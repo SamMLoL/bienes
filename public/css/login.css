@@ -1,0 +1,99 @@
+.colorpanel{
+	background-color:red;
+}
+
+ #sha{
+  	-webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    margin-top: 10px;
+    border-radius: 3px;
+    background-color: white;
+  }
+.canda{
+    width: 200px;
+    height: 200px;
+}
+#containerCentro{
+	margin-top:100px;
+}
+
+#panelheading{
+	margin-bottom: 25px;
+}
+.inputbr{
+	margin-bottom: 15px;
+}
+#colorpanel{
+	background-color: #8E2121;
+}
+
+#colortitulo{
+	color: white;
+}
+
+#colortituloInput{
+	color: #0B614B;
+}
+
+#imgcandado{
+	margin-top: -25px;
+}
+
+#usuarioimg{
+	color:#428cba;
+}
+
+html,body{
+    position: relative;
+    height: 100%;
+}
+
+.login-container{
+    position: relative;
+    width: 500px;
+    margin: 80px auto;
+    padding: 20px 20px 20px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#output{
+    position: absolute;
+    width: 400px;
+    top: -75px;
+    left: 0;
+    color: #fff;
+}
+
+
+.login-container::before,.login-container::after{
+    content: "";
+    position: absolute;
+    width: 100%;height: 100%;
+    top: 3.5px;left: 0;
+    background: #fff;
+    z-index: -1;
+    -webkit-transform: rotateZ(4deg);
+    -moz-transform: rotateZ(4deg);
+    -ms-transform: rotateZ(4deg);
+    border-radius: 5px;
+    background-color: #8E2121;
+
+}
+
+.login-container::after{
+    top: 5px;
+    z-index: -2;
+    -webkit-transform: rotateZ(-2deg);
+    -moz-transform: rotateZ(-2deg);
+    -ms-transform: rotateZ(-2deg);
+    background-color: #8E2121;
+
+}
+
+#validaTC{
+	color:red;
+}

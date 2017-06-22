@@ -1,0 +1,31 @@
+.separar{
+	margin-bottom: 15px;
+}
+
+.borde{
+ 
+  border: 2px solid #8E2121;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 1168px;
+
+  padding: 20px;
+
+}
+
+#colorletra{
+	color:black;
+}
+
+.btn-danger{
+	background-color: #8E2121;
+}
+
+.btn-danger:hover{
+	background-color: white;
+	color:#8E2121;
+	border-radius: 5px;
+	font-weight: bolder;
+
+}
+
