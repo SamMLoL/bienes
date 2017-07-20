@@ -73,7 +73,7 @@
                   <div class="col-md-4">
                     <div class="form-group">
                        <label for="fe_contracto_t2">FECHA DEL CONTRATO:</label>
-                     <input type="date" class="form-control" name="fe_contracto_t2" id="fe_contracto_t2" placeholder="Introduzca el código de origen">
+                     <input type="date" class="form-control" name="fe_contracto_t2" id="fe_contracto_t2">
                     </div>
                   </div>
 

@@ -22,13 +22,13 @@
                    <div class="col-md-4">
                      <div class="form-group">
                         <label for="t6_item">ITEM:</label>
-                      <input type="text" name="t6_item" id="t6_item" class="form-control" placeholder="Introduzca el N° de Item">
+                      <input type="text" class="form-control" name="t6_item" id="t6_item"  placeholder="Introduzca el N° de Item">
                      </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="cod_modelo_t6">CODIGO DEL MODELO:</label>
+                      <label for="cod_modelo_t6">CÓDIGO DEL MODELO:</label>
                         <input type="text" class="form-control" name="cod_modelo_t6" id="cod_modelo_t6" placeholder="Introduzca el código del modelo">
                     </div>
                   </div>
@@ -49,7 +49,7 @@
 
                   <div class="col-md-4">
                     <div class="form-group">
-                       <label for="cod_bien_model_t6">CODIGO QUE PUEDE APLICAR EL MODELO:</label>
+                       <label for="cod_bien_model_t6">CÓDIGO QUE PUEDE APLICAR EL MODELO:</label>
                       <input type="text" class="form-control" name="cod_bien_model_t6" id="cod_bien_model_t6" placeholder="Código del bien mueble segun el catálogo">
                     </div>
                   </div>

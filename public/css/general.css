@@ -1,5 +1,60 @@
+#letrasb{
+  color:white;
+  font-weight: bolder;
+}
+
  #banner{
 
   	height:100%;
   	width:100%;
-  }
+   
+}
+
+ .separarcol{
+ 	margin-bottom: 2px;
+ }
+
+ .separar{
+  margin-bottom: 25px;
+ }
+
+.error{
+	color:red;
+}
+
+#instruccion{
+	color: #8E2121;
+	font-weight: bolder;
+}
+
+#instruccionT1{
+    color: #8E2121;
+	font-weight: bolder;
+    margin-left: -295px;
+    margin-top: -7px;
+}
+
+#instruccionT2{
+    color: #8E2121;
+  font-weight: bolder;
+  margin-top: -14px;
+  margin-left: -377px;
+}
+
+.calendario{
+  color:#8E2121;
+}
+
+.inputplaceholder::-webkit-input-placeholder{ 
+  color: #A24040;
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+.fechaplaceholder::-webkit-input-placeholder{ 
+  color: #A24040;
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+

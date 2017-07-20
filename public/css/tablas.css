@@ -7,14 +7,15 @@
   border: 2px solid #8E2121;
   margin-bottom: 10px;
   border-radius: 5px;
-  width: 1168px;
-
+  width: 1138px;
+  margin-left: 1px;
   padding: 20px;
 
 }
 
 #colorletra{
-	color:black;
+	color:white;
+
 }
 
 .btn-danger{

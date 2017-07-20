@@ -2,19 +2,21 @@
 
 @section('content')
 
-<div class="container" id="sha">
-    <div class="row ">
-       <div class="col-md-12 " >
-           <img src="{{URL::asset('/img/cintillo.jpg')}}" id="banner" >
-       </div>
-    </div>
 
+    
     <div class="row">
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading text-center"><h4><b>NORMATIVAS DE BIENES NACIONALES</b></h4></div>
 
                 <div class="panel-body">
+
+                <div class="panel-body">
+                      @if(isset($edit))
+                      @include('layouts.modificarT1')
+                      @endif
+                </div>
+
                                <p class="text-justify"><b>Gaceta Oficial N° 39.945 del 15 de junio de 2012.</b>
             El Presidente de la República Hugo Chávez, dicta a través del Decreto N° 9.041 la Ley Orgánica de Bienes Públicos la cual tiene por objeto establecer las normas que regulan el ámbito, organización, atribuciones y funcionamiento del Sistema de Bienes Públicos, como parte integrante del Sistema de Administración Financiera del Estado.
             Las normas contenidas en el siguiente Decreto-Ley, normas reglamentarias y aquellas que emita la Superintendencia de Bienes Públicos, son de estricto cumplimiento tanto para las entidades que conforman el Sistema Nacional de Bienes Públicos, así como para las personas naturales o jurídicas que custodien o ejerzan algún derecho sobre un Bien Público, con las excepciones de la Ley, dejando a salvo las competencias y autonomía atribuidas en la materia por la Constitución de la República Bolivariana de Venezuela y las leyes correspondientes.
@@ -29,5 +31,6 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection
+

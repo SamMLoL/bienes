@@ -7,6 +7,16 @@
     background-color: #8E2121;
   }
 
+   #sha{
+  	-webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    margin-top: 10px;
+    border-radius: 3px;
+    background-color: white;
+   
+  }
+
   .logo{
   	height: 50px;
   	width: 210px;
@@ -18,25 +28,7 @@
 	font-weight: bolder;
 }
 
-.nav li a{
-	color: white;
-	font-weight: bolder;
-}
-.nav a:hover{
-	color:#8E2121;
-	border-radius: 5px;
-}
-.nav a:focus{
-	color:#8E2121;
-	border-radius: 5px;
-}
-.nav li li a{
-	color: #8E2121;
-	font-weight: bolder;
-}
-.nav li a:hover{
-	color:#8E2121;
-}
+
 
 #closecolor{
 	color: black;
