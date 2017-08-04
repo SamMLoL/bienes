@@ -19,42 +19,33 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-#VISTAS FORMULARIOS 
-Route::get('/t9ette', function () {
-    return view('tablas/t9ette');
-});
+#CONTROLADOR DE TABLAS y RUTAS DE VISTAS FORMULARIOS
 
-Route::get('/t1dpbpoe', function () {
-    return view('tablas/t1dpbpoe');
-});
+Route::get('/tablat1', 'controladorT1@index');
+Route::resource('t1', 'controladorT1');
 
-Route::get('/t2dobmioe', function () {
-    return view('tablas/t2dobmioe');
-});
+Route::get('/tablat2', 'controladorT2@index');
+Route::resource('t2', 'controladorT2');
 
-Route::get('/t3dsbmioe', function () {
-    return view('tablas/t3dsbmioe');
-});
+Route::get('/tablat3', 'controladorT3@index');
 
-Route::get('/t4drbmioe', function () {
-    return view('tablas/t4drbmioe');
-});
+Route::get('/tablat4', 'controladorT4@index');
 
-Route::get('/t5dmbmioe', function () {
-    return view('tablas/t5dmbmioe');
-});
 
-Route::get('/t6dmbmioe', function () {
-    return view('tablas/t6dmbmioe');
-});
 
-Route::get('/t7dtcbmioe', function () {
-    return view('tablas/t7dtcbmioe');
-});
+#VISTAS DE MUESTRA REGISTROS DATATABLE registroT...
+Route::get('/registroT1', 'controladorVerT1@index');
+Route::get('/registroT2', 'controladorVerT2@index');
 
-Route::get('/registroSude', function () {
-    return view('registros/registroSude');
-});
+#FUNCION DE REVISADO
+Route::get('seleccion/{id}', 'controladorVerT1@selectId');
+Route::get('seleccion2/{id}', 'controladorVerT2@selectId');
+
+#ELIMINAR REGISTRO DE TABLAS
+
+Route::get('/anulart1/{id}', 'controladorVerT1@anularT1');
+Route::get('/anulart2/{id}', 'controladorVerT2@anularT2');
+
 
 
 

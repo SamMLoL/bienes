@@ -2,20 +2,10 @@
 
 @section('content')
 
-
-    
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel">
-                <div class="panel-heading text-center"><h4><b>NORMATIVAS DE BIENES NACIONALES</b></h4></div>
-
+        <div class="panel">
+            <div id="panelTitu" class="panel-heading text-center"><h5 id="h5Titu"><b>NORMATIVAS DE BIENES NACIONALES</b></h5></div>
                 <div class="panel-body">
-
-                <div class="panel-body">
-                      @if(isset($edit))
-                      @include('layouts.modificarT1')
-                      @endif
-                </div>
 
                                <p class="text-justify"><b>Gaceta Oficial N° 39.945 del 15 de junio de 2012.</b>
             El Presidente de la República Hugo Chávez, dicta a través del Decreto N° 9.041 la Ley Orgánica de Bienes Públicos la cual tiene por objeto establecer las normas que regulan el ámbito, organización, atribuciones y funcionamiento del Sistema de Bienes Públicos, como parte integrante del Sistema de Administración Financiera del Estado.
@@ -27,9 +17,9 @@
             Los artículos calificados como materiales y suministros según el Clasificador Presupuestario dictado por la Oficina Nacional de Presupuesto
             Los bienes adquiridos con la finalidad de ser donados de forma inmediata
             Los bienes adquiridos en ejecución de norma expresa, en cumplimiento de fines institucionales, con el fin de ser enajenados a terceros. <a href="{{ asset('pdf/bienes.pdf') }}">Leer más</a></p>
-                </div>
-            </div>
-        </div>
+                 
+              </div>
+         </div>
     </div>
 
 @endsection

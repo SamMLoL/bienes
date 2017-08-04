@@ -28,46 +28,39 @@
 
 <!--@section('content')-->
 
-    <div class="container" id="containerCentro">
-        <div class="login-container">
-           <div id="output"></div>
-             <div class="avatar"></div>
-               <div class="form-box">
+  <div class="container" id="containerCentro">
+    <div class="login-container">
+      <div id="output"></div>
+      <div class="avatar"></div>
+      <div class="form-box">
 
-    <div class="row">
-
-        <div class="col-md-12 ">
-          <div class="panel-heading-info" id="panelheading">  
-            <div class="panel panel-info" id="colorpanel"><h4><b id="colortitulo">Bienes Nacionales</b></h4></div>      
-            
-          </div> 
+        <div class="row">
+          <div class="col-md-12 ">
+            <div class="panel-heading-info" id="panelheading">  
+              <div class="panel panel-info" id="colorpanel"><h4><b id="colortitulo">Bienes Nacionales</b></h4>
+              </div>      
+            </div> 
           
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
-          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
          
-                   <!--  <label for="email" class="col-md-4 control-label">Correo</label>
- <div class="col-md-4 " >
-       
-     </div> -->
-                              <!-- Error de login Correo y clave-->
+               <!-- Error de login Correo y clave-->
                                @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
 
-<div class="col-md-8 col-md-offset-2 inputbr"><br>
-    <div class="input-group" >
-       <span class="input-group-addon" id="colorpanel"><b id="colortitulo">@</b></span>
-        <input id="email" type="email" class="form-control " name="email" value="{{ old('email') }}" placeholder="Ingrese su correo electrónico" aria-describedby="inputGroupprimary3Status" required autofocus>
-    </div>
-      <span id="inputGroupsuccess3Status" class="sr-only">(success)</span>
-
-</div>
-
+          <div class="col-md-8 col-md-offset-2 inputbr"><br>
+             <div class="input-group" >
+                <span class="input-group-addon" id="colorpanel"><b id="colortitulo">@</b></span>
+                  <input id="email" type="email" class="form-control " name="email" value="{{ old('email') }}" placeholder="Ingrese su correo electrónico" aria-describedby="inputGroupprimary3Status" required autofocus>
+             </div>
+             <span id="inputGroupsuccess3Status" class="sr-only">(success)</span>
           </div>
+        </div>
 
     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                          <!--    <label for="password" class="col-md-4 control-label">Contraseña</label> -->
@@ -84,18 +77,24 @@
       </div>
     </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-3">
-                               <br> <input  type="image" src="{{URL::asset('/img/canda2.jpg')}}" type="submit"  height="80" width="80" id="imgcandado">
-                            </div>
-                        </div>
-                    </form>
-      
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                      <br><input  type="image" src="{{URL::asset('/img/canda2.jpg')}}" type="submit"  height="80" width="80" id="imgcandado">
+                    </div>
+                  </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
-
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <center><footer id="pie">
+                    <h6>Vicepresidencia de la República Bolivariana de Venezuela</h6>
+                    <h6>Dirección General de Tecnología de la Información - &copy; 2017 Todos los Derechos Reservados</h6>
+                </footer></center>
+            </div>
+        </div>
+  </div>
 </body>
 </html>

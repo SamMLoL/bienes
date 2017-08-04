@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('', 'Bienes nacionales') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('img/bandera.png') }}" rel="icon">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">  
-    <link href="{{ asset('css/menu.css') }}" rel="stylesheet">  
-    <link href="{{ asset('css/general.css') }}" rel="stylesheet">  
-    <link href="{{ asset('css/appstilo.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/tablas.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/bootstrap-submenu.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('img/bandera.png') }}" rel="icon">
-</head>
+        <title>{{ config('', 'Bienes nacionales') }}</title>
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('img/bandera.png') }}" rel="icon">
+        <link href="{{ asset('css/login.css') }}" rel="stylesheet">  
+        <link href="{{ asset('css/menu.css') }}" rel="stylesheet">  
+        <link href="{{ asset('css/general.css') }}" rel="stylesheet">  
+        <link href="{{ asset('css/appstilo.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/tablas.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/bootstrap-submenu.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('img/bandera.png') }}" rel="icon">
+    </head>
 <body>
 
     <div id="app">
@@ -46,7 +44,6 @@
                 </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-
                     <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                       
@@ -57,18 +54,18 @@
 
                                     <ul class="dropdown-menu">
 
-                                    <li><a href="tablat1" target="_blank">Tabla 1 </a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 2</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 3</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 4</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 5</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 6</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 7</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 8</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 9</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 10</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 11</a></li>
-                                    <li><a href="tablat2" target="_blank">Tabla 12</a></li>
+                                    <li><a href="tablat1">Tabla 1 </a></li>
+                                    <li><a href="tablat2">Tabla 2</a></li>
+                                    <li><a href="tablat2">Tabla 3</a></li>
+                                    <li><a href="tablat2">Tabla 4</a></li>
+                                    <li><a href="tablat2">Tabla 5</a></li>
+                                    <li><a href="tablat2">Tabla 6</a></li>
+                                    <li><a href="tablat2">Tabla 7</a></li>
+                                    <li><a href="tablat2">Tabla 8</a></li>
+                                    <li><a href="tablat2">Tabla 9</a></li>
+                                    <li><a href="tablat2">Tabla 10</a></li>
+                                    <li><a href="tablat2">Tabla 11</a></li>
+                                    <li><a href="tablat2">Tabla 12</a></li>
                                         
                                     </ul>
                                 </li>
@@ -88,18 +85,18 @@
                                 <li class="dropdown-submenu"><a href="">Tablas</a>
                                     <ul class="dropdown-menu">
 
-                                    <li><a href="registroT1" target="_blank">Ver Tabla 1 </a></li>
-                                    <li><a href="tablat2" target="_blank">Ver Tabla 2</a></li>
-                                    <li><a href="tablat3" target="_blank">Ver Tabla 3</a></li>
-                                    <li><a href="tablat4" target="_blank">Ver Tabla 4</a></li>
-                                    <li><a href="tablat5" target="_blank">Ver Tabla 5</a></li>
-                                    <li><a href="tablat6" target="_blank">Ver Tabla 6</a></li>
-                                    <li><a href="tablat7" target="_blank">Ver Tabla 7</a></li>
-                                    <li><a href="tablat8" target="_blank">Ver Tabla 8</a></li>
-                                    <li><a href="tablat9" target="_blank">Ver Tabla 9</a></li>
-                                    <li><a href="tablat10" target="_blank">Ver Tabla 10</a></li>
-                                    <li><a href="tablat11" target="_blank">Ver Tabla 11</a></li>
-                                    <li><a href="tablat12" target="_blank">Ver Tabla 12</a></li>
+                                        <li><a href="registroT1">Ver Tabla 1 </a></li>
+                                        <li><a href="registroT2">Ver Tabla 2</a></li>
+                                        <li><a href="tablat3">Ver Tabla 3</a></li>
+                                        <li><a href="tablat4">Ver Tabla 4</a></li>
+                                        <li><a href="tablat5">Ver Tabla 5</a></li>
+                                        <li><a href="tablat6">Ver Tabla 6</a></li>
+                                        <li><a href="tablat7">Ver Tabla 7</a></li>
+                                        <li><a href="tablat8">Ver Tabla 8</a></li>
+                                        <li><a href="tablat9">Ver Tabla 9</a></li>
+                                        <li><a href="tablat10">Ver Tabla 10</a></li>
+                                        <li><a href="tablat11">Ver Tabla 11</a></li>
+                                        <li><a href="tablat12">Ver Tabla 12</a></li>
                                         
                                     </ul>
                                 </li>
@@ -111,8 +108,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
-                </ul>
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -147,9 +143,6 @@
         </nav>
    </div>
     
-  
-
-    
  <div class="container" id="sha">
     <div class="row">
        <div class="col-md-12 " >
@@ -158,8 +151,6 @@
     </div>
          @yield('content')
 </div>
-
-   
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
@@ -180,12 +171,10 @@
 <script>
          $(document).ready(function() {
     $('#tablaT1').DataTable( {
-        "order": [[ 1, "desc" ]] 
+        "order": [[ 1, "DESC" ]] 
     } );
 } );
-
 </script>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
@@ -196,6 +185,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>

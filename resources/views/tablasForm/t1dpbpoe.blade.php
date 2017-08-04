@@ -4,19 +4,18 @@
 
 
     <div class="row">
-        <div class="panel-heading text-center separar"><h5><b>DATOS DE LOS PROVEEDORES DE LOS BIENES PÚBLICOS DEL ÓRGANO O ENTE</b></h5></div>
+        <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b>DATOS DE LOS PROVEEDORES DE LOS BIENES PÚBLICOS DEL ÓRGANO O ENTE</b></h5></div>
     </div>
 
     <div class="row">
       <div class="col-md-12 separar">
-        <h6> <i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
-         <b style="color:#8E2121;"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO.</b></h6>
+        <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
+         <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO.</b></h6>
       </div>
     </div>
 
-      <form role="form" id="formValidaT1" name="formValidaT1" method="POST" action="{{url('t1')}}">
-           {{ csrf_field() }}
-      
+      <div class="row">
+        <div class="col-md-12 desvanecer">
         @if(session()->has('msj'))
             <center><div  class="col-md-12  alert alert-success" role="alert">{{session('msj')}}</div></center>
                @endif
@@ -24,7 +23,13 @@
                @if(session()->has('errormsj'))
             <center><div  class="col-md-12  alert alert-danger" role="alert">{{session('errormsj')}}</div></center>
         @endif
-  
+        </div>
+      </div>
+
+      <form role="form" id="formValidaT1" name="formValidaT1" method="POST" action="{{url('t1')}}">
+           {{ csrf_field() }}
+
+      
         <div class="row">
          @foreach($selectt1 as $posicion => $valor)
              <div class="pull-right col-md-4 form-group">

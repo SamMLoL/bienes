@@ -20,7 +20,8 @@ class TablaT1 extends Migration
             $table->integer('tip_prove_t1')->nullable();
             $table->string('t1_rif', 20)->nullable();
             $table->string('otr_descr_t1', 200)->nullable();
-            $table->integer('revisado')->nullable();
+            $table->integer('revisadot1')->nullable();
+            $table->integer('anulart1')->nullable();
             $table->timestamps();
         });
     }

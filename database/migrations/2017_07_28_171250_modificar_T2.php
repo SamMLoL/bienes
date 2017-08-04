@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMigselectT2Table extends Migration
+class ModificarT2 extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateMigselectT2Table extends Migration
      */
     public function up()
     {
-        Schema::create('mig_selectT2', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion', 30)->nullable();
-            $table->timestamps();
+        Schema::table('T2', function (Blueprint $table) {
+          
+            $table->integer('revisadot2')->nullable();
+            $table->integer('anulart2')->nullable();
+         
         });
     }
 
@@ -27,6 +28,6 @@ class CreateMigselectT2Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mig_selectT2');
+        Schema::dropIfExists('T2');
     }
 }

@@ -8,7 +8,7 @@ class modeloT1 extends Model
 {     
 	  protected $table ='T1';
       protected $fillable = [
-    'cod_proveedor_t1','desc_prove_t1','tip_prove_t1','t1_rif','otr_descr_t1'
+    'cod_proveedor_t1','desc_prove_t1','tip_prove_t1','t1_rif','otr_descr_t1','revisadot1','anuladot1'
     ];
 
 
