@@ -22,7 +22,7 @@ class TablaT2 extends Migration
             $table->date('fe_concurso_t2', 10)->nullable();
             $table->string('cod_proveedor_t2', 10)->nullable();
             $table->string('n_contracto_t2', 30)->nullable();
-            $table->date('fe_contracto_t2', 10);
+            $table->date('fe_contracto_t2', 10)->nullable();
             $table->string('n_notaentrega_t2', 30)->nullable();
             $table->date('fe_nota_entrega_t2', 10)->nullable();
             $table->string('n_factura_t2', 30)->nullable();

@@ -56,7 +56,7 @@
 
                                     <li><a href="tablat1">Tabla 1 </a></li>
                                     <li><a href="tablat2">Tabla 2</a></li>
-                                    <li><a href="tablat2">Tabla 3</a></li>
+                                    <li><a href="tablat2-1">Tabla 3</a></li>
                                     <li><a href="tablat2">Tabla 4</a></li>
                                     <li><a href="tablat2">Tabla 5</a></li>
                                     <li><a href="tablat2">Tabla 6</a></li>

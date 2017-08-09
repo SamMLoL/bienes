@@ -11,6 +11,6 @@ class mod_selectT2 extends Model
 
      public function selectt2()
     {
-        return $this->hasOne('App\mod_selectT2', 'cod_adquisicion_t2');
+        return $this->hasOne('App\modeloT2', 'cod_adquisicion_t2');
     }
 }
