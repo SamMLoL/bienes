@@ -82,7 +82,7 @@
 <!--FIN DEL SEGUNDO ROW DE INPUT-->
           <div class="row">
               <div class="col-md-12 form-group"><br>
-                <center><button type="submit" class="btn btn-sm btn-danger" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> <b>Guardar Datos</b></button>
+                <center><button type="submit" class="btn btn-sm btn-info" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> <b>Modificar</b></button>
                  <a href="{{ url('/registroT1') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
               </div>
           </div>

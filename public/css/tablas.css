@@ -18,15 +18,8 @@
 
 }
 
-.btn-danger{
+.btn{
 	background-color: #8E2121;
 }
 
-.btn-danger:hover{
-	background-color: white;
-	color:#8E2121;
-	border-radius: 5px;
-	font-weight: bolder;
-
-}
 

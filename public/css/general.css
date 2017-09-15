@@ -1,3 +1,5 @@
+
+
 .moverIzq{
   margin-left: 15px;
 }
@@ -55,7 +57,6 @@ margin-top:8px;
 }
 
 #letrasb{
-  color:white;
   font-weight: bolder;
 }
 
@@ -121,4 +122,7 @@ margin-bottom: 40px;
   font-size: 13px;
 }
 
+.btn{
+  background-color: #8E2121;
+}
 

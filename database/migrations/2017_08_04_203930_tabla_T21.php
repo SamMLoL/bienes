@@ -19,10 +19,10 @@ class TablaT21 extends Migration
             $table->string('codAdq', 2)->nullable();
             $table->string('codPro', 10)->nullable();
             $table->string('numCom', 30)->nullable();
-            $table->date('feCom', 10)->nullable();
             $table->string('numNota', 30)->nullable();
-            $table->date('feNota', 10)->nullable();
             $table->string('numFac', 30)->nullable();
+            $table->date('feCom', 10)->nullable();
+            $table->date('feNota', 10)->nullable();
             $table->date('feFac', 30)->nullable();
             $table->integer('revisadot21')->nullable();
             $table->integer('anulart21')->nullable();

@@ -6,16 +6,12 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateMigselectT2Table extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('mig_selectT2', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion', 30)->nullable();
+            $table->string('opcion')->nullable();
             $table->timestamps();
         });
     }

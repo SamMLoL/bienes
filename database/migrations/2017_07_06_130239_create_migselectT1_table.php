@@ -15,7 +15,7 @@ class CreateMigselectT1Table extends Migration
     {
         Schema::create('mig_selectT1', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion', 30)->nullable();
+            $table->string('opcion')->nullable();
             $table->timestamps();
         });
     }

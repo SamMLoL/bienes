@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="row">
-	     <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b>DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
+	     <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b>ANEXO T-2-1 / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
 	</div>
 
 
@@ -31,8 +31,19 @@
         @endif
     </div>
 
-   <form role="form" id="formValidaT21" name="formValidaT21" method="POST" action="{{url('t21')}}">
-    {{ csrf_field() }}
+    <div class="row"> 
+      <div class="col-md-12 li separar moverIzq">
+          <ul class="js-errors li"></ul>
+      </div>
+    </div>
+    
+<div class="row">
+   <div class="col-md-12">
+   	  <form role="form" id="formValidaT21" name="formValidaT21" method="POST" action="{{url('t21')}}">
+    	{{ csrf_field() }}
+
+    <!--ARRAY SELECT selectT21 PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => mig_selectT21 Y T21-->
+    <!--ARRAY SELECT selectT21 BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => mig_selectT21 AND T21-->
 
     	@foreach($selectT21 as $posicion => $valor)
             
@@ -48,6 +59,9 @@
              </div>
         @endforeach
 
+    <!--ARRAY DE INPUT-TEXT PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => T21-->
+    <!--ARRAY OF INPUT-TEXT BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => T21-->
+
 		@foreach($arrayT21 as $posicion => $valor)
     
 		 <div class="col-md-4 {{$arrayT21[$posicion][4]}} form-group separar">
@@ -57,9 +71,12 @@
 
     	@endforeach
 
+    <!--ARRAY DE FECHA dateT21 PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => T21--> 
+    <!--ARRAY OF DATE dateT21 BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => T21-->
+
 		@foreach($dateT21 as $posicion => $valor)
                       
-         <div class="col-md-4 form-group {{$dateT21[$posicion][6]}}"">
+         <div class="col-md-4 form-group">
             <label for="{{$dateT21[$posicion][0]}}">{{$dateT21[$posicion][1]}}</label>	
                 <div class="{{$dateT21[$posicion][3]}}">
 
@@ -71,9 +88,12 @@
          </div>
         @endforeach
 
+    <!--ARRAY DE FECHA dateT212 PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => T21--> 
+    <!--ARRAY OF DATE dateT212 BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => T21-->
+
         @foreach($dateT212 as $posicion => $valor)
                       
-         <div class="col-md-4 form-group {{$dateT211[$posicion][6]}}"">
+         <div class="col-md-4 form-group">
             <label for="{{$dateT211[$posicion][0]}}">{{$dateT211[$posicion][1]}}</label>	
                 <div class="{{$dateT211[$posicion][3]}}">
 
@@ -84,10 +104,13 @@
                  </div>
          </div>
         @endforeach
-
+    
+    <!--ARRAY DE FECHA dateT212 PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => T21--> 
+    <!--ARRAY OF DATE dateT212 BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => T21-->
+    
         @foreach($dateT212 as $posicion => $valor)
                       
-         <div class="col-md-4 form-group {{$dateT212[$posicion][6]}}"">
+         <div class="col-md-4 form-group">
             <label for="{{$dateT212[$posicion][0]}}">{{$dateT212[$posicion][1]}}</label>	
                 <div class="{{$dateT212[$posicion][3]}}">
 
@@ -103,12 +126,13 @@
 		<div class="row">
             <div class="col-md-12 form-group" ><br>
                 <center>
-                    <button type="submit" class="btn btn-lg btn-danger" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
+                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
                              
                     <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
                 </center> 
             </div>
-        </div>
-   </form>   
-
+       </div>
+     </form> 
+   </div>  
+</div>
 @endsection

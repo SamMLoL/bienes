@@ -10,7 +10,7 @@
      <link href="{{ asset('css/general.css') }}" rel="stylesheet">  
      <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">  
      <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-
+     <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
   </head>
 <body>
 
@@ -71,7 +71,7 @@
 
         <!--FIN DEL PRIMER ROW DE INPUT-->
 
-          <div class="row">
+          <div class="row separar">
               <div class="col-md-4">
                 <label for="n_concurso_t2">NÚMERO DE CONCURSO</label>
             @if($form_t2->n_concurso_t2 == '0')
@@ -83,6 +83,11 @@
               </div>
 
               <div class="col-md-4">
+               <label for="fe_concurso_t2">FECHA DE CONCURSO</label>
+                  <input type="text" class="form-control calendario" name="fe_concurso_t2" id="fe_concurso_t2" value="{{$form_t2->fe_concurso_t2}}">
+              </div>
+
+              <div class="col-md-4">
                 <label for="cod_proveedor_t2">CÓDIGO DE PROVEEDOR</label>
             @if($form_t2->cod_proveedor_t2 == '0')
                  <input type="text" class="form-control" name="cod_proveedor_t2" id="cod_proveedor_t2" value="XXX">
@@ -90,21 +95,60 @@
                  <input type="text" class="form-control" name="cod_proveedor_t2" id="cod_proveedor_t2" value="{{$form_t2->cod_proveedor_t2}}">
             @endif
               </div>
+          </div>
 
+          <div class="row separar">
               <div class="col-md-4">
                 <label for="n_contracto_t2">NÚMERO DE CONTRATO</label>
             @if($form_t2->n_contracto_t2 == '0')
                  <input type="text" class="form-control" name="n_contracto_t2" id="n_contracto_t2" value="XXX">
-              </div>
+             
             @else
                  <input type="text" class="form-control" name="n_contracto_t2" id="n_contracto_t2" value="{{$form_t2->n_contracto_t2}}">
             @endif
+              </div>
+
+              <div class="col-md-4">
+                <label for="fe_contracto_t2">FECHA DE CONTRATO</label>
+                  <input type="text" class="form-control calendario" name="fe_contracto_t2" id="fe_contracto_t2" value="{{$form_t2->fe_contracto_t2}}">
+              </div>
+              
+              <div class="col-md-4">
+                <label for="n_notaentrega_t2">NÚMERO DE LA NOTA DE ENTREGA</label>
+            @if($form_t2->n_notaentrega_t2 == '0')
+                 <input type="text" class="form-control" name="n_notaentrega_t2" id="n_notaentrega_t2" value="XXX">
+             
+            @else
+                 <input type="text" class="form-control" name="n_notaentrega_t2" id="n_notaentrega_t2" value="{{$form_t2->n_notaentrega_t2}}">
+            @endif
+              </div>
           </div>
 
+          <div class="row">
+              <div class="col-md-4">
+                <label for="fe_nota_entrega_t2">FECHA DE NOTA DE ENTREGA</label>
+                  <input type="text" class="form-control calendario" name="fe_nota_entrega_t2" id="fe_nota_entrega_t2" value="{{$form_t2->fe_nota_entrega_t2}}">
+              </div>
+              
+              <div class="col-md-4">
+                <label for="n_factura_t2">NÚMERO DE FACTURA</label>
+            @if($form_t2->n_factura_t2 == '0')
+                 <input type="text" class="form-control" name="n_factura_t2" id="n_factura_t2" value="XXX">
+             
+            @else
+                 <input type="text" class="form-control" name="n_factura_t2" id="n_factura_t2" value="{{$form_t2->n_factura_t2}}">
+            @endif
+              </div>
+
+            <div class="col-md-4">
+                <label for="fe_factura_t2">FECHA DE FACTURA</label>
+                  <input type="text" class="form-control calendario" name="fe_factura_t2" id="fe_factura_t2" value="{{$form_t2->fe_factura_t2}}">
+            </div>
+          </div>
         <!--FIN DEL SEGUNDO ROW DE INPUT-->
           <div class="row">
               <div class="col-md-12 form-group"><br>
-                <center><button type="submit" class="btn btn-sm btn-danger" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> <b>Guardar Datos</b></button>
+                <center><button type="submit" class="btn btn-sm btn-info" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> <b>Modificar</b></button>
                  <a href="{{ url('/registroT2') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
               </div>
           </div>
@@ -113,3 +157,8 @@
   </div>
  </body>
 </html>
+    <script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('js/validate.js') }}"></script>

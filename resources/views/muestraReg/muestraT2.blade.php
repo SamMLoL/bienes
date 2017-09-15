@@ -39,7 +39,7 @@
 
     		  <div class="col-md-4 form-group">
         	     <label>CÓDIGO DE ADQUISICIÓN</label>
-                  <br>{{$seleccion->selectt2->opcion}}
+                  <br>{{$seleccion->selectT2->opcion}}
         	  </div>
 
             @if($seleccion->nom_concurso_t2 == '1')
@@ -183,9 +183,9 @@
             <div class="col-md-12">
                 <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT2" title="AnularT2"><i class="fa fa-trash-o" aria-hidden="true"></i> <b>Eliminar </b></a>  
 
-                <a href="{{url('registroT2')}}" class="btn btn-danger"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+                <a href="{{url('registroT2')}}" class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
 
-                <a href="{{url ('t2/'.$seleccion->id) }}/edit" class="btn btn-danger" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a>
+                <a href="{{url ('t2/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a>
             </div>
         </div>
     </div>

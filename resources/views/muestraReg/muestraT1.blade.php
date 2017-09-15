@@ -22,7 +22,7 @@
         </div>
     </div>
         
-    <div class="row separar40">
+    <div class="row separar">
        	<div class="col-md-3 form-group">
        	    <label>CÓDIGO DEL PROVEEDOR</label>
         	    <br>{{$seleccion->cod_proveedor_t1}}
@@ -35,29 +35,43 @@
 
         <div class="col-md-3 form-group">
             <label>TIPO DE PROVEEDOR</label>
-                <br>{{$seleccion->selectt1->opcion}}
+                <br>{{$seleccion->selectT1->opcion}}
         </div>
-        	
-        @if($seleccion->otr_descr_t1 == '0')
+        
+        @if($seleccion->t1_rif == '0')
+        <div class="col-md-3">
+            <label for="t1_rif">NÚMERO DE RIF -J</label>
+            <br>XXX
+        </div>
+        @else
+        <div class="col-md-3">
+            <label for="t1_rif">NÚMERO DE RIF -J</label>
+            <br>{{$seleccion->t1_rif}}
+        </div>
+        @endif
+    </div>
+    
+    <div class="row">
+         @if($seleccion->otr_descr_t1 == '0')
         <div class="col-md-3 form-group">
             <label>OTRA DESCRIPCION</label>
-        	    <br>XXX
+                <br>XXX
         </div>
         @else
         <div class="col-md-3 form-group">
             <label>OTRA DESCRIPCION</label>
-        	    <br>{{$seleccion->otr_descr_t1}}
+                <br>{{$seleccion->otr_descr_t1}}
         </div>  
         @endif
     </div>
-    
+
     <div class="row text-center separar">
        	<div class="col-md-12 separar form-group">
              <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularR" title="AnularR"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
-             <a href="{{url('registroT1')}}"  class="btn btn-danger"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+             <a href="{{url('registroT1')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                 
-             <a href="{{url ('t1/'.$seleccion->id) }}/edit" class="btn btn-danger" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a> 
+             <a href="{{url ('t1/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a> 
        	</div>
     </div>
 </div>

@@ -12,7 +12,7 @@ class modeloT1 extends Model
     ];
 
 
-     public function selectt1()
+     public function selectT1()
     {
         return $this->belongsTo('App\mod_selectT1', 'tip_prove_t1');
     }
