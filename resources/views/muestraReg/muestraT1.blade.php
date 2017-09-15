@@ -65,6 +65,32 @@
         @endif
     </div>
 
+    <div class="row bajar-10">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-hover table-bordered table-striped table-responsive table-condensed">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Fecha - Hora</th>
+         
+          
+        </tr>
+      </thead>
+      <tbody>
+
+          <tr>
+            <td></td>
+            <td>{{$seleccion->created_at->format('d/m/Y - H:m:s')}}</td>
+
+        
+
+          </tr>
+  
+      </tbody>
+    </table>
+  </div>
+</div>
+
     <div class="row text-center separar">
        	<div class="col-md-12 separar form-group">
              <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularR" title="AnularR"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
