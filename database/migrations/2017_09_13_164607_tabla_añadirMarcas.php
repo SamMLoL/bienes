@@ -15,9 +15,9 @@ class TablaAñadirMarcas extends Migration
     {
         Schema::create('añadirMarcas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codMarca', 200);
-            $table->string('denCoMar', 200);
-            $table->string('nomFabri', 100);
+            $table->string('codMarca', 200)->uniqued()->required();
+            $table->string('denCoMar', 200)->uniqued()->required();
+            $table->string('nomFabri', 100)->uniqued()->required();
             $table->integer('revisadotM')->nullable();
             $table->integer('anulartM')->nullable();
             $table->timestamps();

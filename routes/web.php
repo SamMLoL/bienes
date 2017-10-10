@@ -42,8 +42,6 @@ Route::get('denCoMarcas/{id}','controladorT5@getMarcas');
 Route::get('nomFabricante/{id}','controladorT5@getFabri');
 
 
-
-
 Route::get('/tablat1', 'controladorT1@index');
 Route::resource('t1', 'controladorT1');
 

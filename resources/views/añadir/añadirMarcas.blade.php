@@ -18,6 +18,8 @@
             <center><div  class="col-md-12  alert alert-danger" role="alert">{{session('errormsj')}}</div></center>
         @endif
         </div>
+
+      
       </div>
 
       <div class="row"> 
@@ -39,8 +41,6 @@
                 <input type="text" class="form-control" name="{{$array[$posicion][0]}}" id="{{$array[$posicion][0]}}" placeholder="{{$array[$posicion][2]}}" maxlength="{{$array[$posicion][3]}}" >
          </div>
     @endforeach
-
-
 
 
         <div class="row">
