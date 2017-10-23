@@ -29,6 +29,7 @@ class controladorLogin extends Controller
 				$_SESSION['nombre'] = $nombre[0]->cn[0];
 				$_SESSION['user'] = $user;
 				$_SESSION['rol'] = $permiso[0]->rol;
+				$_SESSION['id'] = $permiso[0]->id;
 				
 
 

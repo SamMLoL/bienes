@@ -40,6 +40,7 @@
            {{ csrf_field() }}
 
       <div class="row">
+        <div class="col-md-12">
          <div class="col-md-4">
              <label for="codMarca">CÓDIGO DE LA MARCA</label>
                 <input type="text" class="form-control" name="codMarca" id="codMarca" value="{{$form_t5->selectT5->opcion}}"  placeholder="Introduzca nombres" maxlength="100" autofocus> 
@@ -53,6 +54,7 @@
          <div class="col-md-4">
              <label for="nomFabri">NOMBRE DEL FABRICANTE</label>   
                 <input type="text" class="form-control" name="nomFabri" id="nomFabri" value="{{$form_t5->selectT52->opcion}}"  placeholder="Introduzca nombres" maxlength="100" autofocus> 
+            </div>
          </div>
       </div>
 <!--FIN DEL PRIMER ROW DE INPUT-->

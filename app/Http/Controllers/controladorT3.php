@@ -9,6 +9,7 @@ use App\mod_selectT31;
 use App\mod_selectT32;
 use App\mod_selectT33;
 use App\mod_selectT34;
+use App\modeloBitacora;
 
 class controladorT3 extends Controller
 {
@@ -149,6 +150,15 @@ class controladorT3 extends Controller
            }
 
         if($form_t3->save()){
+
+          //Función para mostrar la bitacora de las acciones de los usuarios tabla BD: bitacora , acciones.
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Anexo T-3';
+          $bit->save();
+
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
@@ -156,6 +166,13 @@ class controladorT3 extends Controller
 
     }
 
+    public function enviarVariable(){
+
+      $bitacora = modeloBitacora::all();
+
+      return view('bitacora.bitacora', compact('bitacora'));
+
+    }
 
     public function edit($id)
     {
@@ -224,6 +241,13 @@ class controladorT3 extends Controller
         }
 
         if($form_t3->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 2;
+          $bit->referencia = 'Anexo T-3';
+          $bit->save();
+          
             return back()->with('msj', 'Datos Modificados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');

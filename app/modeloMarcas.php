@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class modeloMarcas extends Model
 {	
-    protected $table = 'añadirMarcas';
+    protected $table = 'marcas';
     protected $fillable = ['codMarca','denCoMar','nomFabri'];
 }

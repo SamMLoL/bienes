@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloT25;
 use App\mod_selectT25;
+use App\modeloBitacora;
 
 class controladorT25 extends Controller
 {
@@ -111,6 +112,13 @@ class controladorT25 extends Controller
         }
 
         if($form_t25->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Anexo T2-5';
+          $bit->save();
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
@@ -194,6 +202,13 @@ class controladorT25 extends Controller
         }
 
         if($form_t25->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 2;
+          $bit->referencia = 'Anexo T2-5';
+          $bit->save();
+
             return back()->with('msj', 'Datos Modificados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');

@@ -27,9 +27,10 @@
    <div class="col-md-12">
       <form role="form" id="formValidaT5" name="formValidaT5" method="POST" action="{{url('t5')}}">
       {{ csrf_field() }}
+        
 
 
-                 <div class="form-estilo col-sm-4  ">
+                  <div class="form-estilo col-sm-4  ">
                     <li for="sel_dir"><b>DENOMINACIÓN DE LA MARCA:</b></li>
                      <select name="codMarca" id="codMarca" class="form-control">
                        <option value="0" disabled selected>Seleccione</option>
@@ -42,13 +43,13 @@
 
                   <div class="form-estilo col-sm-4">
                     <li for="denCoMar"><b>CÓDIGO DE LA MARCA:</b></li>
-                     <select name="denCoMar" disabled id="denCoMar" class="form-control">
+                      <select name="denCoMar" disabled id="denCoMar" class="form-control">
                     </select>
                   </div> 
 
                   <div class="form-estilo col-sm-4">
                     <li for="nomFabri"><b>NOMBRE DE FABRICANTE:</b></li>
-                     <select name="nomFabri" disabled id="nomFabri" class="form-control">
+                      <select name="nomFabri" disabled id="nomFabri" class="form-control">
                     </select>
                   </div> 
 

@@ -15,7 +15,10 @@
   </head>
 <body>
 
-  <div class="container" id="sha">
+<div class="container" id="sha">
+  <div class="row">
+    <div class="col-md-12">
+    
       <div class="row separar">
           <div class="panel">
                <img src="{{URL::asset('/img/cintillo.jpg')}}" id="banner" alt="Cintillo Web">
@@ -39,43 +42,47 @@
         <input type="hidden" name="_method" value="PUT">
            {{ csrf_field() }}
 
-      <div class="row">
-         <div class="col-md-4">
-             <label for="cod_proveedor_t1">CÓDIGO DEL PROVEEDOR</label>
-                <input type="text" class="form-control" name="cod_proveedor_t1" id="cod_proveedor_t1" value="{{$form_t1->cod_proveedor_t1}}"  placeholder="Introduzca nombres" maxlength="30" autofocus> 
-         </div>
-       
-         <div class="col-md-4">
-             <label for="desc_prove_t1">DESCRIPCIÓN DEL PROVEEDOR</label>   
-                <input type="text" class="form-control" name="desc_prove_t1" id="desc_prove_t1" value="{{$form_t1->desc_prove_t1}}"  placeholder="Introduzca nombres" maxlength="30" autofocus> 
-         </div>
-      
-         <div class="pull-right col-md-4 form-group">
-            <label for="tip_prove_t1">TIPO DE PROVEEDOR</label>
-               <select name="tip_prove_t1" id="tip_prove_t1" class="form-control">
-                    <option value="{{$form_t1->selectt1->id}}">{{$form_t1->selectt1->opcion}}</option>
-                  @foreach($migselectT1 as $form)
-                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
-                  @endforeach
-               </select>
-         </div>
-      </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-4">
+                 <label for="cod_proveedor_t1">CÓDIGO DEL PROVEEDOR</label>
+                    <input type="text" class="form-control" name="cod_proveedor_t1" id="cod_proveedor_t1" value="{{$form_t1->cod_proveedor_t1}}"  placeholder="Introduzca nombres" maxlength="30" autofocus> 
+             </div>
+           
+             <div class="col-md-4">
+                 <label for="desc_prove_t1">DESCRIPCIÓN DEL PROVEEDOR</label>   
+                    <input type="text" class="form-control" name="desc_prove_t1" id="desc_prove_t1" value="{{$form_t1->desc_prove_t1}}"  placeholder="Introduzca nombres" maxlength="100" autofocus> 
+             </div>
+          
+             <div class="pull-right col-md-4 form-group">
+                <label for="tip_prove_t1">TIPO DE PROVEEDOR</label>
+                   <select name="tip_prove_t1" id="tip_prove_t1" class="form-control">
+                        <option value="{{$form_t1->selectt1->id}}">{{$form_t1->selectt1->opcion}}</option>
+                      @foreach($migselectT1 as $form)
+                        <option value="{{$form->id}}">{{$form->opcion}}</option> 
+                      @endforeach
+                   </select>
+               </div>
+             </div>
+          </div>
 <!--FIN DEL PRIMER ROW DE INPUT-->
           <div class="row">
-             <div class="col-md-4">
-                <label for="t1_rif">INTRODUZCA EL N° RIF J-</label>   
-                 <input type="text" class="form-control" name="t1_rif" id="t1_rif" value="{{$form_t1->t1_rif}}"  placeholder="Introduzca nombres" maxlength="30"> 
-             </div>
+            <div class="col-md-12">
+               <div class="col-md-4">
+                  <label for="t1_rif">INTRODUZCA EL N° RIF J-</label>   
+                   <input type="text" class="form-control" name="t1_rif" id="t1_rif" value="{{$form_t1->t1_rif}}"  placeholder="Introduzca nombres" maxlength="30"> 
+               </div>
 
-             <div class="col-md-4 separar">
-                <label for="otr_descr_t1">DESCRIPCIÓN DEL PROVEEDOR</label>
+               <div class="col-md-4 separar">
+                  <label for="otr_descr_t1">OTRA DESCRIPCIÓN</label>
 
-            @if($form_t1->otr_descr_t1 == '0')
-                <input type="text" class="form-control" name="otr_descr_t1" id="otr_descr_t1" value="XXX"  placeholder="Introduzca nombres" maxlength="30"> 
-             </div>
+              @if($form_t1->otr_descr_t1 == '0')
+                  <input type="text" class="form-control" name="otr_descr_t1" id="otr_descr_t1" value="XXX"  placeholder="Introduzca nombres" maxlength="200">
+               </div>
 
-              @else
-                <input type="text" class="form-control" name="otr_descr_t1" id="otr_descr_t1" value="{{$form_t1->otr_descr_t1}}"  placeholder="Introduzca nombres" maxlength="30"> 
+                @else
+                  <input type="text" class="form-control" name="otr_descr_t1" id="otr_descr_t1" value="{{$form_t1->otr_descr_t1}}"  placeholder="Introduzca otra descripción" maxlength="200">
+            </div> 
           </div>
             @endif
 
@@ -86,7 +93,10 @@
                  <a href="{{ url('/registroT1') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
               </div>
           </div>
+    
+     </div>
     </div>
-   </form>
-  </body>
- </html>
+   </div>
+  </form>
+ </body>
+</html>

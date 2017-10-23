@@ -33,7 +33,7 @@
                        <td id="letrasb" class="text-center">Número Autorización</td>
                        <td id="letrasb" class="text-center">Fecha  Autorización</td>
                        <td id="letrasb" class="text-center">Nombre Registro Notaría</td>
-                       <td id="letrasb" class="text-center">Tomo</td> class="text-center"
+                       <td id="letrasb" class="text-center">Tomo</td> 
                        <td id="letrasb" class="text-center">Folio</td>
                        <td id="letrasb" class="text-center">Fecha Registro</td>
                        <td id="letrasb" class="text-center">Ver más</td>
@@ -48,15 +48,15 @@
                 @if($reg27->codOt2_7 == '0') 
                   <tr>
                         @if($reg27->revisadot27== '1')
-                        <td class="text-center"><a href="seleccion27/{{$reg27->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp; H-1</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg27->id}}</a><a href="seleccion27/{{$reg27->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp; H-1</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion27/{{$reg27->id}}">&nbsp; H-1</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg27->id}}</a><a href="seleccion27/{{$reg27->id}}">&nbsp; H-1</a> </td>
                         @endif
                 @else
                         @if($reg27->revisadot27 == '1')
-                        <td class="text-center"><a href="seleccion27/{{$reg27->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg27->codOt2_7}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg27->id}}</a><a href="seleccion27/{{$reg27->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg27->codOt2_7}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="seleccion27/{{$reg27->id}}">{{$reg27->codOt2_7}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg27->id}}</a><a href="seleccion27/{{$reg27->id}}">{{$reg27->codOt2_7}}</a></td>
                         @endif
                 @endif
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloT26;
 use App\mod_selectT26;
+use App\modeloBitacora;
 
 class controladorT26 extends Controller
 {
@@ -14,12 +15,12 @@ class controladorT26 extends Controller
         $infoSelect = mod_selectT26::all();
 
         $arrayT26 = array(
-            array("codOt2_5","CÓDIGO DE ORIGEN:","Introduzca el código de origen","12","col-md-pull-4"),
+            array("codOt2_6","CÓDIGO DE ORIGEN:","Introduzca el código de origen","12","col-md-pull-4"),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
             array("nomCope","NOMBRE DEL COPERMUTANTE:","Introduzca nombre del copermutante","100","col-md-push-0"),
             array("nomBen","NOMBRE DEL BENEFICIARIO:","Introduzca nombre del beneficiario","100",""),
-            array("nomLic","NOMBRE DE LA LICITACIÓN:","Introduzca nombre de la licitación","100",""),
-            array("numLic","N° DE LA LICITACIÓN:","Introduzca el N° licitación","100",""),
+            array("nomLic","NOMBRE DE LA LICITACIÓN:","Introduzca nombre de la licitación","255",""),
+            array("numLic","N° DE LA LICITACIÓN:","Introduzca el N° licitación","30",""),
             array("numCon","N° DEL CONTRATO:","Introduzca el N° de contrato","30",""),
             array("nomRegn","NOMBRE DEL REGISTRO O NOTARÍA:","Introduzca nombre del registro o notaría","100",""),
             array("tomo","TOMO:","Introduzca el tomo del registro","20",""),
@@ -126,6 +127,13 @@ class controladorT26 extends Controller
         }
 
         if($form_t26->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Anexo T2-6';
+          $bit->save();
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
@@ -221,6 +229,13 @@ class controladorT26 extends Controller
         }
 
         if($form_t26->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 2;
+          $bit->referencia = 'Anexo T2-6';
+          $bit->save();
+
             return back()->with('msj', 'Datos Modificados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');

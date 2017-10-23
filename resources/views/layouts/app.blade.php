@@ -50,127 +50,75 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Formularios de Registros<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                              <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-submenu"><a href="">Registrar Anexos</a>
+                                <li class="dropdown-submenu"><a href="">Registrar Datos</a>
                                     <ul class="dropdown-menu">
                             <!--SUB-MENU DE ANEXOS T-->
-                            <li><a href="tablat1">Anexo T-1 </a></li>
-                                <li class="dropdown-submenu"><a href="">Anexo T-2</a>
+                            <li><a href="tablat1">Proveedores</a></li>
+                                <li class="dropdown-submenu"><a href="">Modalidades</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="tablat2">Anexo T-2</a></li>
-                                        <li><a href="tablat2-1">Anexo T-2-1</a></li>
-                                        <li><a href="tablat2-2">Anexo T-2-2</a></li>
-                                        <li><a href="tablat2-3">Anexo T-2-3</a></li>
-                                        <li><a href="tablat2-4">Anexo T-2-4</a></li>
-                                        <li><a href="tablat2-5">Anexo T-2-5</a></li>
-                                        <li><a href="tablat2-6">Anexo T-2-6</a></li>
-                                        <li><a href="tablat2-7">Anexo T-2-7</a></li>
-                                        <li><a href="tablat2-8">Anexo T-2-8</a></li>
+                                        <li><a href="tablat2">Compra por Concurso</a></li>
+                                        <li><a href="tablat2-1">Compra Directa</a></li>
+                                        <li><a href="tablat2-2">Confiscación</a></li>
+                                        <li><a href="tablat2-3">Dación en Pago</a></li>
+                                        <li><a href="tablat2-4">Donación</a></li>
+                                        <li><a href="tablat2-5">Expropiación</a></li>
+                                        <li><a href="tablat2-6">Permuta</a></li>
+                                        <li><a href="tablat2-7">Transferencia</a></li>
+                                        <li><a href="tablat2-8">Adjudicación</a></li>
                                     </ul>
                                 </li>
 
-                                    <li><a href="tablat3">Anexo T-3</a></li>
-                                    <li><a href="tablat4">Anexo T-4</a></li>
-                                    <li><a href="tablat5">Anexo T-5</a></li>
-                                    <li><a href="tablat2">Anexo T-6</a></li>
-                                    <li><a href="tablat2">Anexo T-7</a></li>
-                                    <li><a href="tablat2">Anexo T-8</a></li>
-                                    <li><a href="tablat2">Anexo T-9</a></li>
-                                    <li><a href="tablat2">Anexo T-10</a></li>
-                                    <li><a href="tablat2">Anexo T-11</a></li>
-                                    <li><a href="tablat2">Anexo T-12</a></li>
+                                    <li><a href="tablat3">Seguros</a></li>
+                                    <li><a href="tablat4">Responsables de los Bienes</a></li>
+                                    <li><a href="tablat5">Marcas</a></li>
+                                    <li><a href="tablat6">Modelos</a></li>
+                                    <li><a href="tablat2">Componentes</a></li>
+                                    <li><a href="#">Bienes</a></li>
+                                    <li><a href="tablat2">Equipo de Transporte</a></li>
+                                    <li><a href="tablat2">Semovientes</a></li>
+                                    <li><a href="tablat2">Bienes Muebles e Inmuebles</a></li>
+                                    <li><a href="tablat2">Bienes de Inmuebles del Organo</a></li>
+                                   
                                         
                                     </ul>
                                 </li>
                              <!--SUB-MENU DE INVENTARIOS-->
-                                <li class="dropdown-submenu"><a href="">Registrar Inventarios</a>
+                                <li class="dropdown-submenu"><a href="">Consultar Datos</a>
                                     <ul class="dropdown-menu">
-                                       <li><a href="{{ url('/directorio')}}">Directorio telefónico </a></li>
-                                       <li><a href="{{ url('/formatos')}}">Formatos</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                            
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Ver Registros<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-submenu"><a href="#">Ver Anexos <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <ul class="dropdown-menu">
-                              <!--SUB-MENU DE VER ANEXOS T-->
-                                <li><a href="registroT1">Anexo T-1 </a></li>
-                                   <li class="dropdown-submenu"><a href="">Anexo T-2</a>
-                                      <ul class="dropdown-menu">
-                                        <li><a href="registroT2">Anexo T-2</a></li>
-                                        <li><a href="registroT2-1">Anexo T-2-1</a></li>
-                                        <li><a href="registroT2-2">Anexo T-2-2</a></li>
-                                        <li><a href="registroT2-3">Anexo T-2-3</a></li>
-                                        <li><a href="registroT2-4">Anexo T-2-4</a></li>
-                                        <li><a href="registroT2-5">Anexo T-2-5</a></li>
-                                        <li><a href="registroT2-6">Anexo T-2-6</a></li>
-                                        <li><a href="registroT2-7">Anexo T-2-7</a></li>
-                                        <li><a href="registroT2-8">Anexo T-2-8</a></li>
-                                     </ul>
-                                 </li>
-
-                                        <li><a href="registroT3">Anexo T-3</a></li>
-                                        <li><a href="registroT4">Anexo T-4</a></li>
-                                        <li><a href="registroT5">Anexo T-5</a></li>
-                                        <li><a href="tablat6">Anexo T-6</a></li>
-                                        <li><a href="tablat7">Anexo T-7</a></li>
-                                        <li><a href="tablat8">Anexo T-8</a></li>
-                                        <li><a href="tablat9">Anexo T-9</a></li>
-                                        <li><a href="tablat10">Anexo T-10</a></li>
-                                        <li><a href="tablat11">Anexo T-11</a></li>
-                                        <li><a href="tablat12">Anexo T-12</a></li>
-                                        
-                                    </ul>
-                                </li>
-
-                                 <li class="dropdown-submenu"><a href="">Inventarios <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ url('/directorio')}}">Directorio telefónico </a></li>
-                                        <li><a href="{{ url('/formatos')}}">Formatos</a></li>
+                                      <li><a href="registroT1">Proveedores</a></li>
+                                        <li class="dropdown-submenu"><a href="">Modalidades</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="registroT2">Compra por Concurso</a></li>
+                                            <li><a href="registroT2-1">Compra Directa</a></li>
+                                            <li><a href="registroT2-2">Confiscación</a></li>
+                                            <li><a href="registroT2-3">Dación en Pago</a></li>
+                                            <li><a href="registroT2-4">Donación</a></li>
+                                            <li><a href="registroT2-5">Expropiación</a></li>
+                                            <li><a href="registroT2-6">Permuta</a></li>
+                                            <li><a href="registroT2-7">Transferencia</a></li>
+                                            <li><a href="registroT2-8">Adjudicación</a></li>
+                                        </ul>
+                                       </li>
+                                       <li><a href="registroT3">Seguros</a></li>
+                                       <li><a href="registroT4">Responsables de los Bienes</a></li>
+                                       <li><a href="registroT5">Marcas</a></li>
+                                       <li><a href="registroT6">Modelos</a></li>
+                                       <li><a href="registroT7">Componentes</a></li>
+                                       <li><a href="registroT8">Bienes</a></li>
+                                       <li><a href="registroT9">Equipo de Transporte</a></li>
+                                       <li><a href="registroT10">Semovientes</a></li>
+                                       <li><a href="registroT11">Bienes Muebles e Inmuebles</a></li>
+                                       <li><a href="registroT12">Bienes de Inmuebles del Órgano</a></li>
+                                      
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                     
-             
-
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links-->
-                            <li class="dropdown">
-                                <a href="buscar" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <i class="fa fa-search" aria-hidden="true"></i>  
-                                </a>
-                            </li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                 <i class="fa fa-cog" aria-hidden="true"></i>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/marcas') }}">
-                                        Registrar marca  <i class="fa fa-plus-circle" aria-hidden="true"></i>  
-                                        </a>
-
-                                        <a href="{{ url('/logout') }}">
-                                        Registrar modelo  <i class="fa fa-plus-circle" aria-hidden="true"></i>  
-                                        </a>
-
-                                    </li>
-                                </ul>
-                            </li>
-                        
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links-->
+                         <!-- Right Side Of Navbar -->
+                         <ul class="nav navbar-nav navbar-right">
+                         <!-- Authentication Links-->
                       
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -180,15 +128,39 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/logout') }}">
-                                            Cerrar Sesión
+                                           Cerrar Sesión
                                         </a>
                                    
                                     </li>
                                 </ul>
                             </li>
-                        
-                    </ul>
+                        </ul>
 
+                        <ul class="nav navbar-nav navbar-right">
+                         <!-- Authentication Links-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                 <i class="fa fa-cog" aria-hidden="true"></i>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/bitacora') }}">
+                                        Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
+                                        </a>
+
+                                        <a href="{{ url('/marcas') }}">
+                                        Añadir marca  <i class="fa fa-plus-circle" aria-hidden="true"></i>  
+                                        </a>
+
+                                        <a href="{{ url('/logout') }}">
+                                        Añadir modelo  <i class="fa fa-plus-circle" aria-hidden="true"></i>  
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
                 </div>
             </div>

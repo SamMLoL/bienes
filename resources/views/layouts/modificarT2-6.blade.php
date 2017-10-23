@@ -42,9 +42,9 @@
 			<div class="col-md-3">
 				<label for="codOt2_6">CÓDIGO DE ORIGEN</label>
 				@if($form_t26->codOt2_6 == '0')
-				 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="G-1">
+				 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="G-1" maxlength="12">
 				@else
-				 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="{{$form_t26->codOt2_6}}">
+				 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="{{$form_t26->codOt2_6}}" maxlength="12">
 				@endif
 			</div>
 			
@@ -62,58 +62,57 @@
 			<div class="col-md-3">
 				<label for="nomCope">NOMBRE DEL COPERMUTANTE</label>
 				@if($form_t26->nomCope == '1')
-				 <input type="text" class="form-control" name="nomCope" id="nomCope" value="XXX">
+				 <input type="text" class="form-control" name="nomCope" id="nomCope" value="XXX" maxlength="100">
 				@else
-				 <input type="text" class="form-control" name="nomCope" id="nomCope" value="{{$form_t26->nomCope}}">
+				 <input type="text" class="form-control" name="nomCope" id="nomCope" value="{{$form_t26->nomCope}}" maxlength="100">
 				@endif
 			</div>
 
 			<div class="col-md-3">
 				<label for="nomBen">NOMBRE DEL BENEFICIARIO</label>
 				@if($form_t26->nomBen == '1')
-				 <input type="text" class="form-control" name="nomBen" id="nomBen" value="noaplica">
+				 <input type="text" class="form-control" name="nomBen" id="nomBen" value="noaplica" maxlength="100">
 				@else
-				 <input type="text" class="form-control" name="nomBen" id="nomBen" value="{{$form_t26->nomBen}}">
+				 <input type="text" class="form-control" name="nomBen" id="nomBen" value="{{$form_t26->nomBen}}" maxlength="100">
 				@endif
 			</div>
 		</div>
 
 		<div class="row separar40 ">
 
-			
 			  <div class="col-md-3">
 				<label for="nomLic">NOMBRE DE LA LICITACIÓN</label>
 				@if($form_t26->nomLic == '1')
-				 <input type="text" class="form-control" name="nomLic" id="nomLic" value="XXX">
+				 <input type="text" class="form-control" name="nomLic" id="nomLic" value="XXX" maxlength="255">
 				@else
-				 <input type="text" class="form-control" name="nomLic" id="nomLic" value="{{$form_t26->nomLic}}">
+				 <input type="text" class="form-control" name="nomLic" id="nomLic" value="{{$form_t26->nomLic}}" maxlength="255">
 				@endif
 			  </div>
 
 			  <div class="col-md-3">
 				<label for="numLic">N° DE LA LICITACIÓN</label>
 				@if($form_t26->numLic == '0')
-				 <input type="text" class="form-control" name="numLic" id="numLic" value="XXX">
+				 <input type="text" class="form-control" name="numLic" id="numLic" value="XXX" maxlength="30">
 				@else
-				 <input type="text" class="form-control" name="numLic" id="numLic" value="{{$form_t26->numLic}}">
+				 <input type="text" class="form-control" name="numLic" id="numLic" value="{{$form_t26->numLic}}" maxlength="30">
 				@endif
 			  </div>
 			 
 			  <div class="col-md-3">
 				<label for="numCon">N° DEL CONTRATO</label>
 				@if($form_t26->numCon == '0')
-				 <input type="text" class="form-control" name="numCon" id="numCon" value="XXX">
+				 <input type="text" class="form-control" name="numCon" id="numCon" value="XXX" maxlength="30">
 				@else
-				 <input type="text" class="form-control" name="numCon" id="numCon" value="{{$form_t26->numCon}}">
+				 <input type="text" class="form-control" name="numCon" id="numCon" value="{{$form_t26->numCon}}" maxlength="30">
 				@endif
 			  </div>
 			
 		       <div class="col-md-3">
 				<label for="nomRegn">NOMBRE REGISTRO O NOTARÍA</label>
 				@if($form_t26->nomRegn == '1')
-				 <input type="text" class="form-control" name="nomRegn" id="nomRegn" value="XXX">
+				 <input type="text" class="form-control" name="nomRegn" id="nomRegn" value="XXX" maxlength="100">
 				@else
-				 <input type="text" class="form-control" name="nomRegn" id="nomRegn" value="{{$form_t26->nomRegn}}">
+				 <input type="text" class="form-control" name="nomRegn" id="nomRegn" value="{{$form_t26->nomRegn}}" maxlength="100">
 				@endif
 			  </div>
 			</div>
@@ -123,18 +122,18 @@
 			  <div class="col-md-3">
 				<label for="tomo">TOMO</label>
 				@if($form_t26->tomo == '1')
-				 <input type="text" class="form-control" name="tomo" id="tomo" value="XXX">
+				 <input type="text" class="form-control" name="tomo" id="tomo" value="XXX" maxlength="20">
 				@else
-				 <input type="text" class="form-control" name="tomo" id="tomo" value="{{$form_t26->tomo}}">
+				 <input type="text" class="form-control" name="tomo" id="tomo" value="{{$form_t26->tomo}}" maxlength="20">
 				@endif
 			  </div>
 
 			  <div class="col-md-3">
 				<label for="folio">FOLIO</label>
 				@if($form_t26->folio == '0')
-				 <input type="text" class="form-control" name="folio" id="folio" value="99">
+				 <input type="text" class="form-control" name="folio" id="folio" value="99" maxlength="6">
 				@else
-				 <input type="text" class="form-control" name="folio" id="folio" value="{{$form_t26->folio}}">
+				 <input type="text" class="form-control" name="folio" id="folio" value="{{$form_t26->folio}}" maxlength="6">
 				@endif
 			  </div>
 

@@ -48,15 +48,15 @@
                 @if($reg23->codOt2_3 == '0') 
                   <tr>
                         @if($reg23->revisadot23 == '1')
-                        <td class="text-center"><a href="seleccion23/{{$reg23->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> D-1</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg23->id}}</a><a href="seleccion23/{{$reg23->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> D-1</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion23/{{$reg23->id}}"> D-1</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg23->id}}</a><a href="seleccion23/{{$reg23->id}}"> D-1</a> </td>
                         @endif
                 @else
                         @if($reg23->revisadot23 == '1')
-                        <td class="text-center"><a href="seleccion23/{{$reg23->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg23->codOt2_3}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg23->id}}</a><a href="seleccion23/{{$reg23->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg23->codOt2_3}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="seleccion23/{{$reg23->id}}">{{$reg23->codOt2_3}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg23->id}}</a><a href="seleccion23/{{$reg23->id}}">{{$reg23->codOt2_3}}</a></td>
                         @endif
                 @endif
 

@@ -48,15 +48,15 @@
                 @if($reg4->codResp == '0') 
                   <tr>
                         @if($reg4->revisadot4== '1')
-                        <td class="text-center"><a href="seleccion4/{{$reg4->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg4->codResp}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg4->id}}</a><a href="seleccion4/{{$reg4->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg4->codResp}}</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion4/{{$reg4->id}}"> {{$reg4->codResp}}</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg4->id}}</a><a href="seleccion4/{{$reg4->id}}"> {{$reg4->codResp}}</a> </td>
                         @endif
                 @else
                         @if($reg4->revisadot4 == '1')
-                        <td class="text-center"><a href="seleccion4/{{$reg4->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg4->codResp}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg4->id}}</a><a href="seleccion4/{{$reg4->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg4->codResp}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="seleccion4/{{$reg4->id}}">{{$reg4->codResp}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg4->id}}</a><a href="seleccion4/{{$reg4->id}}">{{$reg4->codResp}}</a></td>
                         @endif
                 @endif
                         <td class="text-center">{{$reg4->selectT4->opcion}}</td>

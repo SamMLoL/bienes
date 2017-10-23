@@ -50,15 +50,15 @@
                 @if($reg3->codRegT3 == '0') 
                   <tr>
                         @if($reg3->revisadot3== '1')
-                        <td class="text-center"><a href="seleccion3/{{$reg3->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg3->codRegT3}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg3->id}}</a><a href="seleccion3/{{$reg3->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg3->codRegT3}}</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion3/{{$reg3->id}}"> {{$reg3->codRegT3}}</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg3->id}}</a><a href="seleccion3/{{$reg3->id}}"> {{$reg3->codRegT3}}</a> </td>
                         @endif
                 @else
                         @if($reg3->revisadot3 == '1')
-                        <td class="text-center"><a href="seleccion3/{{$reg3->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg3->codRegT3}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg3->id}}</a><a href="seleccion3/{{$reg3->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg3->codRegT3}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="seleccion3/{{$reg3->id}}">{{$reg3->codRegT3}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg3->id}}</a><a href="seleccion3/{{$reg3->id}}">{{$reg3->codRegT3}}</a></td>
                         @endif
                 @endif
 

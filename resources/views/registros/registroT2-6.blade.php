@@ -24,7 +24,7 @@
       <div class="col-md-12">
         <table id="tablaT1" class="tabla table-striped table-responsive table-bordered table-hover">
               
-                <thead style="font-size:12px;">
+                <thead style="font-size:11px;">
                     <tr>
                        <td id="letrasb" class="text-center">Código Origen</td>
                        <td id="letrasb" class="text-center">Código Adquisición</td>
@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
 
-            <tbody style="font-size:12px;">
+            <tbody style="font-size:11px;">
           
                 <!--SI EL revisadot1 ES 0 EL REGISTRO ES NUEVO SI NO , EL REGISTRO SE ABRIO-->
 
@@ -52,15 +52,15 @@
                 @if($reg26->codOt2_6 == '0') 
                   <tr>
                         @if($reg26->revisadot26== '1')
-                        <td class="text-center"><a href="seleccion26/{{$reg26->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> G-1</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg26->id}}</a><a href="seleccion26/{{$reg26->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> G-1</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion26/{{$reg26->id}}"> G-1</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg26->id}}</a><a href="seleccion26/{{$reg26->id}}"> G-1</a> </td>
                         @endif
                 @else
                         @if($reg26->revisadot26 == '1')
-                        <td class="text-center"><a href="seleccion26/{{$reg26->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg26->codOt2_6}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg26->id}}</a><a href="seleccion26/{{$reg26->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg26->codOt2_6}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="seleccion26/{{$reg26->id}}">{{$reg26->codOt2_6}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg26->id}}</a><a href="seleccion26/{{$reg26->id}}">{{$reg26->codOt2_6}}</a></td>
                         @endif
                 @endif
 
@@ -132,4 +132,6 @@
               @endforeach
            </tbody>
         </table>
+      </div>
+    </div>
 @endsection

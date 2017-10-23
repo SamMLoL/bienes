@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloT22;
 use App\mod_selectT22;
+use App\modeloBitacora;
 
 class controladorT22 extends Controller
 {
@@ -116,6 +117,13 @@ class controladorT22 extends Controller
         }
 
         if($form_t22->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Anexo T2-2';
+          $bit->save();
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
@@ -204,6 +212,13 @@ class controladorT22 extends Controller
         }
 
         if($form_t22->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 2;
+          $bit->referencia = 'Anexo T2-2';
+          $bit->save();
+
             return back()->with('msj', 'Datos Modificados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');

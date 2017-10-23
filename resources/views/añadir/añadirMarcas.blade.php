@@ -4,12 +4,12 @@
 
 
     <div class="row">
-        <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b>REGISTRO DE MARCA</b></h5></div>
+        <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-plus-circle" aria-hidden="true"></i>   AÑADIR NUEVA MARCA</b></h5></div>
     </div>
     
 
       <div class="row">
-        <div class="col-md-12 desvanecer">
+        <div class="col-md-12">
         @if(session()->has('msj'))
             <center><div  class="col-md-12  alert alert-success" role="alert">{{session('msj')}}</div></center>
                @endif
@@ -32,8 +32,8 @@
    <div class="col-md-12">
       <form role="form" id="formValidaAña" name="formValidaAña" method="POST" action="{{url('tMarca')}}">
       {{ csrf_field() }}
-
-        
+  
+    
     @foreach($array as $posicion => $valor)
     
          <div class="col-md-4  form-group separar">

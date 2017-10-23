@@ -7,6 +7,8 @@ use App\modeloT5;
 use App\mod_selectT5;
 use App\mod_selectT51;
 use App\mod_selectT52;
+use App\modeloMarcas;
+
 
 class controladorT5 extends Controller
 {
@@ -18,7 +20,7 @@ class controladorT5 extends Controller
     public function index()
     {   
         $modeloT5= modeloT5::all();
-        $infoSelect5= mod_selectT5::all();
+        $infoSelect5= mod_selectT5::orderBy('opcion', 'asc')->get();
         $infoSelect51= mod_selectT51::all();
         $infoSelect52= mod_selectT52::all();
 
@@ -56,8 +58,8 @@ class controladorT5 extends Controller
     public function store(Request $request)
     {
         $form_t5 = new modeloT5();
-        $form_t5->codMarca = $request->codMarca;
         $form_t5->denCoMar = $request->denCoMar;
+        $form_t5->codMarca = $request->codMarca;
         $form_t5->nomFabri = $request->nomFabri;
         $form_t5->revisadot5 = 1;
         $form_t5->anulart5 = 0;

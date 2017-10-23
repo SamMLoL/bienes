@@ -2,61 +2,50 @@
 
 @section('content')
 
-    <div class="row separar">
-        <div class="col-md-12 separar">
-          <center><h4><b>Registro de Anexo T-1</b></h4></center>
+<div class="row">
+  <div class="col-md-12">
+    
+        <div class="row">
+            <div class="col-md-12">
+              <center><h4><b>Datos de los Proveedores de los Bienes Públicos del Órgano o Ente</b></h4></center>
+            </div>
         </div>
-    </div>
+    <hr>
+        <div class="row">
+            <div class="col-md-12 desvanecer">
+            @if(session()->has('msj'))
+                <center><div  class="col-md-12 alert alert-success" role="alert">{{session('msj')}}</div></center>
+                   @endif
 
-    <div class="row">
-        <div class="col-md-12 desvanecer">
-        @if(session()->has('msj'))
-            <center><div  class="col-md-12 alert alert-success" role="alert">{{session('msj')}}</div></center>
-               @endif
-
-               @if(session()->has('errormsj'))
-            <center><div  class="col-md-12 alert alert-danger" role="alert">{{session('errormsj')}}</div></center>
-        @endif
-        </div>
-    </div>    
-  <!-- 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="panel panel-info">
-          <div class="panel-heading">Información del Registro</div>
-            <div class="panel-body">
-  PENDIENTE REALIZAR A CADA ANEXO UN INPUT PARA IDENTIFICAR QUIEN ES LA PERSONA QUE REALIZA EL REGISTRO Y LA FECHA EN EL CUAL SE REALIZO DICHO REGISTRO , TAMBIÉN ANEXAR LA VALIDACIÓN DE USUARIO PARA AUTENTICARLO EN CASO DE QUE NO SEA EL DUEÑO DEL REGISTRO
-            
-          </div>
-        </div>
-      </div>
-    </div>-->
-
-    <div class="row">
-      <div class="col-md-12">
+                   @if(session()->has('errormsj'))
+                <center><div  class="col-md-12 alert alert-danger" role="alert">{{session('errormsj')}}</div></center>
+            @endif
+            </div>
+        </div>    
+ 
         <table id="tablaT1" class="tabla table-striped table-responsive table-bordered table-hover">
              
-              <thead style="font-size:13px;">
+              <thead style="font-size:12px;">
                   <tr>
-                    <td id="letrasb" class="text-center">Código Proveedor</td>
-                    <td id="letrasb" class="text-center">Descripción Proveedor</td>
-                    <td id="letrasb" class="text-center">Tipo Proveedor</td>
-                    <td id="letrasb" class="text-center">Rif</td>
-                    <td id="letrasb" class="text-center">Otra Descripción</td>
-                    <td id="letrasb" class="text-center">Ver más</td>
+                    <th id="letrasb" class="text-center">Código Proveedor</th>
+                    <th id="letrasb" class="text-center">Descripción Proveedor</th>
+                    <th id="letrasb" class="text-center">Tipo Proveedor</th>
+                    <th id="letrasb" class="text-center">Rif</th>
+                    <th id="letrasb" class="text-center">Otra Descripción</th>
+                    <th id="letrasb" class="text-center">Ver más</th>
                   </tr>
               </thead>
-
-          <tbody style="font-size:13px;">
+     
+          <tbody style="font-size:12px;">
             @foreach($verT1 as $registro)
                 @if($registro->otr_descr_t1 == '0')
                     <tr>
                         <!--SI EL revisadot1 ES 0 EL REGISTRO ES NUEVO SI NO , EL REGISTRO SE ABRIO-->
                       @if($registro->revisadot1 == '1')
-                        <td class="text-center"><b><a href="seleccion/{{$registro->id}}">Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$registro->cod_proveedor_t1}}</a></b></td>
+                        <td class="text-center"><a href="#" hidden>{{$registro->id}}</a><b><a href="seleccion/{{$registro->id}}">Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$registro->cod_proveedor_t1}}</a></b></td>
                      
                       @else
-                        <td class="text-center"><a href="seleccion/{{$registro->id}}">{{$registro->cod_proveedor_t1}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$registro->id}}</a><a href="seleccion/{{$registro->id}}">{{$registro->cod_proveedor_t1}}</a></td>
                       @endif
 
                         <td class="text-center">{{$registro->desc_prove_t1}}</td>
@@ -88,5 +77,7 @@
             @endforeach
           </tbody>
         </table>
+  </div>
+</div>
       
 @endsection

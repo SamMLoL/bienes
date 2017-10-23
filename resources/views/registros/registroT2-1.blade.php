@@ -47,17 +47,17 @@
                     <tr>
 
                         @if($reg21->revisadot21 == '1')
-                        <td class="text-center"><a href="seleccion21/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> B-1</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccion21/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> B-1</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion21/{{$reg21->id}}"> B-1</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccion21/{{$reg21->id}}"> B-1</a> </td>
                         @endif
 
                   @else   
 
                         @if($reg21->revisadot21 == '1')
-                        <td><a href="seleccion21/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg21->codOt2_1}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccion21/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg21->codOt2_1}}</b></a></td>
                         @else
-                        <td><a href="seleccion21/{{$reg21->id}}">{{$reg21->codOt2_1}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccion21/{{$reg21->id}}">{{$reg21->codOt2_1}}</a></td>
                         @endif
 
                   @endif

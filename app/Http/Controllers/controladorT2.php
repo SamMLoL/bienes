@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloT2;
 use App\mod_selectT2;
+use App\modeloBitacora;
 
 class controladorT2 extends Controller
 {
@@ -132,6 +133,13 @@ class controladorT2 extends Controller
              }
 
         if($form_t2->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Anexo T-2';
+          $bit->save();
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
@@ -231,6 +239,13 @@ class controladorT2 extends Controller
              }
     
         if($form_t2->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 2;
+          $bit->referencia = 'Anexo T-2';
+          $bit->save();
+
             return back()->with('msj', 'Datos modificados exitosamente');
         } else {
             return back()->with('errormsj', 'Los datos no se guardaron');

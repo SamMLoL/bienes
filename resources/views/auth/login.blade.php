@@ -28,10 +28,10 @@
 
             <div class="row">
                 <div class="col-md-12">
-                        <div class="panel-heading-info" id="panelheading">  
-                            <div class="panel panel-info" id="colorpanel"><h4><b id="colortitulo">Bienes Nacionales</b></h4>
-                          </div>      
-                        </div> 
+                    <div class="panel-heading-info" id="panelheading">  
+                       <div class="panel panel-info" id="colorpanel"><h4><b id="colortitulo">Bienes Nacionales</b></h4>
+                       </div>      
+                    </div> 
 
 
                       <div class="panel-body">

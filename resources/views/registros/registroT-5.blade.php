@@ -32,10 +32,12 @@
               
                 <thead style="font-size:11px;">
                     <tr>
+                       
                        <td id="letrasb" class="text-center">Código de la Marca</td>
                        <td id="letrasb" class="text-center">Denominación Comercial de la Marca</td>
                        <td id="letrasb" class="text-center">Nombre del Fabricante</td>
                        <td id="letrasb" class="text-center">Fecha de Registro</td>
+                      
                     </tr>
                 </thead>
 
@@ -45,15 +47,17 @@
               @foreach($verT5 as $reg5)
 
                   <tr> 
+
                         @if($reg5->revisadot5== '1')
                         <td class="text-center"><a href="seleccion5/{{$reg5->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg5->selectT5->opcion}}</b></a></td>
                         @else 
                         <td class="text-center"><a href="seleccion5/{{$reg5->id}}"> {{$reg5->selectT5->opcion}}</a> </td>
                         @endif
-
+                       
                         <td class="text-center">{{$reg5->selectT51->opcion}}</td>
                         <td class="text-center">{{$reg5->selectT52->opcion}}</td>
                         <td class="text-center">{{$reg5->created_at->format('d-m-Y')}}</td>
+                        
                   </tr>     
               @endforeach
            </tbody>

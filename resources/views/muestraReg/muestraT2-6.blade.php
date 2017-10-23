@@ -23,11 +23,12 @@
     </div>
         
     <div class="row separar40">
-       @if($seleccion->codOt2_6 == '0')
-       	<div class="col-md-3 form-group">
-       	    <label>CÓDIGO DE ORIGEN</label>
-        	    <br>G-1
-       	</div>
+      <div class="col-md-12">
+         @if($seleccion->codOt2_6 == '0')
+        <div class="col-md-3 form-group">
+            <label>CÓDIGO DE ORIGEN</label>
+              <br>G-1
+        </div>
 
         @else
         <div class="col-md-3 form-group">
@@ -36,9 +37,9 @@
         </div>
         @endif
  
-    	  <div class="col-md-3 form-group">
-       	    <label>CÓDIGO FORMA DE ADQUISICIÓN</label>
-           	    <br>{{$seleccion->selectT26->opcion}}
+        <div class="col-md-3 form-group">
+            <label>CÓDIGO FORMA DE ADQUISICIÓN</label>
+                <br>{{$seleccion->selectT26->opcion}}
         </div>
 
        @if($seleccion->nomCope == '1')
@@ -50,13 +51,13 @@
         <div class="col-md-3 form-group">
             <label>NOMBRE DEL COPERMUTANTE</label>
                 <br>{{$seleccion->nomCope}}
-        </div>  	
+        </div>    
         @endif
 
-        @if($seleccion->nomBen == '1')
+         @if($seleccion->nomBen == '1')
         <div class="col-md-3 form-group">
             <label>NOMBRE DEL BENEFICIARIO</label>
-        	    <br>XXX
+              <br>XXX
         </div>
         @else
         <div class="col-md-3 form-group">
@@ -64,7 +65,10 @@
                 <br>{{$seleccion->nomBen}}
         </div>
         @endif
+      </div>
     </div>
+
+   
 
     <div class="row separar40">
 
@@ -91,7 +95,9 @@
                 <br>{{$seleccion->numLic}}
         </div> 
        @endif
+      </div>
 
+      <div class="row">
        @if($seleccion->numCon == '0')
         <div class="col-md-3 form-group">
             <label>N° DEL CONTRATO</label>
@@ -144,7 +150,9 @@
                 <br>{{$seleccion->folio}}
         </div>
        @endif
+      </div>
 
+      <div class="row">
    	   @if($seleccion->feLic == '1111-11-11')
         <div class="col-md-3 form-group">
             <label>FECHA DE LICITACIÓN</label>

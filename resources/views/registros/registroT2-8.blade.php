@@ -4,7 +4,7 @@
 
   <div class="row separar">
       <div class="col-md-12 separar">
-         <center><h4><b>REGISTRO DE TABLA ANEXO T-2-6</b></h4></center>
+         <center><h4><b>REGISTRO DE TABLA ANEXO T-2-8</b></h4></center>
       </div>
   </div>
     
@@ -49,15 +49,15 @@
                 @if($reg28->codOt2_8 == '0') 
                   <tr>
                         @if($reg28->revisadot28== '1')
-                        <td class="text-center"><a href="seleccion28/{{$reg28->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> I-1</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg28->id}}</a><a href="seleccion28/{{$reg28->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> I-1</b></a></td>
                         @else 
-                        <td class="text-center"><a href="seleccion28/{{$reg28->id}}"> I-1</a> </td>
+                        <td class="text-center"><a href="#" hidden>{{$reg28->id}}</a><a href="seleccion28/{{$reg28->id}}"> I-1</a> </td>
                         @endif
                 @else
                         @if($reg28->revisadot28 == '1')
-                        <td class="text-center"><a href="seleccion28/{{$reg28->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg28->codOt2_8}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg28->id}}</a><a href="seleccion28/{{$reg28->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg28->codOt2_8}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="seleccion28/{{$reg28->id}}">{{$reg28->codOt2_8}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$reg28->id}}</a><a href="seleccion28/{{$reg28->id}}">{{$reg28->codOt2_8}}</a></td>
                         @endif
                 @endif
 

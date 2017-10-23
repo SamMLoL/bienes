@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloT21;
 use App\mod_selectT21;
+use App\modeloBitacora;
 
 class controladorT21 extends Controller
 {
@@ -110,6 +111,13 @@ class controladorT21 extends Controller
             }
 
         if($form_t21->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Anexo T2-1';
+          $bit->save();
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
@@ -193,6 +201,13 @@ class controladorT21 extends Controller
             }
 
         if($form_t21->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 2;
+          $bit->referencia = 'Anexo T2-1';
+          $bit->save();
+
             return back()->with('msj', 'Datos modificados exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');

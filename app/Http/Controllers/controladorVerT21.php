@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controllers;
 use App\modeloT21;
+use App\modeloBitacora;
 
 
 class controladorVerT21 extends Controller
@@ -35,6 +36,13 @@ class controladorVerT21 extends Controller
         $seleccion->anulart21 = 1;
         
        if($seleccion->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 3;
+          $bit->referencia = 'Anexo T2-1';
+          $bit->save();
+
          return redirect('registroT2-1')->with('msj', 'Registro Eliminado Exitosamente');
          } else {
          return redirect()->with('errormsj', 'Los datos no se guardaron');

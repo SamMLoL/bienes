@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\modeloT6;
 
 class controladorT6 extends Controller
 {
@@ -13,7 +14,14 @@ class controladorT6 extends Controller
      */
     public function index()
     {
-        //
+        $arrayT6 = array(
+            array("codModel","CÓDIGO DEL MODELO:","Introduzca el código del modelo","10"),
+            array("denModFab","DENOMINACIÓN DEL MODELO:","Indique la denominación según el fabricante","100"),
+            array("codMarca","CÓDIGO DE LA MARCA:","Introduzca el código de la marca","10"),
+            array("codSegModel","CÓDIGO DEL BIEN MUEBLE:","Indique el código según catalogo del modelo","10"),
+            );
+
+        return view('tablasForm.t6dmbmoe', compact('arrayT6'));
     }
 
     /**

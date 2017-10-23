@@ -83,6 +83,10 @@ li{
 margin-bottom: 40px;
  }
 
+ #separar{
+  margin-bottom: 25px;
+ }
+
 .error{
 	color:red;
 }
