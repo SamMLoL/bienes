@@ -13,131 +13,137 @@ class CreateSelectores extends Migration
      */
     public function up()
     {
-        Schema::create('mig_selectT1', function (Blueprint $table) {
+        Schema::create('acciones', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            
+        });
+
+        Schema::create('sel_proveedores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT2', function (Blueprint $table) {
+        Schema::create('sel_concurso', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT21', function (Blueprint $table) {
+        Schema::create('sel_directa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT22', function (Blueprint $table) {
+        Schema::create('sel_confiscacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT23', function (Blueprint $table) {
+        Schema::create('sel_dacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT24', function (Blueprint $table) {
+        Schema::create('sel_donacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT25', function (Blueprint $table) {
+        Schema::create('sel_expropiacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT26', function (Blueprint $table) {
+        Schema::create('sel_permuta', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT27', function (Blueprint $table) {
+        Schema::create('sel_transferencia', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT28', function (Blueprint $table) {
+        Schema::create('sel_adjudicacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT3', function (Blueprint $table) {
+        Schema::create('sel_seguros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT31', function (Blueprint $table) {
+        Schema::create('sel_seguros1', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT32', function (Blueprint $table) {
+        Schema::create('sel_seguros2', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT33', function (Blueprint $table) {
+        Schema::create('sel_seguros3', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT34', function (Blueprint $table) {
+        Schema::create('sel_seguros4', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT4', function (Blueprint $table) {
+        Schema::create('sel_responsables', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT41', function (Blueprint $table) {
+        Schema::create('sel_responsables1', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT5', function (Blueprint $table) {
+        Schema::create('sel_marca', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT51', function (Blueprint $table) {
+        Schema::create('sel_marca1', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
-             $table->integer('marca_id')->unsigned();
-            $table->foreign('marca_id')->references('id')->on('mig_selectT5');
+            $table->integer('marca_id')->unsigned();
+            $table->foreign('marca_id')->references('id')->on('sel_marca');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT52', function (Blueprint $table) {
+        Schema::create('sel_marca2', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->integer('codMarca_id')->unsigned();
-            $table->foreign('codMarca_id')->references('id')->on('mig_selectT51');
+            $table->foreign('codMarca_id')->references('id')->on('sel_marca1');
             $table->timestamps();
         });
 
-        Schema::create('mig_selectT6', function (Blueprint $table) {
+        /*Schema::create('mig_selectT6', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
@@ -159,7 +165,7 @@ class CreateSelectores extends Migration
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

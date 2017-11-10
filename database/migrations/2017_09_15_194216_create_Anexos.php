@@ -14,36 +14,39 @@ class CreateAnexos extends Migration
     public function up()
     {
 
-        Schema::create('T1', function (Blueprint $table) {
+
+        Schema::create('proveedores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cod_proveedor_t1', 10)->nullable();
-            $table->string('desc_prove_t1', 100)->nullable();
-            $table->integer('tip_prove_t1')->nullable();
-            $table->string('t1_rif', 20)->nullable();
-            $table->string('otr_descr_t1', 200)->nullable();
+            $table->string('codProvee', 10)->nullable();
+            $table->string('descProvee', 100)->nullable();
+            $table->integer('tipProvee')->nullable();
+            $table->string('rifProvee', 20)->nullable();
+            $table->string('otraDesc', 200)->nullable();
             $table->integer('revisadot1')->nullable();
             $table->integer('anulart1')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('T2', function (Blueprint $table) {
+        Schema::create('concurso', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('t2_cod_origen', 12)->nullable();
-            $table->string('cod_adquisicion_t2', 2)->nullable();
-            $table->string('nom_concurso_t2', 255)->nullable();
-            $table->string('n_concurso_t2', 30)->nullable();
-            $table->date('fe_concurso_t2', 10)->nullable();
-            $table->string('cod_proveedor_t2', 10)->nullable();
-            $table->string('n_contracto_t2', 30)->nullable();
-            $table->date('fe_contracto_t2', 10)->nullable();
-            $table->string('n_notaentrega_t2', 30)->nullable();
-            $table->date('fe_nota_entrega_t2', 10)->nullable();
-            $table->string('n_factura_t2', 30)->nullable();
-            $table->date('fe_factura_t2', 10)->nullable();
+            $table->string('codOrigen', 12)->nullable();
+            $table->string('codAdquisicion', 2)->nullable();
+            $table->string('nomConcurso', 255)->nullable();
+            $table->string('numConcurso', 30)->nullable();
+            $table->date('feConcurso', 10)->nullable();
+            $table->string('codProveedor', 10)->nullable();
+            $table->string('numContrato', 30)->nullable();
+            $table->date('feContrato', 10)->nullable();
+            $table->string('numNotaEntre', 30)->nullable();
+            $table->date('feNotaEntre', 10)->nullable();
+            $table->string('numFactura', 30)->nullable();
+            $table->date('feFactura', 10)->nullable();
+            $table->integer('revisadot2')->nullable();
+            $table->integer('anulart2')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('T21', function (Blueprint $table) {
+        Schema::create('directa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_1', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -59,7 +62,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T22', function (Blueprint $table) {
+        Schema::create('confiscacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_2', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -77,7 +80,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T23', function (Blueprint $table) {
+        Schema::create('dacionPago', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_3', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -94,7 +97,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T24', function (Blueprint $table) {
+        Schema::create('donacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_4', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -111,7 +114,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T25', function (Blueprint $table) {
+        Schema::create('expropiacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_5', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -129,7 +132,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T26', function (Blueprint $table) {
+        Schema::create('permuta', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_6', 12)->nullable();
             $table->string('codAdq', 2);
@@ -144,12 +147,12 @@ class CreateAnexos extends Migration
             $table->string('tomo', 20);
             $table->integer('folio');
             $table->date('feReg', 10);
-            $table->integer('revisadot26');
-            $table->integer('anulart26');
+            $table->integer('revisadot26')->nullable();
+            $table->integer('anulart26')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('T27', function (Blueprint $table) {
+        Schema::create('transferencia', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_7', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -166,7 +169,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T28', function (Blueprint $table) {
+        Schema::create('adjudicacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_8', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
@@ -184,15 +187,15 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T3', function (Blueprint $table) {
+        Schema::create('seguros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codRegT3', 10)->nullable();
             $table->string('compAse', 5)->nullable();
             $table->string('otraCom', 100)->nullable();
             $table->string('numPoli', 30)->nullable();
             $table->string('tipPoli', 1)->nullable();
-            $table->string('montoAse', 27)->nullable();
-            $table->string('moneda', 5)->nullable();
+            $table->string('montoAse',26)->nullable();
+            $table->integer('moneda')->nullable();
             $table->string('espMone', 30)->nullable();
             $table->date('feiniPoli', 10)->nullable();
             $table->date('fefinPoli', 10)->nullable();
@@ -205,7 +208,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T4', function (Blueprint $table) {
+        Schema::create('responsables', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codResp', 10)->nullable();
             $table->string('tipoResp', 2)->nullable();
@@ -221,7 +224,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T5', function (Blueprint $table) {
+        Schema::create('marcas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codMarca', 100)->nullable();
             $table->string('denCoMar', 100)->nullable();
@@ -231,17 +234,30 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('T6', function (Blueprint $table) {
+       /* Schema::create('T6', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codModel', 10);
-            $table->string('denModFab', 100);
-            $table->string('codMarca', 10);
-            $table->string('codSegModel', 10);
+            $table->string('codModel', 10)->nullable();
+            $table->string('denModFab', 100)->nullable();
+            $table->string('codMarca', 10)->nullable();
+            $table->string('codSegModel', 10)->nullable();
             $table->integer('revisadot6')->nullable();
             $table->integer('anulart6')->nullable();
             $table->timestamps();
+        });*/
+
+
+        Schema::create('bitacora', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user')->unsigned();
+            $table->foreign('user')->references('id')->on('users');
+            $table->integer('accion')->unsigned();
+            $table->foreign('accion')->references('id')->on('acciones');
+            $table->string('referencia')->nullable();
+            $table->timestamps();
         });
 
+
+  
     }
 
     /**

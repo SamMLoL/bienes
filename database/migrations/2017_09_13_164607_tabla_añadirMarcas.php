@@ -13,13 +13,11 @@ class TablaAñadirMarcas extends Migration
      */
     public function up()
     {
-        Schema::create('añadirMarcas', function (Blueprint $table) {
+        Schema::create('addmarcas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codMarca', 200)->uniqued()->required();
             $table->string('denCoMar', 200)->uniqued()->required();
             $table->string('nomFabri', 100)->uniqued()->required();
-            $table->integer('revisadotM')->nullable();
-            $table->integer('anulartM')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class TablaAñadirMarcas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('añadirMarcas');
+        Schema::dropIfExists('marcas');
     }
 }

@@ -33,101 +33,136 @@ Route::group(['middleware' => 'sesion'], function () {
 
 #CONTROLADOR DE TABLAS y RUTAS DE VISTAS FORMULARIOS /En: TABLET CONTROLLER AND VIEW ROUTES FORMS
 
-Route::get('/marcas', 'controladorMarcas@index');
-Route::resource('tMarca', 'controladorMarcas');
-
-//RUTA DE SELECT MULTIPLES CONTROLADORT5
-
-Route::get('denCoMarcas/{id}','controladorT5@getMarcas');
-Route::get('nomFabricante/{id}','controladorT5@getFabri');
 
 
-Route::get('/tablat1', 'controladorT1@index');
-Route::resource('t1', 'controladorT1');
+#Añadir Marca , Código de Marca y fabricante a los select de la tabla T5 = Marcas
 
-Route::get('/tablat2', 'controladorT2@index');
-Route::resource('t2', 'controladorT2');
+Route::get('/bitacora', 'controladorBitacora@enviarVariable');
 
-Route::get('/tablat2-1', 'controladorT21@index');
-Route::resource('t21', 'controladorT21');
+//RUTA DE SELECT MULTIPLES visRegmarcas aqui se captura el id del modelo sel_marca1 y sel_marca2 a traves de la función denCoMarcas, nomFabricante
 
-Route::get('/tablat2-2', 'controladorT22@index');
-Route::resource('t22', 'controladorT22');
+Route::get('denCoMarcas/{id}','controladorRegMarca@getMarcas');
+Route::get('nomFabricante/{id}','controladorRegMarca@getFabri');
 
-Route::get('/tablat2-3', 'controladorT23@index');
-Route::resource('t23', 'controladorT23');
+// ANEXOS DE REGISTROS 
 
-Route::get('/tablat2-4', 'controladorT24@index');
-Route::resource('t24', 'controladorT24');
+//ANEXO T1 = proveedores
+Route::get('/proveedores', 'controladorProveedores@index');
+Route::resource('proveedores', 'controladorProveedores');
 
-Route::get('/tablat2-5', 'controladorT25@index');
-Route::resource('t25', 'controladorT25');
+//ANEXO T2 = concurso
+Route::get('/concurso', 'controladorConcurso@index');
+Route::resource('concurso', 'controladorConcurso');
 
-Route::get('/tablat2-6', 'controladorT26@index');
-Route::resource('t26', 'controladorT26');
+//ANEXO T2-1 = directa
+Route::get('/directa', 'controladorDirecta@index');
+Route::resource('directa', 'controladorDirecta');
 
-Route::get('/tablat2-7', 'controladorT27@index');
-Route::resource('t27', 'controladorT27');
+//ANEXO T2-2 = confiscacion
+Route::get('/confiscacion', 'controladorConfiscacion@index');
+Route::resource('confiscacion', 'controladorConfiscacion');
 
-Route::get('/tablat2-8', 'controladorT28@index');
-Route::resource('t28', 'controladorT28');
+//ANEXO T2-3 = dacion
+Route::get('/dacion', 'controladorDacion@index');
+Route::resource('dacion', 'controladorDacion');
 
-Route::get('/tablat3', 'controladorT3@index');
-Route::resource('t3', 'controladorT3');
+//ANEXO T2-4 = donacion
+Route::get('/donacion', 'controladorDonacion@index');
+Route::resource('donacion', 'controladorDonacion');
 
-Route::get('/tablat4', 'controladorT4@index');
-Route::resource('t4', 'controladorT4');
+//ANEXO T2-5 = expropiacion
+Route::get('/expropiacion', 'controladorExpropiacion@index');
+Route::resource('expropiacion', 'controladorExpropiacion');
 
-Route::get('/tablat5', 'controladorT5@index');
-Route::resource('t5', 'controladorT5');
+//ANEXO T2-6 = permuta
+Route::get('/permuta', 'controladorPermuta@index');
+Route::resource('permuta', 'controladorPermuta');
 
+//ANEXO T2-7 = transferencia
+Route::get('/transferencia', 'controladorTransferencia@index');
+Route::resource('transferencia', 'controladorTransferencia');
+
+//ANEXO T2-8 = adjudicacion
+Route::get('/adjudicacion', 'controladorAdjudicacion@index');
+Route::resource('adjudicacion', 'controladorAdjudicacion');
+
+//ANEXO T3 = seguros
+Route::get('/seguros', 'controladorSeguros@index');
+Route::resource('seguros', 'controladorSeguros');
+
+//ANEXO T4 = responsables
+Route::get('/responsables', 'controladorResponsables@index');
+Route::resource('responsables', 'controladorResponsables');
+
+//ANEXO T5 = regmarcas
+Route::get('/regmarcas', 'controladorRegMarca@index');
+Route::resource('regmarcas', 'controladorRegMarca');
+
+#ruta marcaAdd para acceder a la vista añadir una marca nueva y ruta selMarca para guardar datos de dicha vista
+Route::get('/marcaAdd', 'controladorAddMarca@index');
+Route::post('selMarca', 'controladorAddMarca@store');
+
+#Eliminar marca agregada
+Route::get('selMarca/{id}/destroy',[
+	'uses' => 'controladorAddMarca@destroy',
+	'as'  => 'selMarca.destroy'
+
+	]);
+
+//Route::get('/tablat6', 'controladorT6@index');
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
-Route::get('/registroT1', 'controladorVerT1@index');
-Route::get('/registroT2', 'controladorVerT2@index');
-Route::get('/registroT2-1', 'controladorVerT21@index');
-Route::get('/registroT2-2', 'controladorVerT22@index');
-Route::get('/registroT2-3', 'controladorVerT23@index');
-Route::get('/registroT2-4', 'controladorVerT24@index');
-Route::get('/registroT2-5', 'controladorVerT25@index');
-Route::get('/registroT2-6', 'controladorVerT26@index');
-Route::get('/registroT2-7', 'controladorVerT27@index');
-Route::get('/registroT2-8', 'controladorVerT28@index');
-Route::get('/registroT3', 'controladorVerT3@index');
-Route::get('/registroT4', 'controladorVerT4@index');
-Route::get('/registroT5', 'controladorVerT5@index');
+Route::get('/regProveedores', 'con_proveedoresVer@index');
+Route::get('/regConcurso', 'con_concursoVer@index');
+Route::get('/regDirecta', 'con_directaVer@index');
+Route::get('/regConfiscacion', 'con_confiscacionVer@index');
+Route::get('/regDacion', 'con_dacionVer@index');
+Route::get('/regDonacion', 'con_donacionVer@index');
+Route::get('/regExpropiacion', 'con_expropiacionVer@index');
+Route::get('/regPermuta', 'con_permutaVer@index');
+Route::get('/regTransferencia', 'con_transferenciaVer@index');
+Route::get('/regAdjudicacion', 'con_adjudicacionVer@index');
+Route::get('/regSeguros', 'con_segurosVer@index');
+Route::get('/regResponsables', 'con_responsablesVer@index');
+Route::get('/regMarca', 'con_marcaVer@index');
+
+#MUESTRA REGISTRO DE LAS NUEVAS MARCAS AGREGADAS AL SELECT
+Route::get('/histoMarcas', 'con_histoMarcas@index');
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
-Route::get('seleccion/{id}', 'controladorVerT1@selectId');
-Route::get('seleccion2/{id}', 'controladorVerT2@selectId');
-Route::get('seleccion21/{id}', 'controladorVerT21@selectId21');
-Route::get('seleccion22/{id}', 'controladorVerT22@selectId22');
-Route::get('seleccion23/{id}', 'controladorVerT23@selectId23');
-Route::get('seleccion24/{id}', 'controladorVerT24@selectId24');
-Route::get('seleccion25/{id}', 'controladorVerT25@selectId25');
-Route::get('seleccion26/{id}', 'controladorVerT26@selectId26');
-Route::get('seleccion27/{id}', 'controladorVerT27@selectId27');
-Route::get('seleccion28/{id}', 'controladorVerT28@selectId28');
-Route::get('seleccion3/{id}', 'controladorVerT3@selectId3');
-Route::get('seleccion4/{id}', 'controladorVerT4@selectId4');
-Route::get('seleccion5/{id}', 'controladorVerT5@selectId5');
+Route::get('seleccionProveedores/{id}', 'con_proveedoresVer@selectId');
+Route::get('seleccionConcurso/{id}', 'con_concursoVer@selectId');
+Route::get('seleccionDirecta/{id}', 'con_directaVer@idDirecta');
+Route::get('seleccionConfiscacion/{id}', 'con_confiscacionVer@selectId');
+Route::get('seleccionDacion/{id}', 'con_dacionVer@selectId');
+Route::get('seleccionDonacion/{id}', 'con_donacionVer@selectId');
+Route::get('seleccionExpropiacion/{id}', 'con_expropiacionVer@selectId');
+Route::get('seleccionPermuta/{id}', 'con_permutaVer@selectId');
+Route::get('seleccionTransferencia/{id}', 'con_transferenciaVer@selectId');
+Route::get('seleccionAdjudicacion/{id}', 'con_adjudicacionVer@selectId');
+Route::get('seleccionSeguros/{id}', 'con_segurosVer@selectId');
+Route::get('seleccionResponsables/{id}', 'con_responsablesVer@selectId');
+Route::get('seleccionMarca/{id}', 'con_marcaVer@selectId');
+Route::get('seleccionMarca/{id}', 'con_marcaVer@selectId');
+
+
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
-Route::get('/anulart1/{id}', 'controladorVerT1@anularT1');
-Route::get('/anulart2/{id}', 'controladorVerT2@anularT2');
-Route::get('/anulart21/{id}', 'controladorVerT21@anularT21');
-Route::get('/anulart22/{id}', 'controladorVerT22@anularT22');
-Route::get('/anulart23/{id}', 'controladorVerT23@anularT23');
-Route::get('/anulart24/{id}', 'controladorVerT24@anularT24');
-Route::get('/anulart25/{id}', 'controladorVerT25@anularT25');
-Route::get('/anulart26/{id}', 'controladorVerT26@anularT26');
-Route::get('/anulart27/{id}', 'controladorVerT27@anularT27');
-Route::get('/anulart28/{id}', 'controladorVerT28@anularT28');
-Route::get('/anulart3/{id}', 'controladorVerT3@anularT3');
-Route::get('/anulart4/{id}', 'controladorVerT4@anularT4');
-Route::get('/anulart5/{id}', 'controladorVerT5@anularT5');
+Route::get('/anularProvee/{id}', 'con_proveedoresVer@anularProvee');
+Route::get('/anularConcur/{id}', 'con_concursoVer@anularConcur');
+Route::get('/anularDirec/{id}', 'con_directaVer@anularDirec');
+Route::get('/anularConfis/{id}', 'con_confiscacionVer@anularConfis');
+Route::get('/anularDacion/{id}', 'con_dacionVer@anularDacion');
+Route::get('/anularDonac/{id}', 'con_donacionVer@anularDonac');
+Route::get('/anularExpro/{id}', 'con_expropiacionVer@anularExpro');
+Route::get('/anularPermu/{id}', 'con_permutaVer@anularPermu');
+Route::get('/anularTrans/{id}', 'con_transferenciaVer@anularTrans');
+Route::get('/anularSegu/{id}', 'con_segurosVer@anularSegu');
+Route::get('/anularRespon/{id}', 'con_responsablesVer@anularRespon');
+Route::get('/anularMarca/{id}', 'con_marcaVer@anularMarca');
+
 
 	Route::get('/home', function () {
     return view('/home');
