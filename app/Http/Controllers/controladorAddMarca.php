@@ -8,14 +8,15 @@ use App\sel_marca1;
 use App\sel_marca2;
 use App\modeloMarcas;
 
+
 class controladorAddMarca extends Controller
 {
     public function index(){
 
     	$array= array(
-            array("denCoMar","DENOMINACIÓN DE LA MARCA:","Introduzca el nombre de la marca ","200"),
-    		array("codMarca","CÓDIGO DE LA MARCA:","Introduzca el código de la marca ","200"),
-    		array("nomFabri","NOMBRE DEL FABRICANTE:","Introduzca el nombre del fabricante","200"),
+            array("denCoMar","Denominación de la Marca:","Introduzca el nombre de la marca ","200"),
+    		array("codMarca","Código de la Marca:","Introduzca el código de la marca ","200"),
+    		array("nomFabri","Nombre del Fabricante:","Introduzca el nombre del fabricante","200"),
     		);
 
     	return view('añadir.añadirMarcas', compact('array'));
@@ -70,14 +71,9 @@ class controladorAddMarca extends Controller
 
     }
 
-    public function show()
-    {
-      //
-    }
+    public function destroy(){
 
-    public function destroy(Request $request)
-    {
-      echo "hola" ;
+       //
     }
 
     

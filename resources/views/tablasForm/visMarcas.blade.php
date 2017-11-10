@@ -23,12 +23,21 @@
       </div>
   </div>
 
+<div class="row separar40">
+    <div class="col-md-12">
+        <div class="col-md-4">
+           <a href="{{ url('/marcaAdd') }}" class="btn btn-info btn-sm">
+              <b>Añadir Nueva Marca </b><i class="fa fa-plus-circle" aria-hidden="true"></i>
+           </a>
+        </div>
+    </div>
+</div>
+
 <div class="row">
    <div class="col-md-12">
       <form role="form" id="formValidaT5" name="formValidaT5" method="POST" action="{{url('regmarcas')}}">
       {{ csrf_field() }}
         
-
 
                   <div class="form-estilo col-sm-4  ">
                     <li for="sel_dir"><b>Denominación de la Marca:</b></li>
@@ -53,14 +62,13 @@
                     </select>
                   </div> 
 
-
     
         <div class="row">
             <div class="col-md-12 form-group" ><br>
                 <center>
-                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
+                    <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
                              
-                    <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
+                    <a href="home"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i><b> Salir</b></a>  
                 </center> 
             </div>
         </div>

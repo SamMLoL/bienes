@@ -30,6 +30,7 @@
                 @if(session()->has('errormsj'))
               <center><div  class="col-md-12  alert alert-danger" >{{session('errormsj')}}</div></center>
             @endif
+          </div>
       </div>
 
       <div class="row"> 
@@ -43,7 +44,9 @@
 
     <!--ARRAY SELECT selectT26 PERTENECIENTE AL CONTROLADORT26, TABLA RELACIONADA EN LA BD => mig_selectT26 Y T26-->
     <!--ARRAY SELECT selectT26 BELONGING TO CONTROLADORT26, TABLE RELATED IN THE BD => mig_selectT26 AND T26-->
-      
+<div class="row">     
+    <div class="col-md-12">
+
       @foreach($selectT26 as $posicion => $valor)
       <div class="col-md-4 {{$selectT26[$posicion][2]}} form-group separar">
           <label for="{{$selectT26[$posicion][0]}}">{{$selectT26[$posicion][1]}}</label>
@@ -115,13 +118,14 @@
                 </div>
           </div>
       @endforeach
-
+    </div>
+</div>
 	      <div class="row">
             <div class="col-md-12 form-group"><br>
                 <center>
-                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
+                    <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
                              
-                    <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
+                    <a href="home"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> <b>Salir</b></a>  
                 </center> 
             </div>
         </div>

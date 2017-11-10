@@ -41,7 +41,10 @@
    
    	  <form role="form" id="formValidaT25" name="formValidaT25" method="POST" action="{{url('expropiacion')}}">
     	{{ csrf_field() }}
-      
+
+<div class="row">
+    <div class="col-md-12">     
+     
     <!--ARRAY SELECT selectT25 PERTENECIENTE AL CONTROLADORT25, TABLA RELACIONADA EN LA BD => mig_selectT25 Y T25-->
     <!--ARRAY SELECT selectT25 BELONGING TO CONTROLADORT25, TABLE RELATED IN THE BD => mig_selectT25 AND T25-->
 
@@ -102,13 +105,14 @@
                 </div>
           </div>
       @endforeach
-
+    </div>
+</div>
 	      <div class="row">
             <div class="col-md-12 form-group"><br>
                 <center>
-                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
+                    <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> <b>Enviar</b></button>
                              
-                    <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
+                    <a href="home"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> <b>Salir</b></a>  
                 </center> 
             </div>
         </div>

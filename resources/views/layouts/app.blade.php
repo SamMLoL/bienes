@@ -71,8 +71,8 @@
                                     <li><a href="seguros">Seguros</a></li>
                                     <li><a href="responsables">Responsables de los Bienes</a></li>
                                     <li><a href="regmarcas">Marcas</a></li>
-                                    <li><a href="tablat6">Modelos</a></li>
-                                    <li><a href="tablat2">Componentes</a></li>
+                                    <li><a href="home">Modelos</a></li>
+                                    <li><a href="home">Componentes</a></li>
                                     <li><a href="#">Bienes</a></li>
                                     <li><a href="tablat2">Equipo de Transporte</a></li>
                                     <li><a href="tablat2">Semovientes</a></li>
@@ -102,8 +102,8 @@
                                        <li><a href="regSeguros">Seguros</a></li>
                                        <li><a href="regResponsables">Responsables de los Bienes</a></li>
                                        <li><a href="regMarca">Marcas</a></li>
-                                       <li><a href="registroT6">Modelos</a></li>
-                                       <li><a href="registroT7">Componentes</a></li>
+                                       <li><a href="home">Modelos</a></li>
+                                       <li><a href="home">Componentes</a></li>
                                        <li><a href="registroT8">Bienes</a></li>
                                        <li><a href="registroT9">Equipo de Transporte</a></li>
                                        <li><a href="registroT10">Semovientes</a></li>
@@ -149,8 +149,8 @@
                                         Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
                                         </a>
 
-                                        <a href="{{ url('/marcas') }}">
-                                        Añadir marca  <i class="fa fa-plus-circle" aria-hidden="true"></i>  
+                                        <a href="{{ url('/histoMarcas') }}">
+                                        Histórico de Marcas  <i class="fa fa-history" aria-hidden="true"></i>  
                                         </a>
 
                                         <a href="{{ url('/logout') }}">

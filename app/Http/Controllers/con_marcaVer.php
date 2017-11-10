@@ -11,9 +11,9 @@ class con_marcaVer extends Controller
 {
        public function index(){
         
-        $verT5= modeloRegMarca::where('anulart5', '0')->get();
+        $verT5= modeloRegMarca::where('anulart5','0')->get();
     
-        return view('registros.regMarca', compact('verT5','bitacora'));
+        return view('registros.regMarca', compact('verT5'));
 
     }
 
@@ -27,7 +27,7 @@ class con_marcaVer extends Controller
        return view('muestraReg.muestraMarca',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT3 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA
+     //FUNCIÓN anularT3 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA
 
     public function anularMarca($id)
     {
@@ -45,11 +45,7 @@ class con_marcaVer extends Controller
          } else {
          return redirect()->with('errormsj', 'Los datos no se guardaron');
        }
-    }*/
-
-   public function destroy(Request $request)
-    {
-      echo "hola" ;
     }
 
+   
 }

@@ -94,4 +94,19 @@ class controladorRegMarca extends Controller
 
     }
 
+
+  //AQUI ME ELIMINA EL REGISTRO DEL modeloRegMarca
+    public function destroy($id)
+    {
+      
+
+      modeloRegMarca::destroy($id);
+      
+      
+      return redirect('regMarca')->with('msj', 'Registro Eliminado Exitosamente');
+
+
+    }
+
+
 }

@@ -8,7 +8,7 @@ class sel_marca2 extends Model
 {
     protected $table = 'sel_marca2';
 
-      protected $fillable = ['opcion','codMarca_id','anularMarca'];
+      protected $fillable = ['opcion','codMarca_id'];
 
  
     public static function nomFabricante($id){

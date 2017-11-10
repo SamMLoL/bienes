@@ -33,24 +33,20 @@
             
           <hr>
 
-
-    <form role="form" id="formValidaT23" name="formValidaT23" method="DELETE" action="{{route('tMarca.destroy', $seleccion->id)}}">
-
-<input type="text" id="id" name="id" value="{{$seleccion->id}}">
             <div class="row separar40 ">
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">
-                   	    <label>CÓDIGO DE LA MARCA</label>
+                   	    <label>Código de la Marca</label>
                     	    <br>{{$seleccion->selectMarca->opcion}}
                    	</div>
 
                 	  <div class="col-md-4 form-group">
-                   	    <label>DENOMINACIÓN DE LA MARCA</label>
+                   	    <label>Denominación de la Marca</label>
                        	    <br>{{$seleccion->selectMarca1->opcion}}
                     </div>
 
                     <div class="col-md-4 form-group">
-                        <label>NOMBRE DEL FABRICANTE</label>
+                        <label>Nombre del Fabricante</label>
                             <br>{{$seleccion->selectMarca2->opcion}}
                     </div>
                 </div>
@@ -59,7 +55,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 form-group">
-                        <label>FECHA DEL REGISTRO</label>
+                        <label>Fecha del Registro</label>
                             <br>{{$seleccion->created_at->format('d-m-Y')}}
                     </div>
                 </div>
@@ -67,7 +63,7 @@
 
             <div class="row text-center separar">
                	<div class="col-md-12 separar form-group">
-                     <button  type="submit">Eliminar</button>
+                     <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT5" title="AnularT5"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
 
                      <a href="{{url('regMarca')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                         

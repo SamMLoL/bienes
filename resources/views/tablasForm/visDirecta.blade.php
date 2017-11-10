@@ -44,6 +44,9 @@
    	  <form role="form" id="formValidaT21" name="formValidaT21" method="POST" action="{{url('directa')}}">
     	{{ csrf_field() }}
 
+<div class="row">
+    <div class="col-md-12">
+
     <!--ARRAY SELECT selectT21 PERTENECIENTE AL CONTROLADORDIRECTA, TABLA RELACIONADA EN LA BD => sel_directa Y directa-->
     <!--ARRAY SELECT selectT21 BELONGING TO CONTROLADORDIRECTA, TABLE RELATED IN THE BD => sel_directa AND directa-->
 
@@ -123,14 +126,15 @@
                  </div>
          </div>
         @endforeach
-		
+    </div>
+</div>		
 
 		    <div class="row">
             <div class="col-md-12 form-group" ><br>
                 <center>
-                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
+                    <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
                              
-                    <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
+                    <a href="home"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> <b>Salir</b></a>  
                 </center> 
             </div>
         </div>

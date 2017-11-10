@@ -8,7 +8,7 @@ class sel_marca extends Model
 {
     protected $table = 'sel_marca';
 
-    protected $fillable = ['opcion','marca_id','anularMarca'];
+    protected $fillable = ['opcion','marca_id'];
 
 
      public function selectMarca()

@@ -4,7 +4,6 @@
 
 <div class="row">
    <div class="col-md-12">
-
     	<div class="row">
     	    <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> TRANSFERENCIA / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
       </div>
@@ -46,7 +45,9 @@
 
    <!--ARRAY SELECT selectT27 PERTENECIENTE AL CONTROLADORT27, TABLA RELACIONADA EN LA BD => mig_selectT27 Y T27-->
    <!--ARRAY SELECT selectT27 BELONGING TO CONTROLADORT27, TABLE RELATED IN THE BD => mig_selectT27 AND T27-->
-      
+<div class="row separar">     
+    <div class="col-md-12">
+
       @foreach($selectT27 as $posicion => $valor)
       <div class="col-md-4 {{$selectT27[$posicion][2]}} form-group separar">
           <label for="{{$selectT27[$posicion][0]}}">{{$selectT27[$posicion][1]}}</label>
@@ -110,7 +111,7 @@
 
       @foreach($date2T27 as $posicion => $valor)
        
-          <div class="col-md-4 form-group">
+          <div class="col-md-4 form-group separar">
             <label for="{{$date2T27[$posicion][0]}}">{{$date2T27[$posicion][1]}}</label>  
                 <div class="{{$date2T27[$posicion][3]}}">
 
@@ -121,13 +122,14 @@
                 </div>
           </div>
       @endforeach
-
-	      <div class="row">
-            <div class="col-md-12 form-group"><br>
+    </div>
+</div>
+	      <div class="row separar">
+            <div class="col-md-12 form-group separar">
                 <center>
-                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
+                    <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
                              
-                    <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
+                    <a href="home"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> <b>Salir</b></a>  
                 </center> 
             </div>
         </div>

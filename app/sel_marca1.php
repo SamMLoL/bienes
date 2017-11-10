@@ -8,7 +8,7 @@ class sel_marca1 extends Model
 {
     protected $table = 'sel_marca1';
 
-      protected $fillable = ['opcion','marca_id','anularMarca'];
+      protected $fillable = ['opcion','marca_id'];
        
        public static function denCoMarcas($id){
          return sel_marca1::where('marca_id', $id)->get();
