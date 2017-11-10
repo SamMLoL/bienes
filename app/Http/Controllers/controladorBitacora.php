@@ -7,8 +7,14 @@ use App\modeloBitacora;
 
 class controladorBitacora extends Controller
 {
-    public function index()
-    {
-    	
+    
+    public function enviarVariable(){
+
+      $bitacora = modeloBitacora::all();
+
+      return view('bitacora.bitacora', compact('bitacora'));
+
     }
+
+  
 }

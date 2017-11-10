@@ -30,7 +30,7 @@
 
 <div class="row">
    <div class="col-md-12">
-      <form role="form" id="formValidaAña" name="formValidaAña" method="POST" action="{{url('tMarca')}}">
+      <form role="form" id="formValidaT5" name="formValidaT5" method="POST" action="{{url('tMarca')}}">
       {{ csrf_field() }}
   
     

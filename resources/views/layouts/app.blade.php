@@ -48,29 +48,29 @@
                 <ul class="nav navbar-nav">
                       
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Formularios de Registros<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Formularios<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                              <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-submenu"><a href="">Registrar Datos</a>
                                     <ul class="dropdown-menu">
                             <!--SUB-MENU DE ANEXOS T-->
-                            <li><a href="tablat1">Proveedores</a></li>
+                            <li><a href="proveedores">Proveedores</a></li>
                                 <li class="dropdown-submenu"><a href="">Modalidades</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="tablat2">Compra por Concurso</a></li>
-                                        <li><a href="tablat2-1">Compra Directa</a></li>
-                                        <li><a href="tablat2-2">Confiscación</a></li>
-                                        <li><a href="tablat2-3">Dación en Pago</a></li>
-                                        <li><a href="tablat2-4">Donación</a></li>
-                                        <li><a href="tablat2-5">Expropiación</a></li>
-                                        <li><a href="tablat2-6">Permuta</a></li>
-                                        <li><a href="tablat2-7">Transferencia</a></li>
-                                        <li><a href="tablat2-8">Adjudicación</a></li>
+                                        <li><a href="concurso">Compra por Concurso</a></li>
+                                        <li><a href="directa">Compra Directa</a></li>
+                                        <li><a href="confiscacion">Confiscación</a></li>
+                                        <li><a href="dacion">Dación en Pago</a></li>
+                                        <li><a href="donacion">Donación</a></li>
+                                        <li><a href="expropiacion">Expropiación</a></li>
+                                        <li><a href="permuta">Permuta</a></li>
+                                        <li><a href="transferencia">Transferencia</a></li>
+                                        <li><a href="adjudicacion">Adjudicación</a></li>
                                     </ul>
                                 </li>
 
-                                    <li><a href="tablat3">Seguros</a></li>
-                                    <li><a href="tablat4">Responsables de los Bienes</a></li>
-                                    <li><a href="tablat5">Marcas</a></li>
+                                    <li><a href="seguros">Seguros</a></li>
+                                    <li><a href="responsables">Responsables de los Bienes</a></li>
+                                    <li><a href="regmarcas">Marcas</a></li>
                                     <li><a href="tablat6">Modelos</a></li>
                                     <li><a href="tablat2">Componentes</a></li>
                                     <li><a href="#">Bienes</a></li>
@@ -85,23 +85,23 @@
                              <!--SUB-MENU DE INVENTARIOS-->
                                 <li class="dropdown-submenu"><a href="">Consultar Datos</a>
                                     <ul class="dropdown-menu">
-                                      <li><a href="registroT1">Proveedores</a></li>
+                                      <li><a href="regProveedores">Proveedores</a></li>
                                         <li class="dropdown-submenu"><a href="">Modalidades</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="registroT2">Compra por Concurso</a></li>
-                                            <li><a href="registroT2-1">Compra Directa</a></li>
-                                            <li><a href="registroT2-2">Confiscación</a></li>
-                                            <li><a href="registroT2-3">Dación en Pago</a></li>
-                                            <li><a href="registroT2-4">Donación</a></li>
-                                            <li><a href="registroT2-5">Expropiación</a></li>
-                                            <li><a href="registroT2-6">Permuta</a></li>
-                                            <li><a href="registroT2-7">Transferencia</a></li>
-                                            <li><a href="registroT2-8">Adjudicación</a></li>
+                                            <li><a href="regConcurso">Compra por Concurso</a></li>
+                                            <li><a href="regDirecta">Compra Directa</a></li>
+                                            <li><a href="regConfiscacion">Confiscación</a></li>
+                                            <li><a href="regDacion">Dación en Pago</a></li>
+                                            <li><a href="regDonacion">Donación</a></li>
+                                            <li><a href="regExpropiacion">Expropiación</a></li>
+                                            <li><a href="regPermuta">Permuta</a></li>
+                                            <li><a href="regTransferencia">Transferencia</a></li>
+                                            <li><a href="regAdjudicacion">Adjudicación</a></li>
                                         </ul>
                                        </li>
-                                       <li><a href="registroT3">Seguros</a></li>
-                                       <li><a href="registroT4">Responsables de los Bienes</a></li>
-                                       <li><a href="registroT5">Marcas</a></li>
+                                       <li><a href="regSeguros">Seguros</a></li>
+                                       <li><a href="regResponsables">Responsables de los Bienes</a></li>
+                                       <li><a href="regMarca">Marcas</a></li>
                                        <li><a href="registroT6">Modelos</a></li>
                                        <li><a href="registroT7">Componentes</a></li>
                                        <li><a href="registroT8">Bienes</a></li>
@@ -184,20 +184,8 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/jquery.validate.js') }}"></script>
     <script src="{{ asset('js/validateCampoMarcas.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT1.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT2.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT3.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT21.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT22.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT23.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT24.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT25.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT26.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT27.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT28.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT3.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT4.js') }}"></script>
-    <script src="{{ asset('js/validateCampoT5.js') }}"></script>
+    <script src="{{ asset('js/validateGeneral.js') }}"></script> <!-- Valida los campos de las (Tabla Proveedores=T1 a la Tabla bienes de Inmuebles Organos=T12) -->
+    <script src="{{ asset('js/validateModalidades.js') }}"></script> <!-- Valida los campos de la Tabla compra por concurso=T2 a la  Tabla adjudicación=T28 (Modalidades)) -->
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-hover-dropdown.min.js') }}"></script>

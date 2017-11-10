@@ -1,4 +1,17 @@
+.form-estilo input, .form-estilo textarea {
+    padding-right:30px;
+}
+.form-estilo input, .form-estilo textarea { 
+   
+    box-shadow: 0px 0px 10px #ccc, 0 20px 30px #eee inset;
+    border-radius:4px;
 
+}
+.form-estilo input:focus, .form-estilo textarea:focus {
+    background: #fff; 
+    border:1px solid #5EA0F2; 
+    box-shadow: 0 0 10px #5EA0F2; 
+}
 
 .moverIzq{
   margin-left: 15px;
