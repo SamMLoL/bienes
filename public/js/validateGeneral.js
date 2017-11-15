@@ -129,15 +129,15 @@ $(document).ready(function() {
   //$("#formularioColor").hide();
     $("#formValidaT5").validate({
         rules: {
-           codMarca: { required:true},
            denCoMar: { required:true},
+           codMarca: { required:true},
            nomFabri: { required:true},
          
         },
         messages: {
-           codMarca : "* Campo obligatorio, ¡ Por favor, seleccione la denominación de la marca!",
-           denCoMar : "* Campo obligatorio, ¡Por favor, seleccione el código de la marca!",
-           nomFabri : "* Campo obligatorio, ¡ Por favor, seleccione el nombre del fabricante!"
+           denCoMar : "* Campo obligatorio, ¡ Por favor, introduzca el código de la marca!",
+           codMarca : "* Campo obligatorio, ¡ Por favor, introduzca la denominación de la marca!",
+           nomFabri : "* Campo obligatorio, ¡ Por favor, introduzca el nombre del fabricante!"
          
         
 

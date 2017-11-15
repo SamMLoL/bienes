@@ -121,6 +121,8 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
+
+        //Las 3 tablas sel_marca, sel_marca1, sel_marca2 relacionadas para añadir nuevas marcas a los select del formulario regmarca <-- ruta del web
         Schema::create('sel_marca', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
@@ -130,16 +132,16 @@ class CreateSelectores extends Migration
         Schema::create('sel_marca1', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
-            $table->integer('marca_id')->unsigned();
-            $table->foreign('marca_id')->references('id')->on('sel_marca');
+            $table->integer('relacion')->unsigned();
+            $table->foreign('relacion')->references('id')->on('sel_marca');
             $table->timestamps();
         });
 
         Schema::create('sel_marca2', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
-            $table->integer('codMarca_id')->unsigned();
-            $table->foreign('codMarca_id')->references('id')->on('sel_marca1');
+            $table->integer('relacion')->unsigned();
+            $table->foreign('relacion')->references('id')->on('sel_marca1');
             $table->timestamps();
         });
 

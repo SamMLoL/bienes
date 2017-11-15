@@ -8,15 +8,18 @@ class sel_marca1 extends Model
 {
     protected $table = 'sel_marca1';
 
-      protected $fillable = ['opcion','marca_id'];
+    protected $fillable = ['opcion','relacion'];
        
-       public static function denCoMarcas($id){
-         return sel_marca1::where('marca_id', $id)->get();
+    public static function denCoMarcas($id){
+    return sel_marca1::where('relacion', $id)->get();
 
       }
 
-  public function selectMarca1()
+   
+    //Relacion para mostrar la informacion en el historico de marcas dentro del datatable
+    public function sel_marca2()
     {
-        return $this->hasOne('App\modeloRegMarca', 'denCoMar');
+        return $this->hasOne('App\sel_marca2', 'relacion');
     }
+ 
 }

@@ -1,4 +1,4 @@
-      <div class="modal fade" id="AnularT5" name="AnularT5" role="dialog" aria-labelledby="ModalLabel" aria-hidden="false" >
+      <div class="modal fade" id="AnularMarca" name="AnularMarca" role="dialog" aria-labelledby="ModalLabel" aria-hidden="false" >
           <div class="modal-dialog">
               <div class="modal-content">
                     <div class="modal-header">
@@ -9,7 +9,7 @@
                   <div class="modal-body">
 
                        <center>
-                       <a href="{{url ('anularMarca/'.$seleccion->id) }}" type="button" class="btn btn-danger"  title="Aceptar"  id="BtnAnular"><b>Aceptar</b></a>
+                       <a href="{{url ('eliminarMarca/'.$seleccion->id) }}" type="button" class="btn btn-danger"  title="Aceptar"  id="BtnAnular"><b>Aceptar</b></a>
 
                        <button id="btnCancelar" name="btnCancelar" type="button" class="btn btn-danger" data-toggle="tooltip" title="Cancelar" data-dismiss="modal"><b>Cancelar</b></button>
                        </center>

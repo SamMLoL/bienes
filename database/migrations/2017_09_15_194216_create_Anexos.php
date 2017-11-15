@@ -224,17 +224,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-        Schema::create('marcas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('codMarca', 100)->nullable();
-            $table->string('denCoMar', 100)->nullable();
-            $table->string('nomFabri', 100)->nullable();
-            $table->integer('revisadot5')->nullable();
-            $table->integer('anulart5')->nullable();
-            $table->timestamps();
-        });
-
-       /* Schema::create('T6', function (Blueprint $table) {
+       Schema::create('modelos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codModel', 10)->nullable();
             $table->string('denModFab', 100)->nullable();
@@ -243,7 +233,7 @@ class CreateAnexos extends Migration
             $table->integer('revisadot6')->nullable();
             $table->integer('anulart6')->nullable();
             $table->timestamps();
-        });*/
+        });
 
 
         Schema::create('bitacora', function (Blueprint $table) {
@@ -255,7 +245,6 @@ class CreateAnexos extends Migration
             $table->string('referencia')->nullable();
             $table->timestamps();
         });
-
 
   
     }

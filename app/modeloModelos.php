@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class modeloT6 extends Model
+class modeloModelos extends Model
 {
-    protected $table = 'T6';
+    protected $table = "modelos";
     protected $fillable = ['codModel','denModFab','codMarca','codSegModel','revisadot6','anulart6'];
 
-    /*  public function selectt5()
+     public function sel_marca()
     {
-        return $this->belongsTo('App\mod_selectT5', 'tipoResp');
-    }*/
+        return $this->belongsTo('App\sel_marca1', 'codMarca');
+    }
 }

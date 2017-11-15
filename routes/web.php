@@ -41,8 +41,8 @@ Route::get('/bitacora', 'controladorBitacora@enviarVariable');
 
 //RUTA DE SELECT MULTIPLES visRegmarcas aqui se captura el id del modelo sel_marca1 y sel_marca2 a traves de la función denCoMarcas, nomFabricante
 
-Route::get('denCoMarcas/{id}','controladorRegMarca@getMarcas');
-Route::get('nomFabricante/{id}','controladorRegMarca@getFabri');
+//Route::get('denCoMarcas/{id}','controladorRegMarca@getMarcas');
+//Route::get('nomFabricante/{id}','controladorRegMarca@getFabri');
 
 // ANEXOS DE REGISTROS 
 
@@ -94,22 +94,21 @@ Route::resource('seguros', 'controladorSeguros');
 Route::get('/responsables', 'controladorResponsables@index');
 Route::resource('responsables', 'controladorResponsables');
 
-//ANEXO T5 = regmarcas
-Route::get('/regmarcas', 'controladorRegMarca@index');
-Route::resource('regmarcas', 'controladorRegMarca');
 
-#ruta marcaAdd para acceder a la vista añadir una marca nueva y ruta selMarca para guardar datos de dicha vista
+#ANEXO T5 = Ruta marcaAdd para acceder a la vista añadir una marca nueva y ruta selMarca para guardar datos de dicha vista
 Route::get('/marcaAdd', 'controladorAddMarca@index');
-Route::post('selMarca', 'controladorAddMarca@store');
+Route::resource('selMarca', 'controladorAddMarca');
 
 #Eliminar marca agregada
 Route::get('selMarca/{id}/destroy',[
-	'uses' => 'controladorAddMarca@destroy',
+	'uses' => 'con_histoMarcas@destroy',
 	'as'  => 'selMarca.destroy'
 
 	]);
 
-//Route::get('/tablat6', 'controladorT6@index');
+#ANEXO T6 = modelos
+Route::get('/modelos', 'controladorModelos@index');
+Route::resource('modelos', 'controladorModelos');
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
@@ -125,10 +124,10 @@ Route::get('/regTransferencia', 'con_transferenciaVer@index');
 Route::get('/regAdjudicacion', 'con_adjudicacionVer@index');
 Route::get('/regSeguros', 'con_segurosVer@index');
 Route::get('/regResponsables', 'con_responsablesVer@index');
-Route::get('/regMarca', 'con_marcaVer@index');
-
-#MUESTRA REGISTRO DE LAS NUEVAS MARCAS AGREGADAS AL SELECT
+#MUESTRA REGISTRO DATATABLE DE LAS NUEVAS MARCAS AGREGADAS AL SELECT
 Route::get('/histoMarcas', 'con_histoMarcas@index');
+Route::get('/regModelos', 'con_modelosVer@index');
+
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
@@ -144,9 +143,9 @@ Route::get('seleccionTransferencia/{id}', 'con_transferenciaVer@selectId');
 Route::get('seleccionAdjudicacion/{id}', 'con_adjudicacionVer@selectId');
 Route::get('seleccionSeguros/{id}', 'con_segurosVer@selectId');
 Route::get('seleccionResponsables/{id}', 'con_responsablesVer@selectId');
-Route::get('seleccionMarca/{id}', 'con_marcaVer@selectId');
-Route::get('seleccionMarca/{id}', 'con_marcaVer@selectId');
-
+//Route::get('seleccionMarca/{id}', 'con_marcaVer@selectId');
+Route::get('seleccionEliMarca/{id}', 'con_histoMarcas@selectId');
+Route::get('seleccionModelos/{id}', 'con_modelosVer@selectId');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
@@ -161,7 +160,9 @@ Route::get('/anularPermu/{id}', 'con_permutaVer@anularPermu');
 Route::get('/anularTrans/{id}', 'con_transferenciaVer@anularTrans');
 Route::get('/anularSegu/{id}', 'con_segurosVer@anularSegu');
 Route::get('/anularRespon/{id}', 'con_responsablesVer@anularRespon');
-Route::get('/anularMarca/{id}', 'con_marcaVer@anularMarca');
+//Route::get('/anularMarca/{id}', 'con_marcaVer@anularMarca');
+
+
 
 
 	Route::get('/home', function () {

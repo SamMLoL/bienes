@@ -14,9 +14,9 @@ class controladorAddMarca extends Controller
     public function index(){
 
     	$array= array(
-            array("denCoMar","Denominación de la Marca:","Introduzca el nombre de la marca ","200"),
-    		array("codMarca","Código de la Marca:","Introduzca el código de la marca ","200"),
-    		array("nomFabri","Nombre del Fabricante:","Introduzca el nombre del fabricante","200"),
+            array("denCoMar","Denominación de la Marca:","Introduzca el nombre de la marca ","100"),
+    		array("codMarca","Código de la Marca:","Introduzca el código de la marca ","10"),
+    		array("nomFabri","Nombre del Fabricante:","Introduzca el nombre del fabricante","100"),
     		);
 
     	return view('añadir.añadirMarcas', compact('array'));
@@ -34,7 +34,7 @@ class controladorAddMarca extends Controller
 
         if($duplicado2 == '[]'){
         
-        $form_tMarca=new modeloMarcas();
+
         $form_tMarca=new sel_marca();
         $form_tMarca->opcion = $request->denCoMar;
         $form_tMarca->save();
@@ -44,7 +44,7 @@ class controladorAddMarca extends Controller
 
         $denCoMar = new sel_marca1();
         $denCoMar->opcion = $request->codMarca;
-        $denCoMar->marca_id = $idMarc->id;
+        $denCoMar->relacion = $idMarc->id;
         $denCoMar->save();
 
         $coMar = sel_marca1::all();
@@ -53,7 +53,7 @@ class controladorAddMarca extends Controller
 
         $nomFabri = new sel_marca2;
         $nomFabri->opcion =  $request->nomFabri;
-        $nomFabri->codMarca_id = $idcoMar->id;
+        $nomFabri->relacion = $idcoMar->id;
 
         $nomFabri->save();
         
@@ -71,10 +71,4 @@ class controladorAddMarca extends Controller
 
     }
 
-    public function destroy(){
-
-       //
-    }
-
-    
 }

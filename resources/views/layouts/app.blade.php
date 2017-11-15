@@ -70,8 +70,8 @@
 
                                     <li><a href="seguros">Seguros</a></li>
                                     <li><a href="responsables">Responsables de los Bienes</a></li>
-                                    <li><a href="regmarcas">Marcas</a></li>
-                                    <li><a href="home">Modelos</a></li>
+                                    <li><a href="marcaAdd">Marcas</a></li>
+                                    <li><a href="modelos">Modelos</a></li>
                                     <li><a href="home">Componentes</a></li>
                                     <li><a href="#">Bienes</a></li>
                                     <li><a href="tablat2">Equipo de Transporte</a></li>
@@ -101,8 +101,8 @@
                                        </li>
                                        <li><a href="regSeguros">Seguros</a></li>
                                        <li><a href="regResponsables">Responsables de los Bienes</a></li>
-                                       <li><a href="regMarca">Marcas</a></li>
-                                       <li><a href="home">Modelos</a></li>
+                                       <li><a href="histoMarcas">Marcas</a></li>
+                                       <li><a href="regModelos">Modelos</a></li>
                                        <li><a href="home">Componentes</a></li>
                                        <li><a href="registroT8">Bienes</a></li>
                                        <li><a href="registroT9">Equipo de Transporte</a></li>

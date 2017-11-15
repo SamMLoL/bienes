@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <div class="row separar">
             <div class="col-md-12">
-              <center><h4><b>Datos de las Marcas de los Bienes Muebles del Órgano o Ente</b></h4></center>
+              <center><h4><b>Datos de los Modelos de los Bienes Muebles del Órgano o Ente</b></h4></center>
             </div>
         </div>
     <hr>
@@ -26,10 +26,10 @@
 
                 <thead>
                     <tr>
-                       <td id="letrasb" class="text-center">Número</td>
-                       <td id="letrasb" class="text-center">Denominación Comercial de la Marca</td>
+                       <td id="letrasb" class="text-center">Código del Modelo</td>
+                       <td id="letrasb" class="text-center">Denominación del Modelo Según el fabricante</td>
                        <td id="letrasb" class="text-center">Código de la Marca</td>
-                       <td id="letrasb" class="text-center">Nombre del Fabricante</td>
+                       <td id="letrasb" class="text-center">Código del Bien Mueble Según Catalogo</td>
                        <td id="letrasb" class="text-center">Fecha y Hora del Registro</td>
                        <td id="letrasb" class="text-center">Ver más</td>
                       
@@ -37,12 +37,12 @@
                 </thead>
             <tbody>
           
-               @foreach($a as $im)
+               @foreach($verT6 as $im)
                   <tr> 
-                      <td class="text-center">{{$im->id}} </td>
-                      <td class="text-center">{{$im->opcion}} </td>
+                      <td class="text-center">{{$im->id}} {{$im->codModel}}</td>
+                      <td class="text-center">{{$im->denModFab}}</td>
                       <td class="text-center">{{$im->sel_marca->opcion}}</td>
-                      <td class="text-center">{{$im->sel_marca->sel_marca2->opcion}}</td>
+                      <td class="text-center">{{$im->codSegModel}}</td>
                       <td class="text-center">{{$im->created_at->format('d/m/Y - h:i A')}}</td>
                       <td class="text-center"><a href="seleccionEliMarca/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                   
