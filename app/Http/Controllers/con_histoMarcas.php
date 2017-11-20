@@ -30,19 +30,19 @@ class con_histoMarcas extends Controller
 
     public function destroy($id)
     {
+
       $sel_marca1 = sel_marca1::where('relacion', $id)->get();
       $sel_marca2 = sel_marca2::where('relacion', $sel_marca1[0]->id)->get();
       $modelos = modeloModelos::where('codMarca', $sel_marca1[0]->id)->get();
 
-
 	    sel_marca2::destroy($sel_marca2[0]->id);
 	    sel_marca1::destroy($sel_marca1[0]->id); 
       sel_marca::destroy($id);
-	    
-      modeloModelos::destroy($modelos[0]->id);
-    
+      
+      if($modelos != '[]'){
+        modeloModelos::destroy($modelos[0]->id);
+      }
       return redirect('histoMarcas')->with('msj', 'Registro Eliminado Exitosamente');
-
 
     }
 

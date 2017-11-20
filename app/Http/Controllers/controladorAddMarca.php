@@ -7,6 +7,7 @@ use App\sel_marca;
 use App\sel_marca1;
 use App\sel_marca2;
 use App\modeloMarcas;
+use App\modeloBitacora;
 
 
 class controladorAddMarca extends Controller
@@ -54,9 +55,9 @@ class controladorAddMarca extends Controller
         $nomFabri = new sel_marca2;
         $nomFabri->opcion =  $request->nomFabri;
         $nomFabri->relacion = $idcoMar->id;
-
         $nomFabri->save();
-        
+
+      
        
         return back()->with('msj', 'Datos Registrados Exitosamente');
       
@@ -66,7 +67,7 @@ class controladorAddMarca extends Controller
       } 
 
     }else{
-      return back()->with('errormsj', 'El Código "#'.$request->codMarca.'" ya existe, por favor siga el orden establecido e intente de nuevo');
+      return back()->with('errormsj', 'El Código "#'.$request->codMarca.'" ya existe, por favor siga el orden establecido e introduzca un Código nuevo');
       }  
 
     }

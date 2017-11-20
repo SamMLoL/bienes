@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ficha Marca</title>
+        <title>Ficha Modelos</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/appstilo.css') }}" rel="stylesheet">  
         <link href="{{ asset('css/general.css') }}" rel="stylesheet">  
@@ -14,6 +14,7 @@
     </head>
 <body>
 
+@include('eliminarReg.anularModelos')
 
 <div class="container" id="sha">
     <div class="row">
@@ -21,7 +22,7 @@
             <div class="row">
                 <div class="panel">
                         <img src="{{URL::asset('/img/cintillo.jpg')}}" id="banner" alt="Cintillo Web">
-                      <div id="panelTitu" class="panel-heading text-center"><h5 id="h5Titu"><b>HISTÓRICO DE MARCAS</b> <i class="fa fa-file-text-o" aria-hidden="true"></i></h5></div>
+                      <div id="panelTitu" class="panel-heading text-center"><h5 id="h5Titu"><b>HISTÓRICO DE MODELOS</b> <i class="fa fa-file-text-o" aria-hidden="true"></i></h5></div>
                 </div>   
             </div>
 
@@ -33,24 +34,24 @@
             
         <hr>
 
-      <form form="role" method="DELETE" action="{{route('selMarca.destroy', $seleccion->id)}}">
+        <form form="role" method="DELETE" action="{{route('modelos.destroy', $seleccion->id)}}">
             {{ csrf_field() }}
 
             <div class="row separar40 ">
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">
-                   	    <label>Denominación de la Marca</label>
-                    	    <br>{{$seleccion->opcion}}
+                   	    <label>Código del Modelo</label>
+                    	    <br>{{$seleccion->codModel}}
                    	</div>
 
                 	  <div class="col-md-4 form-group">
-                   	     <label>Código de la Marca</label>
-                       	  <br>{{$seleccion->sel_marca->opcion}}
+                   	     <label>Denominación del Modelo Según el Fabricante</label>
+                       	  <br>{{$seleccion->denModFab}}
                     </div>
 
                     <div class="col-md-4 form-group">
-                        <label>Nombre del Fabricante</label>
-                          <br>{{$seleccion->sel_marca->sel_marca2->opcion}}
+                        <label>Código de la Marca</label>
+                          <br>{{$seleccion->sel_marca->opcion}}
                     </div>
                 </div>
             </div>
@@ -58,7 +59,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 form-group">
-                        <label>Fecha y Hora de Agregación</label>
+                        <label>Fecha y Hora del Registro</label>
                           <br>{{$seleccion->created_at->format('d/m/Y - h:i A')}}
                     </div>
                 </div>
@@ -66,9 +67,9 @@
 
             <div class="row text-center separar">
                	<div class="col-md-12 separar form-group">
-                     <a class="btn btn-danger" href="{{route('selMarca.destroy', $seleccion->id)}}"><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
+                     <a class="btn btn-danger" href="{{route('modelos.destroy', $seleccion->id)}}"><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
 
-                     <a href="{{url('histoMarcas')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+                     <a href="{{url('histoModelos')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                         
                	</div>
             </div>

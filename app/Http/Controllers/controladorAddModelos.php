@@ -7,7 +7,7 @@ use App\modeloModelos;
 use App\sel_marca1;
 use App\modeloBitacora;
 
-class controladorModelos extends Controller
+class controladorAddModelos extends Controller
 {
     public function index()
     {
@@ -32,13 +32,21 @@ class controladorModelos extends Controller
 
     public function store(Request $request)
     {
-        $form_t6 = new modeloModelos();
+        $form_t6 =  modeloModelos::where('codModel', $request->codModel)->get();
+        
+        if($form_t6 == '[]'){
+
+
+        $form_t6 =new modeloModelos();
         $form_t6->codModel = $request->codModel;
+
+
         $form_t6->denModFab = $request->denModFab;
         $form_t6->codMarca = $request->codMarca;
         $form_t6->codSegModel = $request->codSegModel;
         $form_t6->revisadot6 = 1;
         $form_t6->anulart6 = 0;
+        $form_t6->save();
 
         if($form_t6->save()){
 
@@ -48,9 +56,13 @@ class controladorModelos extends Controller
           $bit->referencia = 'Modelos';
           $bit->save();
 
-        return back()->with('msj', 'Datos Registrados Exitosamente');
-            }else {
-        return back()->with('errormsj', 'Los datos no se guardaron');
         }
+
+        return back()->with('msj', 'Datos Registrados Exitosamente');
+            }else{
+        return back()->with('errormsj', 'El Código del Modelo "#'.$request->codModel.'" ya existe, por favor siga el orden establecido e intente de nuevo');
+        }  
+        
     }
+    
 }

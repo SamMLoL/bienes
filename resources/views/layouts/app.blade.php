@@ -102,7 +102,7 @@
                                        <li><a href="regSeguros">Seguros</a></li>
                                        <li><a href="regResponsables">Responsables de los Bienes</a></li>
                                        <li><a href="histoMarcas">Marcas</a></li>
-                                       <li><a href="regModelos">Modelos</a></li>
+                                       <li><a href="histoModelos">Modelos</a></li>
                                        <li><a href="home">Componentes</a></li>
                                        <li><a href="registroT8">Bienes</a></li>
                                        <li><a href="registroT9">Equipo de Transporte</a></li>
