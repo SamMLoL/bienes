@@ -97,7 +97,7 @@ Route::resource('responsables', 'controladorResponsables');
 
 #ANEXO T5 = Ruta marcaAdd para acceder a la vista añadir una marca nueva y ruta selMarca para guardar datos de dicha vista
 Route::get('/marcaAdd', 'controladorAddMarca@index');
-Route::resource('selMarca', 'controladorAddMarca');
+Route::post('selMarca', 'controladorAddMarca@store');
 
 #Eliminar marca agregada
 Route::get('selMarca/{id}/destroy',[
@@ -106,16 +106,18 @@ Route::get('selMarca/{id}/destroy',[
 
 	]);
 
-#Eliminar modelos agregada
+#ANEXO T6 = modelos
+Route::get('/modelos', 'controladorAddModelos@index');
+Route::post('modelos', 'controladorAddModelos@store');
+
+#Eliminar modelos agregados
 Route::get('modelos/{id}/destroy',[
 	'uses' => 'con_histoModelos@destroy',
 	'as'  => 'modelos.destroy'
 
 	]);
 
-#ANEXO T6 = modelos
-Route::get('/modelos', 'controladorAddModelos@index');
-Route::post('modelos', 'controladorAddModelos@store');
+
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
