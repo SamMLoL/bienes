@@ -67,9 +67,9 @@
 
             <div class="row text-center separar">
                	<div class="col-md-12 separar form-group">
-                     <a class="btn btn-danger" href="{{route('modelos.destroy', $seleccion->id)}}"><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
+                     <a class="btn btn-danger" data-toggle="modal" data-target="#AnularT6" title="AnularT6"><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
 
-                     <a href="{{url('histoModelos')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+                     <a href="{{url('histoModelos')}}" class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                         
                	</div>
             </div>

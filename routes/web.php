@@ -117,8 +117,6 @@ Route::get('modelos/{id}/destroy',[
 
 	]);
 
-
-
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
 Route::get('/regProveedores', 'con_proveedoresVer@index');
@@ -151,7 +149,6 @@ Route::get('seleccionTransferencia/{id}', 'con_transferenciaVer@selectId');
 Route::get('seleccionAdjudicacion/{id}', 'con_adjudicacionVer@selectId');
 Route::get('seleccionSeguros/{id}', 'con_segurosVer@selectId');
 Route::get('seleccionResponsables/{id}', 'con_responsablesVer@selectId');
-//Route::get('seleccionMarca/{id}', 'con_marcaVer@selectId');
 Route::get('seleccionEliMarca/{id}', 'con_histoMarcas@selectId');
 Route::get('seleccionModelos/{id}', 'con_histoModelos@selectId');
 
@@ -168,11 +165,6 @@ Route::get('/anularPermu/{id}', 'con_permutaVer@anularPermu');
 Route::get('/anularTrans/{id}', 'con_transferenciaVer@anularTrans');
 Route::get('/anularSegu/{id}', 'con_segurosVer@anularSegu');
 Route::get('/anularRespon/{id}', 'con_responsablesVer@anularRespon');
-//Route::get('/anularModel/{id}', 'con_histoModelos@anularModel');
-
-
-
-
 
 	Route::get('/home', function () {
     return view('/home');

@@ -32,6 +32,8 @@
             </div>
             
         <hr>
+        
+@include('eliminarReg.anularMarca')
 
       <form form="role" method="DELETE" action="{{route('selMarca.destroy', $seleccion->id)}}">
             {{ csrf_field() }}
@@ -66,7 +68,7 @@
 
             <div class="row text-center separar">
                	<div class="col-md-12 separar form-group">
-                     <a class="btn btn-danger" href="{{route('selMarca.destroy', $seleccion->id)}}"><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
+                     <a class="btn btn-danger" data-toggle="modal" data-target="#AnularT5" title="AnularT5"><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a>
 
                      <a href="{{url('histoMarcas')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                         

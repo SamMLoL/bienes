@@ -35,7 +35,6 @@ class controladorAddMarca extends Controller
 
         if($duplicado2 == '[]'){
         
-
         $form_tMarca=new sel_marca();
         $form_tMarca->opcion = $request->denCoMar;
         $form_tMarca->save();
@@ -57,9 +56,8 @@ class controladorAddMarca extends Controller
         $nomFabri->relacion = $idcoMar->id;
         $nomFabri->save();
 
-      
-       
-        return back()->with('msj', 'Datos Registrados Exitosamente');
+        
+      return back()->with('msj', 'Datos Registrados Exitosamente');
       
     }else{
       return back()->with('errormsj', 'La Marca "'.$request->denCoMar.'" ya existe, por favor intente otra marca.');

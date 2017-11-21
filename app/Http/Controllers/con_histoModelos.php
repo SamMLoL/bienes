@@ -12,15 +12,12 @@ class con_histoModelos extends Controller
     public function index()
     {
         
-        
         $verT6= modeloModelos::where('anulart6', '0')->get();
 
         return view('añadir.historicoModelos', compact('verT6'));
-
     }
 
     public function selectId($id)
-
     {
 
         $seleccion = modeloModelos::find($id);
@@ -34,7 +31,6 @@ class con_histoModelos extends Controller
     {
       
       modeloModelos::destroy($id);
-
 
       return redirect('histoModelos')->with('msj', 'Registro Eliminado Exitosamente');
 
