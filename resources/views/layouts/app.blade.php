@@ -49,8 +49,6 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Registrar<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                              <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-submenu"><a href="">Registrar Anexo</a>
-                                    <ul class="dropdown-menu">
                             <!--SUB-MENU DE ANEXOS T-->
                             <li><a href="proveedores">Proveedores</a></li>
                                 <li class="dropdown-submenu"><a href="">Modalidades</a>
@@ -82,15 +80,12 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
 
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Consultar<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-submenu"><a href="">Consultar Anexo</a>
-                                    <ul class="dropdown-menu">
+                                
                                       <li><a href="regProveedores">Proveedores</a></li>
                                         <li class="dropdown-submenu"><a href="">Modalidades</a>
                                         <ul class="dropdown-menu">
@@ -119,8 +114,6 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
                     
                          <!-- Right Side Of Navbar -->
                          <ul class="nav navbar-nav navbar-right">

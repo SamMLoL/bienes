@@ -115,6 +115,7 @@ class controladorDacion extends Controller
           $bit->accion  = 1;
           $bit->referencia = 'Dación en Pago';
           $bit->save();
+          
           }
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else{
@@ -136,12 +137,6 @@ class controladorDacion extends Controller
         $form_t23=modeloDacion::find($id);
         $form_t23->codAdq = $request->codAdq;
 
-         if($form_t23->codOt2_3 = $request->codOt2_3 == ''){
-         $form_t23->codOt2_3 = '0'; 
-
-          }else{
-          $form_t23->codOt2_3 = $request->codOt2_3;
-          }  
 
         if($form_t23->nomCed =$request->nomCed == ''){
           $form_t23->nomCed = '1';
