@@ -48,18 +48,17 @@ class controladorConcurso extends Controller
 
     public function store(Request $request)
     {
+      $duplicado = modeloConcurso::where('codOrigen', $request->codOrigen)->get();
+
+        if($duplicado == '[]'){
+
         $form_t2= new modeloConcurso();
+        $form_t2->codOrigen = $request->codOrigen; 
         $form_t2->codAdquisicion = $request->codAdquisicion; 
         $form_t2->revisadot2 = 1;
         $form_t2->anulart2 = 0;
+
 #Si el campo en el fomulario se deja en blanco cumple la condición
-
-        if ($form_t2->codOrigen = $request->codOrigen == ''){
-        $form_t2->codOrigen = '0';
-
-            }else{
-            $form_t2->codOrigen = $request->codOrigen;
-        }
     
         if ($form_t2->nomConcurso = $request->nomConcurso == ''){
         $form_t2->nomConcurso = '1';
@@ -139,14 +138,17 @@ class controladorConcurso extends Controller
           $bit->referencia = 'Compra por Concurso';
           $bit->save();
 
-            return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
         }
+
+        return back()->with('msj', 'Datos Registrados Exitosamente');
+            }else{
+        return back()->with('errormsj', 'El Código de Origen "#'.$request->codOrigen.'" ya existe, por favor siga el orden establecido e intente un código nuevo');
+        
+        } 
 
     }
 
-       public function edit($id)
+    public function edit($id)
     {
         $form_t2 = modeloConcurso::find($id);
         $infoSelect = sel_concurso::all();
@@ -160,12 +162,6 @@ class controladorConcurso extends Controller
         $form_t2->codAdquisicion = $request->codAdquisicion; 
 #Si el campo en el fomulario se deja en blanco cumple la condición
 
-        if ($form_t2->codOrigen = $request->codOrigen == ''){
-        $form_t2->codOrigen = '0';
-
-            }else{
-            $form_t2->codOrigen = $request->codOrigen;
-        }
     
         if ($form_t2->nomConcurso = $request->nomConcurso == ''){
         $form_t2->nomConcurso = '1';

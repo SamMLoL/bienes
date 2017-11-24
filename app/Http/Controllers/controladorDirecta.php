@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloDirecta;
 use App\sel_directa;
+use App\modeloProveedores;
 use App\modeloBitacora;
 
 
@@ -15,10 +16,10 @@ class controladorDirecta extends Controller
         //id->name/ placeholder / maxlength / posicion de input
         $infoSelect=sel_directa::all();
 
+        $infoSelect2=modeloProveedores::all();
+
         $arrayT21=array(
-            array("codOt2_1","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4"),
-            #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN:","col-md-push-4"),
-            array("codPro","Código de Proveedor:","Introduzca código del proveedor","10","col-md-push-0"),
+            array("codOt2_1","Código de Origen:","Introduzca el código de origen","12","col-md-pull-8"),
             array("numCom","Número de la Orden de Compra:","Introduzca el número de Orden de compra","30",""),
             array("numNota","Número Nota de Entrega:","Introduzca el Número de la nota de entrega","30",""),
             array("numFac","Número de la Factura:","Introduzca el Número de la factura","30",""),
@@ -26,6 +27,10 @@ class controladorDirecta extends Controller
 
         $selectT21=array(
             array("codAdq","Código de Adquisición:","col-md-push-4"),
+            );
+
+        $selectT22=array(
+            array("codProvee","Código del Proveedor:","col-md-push-4"),
             );
 
         $dateT21=array(
@@ -38,37 +43,32 @@ class controladorDirecta extends Controller
         $dateT212=array(
             array("feFac","Fecha de la Factura:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
-        return view('tablasForm.visDirecta', compact('arrayT21','selectT21','infoSelect','dateT21','dateT211','dateT212'));
+        return view('tablasForm.visDirecta', compact('arrayT21','selectT21','selectT22','infoSelect','infoSelect2','dateT21','dateT211','dateT212'));
     }
 
   
     public function store(Request $request)
     {
+    
+    $duplicado = modeloDirecta::where('codOt2_1', $request->codOt2_1)->get();
+      $duplicado2 = modeloDirecta::where('numCom', $request->numCom)->get();
+
+        if($duplicado == '[]'){        
+               
+
         $form_t21=new modeloDirecta();
+        $form_t21->codOt2_1 = $request->codOt2_1;
         $form_t21->codAdq = $request->codAdq;
+        $form_t21->codProvee = $request->codProvee;
         $form_t21->revisadot21 = 1;
         $form_t21->anulart21 = 0;
-
-        if($form_t21->codOt2_1 = $request->codOt2_1 == ''){
-         $form_t21->codOt2_1 = '0'; 
-
-           }else{
-            $form_t21->codOt2_1 = $request->codOt2_1;
-           }  
-
-        if($form_t21->codPro = $request->codPro == ''){
-         $form_t21->codPro = '0';
         
-           }else{
-            $form_t21->codPro = $request->codPro;
-           }
-
         if($form_t21->numCom = $request->numCom == ''){
             $form_t21->numCom = '0';
 
             }else{
             $form_t21->numCom = $request->numCom;    
-            }
+            }  
 
         if($form_t21->numNota = $request->numNota == ''){
             $form_t21->numNota = '0';
@@ -112,11 +112,15 @@ class controladorDirecta extends Controller
           $bit->accion  = 1;
           $bit->referencia = 'Compra Directa';
           $bit->save();
-
-            return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
         }
+
+        
+
+        return back()->with('msj', 'Datos Registrados Exitosamente');
+           }else{
+        return back()->with('errormsj', 'El Código de Origen "#'.$request->codOt2_1.'" ya existe, por favor siga el orden establecido e intente un código nuevo');
+        }
+          
     }
 
 
@@ -124,37 +128,21 @@ class controladorDirecta extends Controller
     {
         $form_t21 = modeloDirecta::find($id);
         $infoSelect = sel_directa::all();
+        $infoSelect2=modeloProveedores::all();
        
-        return view('layouts.modificarDirecta', compact('form_t21','infoSelect'));
+        return view('layouts.modificarDirecta', compact('form_t21','infoSelect','infoSelect2'));
              
     }
 
     public function update(Request $request, $id)
     {
-        
+
+
         $form_t21=modeloDirecta::find($id);
         $form_t21->codAdq = $request->codAdq;
-
-        if($form_t21->codOt2_1 = $request->codOt2_1 == ''){
-         $form_t21->codOt2_1 = '0'; 
-
-           }else{
-            $form_t21->codOt2_1 = $request->codOt2_1;
-           }  
-
-        if($form_t21->codPro = $request->codPro == ''){
-         $form_t21->codPro = '0';
-        
-           }else{
-            $form_t21->codPro = $request->codPro;
-           }
-
-        if($form_t21->numCom = $request->numCom == ''){
-            $form_t21->numCom = '0';
-
-            }else{
-            $form_t21->numCom = $request->numCom;    
-            }
+        $form_t21->codProvee = $request->codProvee;
+        $form_t21->numCom = $request->numCom;
+    
 
         if($form_t21->numNota = $request->numNota == ''){
             $form_t21->numNota = '0';
@@ -199,10 +187,12 @@ class controladorDirecta extends Controller
           $bit->referencia = 'Compra Directa';
           $bit->save();
 
-            return back()->with('msj', 'Datos modificados exitosamente');
+          return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
             return back()->with('errormsj', 'Los datos no se guardaron');
         }
+
+        
     }
     
 }

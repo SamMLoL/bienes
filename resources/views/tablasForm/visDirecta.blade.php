@@ -64,6 +64,20 @@
              </div>
         @endforeach
 
+        @foreach($selectT22 as $posicion => $valor)
+            
+             <div class="col-md-4 {{$selectT22[$posicion][2]}} form-group  separar">
+                <label for="{{$selectT22[$posicion][0]}}">{{$selectT22[$posicion][1]}}</label>
+                   <select name="{{$selectT22[$posicion][0]}}" id="{{$selectT22[$posicion][0]}}" class="form-control">
+                      <option value="0" disabled selected>Seleccione</option>
+
+                   @foreach($infoSelect2 as $traeSelect)
+                      <option value="{{$traeSelect->id}}">{{$traeSelect->codProvee}}</option> 
+                   @endforeach
+                   </select>
+             </div>
+        @endforeach
+
     <!--ARRAY DE INPUT-TEXT PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => T21-->
     <!--ARRAY OF INPUT-TEXT BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => T21-->
 

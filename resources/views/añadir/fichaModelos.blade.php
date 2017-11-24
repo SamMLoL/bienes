@@ -51,7 +51,7 @@
 
                     <div class="col-md-4 form-group">
                         <label>Código de la Marca</label>
-                          <br>{{$seleccion->sel_marca->opcion}}
+                          <br>{{$seleccion->selectMarca->codMarca}}
                     </div>
                 </div>
             </div>

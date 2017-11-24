@@ -53,7 +53,7 @@
                 <div class="col-md-12">
                     <div class="col-md-4">
                        <label for="codProvee">Código del Proveedor</label>
-                          <input type="text" class="form-control" name="codProvee" id="codProvee" value="{{$form_t1->codProvee}}"  placeholder="Introduzca nombres" maxlength="30" autofocus> 
+                          <input type="text" class="form-control" name="codProvee" id="codProvee" value="{{$form_t1->codProvee}}"  placeholder="Introduzca nombres" maxlength="30" disabled> 
                     </div>
                
                     <div class="col-md-4">

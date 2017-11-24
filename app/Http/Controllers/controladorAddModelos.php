@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloModelos;
-use App\sel_marca1;
+use App\modeloMarcas;
 use App\modeloBitacora;
 
 class controladorAddModelos extends Controller
@@ -12,7 +12,7 @@ class controladorAddModelos extends Controller
     public function index()
     {
 
-        $infoSelect = sel_marca1::all();
+        $infoSelect = modeloMarcas::all();
 
         $arrayT6 = array(
             array("codModel","Código del Modelo:","Introduzca el código del modelo","10","col-md-pull-0"),
@@ -39,13 +39,9 @@ class controladorAddModelos extends Controller
 
         $form_t6 =new modeloModelos();
         $form_t6->codModel = $request->codModel;
-
-
         $form_t6->denModFab = $request->denModFab;
         $form_t6->codMarca = $request->codMarca;
         $form_t6->codSegModel = $request->codSegModel;
-        $form_t6->revisadot6 = 1;
-        $form_t6->anulart6 = 0;
         $form_t6->save();
 
         if($form_t6->save()){
@@ -60,7 +56,7 @@ class controladorAddModelos extends Controller
 
         return back()->with('msj', 'Datos Registrados Exitosamente');
             }else{
-        return back()->with('errormsj', 'El Código del Modelo "#'.$request->codModel.'" ya existe, por favor siga el orden establecido e intente de nuevo');
+        return back()->with('errormsj', 'El Código del Modelo "#'.$request->codModel.'" ya existe, por favor siga el orden establecido e intente un modelo nuevo');
         }  
         
     }

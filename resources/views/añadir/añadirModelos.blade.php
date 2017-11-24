@@ -51,7 +51,7 @@
                       <option value="0" disabled selected>Seleccione</option>
 
                    @foreach($infoSelect as $traeSelect)
-                      <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
+                      <option value="{{$traeSelect->id}}">{{$traeSelect->codMarca}}</option> 
                    @endforeach
                    </select>
              </div>

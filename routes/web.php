@@ -117,6 +117,11 @@ Route::get('modelos/{id}/destroy',[
 
 	]);
 
+#ANEXO T7 = Componentes
+
+Route::get('/componentes', 'controladorComponentes@index');
+Route::resource('componentes', 'controladorComponentes');
+
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
 Route::get('/regProveedores', 'con_proveedoresVer@index');
@@ -149,7 +154,7 @@ Route::get('seleccionTransferencia/{id}', 'con_transferenciaVer@selectId');
 Route::get('seleccionAdjudicacion/{id}', 'con_adjudicacionVer@selectId');
 Route::get('seleccionSeguros/{id}', 'con_segurosVer@selectId');
 Route::get('seleccionResponsables/{id}', 'con_responsablesVer@selectId');
-Route::get('seleccionEliMarca/{id}', 'con_histoMarcas@selectId');
+Route::get('seleccionMarcas/{id}', 'con_histoMarcas@selectId');
 Route::get('seleccionModelos/{id}', 'con_histoModelos@selectId');
 
 

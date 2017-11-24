@@ -42,17 +42,17 @@
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">
                    	    <label>Denominación de la Marca</label>
-                    	    <br>{{$seleccion->opcion}}
+                    	    <br>{{$seleccion->codMarca}}
                    	</div>
 
                 	  <div class="col-md-4 form-group">
                    	     <label>Código de la Marca</label>
-                       	  <br>{{$seleccion->sel_marca->opcion}}
+                       	  <br>{{$seleccion->denComar}}
                     </div>
 
                     <div class="col-md-4 form-group">
                         <label>Nombre del Fabricante</label>
-                          <br>{{$seleccion->sel_marca->sel_marca2->opcion}}
+                          <br>{{$seleccion->nomFabri}}
                     </div>
                 </div>
             </div>

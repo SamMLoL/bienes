@@ -45,6 +45,10 @@ class controladorConfiscacion extends Controller
   
     public function store(Request $request)
     {
+
+      $duplicado = modeloConfiscacion::where('codOt2_2', $request->codOt2_2)->get();
+        if($duplicado == '[]'){
+
         $form_t22=new modeloConfiscacion();
         $form_t22->codAdq = $request->codAdq;
         $form_t22->revisadot22 = 1;
@@ -119,22 +123,23 @@ class controladorConfiscacion extends Controller
           $bit->accion  = 1;
           $bit->referencia = 'Confiscación';
           $bit->save();
-
-            return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
-        }
-    }
+          }
+            
+          return back()->with('msj', 'Datos Registrados Exitosamente');
+             }else{
+          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_2.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
+          }
+    }      
 
     public function edit($id)
     {
-         {
+        
         $form_t22 = modeloConfiscacion::find($id);
         $infoSelect = sel_confiscacion::all();
        
         return view('layouts.modificarConfiscacion', compact('form_t22','infoSelect'));
              
-    }
+    
     }
 
     public function update(Request $request, $id)
@@ -143,14 +148,6 @@ class controladorConfiscacion extends Controller
         $form_t22=modeloConfiscacion::find($id);
         $form_t22->codAdq = $request->codAdq;
         
-
-         if($form_t22->codOt2_2 = $request->codOt2_2 == ''){
-         $form_t22->codOt2_1 = '0'; 
-
-           }else{
-            $form_t22->codOt2_2 = $request->codOt2_2;
-           }  
-
 
         if($form_t22->nomPa =$request->nomPa == ''){
           $form_t22->nomPa = '1';

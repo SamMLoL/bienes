@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-           <hr>
+          <hr>
               
             <div class="row separar40">
                 <div class="col-md-12">
@@ -48,24 +48,18 @@
                             <br>{{$seleccion->codOt2_1}}
                     </div>
                     @endif
-                  
            
               	    <div class="col-md-4 form-group">
                  	      <label>Código de Adquisición</label>
                      	    <br>{{$seleccion->selectDirecta->opcion}}
                     </div>
 
-                   @if($seleccion->codPro == '0')
+                   
                     <div class="col-md-4 form-group">
                         <label>Código de Proveedor</label>
-                            <br>xxx
+                            <br>{{$seleccion->selectCodProvee->codProvee}}
                     </div>
-                    @else
-                    <div class="col-md-4 form-group">
-                        <label>Código de Proveedor</label>
-                            <br>{{$seleccion->codPro}}
-                    </div>  	
-                    @endif
+                  
                   </div>
             </div>
 

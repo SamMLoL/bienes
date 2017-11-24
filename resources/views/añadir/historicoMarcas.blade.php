@@ -37,11 +37,11 @@
           
                @foreach($a as $im)
                   <tr> 
-                      <td class="text-center">{{$im->opcion}} </td>
-                      <td class="text-center">{{$im->sel_marca->opcion}}</td>
-                      <td class="text-center">{{$im->sel_marca->sel_marca2->opcion}}</td>
+                      <td class="text-center">{{$im->codMarca}} </td>
+                      <td class="text-center">{{$im->denComar}}</td>
+                      <td class="text-center">{{$im->nomFabri}}</td>
                       <td class="text-center">{{$im->created_at->format('d/m/Y - h:i A')}}</td>
-                      <td class="text-center"><a href="seleccionEliMarca/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
+                      <td class="text-center"><a href="seleccionMarcas/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                   </tr>     
                @endforeach
            </tbody>

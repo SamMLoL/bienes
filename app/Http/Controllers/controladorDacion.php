@@ -43,6 +43,11 @@ class controladorDacion extends Controller
 
     public function store(Request $request)
     {
+
+      $duplicado = modeloDacion::where('codOt2_3', $request->codOt2_3)->get();
+
+        if($duplicado == '[]'){
+
         $form_t23=new modeloDacion();
         $form_t23->codAdq = $request->codAdq;
         $form_t23->revisadot23 = 1;
@@ -110,12 +115,13 @@ class controladorDacion extends Controller
           $bit->accion  = 1;
           $bit->referencia = 'Dación en Pago';
           $bit->save();
-
+          }
             return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
-        }
-    }
+             }else{
+          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_3.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
+          }
+    }      
+   
 
     public function edit($id)
     {

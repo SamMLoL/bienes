@@ -16,4 +16,9 @@ class modeloProveedores extends Model
     {
         return $this->belongsTo('App\sel_proveedores', 'tipProvee');
     }
+
+     public function selectCodProvee()
+    {
+        return $this->hasOne('App\modeloDirecta', 'codProvee');
+    }
 }

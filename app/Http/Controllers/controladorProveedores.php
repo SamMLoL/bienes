@@ -36,6 +36,11 @@ class controladorProveedores extends Controller
           
     public function store(Request $request)
     {
+      $duplicado = modeloProveedores::where('codProvee', $request->codProvee)->get();
+
+      if($duplicado == '[]'){
+
+
         $form_t1= new modeloProveedores();
         $form_t1->codProvee = $request->codProvee;
         $form_t1->descProvee = $request->descProvee;
@@ -50,6 +55,7 @@ class controladorProveedores extends Controller
              }else{
              $form_t1->otraDesc = $request->otraDesc;
              }
+
          if($form_t1->save()){
 
           $bit = new modeloBitacora();
@@ -58,14 +64,13 @@ class controladorProveedores extends Controller
           $bit->referencia = 'Proveedores';
           $bit->save();
 
-     
-            return back()->with('msj', 'Datos Registrados Exitosamente');
-        } else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
-        }
+         }
 
-
-
+        return back()->with('msj', 'Datos Registrados Exitosamente');
+            }else{
+        return back()->with('errormsj', 'El Código de Proveedor "#'.$request->codProvee.'" ya existe, por favor siga el orden establecido e intente un código nuevo');
+        
+        } 
     }
 
     public function edit($id)
@@ -79,7 +84,6 @@ class controladorProveedores extends Controller
     public function update(Request $request, $id)
       {
         $form_t1 = modeloProveedores::find($id);
-        $form_t1->codProvee = $request->codProvee;
         $form_t1->descProvee = $request->descProvee;
         $form_t1->tipProvee = $request->tipProvee;
         $form_t1->rifProvee = $request->rifProvee;

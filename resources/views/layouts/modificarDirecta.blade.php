@@ -53,11 +53,7 @@
 			  	<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="codOt2_1">Código de Origen</label>
-						@if($form_t21->codOt2_1 == '0')
-						 <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" value="B-1" maxlength="12">
-						@else
-						 <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" value="{{$form_t21->codOt2_1}}" maxlength="12">
-						@endif
+						 <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" value="{{$form_t21->codOt2_1}}" maxlength="12" disabled>
 					</div>
 
 					<div class="col-md-4 form-group">
@@ -71,12 +67,13 @@
 					</div>
 
 					<div class="col-md-4">
-						<label for="codPro">Código de Proveedor</label>
-						@if($form_t21->codPro == '0')
-						 <input type="text" class="form-control" name="codPro" id="codPro" value="xxx" maxlength="10"> 
-						@else
-						 <input type="text" class="form-control" name="codPro" id="codPro" value="{{$form_t21->codPro}}" maxlength="10">
-						@endif
+						<label for="codProvee">Código de Proveedor</label>
+							<select name="codProvee" id="codProvee" class="form-control">
+				                <option value="{{$form_t21->selectCodProvee->id}}">{{$form_t21->selectCodProvee->codProvee}}</option>
+				              @foreach($infoSelect2 as $form)
+			                    <option value="{{$form->id}}">{{$form->codProvee}}</option> 
+			                  @endforeach
+				            </select> 
 					</div>
 			    </div>
 			</div>
@@ -85,11 +82,7 @@
 			  	<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="numCom">Número Orden de Compra</label>
-						@if($form_t21->numCom == '0')
-						 <input type="text" class="form-control" name="numCom" id="numCom" value="xxx" maxlength="30">
-						@else
 						 <input type="text" class="form-control" name="numCom" id="numCom" value="{{$form_t21->numCom}}" maxlength="30">
-						@endif
 					</div>
 		
 					<div class="col-md-4">

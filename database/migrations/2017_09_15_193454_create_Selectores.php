@@ -121,53 +121,7 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
-
-        //Las 3 tablas sel_marca, sel_marca1, sel_marca2 relacionadas para añadir nuevas marcas a los select del formulario regmarca <-- ruta del web
-        Schema::create('sel_marca', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->timestamps();
-        });
-
-        Schema::create('sel_marca1', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->integer('relacion')->unsigned();
-            $table->foreign('relacion')->references('id')->on('sel_marca');
-            $table->timestamps();
-        });
-
-        Schema::create('sel_marca2', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->integer('relacion')->unsigned();
-            $table->foreign('relacion')->references('id')->on('sel_marca1');
-            $table->timestamps();
-        });
-
-        /*Schema::create('mig_selectT6', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->timestamps();
-        });
-
-        Schema::create('mig_selectT61', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->timestamps();
-        });
-
-        Schema::create('mig_selectT62', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->timestamps();
-        });
-
-        Schema::create('mig_selectT63', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('opcion');
-            $table->timestamps();
-        });*/
+        
     }
 
     /**

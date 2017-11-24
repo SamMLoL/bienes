@@ -46,7 +46,7 @@
                     @endif 
 
                       <td class="text-center">{{$im->denModFab}}</td>
-                      <td class="text-center">{{$im->sel_marca->opcion}}</td>
+                      <td class="text-center">{{$im->selectMarca->codMarca}}</td>
                       <td class="text-center">{{$im->codSegModel}}</td>
                       <td class="text-center">{{$im->created_at->format('d/m/Y - h:i A')}}</td>
                       <td class="text-center"><a href="seleccionModelos/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>

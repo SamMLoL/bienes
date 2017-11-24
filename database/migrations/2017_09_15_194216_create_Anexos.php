@@ -50,7 +50,8 @@ class CreateAnexos extends Migration
             $table->increments('id');
             $table->string('codOt2_1', 12)->nullable();
             $table->string('codAdq', 2)->nullable();
-            $table->string('codPro', 10)->nullable();
+            $table->integer('codProvee')->unsigned();
+            $table->foreign('codProvee')->references('id')->on('proveedores');
             $table->string('numCom', 30)->nullable();
             $table->string('numNota', 30)->nullable();
             $table->string('numFac', 30)->nullable();
@@ -224,17 +225,33 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
-       Schema::create('modelos', function (Blueprint $table) {
+        Schema::create('marcas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codModel', 10)->nullable();
-            $table->string('denModFab', 100)->nullable();
             $table->string('codMarca', 10)->nullable();
-            $table->string('codSegModel', 10)->nullable();
-            $table->integer('revisadot6')->nullable();
-            $table->integer('anulart6')->nullable();
+            $table->string('denComar', 100)->nullable();
+            $table->string('nomFabri', 100)->nullable();
             $table->timestamps();
         });
 
+        Schema::create('modelos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('codModel', 10)->nullable();
+            $table->string('denModFab', 100)->nullable();
+            $table->integer('codMarca')->unsigned();
+            $table->foreign('codMarca')->references('id')->on('marcas');
+            $table->string('codSegModel', 10)->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('componentes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('codigo', 10)->nullable();
+            $table->string('denComponente', 100)->nullable();
+            $table->string('codBienMueble', 10)->nullable();
+            $table->integer('revisadot7')->nullable();
+            $table->integer('anulart7')->nullable();
+            $table->timestamps();
+        });
 
         Schema::create('bitacora', function (Blueprint $table) {
             $table->increments('id');

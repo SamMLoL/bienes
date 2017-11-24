@@ -69,14 +69,10 @@
 
                         <td class="text-center">{{$reg21->selectDirecta->opcion}}</td>
                         
-                        @if($reg21->codPro == '0')
-                        <td class="text-center">XXX</td>
-                        @else
-                        <td class="text-center">{{$reg21->codPro}}</td>
-                        @endif
+                        <td class="text-center">{{$reg21->selectCodProvee->codProvee}}</td>
 
                         @if($reg21->numCom == '0')
-                        <td class="text-center">XXX</td>
+                        <td class="text-center">xxx</td>
                         @else
                         <td class="text-center">{{$reg21->numCom}}</td>
                         @endif
@@ -88,7 +84,7 @@
                         @endif
 
                         @if($reg21->numNota == '0')
-                        <td class="text-center">XXX</td>
+                        <td class="text-center">xxx</td>
                         @else
                         <td class="text-center">{{$reg21->numNota}}</td>
                         @endif

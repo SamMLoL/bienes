@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloModelos;
-use App\sel_marca1;
+use App\sel_marca;
 use App\modeloBitacora;
 
 class con_histoModelos extends Controller
@@ -12,7 +12,7 @@ class con_histoModelos extends Controller
     public function index()
     {
         
-        $verT6= modeloModelos::where('anulart6', '0')->get();
+        $verT6= modeloModelos::all();
 
         return view('añadir.historicoModelos', compact('verT6'));
     }
@@ -21,7 +21,6 @@ class con_histoModelos extends Controller
     {
 
         $seleccion = modeloModelos::find($id);
-        $seleccion->revisadot6 = 0;
         $seleccion->save();
 
        return view('añadir.fichaModelos', compact('seleccion'));
