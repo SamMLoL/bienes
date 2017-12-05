@@ -77,13 +77,13 @@
                         <td class="text-center">{{$reg3->selectSeguros1->opcion}}</td>
 
                   
-                       @if($reg3->montoAse == '1')
+                       @if($reg3->montoAse == '0')
                         <td class="text-center">xxx</td>
                        @else
                         <td class="text-center">{{$reg3->montoAse}}</td>
                        @endif
 
-                       <td class="text-center">{{$reg3->selectSeguros2->opcion}}</td>
+                       <td class="text-center">{{$reg3->moneda}}</td>
 
                        <td class="text-center"><a href="seleccionSeguros/{{$reg3->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
 

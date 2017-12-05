@@ -80,7 +80,6 @@ class controladorSeguros extends Controller
         $form_t3= new modeloSeguros();
         $form_t3->compAse = $request->compAse;
         $form_t3->revisadot3 = 1;
-        $form_t3->anulart3 = 0;
 
         if($form_t3->codRegT3 = $request->codRegT3 == ''){
          $form_t3->codRegT3 = '0'; 

@@ -47,7 +47,7 @@ class controladorProveedores extends Controller
         $form_t1->tipProvee = $request->tipProvee;
         $form_t1->rifProvee = $request->rifProvee;
         $form_t1->revisadot1 = 1;
-        $form_t1->anulart1 = 0;
+        
 
         if ($form_t1->otraDesc = $request->otraDesc == '') {
         $form_t1->otraDesc = '0';

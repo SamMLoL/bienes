@@ -53,11 +53,7 @@
 				<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="codOt2_6">Código de Origen</label>
-						@if($form_t26->codOt2_6 == '0')
-						 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="G-1" maxlength="12">
-						@else
-						 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="{{$form_t26->codOt2_6}}" maxlength="12">
-						@endif
+						 <input type="text" class="form-control" name="codOt2_6" id="codOt2_6" value="{{$form_t26->codOt2_6}}" maxlength="12" disabled>
 					</div>
 				
 

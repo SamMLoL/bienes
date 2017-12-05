@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloProveedores;
+use App\modeloDirecta;
 use App\modeloBitacora;
 
 class con_proveedoresVer extends Controller
 {
     public function index()
     {
-        $verT1 = modeloProveedores::where('anulart1', '0')->get();
+        $verT1 = modeloProveedores::all();
         return view('registros.regProveedores',compact('verT1'));
     }
 
@@ -26,28 +27,37 @@ class con_proveedoresVer extends Controller
 
        return view('muestraReg.muestraProveedores',compact('seleccion'));
 
-
-
     }
-     /*FUNCIÓN anularT1 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
+    
 
      public function anularProvee($id)
-    {
+    {   
+
         $seleccion= modeloProveedores::find($id);
-        $seleccion->anulart1 = 1;
 
+        $seleccion2 = modeloDirecta::where('codProvee', $id)->get();
 
-        if($seleccion->save()){
+        if($seleccion2 != '[]'){
+
+        foreach($seleccion2 as $directa)
+        {
+          $directa->delete();
+        }
+      }
+
+          if($seleccion->delete()){
+
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];
           $bit->accion  = 3;
-          $bit->referencia = 'Proveedores';
+          $bit->referencia = 'Proveedores y Compra Directa Asociados';
           $bit->save();
 
-            return redirect('regProveedores')->with('msj', 'Registro Eliminado Exitosamente');
-        } else {
-            return redirect()->with('errormsj', 'Los datos no se guardaron');
-        }
+          return redirect('regProveedores')->with('msj', 'Registro Eliminado Exitosamente');
+         } else {
+         return redirect()->with('errormsj', 'Los datos no se guardaron');
+       }
+
     }
 
 }

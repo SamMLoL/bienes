@@ -10,17 +10,17 @@ class con_segurosVer extends Controller
 {
     public function index(){
         
-        $verT3= modeloSeguros::where('anulart3', '0')->get();
+    $verT3= modeloSeguros::all();
 
-        return view('registros.regSeguros', compact('verT3'));
+    return view('registros.regSeguros', compact('verT3'));
 
     }
 
     public function selectId($id){
 
-        $seleccion = modeloSeguros::find($id);
-        $seleccion->revisadot3 = 0;
-        $seleccion->save();
+    $seleccion = modeloSeguros::find($id);
+    $seleccion->revisadot3 = 0;
+    $seleccion->save();
 
        return view('muestraReg.muestraSeguros',compact('seleccion'));
     }
@@ -29,10 +29,10 @@ class con_segurosVer extends Controller
 
     public function anularSegu($id)
     {
-        $seleccion= modeloSeguros::find($id);
-        $seleccion->anulart3 = 1;
+    
+    $seleccion= modeloSeguros::find($id);
         
-       if($seleccion->save()){
+    if($seleccion->delete()){
        	$bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 3;

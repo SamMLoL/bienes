@@ -9,7 +9,7 @@
                   <div class="modal-body">
 
                        <center>
-                       <a href="{{route('modelos.destroy', $seleccion->id)}}" type="button" class="btn btn-danger"  title="Aceptar"  id="BtnAnular"><b>Aceptar</b></a>
+                       <a href="{{url('anularModelo', $seleccion->id)}}" type="button" class="btn btn-danger"  title="Aceptar"  id="BtnAnular"><b>Aceptar</b></a>
 
                        <button id="btnCancelar" name="btnCancelar" type="button" class="btn btn-danger" data-toggle="tooltip" title="Cancelar" data-dismiss="modal"><b>Cancelar</b></button>
                        </center>

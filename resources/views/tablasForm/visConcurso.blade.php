@@ -8,7 +8,7 @@
             <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> CONCURSO / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE .</b></h5></div>
         </div>
       
-        <div class="row separar">
+        <div class="row">
             <div class="col-md-12">
                  <h6><b>A) APLICABLE SOLO PARA LAS FORMAS DE ADQUISICIÓN DE COMPRA POR CONCURSO ABIERTO O CONCURSO CERRADO.</b></h6>
             </div>

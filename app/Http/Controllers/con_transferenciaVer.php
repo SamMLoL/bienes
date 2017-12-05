@@ -32,6 +32,7 @@ class con_transferenciaVer extends Controller
     {
         $seleccion= modeloTransferencia::find($id);
         $seleccion->anulart27 = 1;
+        $seleccion->codOt2_7 = 'anulado';
         
        if($seleccion->save()){
 

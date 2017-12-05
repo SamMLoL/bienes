@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="panel">
                         <img src="{{URL::asset('/img/cintillo.jpg')}}" id="banner" alt="Cintillo Web">
-                      <div id="panelTitu" class="panel-heading text-center"><h5 id="h5Titu"><b>HISTÓRICO DE MARCAS</b> <i class="fa fa-file-text-o" aria-hidden="true"></i></h5></div>
+                      <div id="panelTitu" class="panel-heading text-center"><h5 id="h5Titu"><b>REGISTRO DE COMPONENTES</b> <i class="fa fa-file-text-o" aria-hidden="true"></i></h5></div>
                 </div>   
             </div>
 
@@ -33,23 +33,23 @@
             
         <hr>
         
-@include('eliminarReg.anularMarca')
+@include('eliminarReg.anularComponentes')
 
             <div class="row separar40 ">
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">
-                   	    <label>Denominación de la Marca</label>
-                    	    <br>{{$seleccion->codMarca}}
+                   	    <label>Código</label>
+                    	    <br>{{$seleccion->codigo}}
                    	</div>
 
                 	  <div class="col-md-4 form-group">
-                   	     <label>Código de la Marca</label>
-                       	  <br>{{$seleccion->denComar}}
+                   	     <label>Denominación del Componente</label>
+                       	  <br>{{$seleccion->denComponente}}
                     </div>
 
                     <div class="col-md-4 form-group">
-                        <label>Nombre del Fabricante</label>
-                          <br>{{$seleccion->nomFabri}}
+                        <label>Código del Bien mueble</label>
+                          <br>{{$seleccion->codBienMueble}}
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 form-group">
-                        <label>Fecha y Hora de Agregación</label>
+                        <label>Fecha y Hora del Registro</label>
                           <br>{{$seleccion->created_at->format('d/m/Y - h:i A')}}
                     </div>
                 </div>
@@ -67,7 +67,9 @@
                	<div class="col-md-12 separar form-group">
                      <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT5" title="AnularT5"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
-                     <a href="{{url('histoMarcas')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+                     <a href="{{url('regComponentes')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+
+                     <a href="{{url ('componentes/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a>
                         
                	</div>
             </div>

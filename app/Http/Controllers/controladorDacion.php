@@ -15,7 +15,7 @@ class controladorDacion extends Controller
         $infoSelect= sel_dacion::all();
 
         $arrayT23=array(
-            array("codOt2_3","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4",""),
+            array("codOt2_3","Código de Origen:","Introduzca número consecutivo. Ej: D-2; D-3;","12","col-md-pull-4",""),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
             array("nomCed","Nombre del Cedente:","Introduzca nombre del cedente","100","col-md-push-0",""),
             array("nomBen","Nombre del Beneficiario:","Introduzca nombre del beneficiario","100","",""),
@@ -51,7 +51,6 @@ class controladorDacion extends Controller
         $form_t23=new modeloDacion();
         $form_t23->codAdq = $request->codAdq;
         $form_t23->revisadot23 = 1;
-        $form_t23->anulart23 = 0;
 
          if($form_t23->codOt2_3 = $request->codOt2_3 == ''){
          $form_t23->codOt2_3 = '0'; 

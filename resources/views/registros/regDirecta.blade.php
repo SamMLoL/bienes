@@ -48,24 +48,24 @@
           
                 <!--SI EL revisadot1 ES 0 EL REGISTRO ES NUEVO SI NO , EL REGISTRO SE ABRIO-->
                 @foreach($verT21 as $reg21)
-                  @if($reg21->codOt2_1 == '0')
-                    <tr>
+                    @if($reg21->codOt2_1 == '0')
+                      <tr>
 
-                        @if($reg21->revisadot21 == '1')
-                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> B-1</b></a></td>
-                        @else 
-                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}"> B-1</a> </td>
-                        @endif
+                          @if($reg21->revisadot21 == '1')
+                          <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> B-1</b></a></td>
+                          @else 
+                          <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}"> B-1</a> </td>
+                          @endif
 
-                  @else   
+                    @else   
 
-                        @if($reg21->revisadot21 == '1')
-                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg21->codOt2_1}}</b></a></td>
-                        @else
-                        <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}">{{$reg21->codOt2_1}}</a></td>
-                        @endif
+                          @if($reg21->revisadot21 == '1')
+                          <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg21->codOt2_1}}</b></a></td>
+                          @else
+                          <td class="text-center"><a href="#" hidden>{{$reg21->id}}</a><a href="seleccionDirecta/{{$reg21->id}}">{{$reg21->codOt2_1}}</a></td>
+                          @endif
 
-                  @endif
+                    @endif
 
                         <td class="text-center">{{$reg21->selectDirecta->opcion}}</td>
                         
@@ -94,9 +94,9 @@
                         @else
                         <td class="text-center">{{$reg21->feNota}}</td>
                         @endif
-
+                  
                         <td class="text-center"><a href="seleccionDirecta/{{$reg21->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
-                  </tr>     
+                  </tr> 
                 @endforeach
            </tbody>
         </table>

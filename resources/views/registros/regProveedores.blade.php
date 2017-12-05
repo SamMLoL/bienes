@@ -70,7 +70,6 @@
                         <td class="text-center">{{$registro->otraDesc}}</td>
                         <td class="text-center"><a href="seleccionProveedores/{{$registro->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                        
-
                     </tr>
                 @endif
             @endforeach

@@ -12,7 +12,7 @@ class controladorAddMarca extends Controller
     public function index(){
 
     	$array= array(
-            array("denComar","Denominación de la Marca:","Introduzca el nombre de la marca ","100"),
+        array("denComar","Denominación de la Marca:","Introduzca el nombre de la marca ","100"),
     		array("codMarca","Código de la Marca:","Introduzca el código de la marca ","10"),
     		array("nomFabri","Nombre del Fabricante:","Introduzca el nombre del fabricante","100"),
     		);

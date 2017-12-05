@@ -3,13 +3,14 @@
               <div class="modal-content">
                     <div class="modal-header">
                         
-                      <center><h4 class="modal-title"><b>¿</b>Está seguro que desea eliminar ésta marca : <b style="color:red;">  N ° #{{$seleccion->id}} </b> <b>?</b></h4></center>
-
+                      <center><h4 class="modal-title"><b>¿</b>Está seguro que desea eliminar ésta marca y todos los modelos asociados a la misma  ?</h4></center>
+                      
+                       <center><h4> <b>(  N° de Registro <b style="color:red;"># {{$seleccion->id}}</b> )</h4></center>
                     </div>
                   <div class="modal-body">
 
                        <center>
-                       <a href="{{route('selMarca.destroy', $seleccion->id)}}" type="button" class="btn btn-danger"  title="Aceptar"  id="BtnAnular"><b>Aceptar</b></a>
+                       <a href="{{url('anularMarca/'.$seleccion->id)}}" type="button" class="btn btn-danger"  title="Aceptar"  id="BtnAnular"><b>Aceptar</b></a>
 
                        <button id="btnCancelar" name="btnCancelar" type="button" class="btn btn-danger" data-toggle="tooltip" title="Cancelar" data-dismiss="modal"><b>Cancelar</b></button>
                        </center>

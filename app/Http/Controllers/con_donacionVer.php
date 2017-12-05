@@ -10,7 +10,7 @@ class con_donacionVer extends Controller
 {
      public function index(){
       	
-      	$verT24= modeloDonacion::where('anulart24', '0')->get();
+      	$verT24= modeloDonacion::all();
 
       	return view('registros.regDonacion', compact('verT24'));
 
@@ -25,14 +25,11 @@ class con_donacionVer extends Controller
        return view('muestraReg.muestraDonacion',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT24 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
-
     public function anularDonac($id)
     {
         $seleccion= modeloDonacion::find($id);
-        $seleccion->anulart24 = 1;
         
-       if($seleccion->save()){
+       if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

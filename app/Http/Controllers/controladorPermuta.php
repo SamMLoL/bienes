@@ -14,7 +14,7 @@ class controladorPermuta extends Controller
         $infoSelect = sel_permuta::all();
 
         $arrayT26 = array(
-            array("codOt2_6","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4",""),
+            array("codOt2_6","Código de Origen:","Introduzca número consecutivo. Ej: G-2; G-3;","12","col-md-pull-4",""),
             array("nomCope","Nombre del Copermutante:","Introduzca nombre del copermutante","100","col-md-push-0",""),
             array("nomBen","Nombre del Beneficiario:","Introduzca nombre del beneficiario","100","",""),
             array("nomLic","Nombre de la Licitación:","Introduzca nombre de la licitación","255","",""),
@@ -46,17 +46,15 @@ class controladorPermuta extends Controller
 
     public function store(Request $request)
     {
+
+      $duplicado = modeloPermuta::where('codOt2_6', $request->codOt2_6)->get();
+
+        if($duplicado == '[]'){
+
         $form_t26= new modeloPermuta();
+        $form_t26->codOt2_6 = $request->codOt2_6;
         $form_t26->codAdq = $request->codAdq;
         $form_t26->revisadot26 = 1;
-        $form_t26->anulart26 = 0;
-
-        if($form_t26->codOt2_6 = $request->codOt2_6 == ''){
-         $form_t26->codOt2_6 = '0'; 
-
-           }else{
-            $form_t26->codOt2_6 = $request->codOt2_6;
-           }  
 
         if($form_t26->nomCope =$request->nomCope == ''){
           $form_t26->nomCope = '1';
@@ -132,9 +130,11 @@ class controladorPermuta extends Controller
           $bit->referencia = 'Permuta';
           $bit->save();
 
+          }
+
             return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
+          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_6.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
         }
     }
 
@@ -153,12 +153,6 @@ class controladorPermuta extends Controller
         $form_t26= modeloPermuta::find($id);
         $form_t26->codAdq = $request->codAdq;
 
-        if($form_t26->codOt2_6 = $request->codOt2_6 == ''){
-         $form_t26->codOt2_6 = '0'; 
-
-           }else{
-            $form_t26->codOt2_6 = $request->codOt2_6;
-           }  
 
         if($form_t26->nomCope =$request->nomCope == ''){
           $form_t26->nomCope = '1';

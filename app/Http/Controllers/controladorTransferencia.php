@@ -15,7 +15,7 @@ class controladorTransferencia extends Controller
         $infoSelect = sel_transferencia::all();
 
         $arrayT27 = array(
-            array("codOt2_7","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4",""),
+            array("codOt2_7","Código de Origen:","Introduzca número consecutivo. Ej: H-2; H-3","12","col-md-pull-4",""),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
             array("nomQtra","Nombre de Quien Transfiere:","Introduzca nombre del quien transfiere","120","col-md-push-0",""),
             array("nomBen","Nombre del Beneficiario:","Introduzca nombre del beneficiario (quien recibe)","120","",""),
@@ -43,17 +43,17 @@ class controladorTransferencia extends Controller
    
     public function store(Request $request)
     {
+
+      $duplicado = modeloTransferencia::where('codOt2_7', $request->codOt2_7)->get();
+
+        if($duplicado == '[]'){
+
         $form_t27= new modeloTransferencia();
+        $form_t27->codOt2_7 = $request->codOt2_7;
         $form_t27->codAdq = $request->codAdq;
         $form_t27->revisadot27 = 1;
         $form_t27->anulart27 = 0;
 
-        if($form_t27->codOt2_7 = $request->codOt2_7 == ''){
-         $form_t27->codOt2_7 = '0'; 
-
-           }else{
-            $form_t27->codOt2_7 = $request->codOt2_7;
-           }  
 
         if($form_t27->nomQtra =$request->nomQtra == ''){
           $form_t27->nomQtra = '1';
@@ -118,9 +118,10 @@ class controladorTransferencia extends Controller
 	        $bit->referencia = 'Transferencia';
 	        $bit->save();
 
-            return back()->with('msj', 'Datos Registrados Exitosamente');
+        }
+          return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
+          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_7.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
         }
     }
     
@@ -138,13 +139,6 @@ class controladorTransferencia extends Controller
     {
         $form_t27= modeloTransferencia::find($id);
         $form_t27->codAdq = $request->codAdq;
-
-        if($form_t27->codOt2_7 = $request->codOt2_7 == ''){
-         $form_t27->codOt2_7 = '0'; 
-
-           }else{
-            $form_t27->codOt2_7 = $request->codOt2_7;
-           }  
 
         if($form_t27->nomQtra =$request->nomQtra == ''){
           $form_t27->nomQtra = '1';

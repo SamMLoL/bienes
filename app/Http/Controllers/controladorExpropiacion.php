@@ -14,7 +14,7 @@ class controladorExpropiacion extends Controller
       $infoSelect = sel_expropiacion::all();
 
       $arrayT25 = array(
-        array("codOt2_5","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4",""),
+        array("codOt2_5","Código de Origen:","Introduzca número consecutivo. Ej: F-2; F-3;","12","col-md-pull-4",""),
         array("nomPan","Nombre del Propietario Anterior:","Introduzca nombre del propietario anterior","100","col-md-push-0",""),
         array("nomBen","Nombre del Beneficiario:","Introduzca nombre del beneficiario","100","",""),
         array("nomAut","Nombre de la Autoridad:","Introduzca nombre de la autoridad","100","",""),
@@ -43,17 +43,15 @@ class controladorExpropiacion extends Controller
 
     public function store(Request $request)
     {
+      $duplicado = modeloExpropiacion::where('codOt2_5', $request->codOt2_5)->get();
+
+        if($duplicado == '[]'){
+
         $form_t25=new modeloExpropiacion();
+        $form_t25->codOt2_5 = $request->codOt2_5;
         $form_t25->codAdq = $request->codAdq;
         $form_t25->revisadot25 = 1;
-        $form_t25->anulart25 = 0;
-
-        if($form_t25->codOt2_5 = $request->codOt2_5 == ''){
-         $form_t25->codOt2_5 = '0'; 
-
-           }else{
-            $form_t25->codOt2_5 = $request->codOt2_5;
-           }  
+        
 
         if($form_t25->nomPan =$request->nomPan == ''){
           $form_t25->nomPan = '1';
@@ -117,9 +115,11 @@ class controladorExpropiacion extends Controller
           $bit->referencia = 'Expropiación';
           $bit->save();
 
-            return back()->with('msj', 'Datos Registrados Exitosamente');
+          }
+
+          return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
+          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_5.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
         }
     }
 
@@ -138,12 +138,6 @@ class controladorExpropiacion extends Controller
         $form_t25= modeloExpropiacion::find($id);
         $form_t25->codAdq = $request->codAdq;
 
-        if($form_t25->codOt2_5 = $request->codOt2_5 == ''){
-         $form_t25->codOt2_5 = '0'; 
-
-           }else{
-            $form_t25->codOt2_5 = $request->codOt2_5;
-           }  
 
         if($form_t25->nomPan =$request->nomPan == ''){
           $form_t25->nomPan = '1';

@@ -46,7 +46,7 @@ $(document).ready(function() {
            moneda: { required:true},
            poseRes: { required:true},
            tipoCobe: { required:true},
-           montoAse: { required:true},
+           
         },
         messages: {
             codRegT3 : "* Campo obligatorio, ¡Por favor, introduzca el código del registro!",
@@ -55,7 +55,7 @@ $(document).ready(function() {
             moneda: "* Campo obligatorio,¡ Por favor, seleccione la moneda!",
             poseRes : "* Campo obligatorio, ¡Por favor, seleccione si posee responsabilidad civil!",
             tipoCobe : "* Campo obligatorio, ¡ Por favor, seleccione el tipo de cobertura!",
-            montoAse : "* Campo obligatorio, ¡ Por favor, introduzca el monto asegurado!",
+            
         
 
         },

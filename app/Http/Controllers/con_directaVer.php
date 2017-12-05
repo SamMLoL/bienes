@@ -10,7 +10,7 @@ class con_directaVer extends Controller
 {
     public function index(){
       	
-      	$verT21= modeloDirecta::where('anulart21', '0')->get();
+      	$verT21= modeloDirecta::all();
 
       	return view('registros.regDirecta', compact('verT21'));
 
@@ -30,9 +30,9 @@ class con_directaVer extends Controller
     public function anularDirec($id)
     {
         $seleccion= modeloDirecta::find($id);
-        $seleccion->anulart21 = 1;
         
-       if($seleccion->save()){
+        
+       if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

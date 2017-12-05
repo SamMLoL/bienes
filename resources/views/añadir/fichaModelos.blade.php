@@ -34,9 +34,6 @@
             
         <hr>
 
-        <form form="role" method="DELETE" action="{{route('modelos.destroy', $seleccion->id)}}">
-            {{ csrf_field() }}
-
             <div class="row separar40 ">
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">

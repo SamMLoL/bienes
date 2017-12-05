@@ -3,11 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class modeloDirecta extends Model
 {
+
+use SoftDeletes;
+
      protected $table ='directa';
-     protected $fillable = ['codOt2_1','codAdq','codProvee','numCom','numNota','numFac','feCom','feNota','feFac','revisadot21','anulart21'];
+
+	 protected $dates = ['deleted_at'];
+    
+     protected $fillable = ['codOt2_1','codAdq','codProvee','numCom','numNota','numFac','feCom','feNota','feFac','revisadot21'];
 
 
     /* FUNCION DE SELECT*/

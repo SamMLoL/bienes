@@ -27,7 +27,7 @@
           </div>
 
 
-      <form role="form" id="formValidaT5" name="formValidaT5" method="POST" action="{{url('selMarca')}}">
+      <form role="form" id="formValidaT5" name="formValidaT5" method="POST" action="{{url('marcas')}}">
       {{ csrf_field() }}
   
     

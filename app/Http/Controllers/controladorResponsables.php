@@ -48,7 +48,6 @@ class controladorResponsables extends Controller
         $form_t4->tipoResp = $request->tipoResp;
         $form_t4->depAdmRes = $request->depAdmRes;
         $form_t4->revisadot4 = 1;
-        $form_t4->anulart4 = 0;
 
      
         $form_t4->cedula = $request->cedula;

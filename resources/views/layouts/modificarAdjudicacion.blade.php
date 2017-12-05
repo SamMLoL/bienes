@@ -54,11 +54,7 @@
 				<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="codOt2_8">Código de Origen</label>
-						@if($form_t28->codOt2_8 == '0')
-						 <input type="text" class="form-control" name="codOt2_8" id="codOt2_8" value="I-1">
-						@else
-						 <input type="text" class="form-control" name="codOt2_8" id="codOt2_8" value="{{$form_t28->codOt2_8}}">
-						@endif
+						 <input type="text" class="form-control" name="codOt2_8" id="codOt2_8" value="{{$form_t28->codOt2_8}}" maxlength="12" disabled>
 					</div>
 				
 		    
@@ -76,9 +72,9 @@
 					<div class="col-md-4">
 						<label for="nomProan">Nombre del Propietario Anterior</label>
 						@if($form_t28->nomProan == '1')
-						 <input type="text" class="form-control" name="nomProan" id="nomProan" value="xxx">
+						 <input type="text" class="form-control" name="nomProan" id="nomProan" value="xxx" maxlength="100">
 						@else
-						 <input type="text" class="form-control" name="nomProan" id="nomProan" value="{{$form_t28->nomProan}}">
+						 <input type="text" class="form-control" name="nomProan" id="nomProan" value="{{$form_t28->nomProan}}" maxlength="100">
 						@endif
 					</div>
 				</div>
@@ -89,27 +85,27 @@
 					<div class="col-md-4">
 						<label for="nomBen">Nombre del Beneficiario</label>
 						@if($form_t28->nomBen == '1')
-						 <input type="text" class="form-control" name="nomBen" id="nomBen" value="noaplica">
+						 <input type="text" class="form-control" name="nomBen" id="nomBen" value="noaplica" maxlength="100">
 						@else
-						 <input type="text" class="form-control" name="nomBen" id="nomBen" value="{{$form_t28->nomBen}}">
+						 <input type="text" class="form-control" name="nomBen" id="nomBen" value="{{$form_t28->nomBen}}" maxlength="100">
 						@endif
 					</div>
 		
 				    <div class="col-md-4">
-						<label for="nomAuto">Número de la Autorización</label>
+						<label for="nomAuto">Nombre de la Autoridad</label>
 						@if($form_t28->nomAuto == '1')
-						 <input type="text" class="form-control" name="nomAuto" id="nomAuto" value="xxx">
+						 <input type="text" class="form-control" name="nomAuto" id="nomAuto" value="xxx" maxlength="100">
 						@else
-						 <input type="text" class="form-control" name="nomAuto" id="nomAuto" value="{{$form_t28->nomAuto}}">
+						 <input type="text" class="form-control" name="nomAuto" id="nomAuto" value="{{$form_t28->nomAuto}}" maxlength="100">
 						@endif
 				    </div>
 
 				    <div class="col-md-4">
-						<label for="nomRegn">Número Sentencia o Acto</label>
+						<label for="nomRegn">Número de Sentencia o Acto Administrativo</label>
 						@if($form_t28->numSeAdm == '0')
-						 <input type="text" class="form-control" name="numSeAdm" id="numSeAdm" value="xxx">
+						 <input type="text" class="form-control" name="numSeAdm" id="numSeAdm" value="xxx" maxlength="30">
 						@else
-						 <input type="text" class="form-control" name="numSeAdm" id="numSeAdm" value="{{$form_t28->numSeAdm}}">
+						 <input type="text" class="form-control" name="numSeAdm" id="numSeAdm" value="{{$form_t28->numSeAdm}}" maxlength="30">
 						@endif
 				    </div>
 			    </div>
@@ -120,9 +116,9 @@
 				    <div class="col-md-4">
 						<label for="nomRegn">Nombre del Registro o Notaría</label>
 						@if($form_t28->nomRegn == '1')
-					    <input type="text" class="form-control" name="nomRegn" id="nomRegn" value="xxx">
+					    <input type="text" class="form-control" name="nomRegn" id="nomRegn" value="xxx" maxlength="100">
 						@else
-						<input type="text" class="form-control" name="nomRegn" id="nomRegn" value="{{$form_t28->nomRegn}}">
+						<input type="text" class="form-control" name="nomRegn" id="nomRegn" value="{{$form_t28->nomRegn}}" maxlength="100">
 						@endif
 					</div>	
 
@@ -149,15 +145,6 @@
 		
 			<div class="row separar40">	  
 				<div class="col-md-12">
-				    <div class="col-md-4">
-						<label for="feSeAdm">Fecha de Autorización</label>
-						@if($form_t28->feSeAdm == '1111-11-11')
-						 <input type="text" class="form-control calendario" name="feSeAdm" id="feSeAdm" value="11111111">
-						@else
-						 <input type="text" class="form-control calendario" name="feSeAdm" id="feSeAdm" value="{{$form_t28->feSeAdm}}">
-						@endif
-				    </div>
-			  
 					 <div class="col-md-4">
 						  <label for="feReg">Fecha de Registro</label>
 						@if($form_t28->feReg == '1111-11-11')

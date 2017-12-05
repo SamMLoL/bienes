@@ -3,7 +3,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         
-                        <center><h4 class="modal-title"><b>¿</b>Está seguro que desea eliminar este registro : <b style="color:red;">  N ° #{{$seleccion->id}} </b> <b>?</b></h4></center>
+                      <center><h4 class="modal-title"><b>¿</b>Está seguro que desea eliminar este registro de proveedor y todas las compras directas asociadas a la misma  ?</h4></center>
+                      
+                      <center><h4> <b>(  N° de Registro <b style="color:red;"># {{$seleccion->id}}</b> )</h4></center>
 
                     </div>
                     <div class="modal-body">

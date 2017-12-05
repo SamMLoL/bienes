@@ -11,7 +11,7 @@ class con_responsablesVer extends Controller
 {
     public function index(){
         
-        $verT4= modeloResponsables::where('anulart4', '0')->get();
+        $verT4= modeloResponsables::all();
 
         return view('registros.regResponsables', compact('verT4'));
 
@@ -19,21 +19,20 @@ class con_responsablesVer extends Controller
 
     public function selectId($id){
 
-        $seleccion = modeloResponsables::find($id);
-        $seleccion->revisadot4 = 0;
-        $seleccion->save();
+    $seleccion = modeloResponsables::find($id);
+    $seleccion->revisadot4 = 0;
+    $seleccion->save();
 
        return view('muestraReg.muestraResponsables',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT3 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
-
+   
     public function anularRespon($id)
     {
-        $seleccion= modeloResponsables::find($id);
-        $seleccion->anulart4 = 1;
+
+    $seleccion= modeloResponsables::find($id);
         
-       if($seleccion->save()){
+       if($seleccion->delete()){
        	$bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 3;

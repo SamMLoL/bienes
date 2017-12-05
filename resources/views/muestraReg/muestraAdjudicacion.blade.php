@@ -92,7 +92,7 @@
                   </div> 
                   @endif
                  
-                  @if($seleccion->numSeAdm == '1111-11-11')
+                  @if($seleccion->numSeAdm == '0')
                   <div class="col-md-4 form-group">
                       <label>Número de Sentencia o Acto Administrativo</label>
                         <br>xxx
@@ -108,7 +108,7 @@
             
             <div class="row separar40">
                 <div class="col-md-12">
-                   @if($seleccion->nomRegn == '0')
+                   @if($seleccion->nomRegn == '1')
                     <div class="col-md-4 form-group">
                         <label>Nombre del Registro o Notaría</label>
                           <br>xxx

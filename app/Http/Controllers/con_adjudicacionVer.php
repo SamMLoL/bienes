@@ -10,7 +10,7 @@ class con_adjudicacionVer extends Controller
 {
     public function index(){
         
-        $verT28= modeloAdjudicacion::where('anulart28', '0')->get();
+        $verT28= modeloAdjudicacion::all();
 
         return view('registros.regAdjudicacion', compact('verT28'));
 
@@ -25,14 +25,11 @@ class con_adjudicacionVer extends Controller
        return view('muestraReg.muestraAdjudicacion',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT28 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
-
     public function anularAdjud($id)
     {
         $seleccion= modeloAdjudicacion::find($id);
-        $seleccion->anulart28 = 1;
         
-       if($seleccion->save()){
+       if($seleccion->delete()){
        	$bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 3;

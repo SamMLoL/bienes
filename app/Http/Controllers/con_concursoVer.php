@@ -10,7 +10,7 @@ class con_concursoVer extends Controller
 {
      public function index(){
      
-     $verT2 = modeloConcurso::where('anulart2','0')->get();
+     $verT2 = modeloConcurso::all();
      return view('registros.regConcurso', compact('verT2'));
     }
 
@@ -22,14 +22,12 @@ class con_concursoVer extends Controller
        return view('muestraReg.muestraConcurso',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularConcur es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
-
      public function anularConcur($id)
     {
         $seleccion= modeloConcurso::find($id);
-        $seleccion->anulart2 = 1;
+       
         
-        if($seleccion->save()){
+        if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

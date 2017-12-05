@@ -19,7 +19,7 @@ class controladorDirecta extends Controller
         $infoSelect2=modeloProveedores::all();
 
         $arrayT21=array(
-            array("codOt2_1","Código de Origen:","Introduzca el código de origen","12","col-md-pull-8"),
+            array("codOt2_1","Código de Origen:","Introduzca número consecutivo. Ej: B-2; B-3;","12","col-md-pull-8"),
             array("numCom","Número de la Orden de Compra:","Introduzca el número de Orden de compra","30",""),
             array("numNota","Número Nota de Entrega:","Introduzca el Número de la nota de entrega","30",""),
             array("numFac","Número de la Factura:","Introduzca el Número de la factura","30",""),
@@ -51,7 +51,6 @@ class controladorDirecta extends Controller
     {
     
     $duplicado = modeloDirecta::where('codOt2_1', $request->codOt2_1)->get();
-      $duplicado2 = modeloDirecta::where('numCom', $request->numCom)->get();
 
         if($duplicado == '[]'){        
                
@@ -61,7 +60,6 @@ class controladorDirecta extends Controller
         $form_t21->codAdq = $request->codAdq;
         $form_t21->codProvee = $request->codProvee;
         $form_t21->revisadot21 = 1;
-        $form_t21->anulart21 = 0;
         
         if($form_t21->numCom = $request->numCom == ''){
             $form_t21->numCom = '0';

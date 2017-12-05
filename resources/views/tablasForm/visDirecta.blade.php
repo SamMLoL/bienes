@@ -70,9 +70,15 @@
                 <label for="{{$selectT22[$posicion][0]}}">{{$selectT22[$posicion][1]}}</label>
                    <select name="{{$selectT22[$posicion][0]}}" id="{{$selectT22[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
-
+            
                    @foreach($infoSelect2 as $traeSelect)
+                     
+                    @if($traeSelect->codProvee == 'anulado')
+                    
+                    @else
                       <option value="{{$traeSelect->id}}">{{$traeSelect->codProvee}}</option> 
+                    @endif
+
                    @endforeach
                    </select>
              </div>

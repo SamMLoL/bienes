@@ -25,7 +25,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-      $dato = array('N=Nacional', 'I=Internacional');
+      $dato = array('N', 'I');
 
       foreach ($dato as $v) {
         DB::table('sel_proveedores')->insert([
@@ -83,7 +83,6 @@ class migracionGeneral extends Seeder
 
           ]);   
       }
-        
 
       $dato = array('Permuta');
 
@@ -123,7 +122,7 @@ class migracionGeneral extends Seeder
       }
         
 
-      $dato = array("I=Individual","C=Colectiva");
+      $dato = array("I","C");
 
       foreach ($dato as $v) {
         DB::table('sel_seguros1')->insert([
@@ -141,7 +140,7 @@ class migracionGeneral extends Seeder
        		]); 	
     	}
        	
-        $dato = array("Sí","No");
+        $dato = array("S","N");
 
       foreach ($dato as $v) {
         DB::table('sel_seguros3')->insert([

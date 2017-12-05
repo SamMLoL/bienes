@@ -10,29 +10,26 @@ class con_confiscacionVer extends Controller
 {
     public function index(){
       	
-      	$verT22= modeloConfiscacion::where('anulart22', '0')->get();
+      $verT22= modeloConfiscacion::all();
 
-      	return view('registros.regConfiscacion', compact('verT22'));
+      return view('registros.regConfiscacion', compact('verT22'));
 
     }
 
     public function selectId($id){
 
-      	$seleccion = modeloConfiscacion::find($id);
-        $seleccion->revisadot22 = 0;
-        $seleccion->save();
+      $seleccion = modeloConfiscacion::find($id);
+      $seleccion->revisadot22 = 0;
+      $seleccion->save();
 
        return view('muestraReg.muestraConfiscacion',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT21 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
-
     public function anularConfis($id)
     {
-        $seleccion= modeloConfiscacion::find($id);
-        $seleccion->anulart22 = 1;
+      $seleccion= modeloConfiscacion::find($id);
         
-       if($seleccion->save()){
+        if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

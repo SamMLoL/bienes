@@ -10,7 +10,7 @@ class con_permutaVer extends Controller
 {
      public function index(){
         
-        $verT26= modeloPermuta::where('anulart26', '0')->get();
+        $verT26= modeloPermuta::all();
 
         return view('registros.regPermuta', compact('verT26'));
 
@@ -25,14 +25,12 @@ class con_permutaVer extends Controller
        return view('muestraReg.muestraPermuta',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT26 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
 
     public function anularPermu($id)
     {
         $seleccion= modeloPermuta::find($id);
-        $seleccion->anulart26 = 1;
-        
-       if($seleccion->save()){
+
+       if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

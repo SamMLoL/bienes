@@ -3,10 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class modeloConcurso extends Model
 {
+use SoftDeletes;
+
+	
       protected $table ='concurso';
+
+      protected $dates = ['deleted_at'];
+
       protected $fillable = ['codOrigen','codAdquisicion','nomConcurso','numConcurso','feConcurso','codProveedor','numContrato','feContrato','numNotaEntre','feNotaEntre','numFactura','feFactura','revisadot2','anulart2' ];
   
 

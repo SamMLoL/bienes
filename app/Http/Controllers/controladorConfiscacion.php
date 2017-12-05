@@ -16,7 +16,7 @@ class controladorConfiscacion extends Controller
         $infoSelect= sel_confiscacion::all();
 
         $arrayT22=array(
-            array("codOt2_2","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4",""),
+            array("codOt2_2","Código de Origen:","Introduzca número consecutivo. Ej: C-2; C-3;","12","col-md-pull-4",""),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
             array("nomPa","Nombre del Propietario Anterior:","Introduzca nombre del propietario","100","col-md-push-0",""),
             array("nomBen","Nombre del Beneficiario:","Introduzca nombre del propietario","100","",""),
@@ -52,7 +52,6 @@ class controladorConfiscacion extends Controller
         $form_t22=new modeloConfiscacion();
         $form_t22->codAdq = $request->codAdq;
         $form_t22->revisadot22 = 1;
-        $form_t22->anulart22 = 0;
 
          if($form_t22->codOt2_2 = $request->codOt2_2 == ''){
          $form_t22->codOt2_2 = '0'; 

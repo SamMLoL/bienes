@@ -60,7 +60,7 @@
 
           <div class="row separar40">
               <div class="col-md-12">
-                  @if($seleccion->numPoli == '0 ')
+                  @if($seleccion->numPoli == '0')
                   <div class="col-md-4 form-group">
                       <label>Número de Póliza</label>
                         <br>xxx
@@ -96,7 +96,7 @@
 
                     <div class="col-md-4 form-group">
                         <label>Moneda</label>
-                            <br>{{$seleccion->selectSeguros2->opcion}}
+                            <br>{{$seleccion->moneda}}
                     </div>
 
                    @if($seleccion->espMone == '1')

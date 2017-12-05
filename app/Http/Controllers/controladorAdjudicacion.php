@@ -16,7 +16,7 @@ class controladorAdjudicacion extends Controller
      	$infoSelect=sel_adjudicacion::all();
 
         $arrayT28 = array(
-            array("codOt2_8","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4"),
+            array("codOt2_8","Código de Origen:","Introduzca número consecutivo. Ej: I-2; I-3;","12","col-md-pull-4"),
             array("nomProan","Nombre del Propietario Anterior:","Introduzca nombre del propietario anterior","100","col-md-push-0"),
             array("nomBen","Nombre del Beneficiario:","Introduzca nombre del beneficiario","100",""),
             array("nomAuto","Nombre de la Autoridad:","Introduzca nombre de la autoridad","100",""),
@@ -46,17 +46,14 @@ class controladorAdjudicacion extends Controller
     
     public function store(Request $request)
     {
+      $duplicado = modeloAdjudicacion::where('codOt2_8', $request->codOt2_8)->get();
+
+        if($duplicado == '[]'){
+
         $form_t28= new modeloAdjudicacion();
+        $form_t28->codOt2_8 = $request->codOt2_8;
         $form_t28->codAdq = $request->codAdq;
         $form_t28->revisadot28 = 1;
-        $form_t28->anulart28 = 0;
-
-        if($form_t28->codOt2_8 = $request->codOt2_8 == ''){
-         $form_t28->codOt2_8 = '0'; 
-
-           }else{
-            $form_t28->codOt2_8 = $request->codOt2_8;
-           }  
 
         if($form_t28->nomProan =$request->nomProan == ''){
           $form_t28->nomProan = '1';
@@ -119,9 +116,12 @@ class controladorAdjudicacion extends Controller
             $bit->accion  = 1;
             $bit->referencia = 'Adjudicación';
             $bit->save();
-            return back()->with('msj', 'Datos Registrados Exitosamente');
+
+          }
+
+          return back()->with('msj', 'Datos Registrados Exitosamente');
              }else {
-            return back()->with('errormsj', 'Los datos no se guardaron');
+          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_8.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
         }
     }
 
@@ -140,14 +140,6 @@ class controladorAdjudicacion extends Controller
         $form_t28=modeloAdjudicacion::find($id);
         $form_t28->codAdq = $request->codAdq;
        
-
-        if($form_t28->codOt2_8 = $request->codOt2_8 == ''){
-         $form_t28->codOt2_8 = '0'; 
-
-           }else{
-            $form_t28->codOt2_8 = $request->codOt2_8;
-           }  
-
         if($form_t28->nomProan =$request->nomProan == ''){
           $form_t28->nomProan = '1';
           }else{

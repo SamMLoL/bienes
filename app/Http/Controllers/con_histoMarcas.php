@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloMarcas;
 use App\modeloModelos;
+use App\modeloBitacora;
 
 
 
@@ -14,7 +15,6 @@ class con_histoMarcas extends Controller
     {
     	$a= modeloMarcas::all();
     	
-
         return view('añadir.historicoMarcas', compact('a'));
     }
 
@@ -26,21 +26,30 @@ class con_histoMarcas extends Controller
        return view('añadir.fichaMarca',compact('seleccion'));
     }
 
-    public function destroy($id)
+    public function anularMarca($id)
     {
-      
+      $seleccion = modeloMarcas::find($id);
 
-      $marca = modeloMarcas::find($id);
-      $modelo = modeloModelos::where('codMarca', $id)->get();
-      
-      modeloMarcas::destroy($id);
+      $seleccion2 = modeloModelos::where('codMarca', $id)->get();
 
-      if($modelo != '[]'){
-      modeloModelos::destroy($modelo[0]->id);
-      } 
-      
-    
-      return redirect('histoMarcas')->with('msj', 'Registro Eliminado Exitosamente');
-    }
+      foreach($seleccion2 as $modelos)
+      {
+        $modelos->delete();
+      }
+
+      if($seleccion->delete()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 3;
+          $bit->referencia = 'Marcas y Modelos Asociados';
+          $bit->save();
+
+          return redirect('histoMarcas')->with('msj', 'Registro Eliminado Exitosamente');
+         } else {
+         return redirect()->with('errormsj', 'Los Datos no se Eliminaron');
+       }
+
+    } 
 
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloModelos;
-use App\sel_marca;
 use App\modeloBitacora;
 
 class con_histoModelos extends Controller
@@ -26,12 +25,23 @@ class con_histoModelos extends Controller
        return view('añadir.fichaModelos', compact('seleccion'));
     }
 
-    public function destroy($id)
+    public function anularModelo($id)
     {
       
-      modeloModelos::destroy($id);
+      $seleccion = modeloModelos::find($id);
 
-      return redirect('histoModelos')->with('msj', 'Registro Eliminado Exitosamente');
+      if($seleccion->delete()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 3;
+          $bit->referencia = 'Modelos';
+          $bit->save();
+
+          return redirect('histoModelos')->with('msj', 'Registro Eliminado Exitosamente');
+         } else {
+         return redirect()->with('errormsj', 'Los Datos no se Eliminaron');
+       }
 
     }
 

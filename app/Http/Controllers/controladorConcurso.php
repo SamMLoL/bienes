@@ -16,7 +16,7 @@ class controladorConcurso extends Controller
 
         # for/id/name label /placeholder 
         $arrayt2=array(
-            array("codOrigen","Código de Origen:","Introduzca el código de origen","12","col-md-pull-4"),
+            array("codOrigen","Código de Origen:","Introduzca número consecutivo. Ej: A-2; A-3;","12","col-md-pull-4"),
             #array("codAdquisicion","CÓDIGO DE LA FORMA DE ADQUISICIÓN:","Introduzca el código de adquisición"),
             array("nomConcurso","Nombre del Concurso:","Introduzca nombre del concurso","255","col-md-push-0"),
             array("numConcurso","Número del Concurso:","Introduzca el N° del concurso","30",""),
@@ -56,7 +56,6 @@ class controladorConcurso extends Controller
         $form_t2->codOrigen = $request->codOrigen; 
         $form_t2->codAdquisicion = $request->codAdquisicion; 
         $form_t2->revisadot2 = 1;
-        $form_t2->anulart2 = 0;
 
 #Si el campo en el fomulario se deja en blanco cumple la condición
     

@@ -11,7 +11,7 @@ class con_dacionVer extends Controller
 {
       public function index(){
       	
-      	$verT23= modeloDacion::where('anulart23', '0')->get();
+      	$verT23= modeloDacion::all();
 
       	return view('registros.regDacion', compact('verT23'));
 
@@ -26,14 +26,12 @@ class con_dacionVer extends Controller
        return view('muestraReg.muestraDacion',compact('seleccion'));
     }
 
-     /*FUNCIÓN anularT23 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
-
     public function anularDacion($id)
     {
         $seleccion= modeloDacion::find($id);
-        $seleccion->anulart23 = 1;
         
-       if($seleccion->save()){
+        
+       if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

@@ -23,7 +23,7 @@ class CreateAnexos extends Migration
             $table->string('rifProvee', 20)->nullable();
             $table->string('otraDesc', 200)->nullable();
             $table->integer('revisadot1')->nullable();
-            $table->integer('anulart1')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -42,7 +42,7 @@ class CreateAnexos extends Migration
             $table->string('numFactura', 30)->nullable();
             $table->date('feFactura', 10)->nullable();
             $table->integer('revisadot2')->nullable();
-            $table->integer('anulart2')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -59,7 +59,7 @@ class CreateAnexos extends Migration
             $table->date('feNota', 10)->nullable();
             $table->date('feFac', 30)->nullable();
             $table->integer('revisadot21')->nullable();
-            $table->integer('anulart21')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -77,7 +77,7 @@ class CreateAnexos extends Migration
             $table->date('feSenc', 10)->nullable();
             $table->date('feReg', 8)->nullable();
             $table->integer('revisadot22')->nullable();
-            $table->integer('anulart22')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -94,7 +94,7 @@ class CreateAnexos extends Migration
             $table->integer('folio')->nullable();
             $table->date('feReg', 10)->nullable();
             $table->integer('revisadot23')->nullable();
-            $table->integer('anulart23')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -111,7 +111,7 @@ class CreateAnexos extends Migration
             $table->integer('folio')->nullable();
             $table->date('feReg', 10)->nullable();
             $table->integer('revisadot24')->nullable();
-            $table->integer('anulart24')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -129,7 +129,7 @@ class CreateAnexos extends Migration
             $table->integer('folio')->nullable();
             $table->date('feReg', 10)->nullable();
             $table->integer('revisadot25')->nullable();
-            $table->integer('anulart25')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -149,7 +149,7 @@ class CreateAnexos extends Migration
             $table->integer('folio');
             $table->date('feReg', 10);
             $table->integer('revisadot26')->nullable();
-            $table->integer('anulart26')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -166,7 +166,7 @@ class CreateAnexos extends Migration
             $table->integer('folio')->nullable();
             $table->date('feReg', 10)->nullable();
             $table->integer('revisadot27')->nullable();
-            $table->integer('anulart27')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -184,7 +184,7 @@ class CreateAnexos extends Migration
             $table->integer('folio')->nullable();
             $table->date('feReg', 10)->nullable();
             $table->integer('revisadot28')->nullable();
-            $table->integer('anulart28')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -196,7 +196,8 @@ class CreateAnexos extends Migration
             $table->string('numPoli', 30)->nullable();
             $table->string('tipPoli', 1)->nullable();
             $table->string('montoAse',26)->nullable();
-            $table->integer('moneda')->nullable();
+            $table->integer('moneda')->unsigned();
+            $table->foreign('moneda')->references('id')->on('sel_seguros2');
             $table->string('espMone', 30)->nullable();
             $table->date('feiniPoli', 10)->nullable();
             $table->date('fefinPoli', 10)->nullable();
@@ -205,7 +206,7 @@ class CreateAnexos extends Migration
             $table->string('espeCobe', 100)->nullable();
             $table->string('descCobe', 200)->nullable();
             $table->integer('revisadot3')->nullable();
-            $table->integer('anulart3')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -221,7 +222,7 @@ class CreateAnexos extends Migration
             $table->string('correRes', 200)->nullable();
             $table->string('depAdmRes', 10)->nullable();
             $table->integer('revisadot4')->nullable();
-            $table->integer('anulart4')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -230,6 +231,7 @@ class CreateAnexos extends Migration
             $table->string('codMarca', 10)->nullable();
             $table->string('denComar', 100)->nullable();
             $table->string('nomFabri', 100)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -240,6 +242,7 @@ class CreateAnexos extends Migration
             $table->integer('codMarca')->unsigned();
             $table->foreign('codMarca')->references('id')->on('marcas');
             $table->string('codSegModel', 10)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -249,7 +252,51 @@ class CreateAnexos extends Migration
             $table->string('denComponente', 100)->nullable();
             $table->string('codBienMueble', 10)->nullable();
             $table->integer('revisadot7')->nullable();
-            $table->integer('anulart7')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        Schema::create('bienes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('codOt2_1')->unsigned();
+            $table->foreign('codOt2_1')->references('id')->on('directa');
+            $table->string('codCata', 10)->nullable();
+            $table->string('depenAdm', 10)->nullable();
+            $table->string('sedeOrgano', 10)->nullable();
+            $table->string('codRespAdm', 10)->nullable();
+            $table->string('codResBien', 10)->nullable();
+            $table->string('codInterno', 20)->nullable();
+            $table->integer('estatuBien')->nullable();
+            $table->string('espOtro', 100)->nullable();
+            $table->string('valorAdq', 26)->nullable();
+            $table->integer('moneda')->unsigned();
+            $table->foreign('moneda')->references('id')->on('sel_seguros2');
+            $table->string('espeMoneda', 30)->nullable();
+            $table->date('feAdqBien', 10)->nullable();
+            $table->date('feIngBien', 10)->nullable();
+            $table->integer('edoBien')->nullable();
+            $table->string('espOtroEdo', 30)->nullable();
+            $table->string('descEdoBien', 200)->nullable();
+            $table->string('serialBien', 50)->nullable();
+            $table->integer('codMarca')->unsigned();
+            $table->foreign('codMarca')->references('id')->on('marcas');
+            $table->integer('codModel')->unsigned();
+            $table->foreign('codModel')->references('id')->on('modelos');
+            $table->integer('añoFabriBien')->nullable();
+            $table->integer('codColorBien')->nullable();
+            $table->string('espeColor', 50)->nullable();
+            $table->string('otraEspeColor', 255)->nullable();
+            $table->string('espeTecBien', 255)->nullable();
+            $table->string('otraDescBien', 255)->nullable();
+            $table->integer('garantia')->nullable();
+            $table->integer('unidadMedi')->nullable();
+            $table->date('feIniGarantia', 10)->nullable();
+            $table->date('feFinGarantia', 10)->nullable();
+            $table->integer('poseeCompo')->nullable();
+            $table->integer('seguroBien')->nullable();
+            $table->string('codRegSeguro', 10)->nullable();
+            $table->integer('revisadot7')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 

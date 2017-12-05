@@ -96,31 +96,20 @@ Route::resource('responsables', 'controladorResponsables');
 
 
 #ANEXO T5 = Ruta marcaAdd para acceder a la vista añadir una marca nueva y ruta selMarca para guardar datos de dicha vista
-Route::get('/marcaAdd', 'controladorAddMarca@index');
-Route::post('selMarca', 'controladorAddMarca@store');
-
-#Eliminar marca agregada
-Route::get('selMarca/{id}/destroy',[
-	'uses' => 'con_histoMarcas@destroy',
-	'as'  => 'selMarca.destroy'
-
-	]);
+Route::get('/marcas', 'controladorAddMarca@index');
+Route::post('marcas', 'controladorAddMarca@store');
 
 #ANEXO T6 = modelos
 Route::get('/modelos', 'controladorAddModelos@index');
 Route::post('modelos', 'controladorAddModelos@store');
 
-#Eliminar modelos agregados
-Route::get('modelos/{id}/destroy',[
-	'uses' => 'con_histoModelos@destroy',
-	'as'  => 'modelos.destroy'
-
-	]);
-
 #ANEXO T7 = Componentes
-
 Route::get('/componentes', 'controladorComponentes@index');
 Route::resource('componentes', 'controladorComponentes');
+
+#ANEXO T8 = bienes
+Route::get('/bienes', 'controladorBienes@index');
+Route::resource('bienes', 'controladorBienes');
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
@@ -139,6 +128,7 @@ Route::get('/regResponsables', 'con_responsablesVer@index');
 #MUESTRA REGISTRO DATATABLE DE LAS NUEVAS MARCAS AGREGADAS AL SELECT
 Route::get('/histoMarcas', 'con_histoMarcas@index');
 Route::get('/histoModelos', 'con_histoModelos@index');
+Route::get('/regComponentes', 'con_componentesVer@index');
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
@@ -156,6 +146,7 @@ Route::get('seleccionSeguros/{id}', 'con_segurosVer@selectId');
 Route::get('seleccionResponsables/{id}', 'con_responsablesVer@selectId');
 Route::get('seleccionMarcas/{id}', 'con_histoMarcas@selectId');
 Route::get('seleccionModelos/{id}', 'con_histoModelos@selectId');
+Route::get('seleccionComponentes/{id}', 'con_componentesVer@selectId');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
@@ -170,6 +161,10 @@ Route::get('/anularPermu/{id}', 'con_permutaVer@anularPermu');
 Route::get('/anularTrans/{id}', 'con_transferenciaVer@anularTrans');
 Route::get('/anularSegu/{id}', 'con_segurosVer@anularSegu');
 Route::get('/anularRespon/{id}', 'con_responsablesVer@anularRespon');
+Route::get('/anularAdjud/{id}', 'con_adjudicacionVer@anularAdjud');
+Route::get('/anularMarca/{id}', 'con_histoMarcas@anularMarca');
+Route::get('/anularModelo/{id}', 'con_histoModelos@anularModelo');
+Route::get('/anularComponentes/{id}', 'con_componentesVer@anularComponentes');
 
 	Route::get('/home', function () {
     return view('/home');

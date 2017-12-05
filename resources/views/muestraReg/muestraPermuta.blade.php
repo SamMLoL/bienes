@@ -57,7 +57,7 @@
                    @if($seleccion->nomCope == '1')
                     <div class="col-md-4 form-group">
                         <label>Nombre del Copermutante</label>
-                            <br>XXX
+                            <br>xxx
                     </div>
                     @else
                     <div class="col-md-4 form-group">
@@ -73,7 +73,7 @@
                     @if($seleccion->nomBen == '1')
                       <div class="col-md-4 form-group">
                         <label>Nombre del Beneficiario</label>
-                          <br>XXX
+                          <br>xxx
                       </div>
                     @else
                       <div class="col-md-4 form-group">
@@ -85,7 +85,7 @@
                     @if($seleccion->nomLic == '1')
                     <div class="col-md-4 form-group">
                         <label>Nombre de Licitación</label>
-                    	    <br>XXX
+                    	    <br>xxx
                     </div> 
                     @else 
                     <div class="col-md-4 form-group">
@@ -97,7 +97,7 @@
                    @if($seleccion->numLic == '0')
                     <div class="col-md-4 form-group">
                         <label>Número de Licitación</label>
-                          <br>XXX
+                          <br>xxx
                     </div> 
                    @else 
                     <div class="col-md-4 form-group">
@@ -113,7 +113,7 @@
                    @if($seleccion->numCon == '0')
                     <div class="col-md-4 form-group">
                         <label>Número del Contrato</label>
-                          <br>XXX
+                          <br>xxx
                     </div> 
                    @else 
                     <div class="col-md-4 form-group">
@@ -122,10 +122,10 @@
                     </div> 
                    @endif
 
-                   @if($seleccion->nomRegn == '0')
+                   @if($seleccion->nomRegn == '1')
                     <div class="col-md-4 form-group">
                         <label>Nombre del Registro o Notaría</label>
-                          <br>XXX
+                          <br>xxx
                     </div> 
                    @else 
                     <div class="col-md-4 form-group">
@@ -137,7 +137,7 @@
                    @if($seleccion->tomo == '1')
                     <div class="col-md-4 form-group">
                         <label>Tomo</label>
-                            <br>XXX
+                            <br>xxx
                     </div>
 
                    @else

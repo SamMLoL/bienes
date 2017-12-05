@@ -69,9 +69,9 @@
 					<div class="col-md-4">
 						<label for="codProvee">Código de Proveedor</label>
 							<select name="codProvee" id="codProvee" class="form-control">
-				                <option value="{{$form_t21->selectCodProvee->id}}">{{$form_t21->selectCodProvee->codProvee}}</option>
+				                <option value="{{$form_t21->selectCodProvee->id}}" disabled selected>{{$form_t21->selectCodProvee->codProvee}}</option>
 				              @foreach($infoSelect2 as $form)
-			                    <option value="{{$form->id}}">{{$form->codProvee}}</option> 
+			                    <option value="{{$form->id}}" >{{$form->codProvee}}</option>
 			                  @endforeach
 				            </select> 
 					</div>
