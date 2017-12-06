@@ -53,11 +53,10 @@
 						 <input type="text" class="form-control" name="codOt2_3" id="codOt2_3" value="{{$form_t23->codOt2_3}}" maxlength="12" disabled>
 					</div>
 				
-
 					<div class="col-md-4 form-group">
 			           	<label for="codAdq">Código de Adquisición</label>
 			              <select name="codAdq" id="codAdq" class="form-control">
-			                  <option value="{{$form_t23->selectDacion->id}}">{{$form_t23->selectDacion->opcion}}</option>
+			                  <option value="{{$form_t23->selectDacion->id}}" disabled>{{$form_t23->selectDacion->opcion}}</option>
 			                @foreach($infoSelect as $form)
 			                  <option value="{{$form->id}}">{{$form->opcion}}</option> 
 			                @endforeach

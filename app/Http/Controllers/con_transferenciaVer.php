@@ -11,7 +11,7 @@ class con_transferenciaVer extends Controller
 {
     public function index(){
         
-        $verT27= modeloTransferencia::where('anulart27', '0')->get();
+        $verT27= modeloTransferencia::all();
 
         return view('registros.regTransferencia', compact('verT27'));
 

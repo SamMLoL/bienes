@@ -45,16 +45,22 @@ class controladorProveedores extends Controller
         $form_t1->codProvee = $request->codProvee;
         $form_t1->descProvee = $request->descProvee;
         $form_t1->tipProvee = $request->tipProvee;
-        $form_t1->rifProvee = $request->rifProvee;
+        
         $form_t1->revisadot1 = 1;
         
+        if($form_t1->rifProvee = $request->rifProvee == ''){
+          $form_t1->rifProvee = '0';
+        }else{
+          $form_t1->rifProvee = $request->rifProvee;
+        }
+
 
         if ($form_t1->otraDesc = $request->otraDesc == '') {
         $form_t1->otraDesc = '0';
       
-             }else{
-             $form_t1->otraDesc = $request->otraDesc;
-             }
+        }else{
+          $form_t1->otraDesc = $request->otraDesc;
+        }
 
          if($form_t1->save()){
 

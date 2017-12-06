@@ -148,14 +148,6 @@
                                         Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
                                         </a>
 
-                                        <a href="{{ url('/histoMarcas') }}">
-                                        Histórico de Marcas  <i class="fa fa-history" aria-hidden="true"></i>  
-                                        </a>
-
-                                        <a href="{{ url('/logout') }}">
-                                        Añadir modelo  <i class="fa fa-plus-circle" aria-hidden="true"></i>  
-                                        </a>
-
                                     </li>
                                 </ul>
                             </li>

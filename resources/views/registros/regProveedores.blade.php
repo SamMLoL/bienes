@@ -63,11 +63,22 @@
                       @else
                         <td class="text-center"><a href="seleccionProveedores/{{$registro->id}}">{{$registro->codProvee}}</a></td>
                       @endif
-
+                        
+                        @if($registro->descProvee == '0')
+                        <td class="text-center">xxx</td>
+                        @else
                         <td class="text-center">{{$registro->descProvee}}</td>
+                        @endif
+
                         <td class="text-center">{{$registro->selectProvee->opcion}}</td>
+
                         <td class="text-center">{{$registro->rifProvee}}</td>
+                        
+                        @if($registro->otraDesc == '0')
+                        <td class="text-center">xxx</td>
+                        @else
                         <td class="text-center">{{$registro->otraDesc}}</td>
+                        @endif
                         <td class="text-center"><a href="seleccionProveedores/{{$registro->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                        
                     </tr>

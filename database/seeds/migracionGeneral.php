@@ -158,7 +158,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-      $dato = array("Administrativo","Uso Directo","Cuido Directo");
+      $dato = array("D","U","C");
 
       foreach ($dato as $v) {
         DB::table('sel_responsables')->insert([

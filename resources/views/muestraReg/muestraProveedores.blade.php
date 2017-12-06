@@ -55,10 +55,10 @@
                   <div class="col-md-12">
                       <div class="col-md-4 form-group">
                           <label for="rifProvee">Número de Rif</label>
-                          <br>{{$seleccion->rifProvee}}
+                              <br>{{$seleccion->rifProvee}}
                       </div>
-
-                       @if($seleccion->otraDesc == '0')
+                     
+                      @if($seleccion->otraDesc == '0')
                       <div class="col-md-4 form-group">
                           <label for="otraDesc">Otra Descripción</label>
                               <br>xxx

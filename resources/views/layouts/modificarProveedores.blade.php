@@ -57,14 +57,18 @@
                     </div>
                
                     <div class="col-md-4">
-                       <label for="descProvee">Descripción del Proveedor</label>   
-                          <input type="text" class="form-control" name="descProvee" id="descProvee" value="{{$form_t1->descProvee}}"  placeholder="Introduzca nombres" maxlength="100" autofocus> 
+                       <label for="descProvee">Descripción del Proveedor</label> 
+                        @if($form_t1->descProvee == '0')  
+                          <input type="text" class="form-control" name="descProvee" id="descProvee" value="xxx" maxlength="100"> 
+                        @else
+                          <input type="text" class="form-control" name="descProvee" id="descProvee" value="{{$form_t1->descProvee}}" maxlength="100">
+                        @endif
                     </div>
               
                     <div class="pull-right col-md-4 form-group">
                       <label for="tipProvee">Tipo de Proveedor</label>
                          <select name="tipProvee" id="tipProvee" class="form-control">
-                              <option value="{{$form_t1->selectProvee->id}}">{{$form_t1->selectProvee->opcion}}</option>
+                              <option value="{{$form_t1->selectProvee->id}}" disabled>{{$form_t1->selectProvee->opcion}}</option>
                             @foreach($sel_proveedores as $form)
                               <option value="{{$form->id}}">{{$form->opcion}}</option> 
                             @endforeach
@@ -77,13 +81,13 @@
                 <div class="col-md-12">
                     <div class="col-md-4">
                       <label for="rifProvee">RIF</label>   
-                       <input type="text" class="form-control" name="rifProvee" id="rifProvee" value="{{$form_t1->rifProvee}}"  placeholder="Introduzca nombres" maxlength="30"> 
+                       <input type="text" class="form-control" name="rifProvee" id="rifProvee" value="{{$form_t1->rifProvee}}" maxlength="20"> 
                     </div>
-
+                  
                     <div class="col-md-4 separar">
                       <label for="otraDesc">Otra Descripción</label>
 
-                     @if($form_t1->otraDesc == '0')
+                    @if($form_t1->otraDesc == '0')
                       <input type="text" class="form-control" name="otraDesc" id="otraDesc" value="xxx"  placeholder="Introduzca nombres" maxlength="200">
                     </div>
 

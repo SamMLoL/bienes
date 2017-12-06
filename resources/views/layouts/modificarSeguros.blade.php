@@ -13,7 +13,11 @@
 	     <link href="{{ asset('img/bandera.png') }}" rel="icon">
 	</head>
 <body>
+<style>
+	#montoAse::-webkit-input-placeholder { color: #A24040; opacity: 0.9; font-size: 13px; } /* WebKit */
+	#montoAse::-moz-placeholder { color: #A24040; opacity: 0.9; font-size: 13px;} /* Firefox 19+ *
 
+</style>
 <div class="container" id="sha">
 	<div class="row">
 		<div class="col-md-12">
@@ -56,9 +60,9 @@
 					</div>
 
 					<div class="col-md-4 form-group">
-		           	   <label for="compAse">COMPAÑIA ASEGURADORA</label>
+		           	   <label for="compAse">Compañía Aseguradoras</label>
 		                 <select name="compAse" id="compAse" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros->id}}">{{$form_t3->selectSeguros->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros->id}}" disabled>{{$form_t3->selectSeguros->opcion}}</option>
 		                  @foreach($infoSelect as $form)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
 		                  @endforeach
@@ -66,7 +70,7 @@
 					</div>
 
 					<div class="col-md-4">
-						<label for="otraCom">OTRA COMPAÑÍA ASEGURADORA<</label>
+						<label for="otraCom">Otra Compañía Aseguradora</label>
 						@if($form_t3->otraCom == '1')
 						 <input type="text" class="form-control" name="otraCom" id="otraCom" value="noaplica" maxlength="100">
 						@else
@@ -79,7 +83,7 @@
 			<div class="row separar40">
 				<div class="col-md-12">
 					<div class="col-md-4">
-						<label for="numPoli">NÚMERO DE PÓLIZA</label>
+						<label for="numPoli">Número de Póliza</label>
 						@if($form_t3->numPoli == '0')
 						 <input type="text" class="form-control" name="numPoli" id="numPoli" value="noaplica" maxlength="30">
 						@else
@@ -88,9 +92,9 @@
 					</div>
 				
 					<div class="col-md-4 form-group">
-		           	  <label for="tipPoli">TIPO DE PÓLIZA</label>
+		           	  <label for="tipPoli">Tipo de Póliza</label>
 		                 <select name="tipPoli" id="tipPoli" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros1->id}}">{{$form_t3->selectSeguros1->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros1->id}}" disabled>{{$form_t3->selectSeguros1->opcion}}</option>
 		                  @foreach($infoSelect1 as $form)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
 		                  @endforeach
@@ -98,8 +102,12 @@
 					</div>
 
 					<div class="col-md-4">
-						<label for="montoAse">MONTO ASEGURADO</label>
+						<label for="montoAse">Monto Asegurado</label>
+						@if($form_t3->montoAse == '0')
+						 <input type="text" class="form-control money" name="montoAse" id="montoAse"  placeholder="¡ Si se desconoce el campo dejarlo en blanco !" value="xxx" maxlength="26">
+						@else
 						 <input type="text" class="form-control money" name="montoAse" id="montoAse" value="{{$form_t3->montoAse}}" maxlength="26">
+						@endif
 					</div>
 			    </div>
 			</div> 
@@ -107,9 +115,9 @@
 			<div class="row separar40">
 				<div class="col-md-12">
 					<div class="col-md-4 form-group">
-		           	  <label for="moneda">MONEDA</label>
+		           	  <label for="moneda">Moneda</label>
 		               <select name="moneda" id="moneda" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros2->id}}">{{$form_t3->selectSeguros2->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros2->id}}" disabled>{{$form_t3->selectSeguros2->opcion}}</option>
 		                  @foreach($infoSelect2 as $form)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
 		                  @endforeach
@@ -117,7 +125,7 @@
 					</div>
 					
 				    <div class="col-md-4">
-						<label for="espMone">ESPECIFIQUE LA MONEDA</label>
+						<label for="espMone">Especifique la Moneda</label>
 						@if($form_t3->espMone == '1')
 						 <input type="text" class="form-control" name="espMone" id="espMone" value="noaplica" maxlength="30">
 						@else
@@ -126,7 +134,7 @@
 					</div>
 				
 					<div class="col-md-4">
-						<label for="feiniPoli">FECHA INICIO DE PÓLIZA</label>
+						<label for="feiniPoli">Fecha Inicio de Póliza</label>
 						@if($form_t3->feiniPoli == '1111-11-11')
 						 <input type="text" class="form-control calendario" name="feiniPoli" id="feiniPoli" value="11111111" maxlength="10">
 						@else
@@ -139,7 +147,7 @@
 			<div class="row separar40">
 				<div class="col-md-12">
 					<div class="col-md-4">
-						<label for="fefinPoli">FECHA FINAL DE POLIZA</label>
+						<label for="fefinPoli">Fecha Final de Póliza</label>
 						@if($form_t3->fefinPoli == '1111-11-11')
 						 <input type="text" class="form-control calendario" name="fefinPoli" id="fefinPoli" value="11111111" maxlength="10">
 						@else
@@ -150,7 +158,7 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="poseRes">Posee Responsabilidad Civil</label>
 		               	<select name="poseRes" id="poseRes" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros3->id}}">{{$form_t3->selectSeguros3->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros3->id}}" disabled>{{$form_t3->selectSeguros3->opcion}}</option>
 		                  @foreach($infoSelect3 as $form)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
 		                  @endforeach
@@ -160,7 +168,7 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="tipoCobe">Tipo de Cobertura de la Póliza </label>
 		               	<select name="tipoCobe" id="tipoCobe" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros4->id}}">{{$form_t3->selectSeguros4->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros4->id}}" disabled>{{$form_t3->selectSeguros4->opcion}}</option>
 		                  @foreach($infoSelect4 as $form)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
 		                  @endforeach

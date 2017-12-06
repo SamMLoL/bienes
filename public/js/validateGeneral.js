@@ -5,14 +5,16 @@ $(document).ready(function() {
            codProvee: { required:true},
            descProvee: { required:true},
            tipProvee: {required:true},
-           rifProvee: { required:true},
+           rifProvee: {required:true},
+           
             
         },
         messages: {
-            codProvee : "* Campo obligatorio, &nbsp;¡ Por favor introduzca el código del proveedor !",
-            descProvee : "* Campo obligatorio, &nbsp;¡ Por favor introduzca la descripción del proveedor!",
-            tipProvee : "* Campo obligatorio, &nbsp;¡ Por favor seleccione el tipo de proveedor !",
-            rifProvee : "* Campo obligatorio, &nbsp;¡ Por favor introduzca el número de RIF !"
+            codProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el código del proveedor !",
+            descProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca la descripción del proveedor!",
+            tipProvee : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el tipo de proveedor !",
+            rifProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el número de rif !",
+            
         
 
         },

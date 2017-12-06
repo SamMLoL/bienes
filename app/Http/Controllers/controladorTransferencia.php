@@ -52,8 +52,6 @@ class controladorTransferencia extends Controller
         $form_t27->codOt2_7 = $request->codOt2_7;
         $form_t27->codAdq = $request->codAdq;
         $form_t27->revisadot27 = 1;
-        $form_t27->anulart27 = 0;
-
 
         if($form_t27->nomQtra =$request->nomQtra == ''){
           $form_t27->nomQtra = '1';

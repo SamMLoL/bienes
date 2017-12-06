@@ -129,17 +129,21 @@ margin-bottom: 40px;
 
 .inputplaceholder::-webkit-input-placeholder{ 
   color: #A24040;
-  opacity: 0.5;
+  opacity: 0.9;
   font-size: 13px;
 }
 
 .fechaplaceholder::-webkit-input-placeholder{ 
   color: #A24040;
-  opacity: 0.5;
+  opacity: 0.9;
   font-size: 13px;
 }
 
 .btn{
   background-color: #8E2121;
 }
+
+#correRes::-webkit-input-placeholder { color: #A24040; opacity: 0.9; font-size: 13px;} /* WebKit */
+#correRes::-moz-placeholder { color:; #A24040; opacity: 0.9; font-size: 13px;} /* Firefox 19+ *
+
 

@@ -26,7 +26,7 @@ class controladorResponsables extends Controller
             array("apeRes","Apellido del Responsable:","Introduzca el apellido del responsable","100","","",""),         
             array("telfRes","Teléfono del Responsable:","Introduzca el N° de teléfono del responsable","20","","return soloNum(event)","telefono"),         
             array("cargoRes","Cargo del Responsable:","Introduzca el cargo del responsable","200","","",""),         
-            array("correRes","Correo Electrónico del Responsable:","Introduzca el correo electrónico del responsable","200","","",""),         
+            array("correRes","Correo Electrónico del Responsable:","¡Si se desconoce, deje el campo en blanco!","200","","",""),         
             );
 
         $select = array(
