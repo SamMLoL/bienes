@@ -13,13 +13,17 @@ class controladorProveedores extends Controller
     {
       $sel_proveedores = sel_proveedores::all();
 
+      //ULTIMO REGISTRO DE UN CAMPO EN ESPECIFICO
+    
+        $lastCod = modeloProveedores::select('codProvee')->get()->last();
+        
         $input1=array(
             array("codProvee","Código del Proveedor:","Introduzca el código de proveedor","10","col-md-pull-4"),
             array("descProvee","Descripción de Proveedor:","Descripción del proveedor","100","col-md-push-0"),
           );
 
         $input2=array(
-            array("otraDesc","Otra Descripción:","¡Deje el campo en blanco si lo desconoce!","200",""),
+            array("otraDesc","Otra Descripción:","Introduzca otra descripción","200",""),
           );
 
         $input3= array(
@@ -30,7 +34,7 @@ class controladorProveedores extends Controller
                array("tipProvee","Tipo de Proveedor:","select","1","col-md-push-4"),
           );
 
-        return view('tablasForm.visProveedores', compact('input1','input2','input3','sel_proveedores','selectt1'));
+        return view('tablasForm.visProveedores', compact('input1','input2','input3','sel_proveedores','selectt1','lastCod'));
 
     } 
           
@@ -45,7 +49,6 @@ class controladorProveedores extends Controller
         $form_t1->codProvee = $request->codProvee;
         $form_t1->descProvee = $request->descProvee;
         $form_t1->tipProvee = $request->tipProvee;
-        
         $form_t1->revisadot1 = 1;
         
         if($form_t1->rifProvee = $request->rifProvee == ''){

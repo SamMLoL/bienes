@@ -186,6 +186,20 @@
     <script src="{{ asset('js/tabla.datatable.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
+    <script>
+  $(document).ready(function(){
+    $("#otraDesc").attr("disabled", true);
+    $('#tipProvee').change(function(){
+        var id = $('#tipProvee').val();
+        if(id == 2){
+           $("#otraDesc").attr("disabled", false); 
+
+        }else{
+            $("#otraDesc").attr("disabled", true);
+        }
+    })
+  });
+</script>
    
 
     <div class="container">

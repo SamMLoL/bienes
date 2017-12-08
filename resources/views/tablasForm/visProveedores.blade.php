@@ -10,14 +10,14 @@
         </div>
             
         <div class="row">
-            <div class="col-md-12 separar">
+            <div class="col-md-12">
                <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
                 <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
             </div>
         </div>
 
         <div class="row"> 
-            <div class="col-md-12 li separar moverIzq">
+            <div class="col-md-12 li moverIzq">
                 <ul class="js-errors li"></ul>
             </div>
         </div>
@@ -33,6 +33,20 @@
              @endif
             </div>
         </div>
+
+        <div class="row separar">
+            <div class="col-md-12">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar3"> Código del Proveedor</b> <b id="espaciar">  
+              @if($lastCod)
+                {{$lastCod->codProvee}}
+              @else
+                VPRBV-P000
+              @endif
+              </b>
+            </div>
+        </div>
+    <hr>
 
       <form role="form" id="formValidaT1" name="formValidaT1" method="POST" action="{{url('proveedores')}}">
            {{ csrf_field() }}
@@ -60,7 +74,7 @@
        <!--ARRAY OF INPUT-TEXT BELONGING TO CONTROLADORT1 THE RELATED TABLE IN THE BD => T1--> 
 
           @foreach($input1 as $posicion => $valor)
-
+             
         <div class="col-md-4 form-group {{$input1[$posicion][4]}}">
           
            <label for="{{$input1[$posicion][0]}}">{{$input1[$posicion][1]}}</label>
@@ -68,6 +82,7 @@
            <input type="text" class="form-control" name="{{$input1[$posicion][0]}}" id="{{$input1[$posicion][0]}}" placeholder="{{$input1[$posicion][2]}}" maxlength="{{$input1[$posicion][3]}}" >
 
         </div> 
+
           @endforeach
         </div> 
     </div>
@@ -89,7 +104,7 @@
           
            <label for="{{$input2[$posicion][0]}}">{{$input2[$posicion][1]}}</label>
         
-           <input type="text" class="form-control" name="{{$input2[$posicion][0]}}" id="{{$input2[$posicion][0]}}" placeholder="{{$input2[$posicion][2]}}" maxlength="{{$input2[$posicion][3]}}" >
+           <input type="text" class="form-control" name="{{$input2[$posicion][0]}}" id="{{$input2[$posicion][0]}}" placeholder="{{$input2[$posicion][2]}}" maxlength="{{$input2[$posicion][3]}}"  >
 
         </div> 
           @endforeach

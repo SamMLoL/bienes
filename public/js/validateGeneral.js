@@ -2,7 +2,7 @@ $(document).ready(function() {
 //TABLA PROVEEDORES
     $("#formValidaT1").validate({
         rules: {
-           codProvee: { required:true},
+           
            descProvee: { required:true},
            tipProvee: {required:true},
            rifProvee: {required:true},
@@ -10,7 +10,7 @@ $(document).ready(function() {
             
         },
         messages: {
-            codProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el código del proveedor !",
+           
             descProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca la descripción del proveedor!",
             tipProvee : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el tipo de proveedor !",
             rifProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el número de rif !",
@@ -37,6 +37,21 @@ $(document).ready(function() {
         errorElement: "li",
                 
     });
+
+  // INPUT DISABLED EN TABLA DE PROVEEDORES AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
+  $(document).ready(function(){
+    $("#otraDesc").attr("disabled", true);
+    $('#tipProvee').change(function(){
+        var id = $('#tipProvee').val();
+        if(id == 2){
+           $("#otraDesc").attr("disabled", false); 
+
+        }else{
+            $("#otraDesc").attr("disabled", true);
+        }
+    })
+  });
+
 
 
   //TABLA SEGUROS
