@@ -53,7 +53,11 @@
 			  	<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="codOt2_1">Código de Origen</label>
-						 <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" value="{{$form_t21->codOt2_1}}" maxlength="12" disabled>
+						@if($form_t21->codOt2_1 == '0')
+						 <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" value="B-1" maxlength="12">
+						@else 
+						 <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" value="{{$form_t21->codOt2_1}}" maxlength="12">
+						@endif
 					</div>
 
 					<div class="col-md-4 form-group">
@@ -82,7 +86,11 @@
 			  	<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="numCom">Número Orden de Compra</label>
+						@if($form_t21->numCom == '0')
+						 <input type="text" class="form-control" name="numCom" id="numCom" value="xxx" maxlength="30">
+						@else
 						 <input type="text" class="form-control" name="numCom" id="numCom" value="{{$form_t21->numCom}}" maxlength="30">
+						@endif
 					</div>
 		
 					<div class="col-md-4">

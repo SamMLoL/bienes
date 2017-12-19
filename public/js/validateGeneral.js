@@ -1,8 +1,10 @@
 $(document).ready(function() {
 //TABLA PROVEEDORES
+
     $("#formValidaT1").validate({
         rules: {
            
+           codProvee: { required:true},
            descProvee: { required:true},
            tipProvee: {required:true},
            rifProvee: {required:true},
@@ -11,6 +13,7 @@ $(document).ready(function() {
         },
         messages: {
            
+            codProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el código del proveedor!",
             descProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca la descripción del proveedor!",
             tipProvee : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el tipo de proveedor !",
             rifProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el número de rif !",
@@ -57,7 +60,6 @@ $(document).ready(function() {
   //TABLA SEGUROS
     $("#formValidaT3").validate({
         rules: {
-           codRegT3: { required:true},
            compAse: { required:true},
            tipPoli: { required:true},
            moneda: { required:true},
@@ -66,7 +68,6 @@ $(document).ready(function() {
            
         },
         messages: {
-            codRegT3 : "* Campo obligatorio, ¡Por favor, introduzca el código del registro!",
             compAse : "* Campo obligatorio, ¡ Por favor, seleccione la compañia aseguradora!",
             tipPoli : "* Campo obligatorio, ¡ Por favor, seleccione el tipo de poliza!",
             moneda: "* Campo obligatorio,¡ Por favor, seleccione la moneda!",
@@ -95,6 +96,34 @@ $(document).ready(function() {
         errorElement: "li", 
                 
             });
+
+    // INPUT DISABLED EN TABLA DE SEGUROS AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
+  $(document).ready(function(){
+    $("#espeCobe").attr("disabled", true);
+    $("#tipoCobe").change(function(){
+      var id = $("#tipoCobe").val();
+    if(id == 3){
+      $("#espeCobe").attr("disabled", false);
+    }else{
+      $("#espeCobe").attr("disabled", true);
+    
+      }
+    })
+  });
+
+  // INPUT DISABLED EN TABLA DE SEGUROS AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
+  $(document).ready(function(){
+    $("#espMone").attr("disabled", true);
+    $("#moneda").change(function(){
+      var id = $("#moneda").val();
+    if(id == 4){
+      $("#espMone").attr("disabled", false);
+    }else{
+      $("#espMone").attr("disabled", true);
+    
+      }
+    })
+  });
 
 
       //TABLA RESPONSABLE DE LOS BIENES

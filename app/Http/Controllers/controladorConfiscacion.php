@@ -15,6 +15,8 @@ class controladorConfiscacion extends Controller
         
         $infoSelect= sel_confiscacion::all();
 
+        $lastCod = modeloConfiscacion::select('codOt2_2')->get()->last();
+
         $arrayT22=array(
             array("codOt2_2","Código de Origen:","Introduzca número consecutivo. Ej: C-2; C-3;","12","col-md-pull-4",""),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
@@ -39,27 +41,23 @@ class controladorConfiscacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visConfiscacion', compact('infoSelect','selectT22','arrayT22','dateT22','date2T22'));
+        return view('tablasForm.visConfiscacion', compact('infoSelect','selectT22','arrayT22','dateT22','date2T22','lastCod'));
     }
 
   
     public function store(Request $request)
     {
 
-      $duplicado = modeloConfiscacion::where('codOt2_2', $request->codOt2_2)->get();
-        if($duplicado == '[]'){
-
         $form_t22=new modeloConfiscacion();
         $form_t22->codAdq = $request->codAdq;
         $form_t22->revisadot22 = 1;
 
          if($form_t22->codOt2_2 = $request->codOt2_2 == ''){
-         $form_t22->codOt2_2 = '0'; 
+         $form_t22->codOt2_2 = 'C-1'; 
 
            }else{
             $form_t22->codOt2_2 = $request->codOt2_2;
            }  
-
 
         if($form_t22->nomPa =$request->nomPa == ''){
           $form_t22->nomPa = '1';
@@ -125,9 +123,7 @@ class controladorConfiscacion extends Controller
           }
             
           return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else{
-          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_2.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
-          }
+             
     }      
 
     public function edit($id)
@@ -145,6 +141,7 @@ class controladorConfiscacion extends Controller
     {
         
         $form_t22=modeloConfiscacion::find($id);
+        $form_t22->codOt2_2 = $request->codOt2_2;
         $form_t22->codAdq = $request->codAdq;
         
 

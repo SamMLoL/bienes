@@ -73,9 +73,15 @@
                   @endif
 
                   <div class="col-md-4 form-group">
+                  @if($seleccion->tipPoli == '1')
                       <label>Tipo de Póliza</label>
-                          <br>{{$seleccion->selectSeguros1->opcion}}
+                          <br>I
                   </div>
+                  @else
+                   <label>Tipo de Póliza</label>
+                          <br>C
+                  </div>
+                  @endif
 
                   @if($seleccion->montoAse == '0')
                   <div class="col-md-4 form-group">
@@ -140,13 +146,19 @@
                    @endif
 
                     <div class="col-md-4 form-group">
+                    @if($seleccion->poseRes == '1')
                         <label>Posee Responsabilidad Civil</label>
-                            <br>{{$seleccion->selectSeguros3->opcion}}
+                            <br>S
                     </div>
+                    @else
+                    <label>Posee Responsabilidad Civil</label>
+                            <br>N
+                    </div>
+                    @endif
 
                     <div class="col-md-4 form-group">
                         <label>Tipo de Cobertura de la Póliza</label>
-                            <br>{{$seleccion->selectSeguros4->opcion}}
+                            <br>{{$seleccion->tipoCobe}}
                     </div>
               </div>
           </div>

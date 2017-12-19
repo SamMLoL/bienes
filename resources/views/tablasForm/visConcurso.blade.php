@@ -31,6 +31,25 @@
                 <center><div  class="col-md-12  alert alert-danger" >{{session('errormsj')}}</div></center>
               @endif
             </div>
+        </div>
+
+        <div class="row separar">
+            <div class="col-md-12">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+            
+              @if($lastCod)
+                @if($lastCod->codOrigen == 'A-1')
+                  <b id="espaciar4"> A-1 </b>
+                @else
+                  <b id="espaciar3"> {{$lastCod->codOrigen}}</b>
+                @endif
+              @else
+                  <b id="espaciar3">A2012000</b>
+              @endif
+              
+                </b>
+            </div>
         </div>  
 
         <div class="row"> 

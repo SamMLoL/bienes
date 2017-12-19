@@ -66,8 +66,8 @@
                           @endif
 
                     @endif
-
-                        <td class="text-center">{{$reg21->selectDirecta->opcion}}</td>
+                        
+                        <td class="text-center">{{$reg21->codAdq}}</td>
                         
                         <td class="text-center">{{$reg21->selectCodProvee->codProvee}}</td>
 

@@ -4,13 +4,11 @@ $(document).ready(function() {
       //TABLA COMPRA POR CONCURSO
       $("#formValidaT2").validate({
         rules: {
-           codOrigen: { required:true},
            codAdquisicion: { required:true},
           
             
        },
         messages: {
-            codOrigen : "* Campo obligatorio, &nbsp;¡Por favor, introduzca el código de origen!",
             codAdquisicion : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
             
         
@@ -37,17 +35,17 @@ $(document).ready(function() {
       //TABLA COMPRA DIRECTA
       $("#formValidaT21").validate({
         rules: {
-           codOt2_1: { required:true},
+           
            codAdq: { required:true},
            codProvee: { required:true},
-           numCom: { required:true},
+           
           
         },
         messages: {
-            codOt2_1 : "* Campo obligatorio, &nbsp;¡Por favor, introduzca el código de origen!",
+            
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
             codProvee : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código del proveedor según las especificaciones descritas en proveedores!",
-            numCom : "* Campo obligatorio, &nbsp;¡Por favor, introduzca el número de la orden de compra!",
+            
             
 
         },
@@ -72,12 +70,10 @@ $(document).ready(function() {
       //TABLA CONFISCACIÓN
       $("#formValidaT22").validate({
           rules: {
-             codOt2_2: { required:true},
              codAdq: { required:true},
               
           },
           messages: {
-              codOt2_2 : "* Campo obligatorio, &nbsp;¡Por favor, introduzca el código de origen!",
               codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
               
           },
@@ -102,13 +98,10 @@ $(document).ready(function() {
       //TABLA DACIÓN EN PAGO
       $("#formValidaT23").validate({
         rules: {
-           codOt2_3: { required:true},
            codAdq: { required:true},
             
         },
         messages: {
-           
-            codOt2_3 : "* Campo obligatorio, &nbsp;¡Por favor, Por favor, introduzca el código de origen!",
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
 
         },
@@ -133,13 +126,11 @@ $(document).ready(function() {
       //TABLA DONACIÓN
       $("#formValidaT24").validate({
         rules: {
-           codOt2_4: { required:true},
            codAdq: { required:true},
           
             
         },
         messages: {
-            codOt2_4 : "* Campo obligatorio, &nbsp;¡Por favor, Por favor, introduzca el código de origen!",
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
             
         },
@@ -164,13 +155,11 @@ $(document).ready(function() {
       //TABLA EXPROPIACIÓN
       $("#formValidaT25").validate({
         rules: {
-           codOt2_5: { required:true},
            codAdq: { required:true},
           
             
         },
         messages: {
-            codOt2_5 : "* Campo obligatorio, &nbsp;¡Por favor, Por favor, introduzca el código de origen!",
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
             
         
@@ -197,13 +186,11 @@ $(document).ready(function() {
       //TABLA PERMUTA
       $("#formValidaT26").validate({
         rules: {
-           codOt2_6: { required:true},
            codAdq: { required:true},
           
             
         },
         messages: {
-            codOt2_6 : "* Campo obligatorio, &nbsp;¡Por favor, Por favor, introduzca el código de origen!",
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
             
         },
@@ -228,13 +215,11 @@ $(document).ready(function() {
     //TABLA TRANSFERENCIA
     $("#formValidaT27").validate({
         rules: {
-           codOt2_7: { required:true},
            codAdq: { required:true},
           
             
         },
         messages: {
-            codOt2_7 : "* Campo obligatorio, &nbsp;¡Por favor, Por favor, introduzca el código de origen!",
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
         
 
@@ -260,13 +245,11 @@ $(document).ready(function() {
     //TABLA ADJUDICACIÓN
     $("#formValidaT28").validate({
         rules: {
-           codOt2_8: { required:true},
            codAdq: { required:true},
           
             
         },
         messages: {
-            codOt2_8 : "* Campo obligatorio, &nbsp;¡Por favor, Por favor, introduzca el código de origen!",
             codAdq : "* Campo obligatorio, &nbsp;¡Por favor, seleccione el código de la forma de adquisición según el caso!",
 
         },

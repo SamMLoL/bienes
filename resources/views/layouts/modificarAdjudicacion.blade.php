@@ -54,7 +54,11 @@
 				<div class="col-md-12">
 					<div class="col-md-4">
 						<label for="codOt2_8">Código de Origen</label>
-						 <input type="text" class="form-control" name="codOt2_8" id="codOt2_8" value="{{$form_t28->codOt2_8}}" maxlength="12" disabled>
+						@if($form_t28->codOt2_8 == '0')
+						 <input type="text" class="form-control" name="codOt2_8" id="codOt2_8" value="I-1" maxlength="12">
+						@else
+						 <input type="text" class="form-control" name="codOt2_8" id="codOt2_8" value="{{$form_t28->codOt2_8}}" maxlength="12">
+						@endif
 					</div>
 				
 		    

@@ -46,13 +46,15 @@
                               <br>{{$seleccion->codOt2_8}}
                       </div>
                       @endif
-               
+                      
+                      @if($seleccion->codAdq == '1')
                   	  <div class="col-md-4 form-group">
                      	    <label>Código de Adquisición</label>
-                         	    <br>{{$seleccion->selectAdjudicacion->opcion}}
+                         	    <br>10
                       </div>
+                      @endif
 
-                     @if($seleccion->nomProan == '1')
+                      @if($seleccion->nomProan == '1')
                       <div class="col-md-4 form-group">
                           <label>Nombre del Propietario Anterior</label>
                               <br>xxx

@@ -174,7 +174,6 @@
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/jquery.validate.js') }}"></script>
-    <script src="{{ asset('js/validateCampoMarcas.js') }}"></script>
     <script src="{{ asset('js/validateGeneral.js') }}"></script> <!-- Valida los campos de las (Tabla Proveedores=T1 a la Tabla bienes de Inmuebles Organos=T12) -->
     <script src="{{ asset('js/validateModalidades.js') }}"></script> <!-- Valida los campos de la Tabla compra por concurso=T2 a la  Tabla adjudicación=T28 (Modalidades)) -->
     <script src="{{ asset('js/validate.js') }}"></script>

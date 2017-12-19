@@ -10,6 +10,8 @@ class controladorComponentes extends Controller
 {
   public function index()
     {
+      $lastCod = modeloComponentes::select('codigo')->get()->last();
+
     	$arrayt7= array(
 
     		array('codigo','Código','Introduzca el código interno asignado por el ente','10'),
@@ -18,7 +20,7 @@ class controladorComponentes extends Controller
 
     		);
 
-    	return view('tablasForm.visComponentes', compact('arrayt7'));
+    	return view('tablasForm.visComponentes', compact('arrayt7','lastCod'));
     }
 
   public function store(Request $request)

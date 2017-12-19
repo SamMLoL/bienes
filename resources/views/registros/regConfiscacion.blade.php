@@ -63,9 +63,11 @@
                         @endif
                 @endif
 
-                        <td class="text-center">{{$reg22->selectConfiscacion->opcion}}</td>
+                       @if($reg22->codAdq == '1')
+                        <td class="text-center">7</td>
+                       @endif
 
-                       @if($reg22->nomPa == '1')
+                       @if($reg22->nomPa == '1')  
                         <td class="text-center">xxx</td>
                        @else
                         <td class="text-center">{{$reg22->nomPa}}</td>

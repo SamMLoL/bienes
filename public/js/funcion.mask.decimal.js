@@ -4,6 +4,6 @@
 
  });
  
-$(document).ready(function () { 
+/*$(document).ready(function () { 
  $(".telefono").mask("(9999) 999-99-99");
- });
+ });*/

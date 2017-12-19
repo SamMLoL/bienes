@@ -13,6 +13,8 @@ class controladorPermuta extends Controller
     {
         $infoSelect = sel_permuta::all();
 
+        $lastCod = modeloPermuta::select('codOt2_6')->get()->last();
+
         $arrayT26 = array(
             array("codOt2_6","Código de Origen:","Introduzca número consecutivo. Ej: G-2; G-3;","12","col-md-pull-4",""),
             array("nomCope","Nombre del Copermutante:","Introduzca nombre del copermutante","100","col-md-push-0",""),
@@ -41,20 +43,21 @@ class controladorPermuta extends Controller
         array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
         );
 
-        return view('tablasForm.visPermuta', compact('infoSelect','arrayT26','selectT26','dateT26','date2T26','date3T26'));
+        return view('tablasForm.visPermuta', compact('infoSelect','arrayT26','selectT26','dateT26','date2T26','date3T26','lastCod'));
     }
 
     public function store(Request $request)
     {
 
-      $duplicado = modeloPermuta::where('codOt2_6', $request->codOt2_6)->get();
-
-        if($duplicado == '[]'){
-
         $form_t26= new modeloPermuta();
-        $form_t26->codOt2_6 = $request->codOt2_6;
         $form_t26->codAdq = $request->codAdq;
         $form_t26->revisadot26 = 1;
+
+        if($form_t26->codOt2_6 =$request->codOt2_6 == ''){
+          $form_t26->codOt2_6 = 'G-1';
+          }else{
+          $form_t26->codOt2_6 = $request->codOt2_6;  
+        }
 
         if($form_t26->nomCope =$request->nomCope == ''){
           $form_t26->nomCope = '1';
@@ -132,10 +135,8 @@ class controladorPermuta extends Controller
 
           }
 
-            return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_6.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
-        }
+          return back()->with('msj', 'Datos Registrados Exitosamente');
+            
     }
 
  
@@ -151,6 +152,7 @@ class controladorPermuta extends Controller
     public function update(Request $request, $id)
     {
         $form_t26= modeloPermuta::find($id);
+        $form_t26->codOt2_6 = $request->codOt2_6;
         $form_t26->codAdq = $request->codAdq;
 
 

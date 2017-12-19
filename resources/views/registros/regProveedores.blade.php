@@ -48,7 +48,11 @@
                       @endif
 
                         <td class="text-center">{{$registro->descProvee}}</td>
-                        <td class="text-center">{{$registro->selectProvee->opcion}}</td>
+                        @if($registro->tipProvee == '1')
+                        <td class="text-center">N</td>
+                        @else
+                        <td class="text-center">I</td>
+                        @endif
                         <td class="text-center">{{$registro->rifProvee}}</td>
                         <td class="text-center">xxx</td>
                         <td class="text-center"><a href="seleccionProveedores/{{$registro->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
@@ -69,8 +73,12 @@
                         @else
                         <td class="text-center">{{$registro->descProvee}}</td>
                         @endif
-
-                        <td class="text-center">{{$registro->selectProvee->opcion}}</td>
+                        
+                        @if($registro->tipProvee == '1')
+                        <td class="text-center">N</td>
+                        @else
+                        <td class="text-center">I</td>
+                        @endif
 
                         <td class="text-center">{{$registro->rifProvee}}</td>
                         
@@ -79,6 +87,7 @@
                         @else
                         <td class="text-center">{{$registro->otraDesc}}</td>
                         @endif
+                  
                         <td class="text-center"><a href="seleccionProveedores/{{$registro->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                        
                     </tr>

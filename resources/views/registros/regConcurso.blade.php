@@ -52,8 +52,9 @@
                         <tr>
                             @if($registro2->revisadot2 == '1')
                               <td class="text-center"><a href="#" hidden>{{$registro2->id}}</a><a href="seleccionConcurso/{{$registro2->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> A-1</b></a></td>
+                            @else
+                              <td class="text-center"><a href="#" hidden>{{$registro2->id}}</a><a href="seleccionConcurso/{{$registro2->id}}"> A-1</a></td>
 
-                              <td class="text-center"><a href="#" hidden>{{$registro2->id}}</a><a href="seleccionConcurso/{{$registro2->id}}">A-1</a></td>
                             @endif
                             
                       @else
@@ -61,12 +62,16 @@
                             @if($registro2->revisadot2 == '1')
                                <td class="text-center"><a href="#" hidden>{{$registro2->id}}</a><a href="seleccionConcurso/{{$registro2->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$registro2->codOrigen}}</b></a></td>
                             @else
-                               <td class="text-center"><a href="#" hidden>{{$registro2->id}}</a><a href="seleccionConcurso/{{$registro2->id}}">{{$registro2->codOrigen}}</a></td>
+                               <td class="text-center"><a href="#" hidden>{{$registro2->id}}</a><a href="seleccionConcurso/{{$registro2->id}}"> {{$registro2->codOrigen}}</a></td>
                             @endif
 
                       @endif
-
-                               <td class="text-center">{{$registro2->selectConcurso->opcion}}</td>
+                            
+                            @if($registro2->codAdquisicion == '1')
+                               <td class="text-center">8</td>
+                            @else
+                               <td class="text-center">9</td>
+                            @endif
 
                             @if($registro2->nomConcurso == '1')
                                <td class="text-center">xxx</td>

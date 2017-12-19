@@ -19,6 +19,8 @@ class controladorSeguros extends Controller
     {
 
    # id / label / placeholder tabla->t3dsbmioe type="text" / posición: position del select y input >
+  $lastCod = modeloSeguros::select('codRegT3')->get()->last();
+
   $infoSelect = sel_seguros::all();
   $infoSelect1 = sel_seguros1::all();
   $infoSelect2 = sel_seguros2::all();
@@ -28,9 +30,9 @@ class controladorSeguros extends Controller
   $arrayT3=array(
     array("codRegT3","Código del Registro:","Introduzca el código de registro","10","col-md-pull-4",""),
     array("otraCom","Otra Compañía Aseguradora:","Introduzca otra compañoa aseguradora","100","col-md-push-0",""),
-    array("numPoli","Número de Póliza:","Indique el N° de la póliza emitido","30","",""),
+    array("numPoli","Número de Póliza:","Indique el número de la póliza emitido","30","",""),
     array("montoAse","Monto Asegurado:","Indique el monto asegurado","26","","money"),
-    array("espMone","Especifique la Moneda:","Especifique la moneda:","Especifique otra moneda","30","",""),
+   
     
     );
 
@@ -50,6 +52,10 @@ class controladorSeguros extends Controller
     array("poseRes","Posee Responsabilidad Civil:","2"),
     );
 
+  $desMoneda = array(
+    array("espMone","Especifique la Moneda:","Especifique la moneda:","Especifique otra moneda","30",'col-md-push-4'),
+    );
+
   $select4= array(
     array("tipoCobe","Tipo Cobertura de la Póliza:","5"),
     );
@@ -64,13 +70,12 @@ class controladorSeguros extends Controller
     );
 
   $arrayT31= array(
-  array("espeCobe","Especifique el Tipo de Cobertura:","Especifique el tipo de cobertura","100","col-md-push-4"),
+  array("espeCobe","Especifique el Tipo de Cobertura:","Especifique el tipo de cobertura","100","col-md-pull-4"),
   array("descCobe","Descripción de la Cobertura:","Describa el tipo de cobertura","200","col-md-pull-4"),
-  
   );
 
-
-  return view('tablasForm.visSeguros', compact('infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4','arrayT3','select','select1','select2','select3','select4','datet1','datet2','arrayT31'));
+ 
+  return view('tablasForm.visSeguros', compact('infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4','arrayT3','select','select1','select2','select3','select4','datet1','datet2','arrayT31','desMoneda','lastCod'));
 
     }
 
@@ -82,7 +87,7 @@ class controladorSeguros extends Controller
         $form_t3->revisadot3 = 1;
 
         if($form_t3->codRegT3 = $request->codRegT3 == ''){
-         $form_t3->codRegT3 = '0'; 
+         $form_t3->codRegT3 = '99'; 
 
         }else{
          $form_t3->codRegT3 = $request->codRegT3;

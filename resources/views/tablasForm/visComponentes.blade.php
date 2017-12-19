@@ -20,6 +20,21 @@
           </div>
       </div>
 
+      <div class="row separar">
+            <div class="col-md-12">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar7"> Código </b>
+              <b id="espaciar">
+              @if($lastCod)
+                {{$lastCod->codigo}}
+              @else
+                VPRBV-P000
+              @endif
+              </b>
+            </div>
+        </div>
+    <hr>
+
       <div class="row"> 
           <div class="col-md-12 li separar moverIzq">
               <ul class="js-errors li"></ul>

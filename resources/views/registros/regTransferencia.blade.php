@@ -63,8 +63,10 @@
                         <td class="text-center"><a href="#" hidden>{{$reg27->id}}</a><a href="seleccionTransferencia/{{$reg27->id}}">{{$reg27->codOt2_7}}</a></td>
                         @endif
                 @endif
-
-                        <td class="text-center">{{$reg27->selectTransferencia->opcion}}</td>
+                       
+                       @if($reg27->codAdq == '1')
+                        <td class="text-center">5</td>
+                       @endif
 
                        @if($reg27->nomQtra == '1')
                         <td class="text-center">xxx</td>

@@ -64,8 +64,10 @@
                         <td class="text-center"><a href="#" hidden>{{$reg24->id}}</a><a href="seleccionDonacion/{{$reg24->id}}">{{$reg24->codOt2_4}}</a></td>
                         @endif
                 @endif
-
-                        <td class="text-center">{{$reg24->selectDonacion->opcion}}</td>
+                      
+                       @if($reg24->codAdq == '1')
+                        <td class="text-center">4</td>
+                       @endif
 
                        @if($reg24->nomDona == '1')
                         <td class="text-center">xxx</td>

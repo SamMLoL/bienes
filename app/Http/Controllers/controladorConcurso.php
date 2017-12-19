@@ -14,6 +14,8 @@ class controladorConcurso extends Controller
 
         $infoSelect=sel_concurso::all();
 
+        $lastCod = modeloConcurso::select('codOrigen')->get()->last();
+
         # for/id/name label /placeholder 
         $arrayt2=array(
             array("codOrigen","Código de Origen:","Introduzca número consecutivo. Ej: A-2; A-3;","12","col-md-pull-4"),
@@ -43,22 +45,24 @@ class controladorConcurso extends Controller
            array("codAdquisicion","Código de la Forma de adquisición:","col-md-push-4"),
             );
 
-           return view('tablasForm.visConcurso', compact('infoSelect','arrayt2','datet2','date2t2','date3t2','selectT2'));
+           return view('tablasForm.visConcurso', compact('infoSelect','arrayt2','datet2','date2t2','date3t2','selectT2','lastCod'));
     }
 
     public function store(Request $request)
     {
-      $duplicado = modeloConcurso::where('codOrigen', $request->codOrigen)->get();
-
-        if($duplicado == '[]'){
 
         $form_t2= new modeloConcurso();
-        $form_t2->codOrigen = $request->codOrigen; 
         $form_t2->codAdquisicion = $request->codAdquisicion; 
         $form_t2->revisadot2 = 1;
 
 #Si el campo en el fomulario se deja en blanco cumple la condición
-    
+        if ($form_t2->codOrigen = $request->codOrigen == ''){
+        $form_t2->codOrigen = 'A-1';
+
+            }else{
+            $form_t2->codOrigen = $request->codOrigen;  
+        }
+
         if ($form_t2->nomConcurso = $request->nomConcurso == ''){
         $form_t2->nomConcurso = '1';
 
@@ -140,10 +144,7 @@ class controladorConcurso extends Controller
         }
 
         return back()->with('msj', 'Datos Registrados Exitosamente');
-            }else{
-        return back()->with('errormsj', 'El Código de Origen "#'.$request->codOrigen.'" ya existe, por favor siga el orden establecido e intente un código nuevo');
-        
-        } 
+            
 
     }
 
@@ -158,6 +159,8 @@ class controladorConcurso extends Controller
     public function update(Request $request, $id)
       {
         $form_t2= modeloConcurso::find($id);
+
+        $form_t2->codOrigen = $request->codOrigen; 
         $form_t2->codAdquisicion = $request->codAdquisicion; 
 #Si el campo en el fomulario se deja en blanco cumple la condición
 

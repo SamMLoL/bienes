@@ -15,6 +15,8 @@ class controladorDonacion extends Controller
         
         $infoSelect = sel_donacion::all();
 
+        $lastCod = modeloDonacion::select('codOt2_4')->get()->last();
+
         $arrayT24 = array(
             array("codOt2_4","Código de Origen:","Introduzca número consecutivo. Ej: E-2; E-3;","12","col-md-pull-4",""),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
@@ -38,21 +40,21 @@ class controladorDonacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visDonacion', compact('infoSelect','arrayT24','selectT24','dateT24','date2T24'));
+        return view('tablasForm.visDonacion', compact('infoSelect','arrayT24','selectT24','dateT24','date2T24','lastCod'));
     }
 
     public function store(Request $request)
     {
 
-      $duplicado = modeloDonacion::where('codOt2_4', $request->codOt2_4)->get();
-
-        if($duplicado == '[]'){
-
         $form_t24=new modeloDonacion();
-        $form_t24->codOt2_4 = $request->codOt2_4;
         $form_t24->codAdq = $request->codAdq;
         $form_t24->revisadot24 = 1;
 
+        if($form_t24->codOt2_4 =$request->codOt2_4 == ''){
+          $form_t24->codOt2_4 = 'E-1';
+          }else{
+          $form_t24->codOt2_4 = $request->codOt2_4;  
+        }
         
         if($form_t24->nomDona =$request->nomDona == ''){
           $form_t24->nomDona = '1';
@@ -113,10 +115,9 @@ class controladorDonacion extends Controller
           }
 
           return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else{
-          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_4.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
+             
         }
-    }
+  
 
 
     public function edit($id)
@@ -130,6 +131,7 @@ class controladorDonacion extends Controller
     public function update(Request $request, $id)
     {
         $form_t24= modeloDonacion::find($id);
+        $form_t24->codOt2_4 = $request->codOt2_4;
         $form_t24->codAdq = $request->codAdq;
 
 

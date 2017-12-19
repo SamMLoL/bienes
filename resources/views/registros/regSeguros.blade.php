@@ -62,26 +62,29 @@
 
                         <td class="text-center">{{$reg3->selectSeguros->opcion}}</td>
 
-                       @if($reg3->otraCom == '1')
+                      @if($reg3->otraCom == '1')
                         <td class="text-center">noaplica</td>
-                       @else
+                      @else
                         <td class="text-center">{{$reg3->otraCom}}</td>
-                       @endif
+                      @endif
 
-                       @if($reg3->numPoli == '0')
+                      @if($reg3->numPoli == '0')
                         <td class="text-center">xxx</td>
-                       @else
+                      @else
                         <td class="text-center">{{$reg3->numPoli}}</td>
-                       @endif
-                      
-                        <td class="text-center">{{$reg3->selectSeguros1->opcion}}</td>
+                      @endif
+                        
+                      @if($reg3->tipPoli == '1')
+                        <td class="text-center">I</td>
+                      @else
+                        <td class="text-center">C</td>
+                      @endif
 
-                  
-                       @if($reg3->montoAse == '0')
+                      @if($reg3->montoAse == '0')
                         <td class="text-center">xxx</td>
-                       @else
+                      @else
                         <td class="text-center">{{$reg3->montoAse}}</td>
-                       @endif
+                      @endif
 
                        <td class="text-center">{{$reg3->moneda}}</td>
 

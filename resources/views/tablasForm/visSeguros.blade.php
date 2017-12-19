@@ -23,6 +23,26 @@
             @if(session()->has('errormsj'))
           <center><div  class="col-md-12  alert alert-danger" >{{session('errormsj')}}</div></center>
         @endif
+      </div>
+    </div>
+
+    <div class="row separar">
+        <div class="col-md-12">
+            <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
+            <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar5"> Código del Proveedor</b>
+            <b id="espaciar">
+            @if($lastCod)
+                @if($lastCod->codRegT3 == '99')
+                  <b id="espaciar4"> 99 </b>
+                @else
+                  <b id="espaciar6"> {{$lastCod->codRegT3}}</b>
+                @endif
+               </b>
+            @else
+               EMPRSE-G000
+            @endif
+            </b>
+        </div>
     </div>
 
     <div class="row"> 
@@ -59,9 +79,9 @@
       @foreach($arrayT3 as $posicion => $valor)
       
       <div class="col-md-4 form-group {{$arrayT3[$posicion][4]}} separar">
-            <label for="{{$arrayT3[$posicion][0]}}">{{$arrayT3[$posicion][1]}}</label>
-              <input type="text" name="{{$arrayT3[$posicion][0]}}" id="{{$arrayT3[$posicion][0]}}" class="form-control {{$arrayT3[$posicion][5]}}" placeholder="{{$arrayT3[$posicion][2]}}" maxlength="{{$arrayT3[$posicion][3]}}">
-          </div>
+          <label for="{{$arrayT3[$posicion][0]}}">{{$arrayT3[$posicion][1]}}</label>
+          <input type="text" name="{{$arrayT3[$posicion][0]}}" id="{{$arrayT3[$posicion][0]}}" class="form-control {{$arrayT3[$posicion][5]}}" placeholder="{{$arrayT3[$posicion][2]}}" maxlength="{{$arrayT3[$posicion][3]}}">
+      </div>
       @endforeach
 
     <!--ARRAY SELECT select1 PERTENECIENTE AL CONTROLADORT3, TABLA RELACIONADA EN LA BD => mig_selectT31 Y T3-->
@@ -96,6 +116,14 @@
             </select>
       </div>
 
+      @endforeach
+
+      @foreach($desMoneda as $posicion => $valor)
+      
+      <div class="col-md-4 form-group {{$desMoneda[$posicion][4]}} separar">
+          <label for="{{$desMoneda[$posicion][0]}}">{{$desMoneda[$posicion][1]}}</label>
+          <input type="text" name="{{$desMoneda[$posicion][0]}}" id="{{$desMoneda[$posicion][0]}}" class="form-control {{$desMoneda[$posicion][5]}}" placeholder="{{$desMoneda[$posicion][2]}}" maxlength="{{$desMoneda[$posicion][3]}}">
+      </div>
       @endforeach
 
     <!--ARRAY DE FECHA datet1 PERTENECIENTE AL CONTROLADORT1, TABLA RELACIONADA EN LA BD => T1--> 
@@ -147,6 +175,8 @@
 
       @endforeach
 
+
+
       @foreach($select4 as $posicion => $valor)
 
       <div class="col-md-4 form-group separar">
@@ -170,13 +200,13 @@
       @endforeach
 
 	    	<div class="row">
-            <div class="col-md-12 form-group" ><br>
-                <center>
-                    <button type="submit" class="btn btn-lg btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> Guardar Registro</button>
-                             
-                    <a href="home"  class="btn btn-lg btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Salir</a>  
-                </center> 
-            </div>
+              <div class="col-md-12 form-group" ><br>
+                           
+                  <center><button type="submit" class="btn btn-md btn-success" name="#" title="Guardar Registro"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
+                          
+                  <a href="{{url('home')}}" class="btn btn-md btn-danger" title="Salir" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i><b>Salir</b></a></center>  
+
+              </div>
         </div>
      </form> 
    </div>  

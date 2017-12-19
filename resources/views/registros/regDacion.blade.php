@@ -62,8 +62,10 @@
                         <td class="text-center"><a href="#" hidden>{{$reg23->id}}</a><a href="seleccionDacion/{{$reg23->id}}">{{$reg23->codOt2_3}}</a></td>
                         @endif
                 @endif
-
-                        <td class="text-center">{{$reg23->selectDacion->opcion}}</td>
+                      
+                       @if($reg23->codAdq == '1')
+                        <td class="text-center">3</td>
+                       @endif
 
                        @if($reg23->nomCed == '1')
                         <td class="text-center">xxx</td>

@@ -47,11 +47,13 @@
                               <br>{{$seleccion->codOt2_4}}
                       </div>
                       @endif
-               
+                      
+                      @if($seleccion->codAdq == '1')
                   	  <div class="col-md-4 form-group">
                      	    <label>Código de Adquisición</label>
-                         	    <br>{{$seleccion->selectDonacion->opcion}}
+                         	    <br>4
                       </div>
+                      @endif
 
                       @if($seleccion->nomDona == '1')
                       <div class="col-md-4 form-group">

@@ -18,16 +18,33 @@
 }
 
 #espaciar{
-  margin-left: 30px;
+  margin-left: 40px;
   color: #8E2121;
 }
 
+
 #espaciar2{
-  margin-left: 25px;
+  margin-left: 27px;
 }
 
 #espaciar3{
-  margin-left: 5px;
+  margin-left: 11px;
+}
+
+#espaciar4{
+  margin-left: 20px;
+}
+
+#espaciar5{
+  margin-left: 8px;
+}
+
+#espaciar6{
+  margin-left: 3px;
+}
+
+#espaciar7{
+  margin-left: 50px;
 }
 
 #panelTitu{

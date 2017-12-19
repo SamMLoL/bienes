@@ -13,6 +13,8 @@ class controladorExpropiacion extends Controller
     {
       $infoSelect = sel_expropiacion::all();
 
+      $lastCod = modeloExpropiacion::select('codOt2_5')->get()->last();
+
       $arrayT25 = array(
         array("codOt2_5","Código de Origen:","Introduzca número consecutivo. Ej: F-2; F-3;","12","col-md-pull-4",""),
         array("nomPan","Nombre del Propietario Anterior:","Introduzca nombre del propietario anterior","100","col-md-push-0",""),
@@ -36,22 +38,23 @@ class controladorExpropiacion extends Controller
         array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
         );
 
-      return view('tablasForm.visExpropiacion', compact('infoSelect','arrayT25','selectT25','dateT25','date2T25'));
+      return view('tablasForm.visExpropiacion', compact('infoSelect','arrayT25','selectT25','dateT25','date2T25','lastCod'));
 
     }
 
 
     public function store(Request $request)
     {
-      $duplicado = modeloExpropiacion::where('codOt2_5', $request->codOt2_5)->get();
-
-        if($duplicado == '[]'){
 
         $form_t25=new modeloExpropiacion();
-        $form_t25->codOt2_5 = $request->codOt2_5;
         $form_t25->codAdq = $request->codAdq;
         $form_t25->revisadot25 = 1;
         
+        if($form_t25->codOt2_5 =$request->codOt2_5 == ''){
+          $form_t25->codOt2_5 = 'F-1';
+          }else{
+          $form_t25->codOt2_5 = $request->codOt2_5;  
+        }
 
         if($form_t25->nomPan =$request->nomPan == ''){
           $form_t25->nomPan = '1';
@@ -118,9 +121,7 @@ class controladorExpropiacion extends Controller
           }
 
           return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_5.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
-        }
+       
     }
 
 
@@ -136,6 +137,7 @@ class controladorExpropiacion extends Controller
     public function update(Request $request, $id)
     {
         $form_t25= modeloExpropiacion::find($id);
+        $form_t25->codOt2_5 = $request->codOt2_5;
         $form_t25->codAdq = $request->codAdq;
 
 

@@ -63,8 +63,10 @@
                         <td class="text-center"><a href="#" hidden>{{$reg26->id}}</a><a href="seleccionPermuta/{{$reg26->id}}">{{$reg26->codOt2_6}}</a></td>
                         @endif
                 @endif
-
-                        <td class="text-center">{{$reg26->selectPermuta->opcion}}</td>
+                       
+                       @if($reg26->codAdq == '1')
+                        <td class="text-center">2</td>
+                       @endif
 
                        @if($reg26->nomCope == '1')
                         <td class="text-center">xxx</td>

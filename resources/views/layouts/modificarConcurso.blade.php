@@ -53,13 +53,17 @@
                   <div class="col-md-12">
                     <div class="col-md-4">
                       <label for="codOrigen">Código de Origen</label>
-                        <input type="text" class="form-control" name="codOrigen" id="codOrigen" value="{{$form_t2->codOrigen}}" maxlength="12" disabled> 
+                    @if($form_t2->codOrigen == '0')
+                        <input type="text" class="form-control" name="codOrigen" id="codOrigen" value="A-1" maxlength="12"> 
+                    @else
+                        <input type="text" class="form-control" name="codOrigen" id="codOrigen" value="{{$form_t2->codOrigen}}" maxlength="12"> 
+                    @endif
                     </div>
 
                     <div class="col-md-4 form-group">
                       <label for="codAdquisicion">Código de la Forma de Adquisición</label>
                         <select name="codAdquisicion" id="codAdquisicion" class="form-control">
-                          <option value="{{$form_t2->selectConcurso->id}}">{{$form_t2->selectConcurso->opcion}}</option>
+                          <option value="{{$form_t2->selectConcurso->id}}" disabled>{{$form_t2->selectConcurso->opcion}}</option>
                             @foreach($infoSelect as $form)
                           <option value="{{$form->id}}">{{$form->opcion}}</option> 
                         @endforeach

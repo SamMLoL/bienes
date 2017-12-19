@@ -11,13 +11,16 @@ class controladorAddMarca extends Controller
 {
     public function index(){
 
+      $lastCod = modeloMarcas::select('codMarca')->get()->last();
+      $infoSelectt = modeloMarcas::all();
+
     	$array= array(
         array("denComar","Denominación de la Marca:","Introduzca el nombre de la marca ","100"),
     		array("codMarca","Código de la Marca:","Introduzca el código de la marca ","10"),
     		array("nomFabri","Nombre del Fabricante:","Introduzca el nombre del fabricante","100"),
     		);
 
-    	return view('añadir.añadirMarcas', compact('array'));
+    	return view('añadir.añadirMarcas', compact('array','lastCod','infoSelectt'));
     }
 
 

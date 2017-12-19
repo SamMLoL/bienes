@@ -33,6 +33,25 @@
           </div>
       </div>
 
+      <div class="row separar">
+          <div class="col-md-12">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+            
+              @if($lastCod)
+                @if($lastCod->codOt2_5 == 'F-1')
+                  <b id="espaciar4"> F-1 </b>
+                @else
+                  <b id="espaciar3"> {{$lastCod->codOt2_5}}</b>
+                @endif
+              @else
+                  <b id="espaciar3">F2012000</b>
+              @endif
+              
+                </b>
+          </div>
+      </div>
+
       <div class="row"> 
           <div class="col-md-12 li separar moverIzq">
               <ul class="js-errors li"></ul>

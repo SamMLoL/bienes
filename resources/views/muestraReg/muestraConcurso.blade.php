@@ -46,9 +46,15 @@
                     @endif
 
             		    <div class="col-md-4 form-group">
+                    @if($seleccion->codAdquisicion == '1')
                 	     <label>Código de Adquisición</label>
-                          <br>{{$seleccion->selectConcurso->opcion}}
+                          <br>8
                 	  </div>
+                    @else
+                    <label>Código de Adquisición</label>
+                          <br>9
+                    </div>
+                    @endif
 
                     @if($seleccion->nomConcurso == '1')
 

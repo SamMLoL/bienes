@@ -41,9 +41,20 @@
                    	</div>
 
                 	  <div class="col-md-4 form-group">
+                    @if($seleccion->tipoResp == '1')
                    	    <label>Tipo de Responsable</label>
-                       	    <br>{{$seleccion->selectResponsables->opcion}}
+                       	    <br>D
                     </div>
+                    @elseif($seleccion->tipoResp == '2')
+                    <label>Tipo de Responsable</label>
+                            <br>U
+                    </div>
+                    @else
+                    <label>Tipo de Responsable</label>
+                            <br>C
+                    </div>
+                    @endif
+
 
                     <div class="col-md-4 form-group">
                         <label>Cédula de Identidad</label>

@@ -19,6 +19,20 @@
             </div>
           </div>
 
+          <div class="row separar">
+            <div class="col-md-12">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar5"> Código del Proveedor</b>
+              <b id="espaciar">
+              @if($lastCod)
+                {{$lastCod->codModel}}
+              @else
+                MOD000
+              @endif
+              </b>
+            </div>
+        </div>
+
           <div class="row"> 
               <div class="col-md-12 li separar moverIzq">
                   <ul class="js-errors li"></ul>
@@ -28,6 +42,7 @@
       <form role="form" id="formValidaT6" name="formValidaT6" method="POST" action="{{url('modelos')}}">
       {{ csrf_field() }}
         
+      
       <!--ARRAY DE INPUT-TEXT PERTENECIENTE AL CONTROLADORT6, TABLA RELACIONADA EN LA BD => T6-->
       <!--ARRAY OF INPUT-TEXT BELONGING TO CONTROLADORT6, TABLE RELATED IN THE BD => T6-->
   
@@ -43,6 +58,16 @@
             
           @endforeach
 
+        <div id="hola" name="hola">
+          
+           
+        </div>
+      
+
+        
+
+        
+
           @foreach($selectCod as $posicion => $valor)
             
              <div class="col-md-4 {{$selectCod[$posicion][4]}} form-group  separar">
@@ -56,6 +81,8 @@
                    </select>
              </div>
           @endforeach
+
+
 
           @foreach($arrayBien as $posicion => $valor)
 

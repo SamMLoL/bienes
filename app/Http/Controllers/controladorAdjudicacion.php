@@ -15,6 +15,8 @@ class controladorAdjudicacion extends Controller
 	{
      	$infoSelect=sel_adjudicacion::all();
 
+      $lastCod = modeloAdjudicacion::select('codOt2_8')->get()->last();
+
         $arrayT28 = array(
             array("codOt2_8","Código de Origen:","Introduzca número consecutivo. Ej: I-2; I-3;","12","col-md-pull-4"),
             array("nomProan","Nombre del Propietario Anterior:","Introduzca nombre del propietario anterior","100","col-md-push-0"),
@@ -39,21 +41,23 @@ class controladorAdjudicacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visAdjudicacion', compact('infoSelect','arrayT28','selectT28','dateT28','date2T28'));
+        return view('tablasForm.visAdjudicacion', compact('infoSelect','arrayT28','selectT28','dateT28','date2T28','lastCod'));
     }
 
     
     
     public function store(Request $request)
     {
-      $duplicado = modeloAdjudicacion::where('codOt2_8', $request->codOt2_8)->get();
-
-        if($duplicado == '[]'){
 
         $form_t28= new modeloAdjudicacion();
-        $form_t28->codOt2_8 = $request->codOt2_8;
         $form_t28->codAdq = $request->codAdq;
         $form_t28->revisadot28 = 1;
+
+        if($form_t28->codOt2_8 =$request->codOt2_8 == ''){
+          $form_t28->codOt2_8 = 'I-1';
+          }else{
+          $form_t28->codOt2_8 = $request->codOt2_8;  
+        }
 
         if($form_t28->nomProan =$request->nomProan == ''){
           $form_t28->nomProan = '1';
@@ -120,9 +124,7 @@ class controladorAdjudicacion extends Controller
           }
 
           return back()->with('msj', 'Datos Registrados Exitosamente');
-             }else {
-          return back()->with('errormsj', 'El Código de Origen "'.$request->codOt2_8.'" ya existe, por favor siga el orden establecido e intente un nuevo código.');
-        }
+            
     }
 
   
@@ -138,6 +140,7 @@ class controladorAdjudicacion extends Controller
     public function update(Request $request, $id)
     {
         $form_t28=modeloAdjudicacion::find($id);
+        $form_t28->codOt2_8 = $request->codOt2_8;
         $form_t28->codAdq = $request->codAdq;
        
         if($form_t28->nomProan =$request->nomProan == ''){

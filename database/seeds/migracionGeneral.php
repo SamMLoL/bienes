@@ -25,7 +25,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-      $dato = array('N', 'I');
+      $dato = array('Nacional', 'Internacional');
 
       foreach ($dato as $v) {
         DB::table('sel_proveedores')->insert([
@@ -122,7 +122,7 @@ class migracionGeneral extends Seeder
       }
         
 
-      $dato = array("I","C");
+      $dato = array("Individual","Colectiva");
 
       foreach ($dato as $v) {
         DB::table('sel_seguros1')->insert([
@@ -140,7 +140,7 @@ class migracionGeneral extends Seeder
        		]); 	
     	}
        	
-        $dato = array("S","N");
+        $dato = array("Si","No");
 
       foreach ($dato as $v) {
         DB::table('sel_seguros3')->insert([
@@ -158,7 +158,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-      $dato = array("D","U","C");
+      $dato = array("Administrativo","Uso Directo","Cuido Directo");
 
       foreach ($dato as $v) {
         DB::table('sel_responsables')->insert([
@@ -171,6 +171,33 @@ class migracionGeneral extends Seeder
 
       foreach ($dato as $v) {
         DB::table('sel_responsables1')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+       $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En proceso de disposición","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En Almacén o Depósito para su asignación","Otro uso");
+
+      foreach ($dato as $v) {
+        DB::table('sel_estatusbien')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+       $dato = array("Óptimo","Regular","Deteriorado","Averiado","Chatarra","No operativo","Otra condición física");
+
+      foreach ($dato as $v) {
+        DB::table('sel_condicionbien')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("Días","Meses","Años",'99');
+
+      foreach ($dato as $v) {
+        DB::table('sel_garantiabien')->insert([
            'opcion' => $v,
 
           ]);   

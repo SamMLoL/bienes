@@ -101,7 +101,7 @@ Route::post('marcas', 'controladorAddMarca@store');
 
 #ANEXO T6 = modelos
 Route::get('/modelos', 'controladorAddModelos@index');
-Route::post('modelos', 'controladorAddModelos@store');
+Route::resource('modelos', 'controladorAddModelos');
 
 #ANEXO T7 = Componentes
 Route::get('/componentes', 'controladorComponentes@index');
@@ -111,6 +111,8 @@ Route::resource('componentes', 'controladorComponentes');
 Route::get('/bienes', 'controladorBienes@index');
 Route::resource('bienes', 'controladorBienes');
 
+#SELECT DINAMICOS
+Route::get('dropdown/{id}','controladorBienes@getBienes');
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
 Route::get('/regProveedores', 'con_proveedoresVer@index');

@@ -64,8 +64,10 @@
                         <td class="text-center"><a href="#" hidden>{{$reg25->id}}</a><a href="seleccionExpropiacion/{{$reg25->id}}">{{$reg25->codOt2_5}}</a></td>
                         @endif
                 @endif
-
-                        <td class="text-center">{{$reg25->selectExpropiacion->opcion}}</td>
+                        
+                       @if($reg25->codAdq == '1')
+                        <td class="text-center">6</td>
+                       @endif
 
                        @if($reg25->nomPan == '1')
                         <td class="text-center">xxx</td>

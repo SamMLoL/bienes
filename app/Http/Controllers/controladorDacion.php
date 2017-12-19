@@ -14,6 +14,8 @@ class controladorDacion extends Controller
     {   
         $infoSelect= sel_dacion::all();
 
+        $lastCod = modeloDacion::select('codOt2_3')->get()->last();
+
         $arrayT23=array(
             array("codOt2_3","Código de Origen:","Introduzca número consecutivo. Ej: D-2; D-3;","12","col-md-pull-4",""),
             #array("codAdq","CÓDIGO DE LA FORMA DE ADQUISICIÓN","Introduzca el N° el código de origen","12","col-md-pull-4"),
@@ -37,7 +39,7 @@ class controladorDacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visDacion', compact('infoSelect','arrayT23','selectT23','dateT23','date2T23'));
+        return view('tablasForm.visDacion', compact('infoSelect','arrayT23','selectT23','dateT23','date2T23','lastCod'));
 
     }
 
@@ -53,7 +55,7 @@ class controladorDacion extends Controller
         $form_t23->revisadot23 = 1;
 
          if($form_t23->codOt2_3 = $request->codOt2_3 == ''){
-         $form_t23->codOt2_3 = '0'; 
+         $form_t23->codOt2_3 = 'D-1'; 
 
           }else{
           $form_t23->codOt2_3 = $request->codOt2_3;
@@ -134,6 +136,7 @@ class controladorDacion extends Controller
     public function update(Request $request, $id)
     {
         $form_t23=modeloDacion::find($id);
+        $form_t23->codOt2_3 = $request->codOt2_3;
         $form_t23->codAdq = $request->codAdq;
 
 

@@ -18,6 +18,8 @@ class controladorDirecta extends Controller
 
         $infoSelect2=modeloProveedores::all();
 
+        $lastCod = modeloDirecta::select('codOt2_1')->get()->last();
+
         $arrayT21=array(
             array("codOt2_1","Código de Origen:","Introduzca número consecutivo. Ej: B-2; B-3;","12","col-md-pull-8"),
             array("numCom","Número de la Orden de Compra:","Introduzca el número de Orden de compra","30",""),
@@ -43,17 +45,13 @@ class controladorDirecta extends Controller
         $dateT212=array(
             array("feFac","Fecha de la Factura:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
-        return view('tablasForm.visDirecta', compact('arrayT21','selectT21','selectT22','infoSelect','infoSelect2','dateT21','dateT211','dateT212'));
+        return view('tablasForm.visDirecta', compact('arrayT21','selectT21','selectT22','infoSelect','infoSelect2','dateT21','dateT211','dateT212','lastCod'));
     }
 
   
     public function store(Request $request)
     {
     
-    $duplicado = modeloDirecta::where('codOt2_1', $request->codOt2_1)->get();
-
-        if($duplicado == '[]'){        
-               
 
         $form_t21=new modeloDirecta();
         $form_t21->codOt2_1 = $request->codOt2_1;
@@ -61,6 +59,13 @@ class controladorDirecta extends Controller
         $form_t21->codProvee = $request->codProvee;
         $form_t21->revisadot21 = 1;
         
+        if($form_t21->codOt2_1 = $request->codOt2_1 == ''){
+            $form_t21->codOt2_1 = 'B-1';
+
+            }else{
+            $form_t21->codOt2_1 = $request->codOt2_1;    
+            }  
+
         if($form_t21->numCom = $request->numCom == ''){
             $form_t21->numCom = '0';
 
@@ -112,12 +117,7 @@ class controladorDirecta extends Controller
           $bit->save();
         }
 
-        
-
         return back()->with('msj', 'Datos Registrados Exitosamente');
-           }else{
-        return back()->with('errormsj', 'El Código de Origen "#'.$request->codOt2_1.'" ya existe, por favor siga el orden establecido e intente un código nuevo');
-        }
           
     }
 
@@ -137,6 +137,7 @@ class controladorDirecta extends Controller
 
 
         $form_t21=modeloDirecta::find($id);
+        $form_t21->codOt2_1 = $request->codOt2_1;
         $form_t21->codAdq = $request->codAdq;
         $form_t21->codProvee = $request->codProvee;
         $form_t21->numCom = $request->numCom;

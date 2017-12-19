@@ -47,13 +47,15 @@
                           <br>{{$seleccion->codOt2_7}}
                   </div>
                   @endif
-           
+                  
+                  @if($seleccion->codAdq == '1')
               	  <div class="col-md-4 form-group">
                  	    <label>Código de Adquisición</label>
-                     	    <br>{{$seleccion->selectTransferencia->opcion}}
+                     	    <br>5
                   </div>
+                  @endif
 
-                 @if($seleccion->nomQtra == '1')
+                  @if($seleccion->nomQtra == '1')
                   <div class="col-md-4 form-group">
                       <label>Nombre de Quien Transfiere</label>
                           <br>xxx
