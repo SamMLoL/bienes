@@ -258,8 +258,7 @@ class CreateAnexos extends Migration
 
         Schema::create('bienes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('codOt2_1')->unsigned();
-            $table->foreign('codOt2_1')->references('id')->on('directa');
+            $table->string('codOt2_1', 10)->nullable();
             $table->string('codCata', 10)->nullable();
             $table->integer('depAdmRes')->nullable();
             $table->foreign('depAdmRes')->references('id')->on('sel_responsables1');
@@ -284,13 +283,13 @@ class CreateAnexos extends Migration
             $table->foreign('codMarca')->references('id')->on('marcas');
             $table->integer('codModel')->unsigned();
             $table->foreign('codModel')->references('id')->on('modelos');
-            $table->integer('añoFabriBien')->nullable();
+            $table->integer('anoFabriBien')->nullable();
             $table->integer('codColorBien')->nullable();
             $table->string('espeColor', 50)->nullable();
             $table->string('otraEspeColor', 255)->nullable();
             $table->string('espeTecBien', 255)->nullable();
             $table->string('otraDescBien', 255)->nullable();
-            $table->integer('garantia')->nullable();
+            $table->string('garantia')->nullable();
             $table->integer('unidadMedi')->unsigned();
             $table->foreign('unidadMedi')->references('id')->on('sel_seguros3');
             $table->date('feIniGarantia', 10)->nullable();
@@ -299,7 +298,7 @@ class CreateAnexos extends Migration
             $table->integer('seguroBien')->nullable();
             $table->foreign('seguroBien')->references('id')->on('sel_seguros3');
             $table->string('codRegSeguro', 10)->nullable();
-            $table->integer('revisadot7')->nullable();
+            $table->integer('revisadot8')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

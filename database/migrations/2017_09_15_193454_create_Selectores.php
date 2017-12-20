@@ -139,6 +139,12 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
+        Schema::create('sel_colorbien', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
+
         
     }
 

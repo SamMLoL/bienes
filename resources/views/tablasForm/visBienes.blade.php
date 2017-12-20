@@ -19,6 +19,21 @@
             @endif
           </div>
       </div>
+      
+      <div class="row separar">
+            <div class="col-md-12">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+            
+              @if($lastCod)
+                  <b id="espaciar3"> {{$lastCod->codOt2_1}}</b>
+              @else
+                  <b id="espaciar3">B2012000</b>
+              @endif
+              
+                </b>
+            </div>
+        </div> 
 
       <div class="row"> 
           <div class="col-md-12 li separar moverIzq">
@@ -33,13 +48,8 @@
     <div class="col-md-12">
       
       <div class="col-md-4 form-group">
-        <li for="sel_dir"><b>Código del Origen del Bien:</b></li>
-          <select name="codOt2_1" id="codOt2_1" class="form-control">
-            <option value="0" disabled selected>Seleccione</option>
-              @foreach($infoSelect as $traeDir)
-                <option value="{{$traeDir->id}}">{{$traeDir->codOt2_1}}</option> 
-              @endforeach
-          </select>
+        <li><b>Código del Origen del Bien:</b></li>
+          <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" placeholder="Introduzca el código según el catalogo" maxlength="10">
       </div>
 
       <div class="col-md-4 form-group">
@@ -98,7 +108,7 @@
 
     <div class="col-md-4 form-group">
         <li>Especifique el otro uso:</li>
-          <input type="text" id="espOtro" name="espOtro" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100">
+          <input type="text" id="espOtro" name="espOtro" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
     </div>
   </div>
 </div>
@@ -204,7 +214,7 @@
     
     <div class="col-md-4 form-group">
       <li>Año de Fabricación del Bien:</li>
-          <input type="text" id="añoFabriBien" name="añoFabriBien" class="form-control" placeholder="Introduzca el año de fabricación" maxlength="4">
+          <input type="text" id="anoFabriBien" name="anoFabriBien" class="form-control" placeholder="Introduzca el año de fabricación" maxlength="4" onkeypress="return soloNum(event)">
     </div>
   </div>
 </div>
@@ -213,7 +223,12 @@
   <div class="col-md-12">
     <div class="col-md-4 form-group">
       <li>Código del Color del Bien:</li>
-          <input type="text" id="codColorBien" name="codColorBien" class="form-control" placeholder="Introduzca el  código del color del bien" maxlength="5">
+          <select name="codColorBien" id="codColorBien" class="form-control">
+            <option value="0" >Seleccione</option>
+              @foreach($colorBien as $traeDir)
+            <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
+              @endforeach
+        </select>
     </div>
 
     <div class="col-md-4 form-group">

@@ -204,5 +204,15 @@ class migracionGeneral extends Seeder
       }
 
 
+      $dato = array("Negro","Azul","Palo Rosa","Naranja","Verde","Beige","Cromático","Vinotinto","Gris / Negro","Plateado","Beige Australia","Plateado Ferroso","Perla","Beige Olimpico","Arena Metalizado","Plata","Rojo","Amarillo","Beige Duna","Marrón / Negro","Azul / Beige","Marrón / Beige","Verde Esmeralda","Plata Claro","Plateado Brillante","Marrón Pardillo Bi Capa","Gris Palmera","Dorado","Madera Natural","Negro / Amarillo Mostaza","Marrón","Blanco","Gris","Azul / Gris","Azul / Negro","Acero","Otro Color");
+
+      foreach ($dato as $v) {
+        DB::table('sel_colorbien')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+
     }
 }

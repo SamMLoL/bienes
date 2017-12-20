@@ -70,8 +70,8 @@ class controladorSeguros extends Controller
     );
 
   $arrayT31= array(
-  array("espeCobe","Especifique el Tipo de Cobertura:","Especifique el tipo de cobertura","100","col-md-pull-4"),
-  array("descCobe","Descripción de la Cobertura:","Describa el tipo de cobertura","200","col-md-pull-4"),
+  array("espeCobe","Especifique el Tipo de Cobertura:","Especifique el tipo de cobertura","100","col-md-pull-0"),
+  array("descCobe","Descripción de la Cobertura:","Describa el tipo de cobertura","200","col-md-push-0"),
   );
 
  
@@ -141,7 +141,7 @@ class controladorSeguros extends Controller
           $form_t3->tipoCobe = $request->tipoCobe;
 
           if($form_t3->espeCobe = $request->espeCobe == ''){
-         $form_t3->espeCobe = '1'; 
+            $form_t3->espeCobe = '1'; 
 
            }else{
             $form_t3->espeCobe = $request->espeCobe;

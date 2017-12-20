@@ -278,4 +278,61 @@ $(document).ready(function() {
         errorElement: "li", 
    
     });
+
+    // INPUT DISABLED EN TABLA DE BIENES AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
+  $(document).ready(function(){
+    $("#espOtro").attr("disabled", true);
+    $("#estatuBien").change(function(){
+      var id = $("#estatuBien").val();
+    if(id == 11){
+      $("#espOtro").attr("disabled", false);
+    }else{
+      $("#espOtro").attr("disabled", true);
+    
+      }
+    })
+  });
+
+  $(document).ready(function(){
+    $("#espeMoneda").attr("disabled", true);
+    $("#moneda").change(function(){
+      var id = $("#moneda").val();
+    if(id == 4){
+      $("#espeMoneda").attr("disabled", false);
+    }else{
+      $("#espeMoneda").attr("disabled", true);
+    
+      }
+    })
+  });
+
+  $(document).ready(function(){
+    $("#espOtroEdo").attr("disabled", true);
+    $("#edoBien").change(function(){
+      var id = $("#edoBien").val();
+    if(id == 7){
+      $("#espOtroEdo").attr("disabled", false);
+    }else{
+      $("#espOtroEdo").attr("disabled", true);
+    
+      }
+    })
+  });
+
+  $(document).ready(function(){
+    $("#espeColor").attr("disabled", true);
+    $("#codColorBien").change(function(){
+      var id = $("#codColorBien").val();
+    if(id == 37){
+      $("#espeColor").attr("disabled", false);
+    }else{
+      $("#espeColor").attr("disabled", true);
+    
+      }
+    })
+  });
+
+  //ANEXO T8 = BIENES
+
+
  });
