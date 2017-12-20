@@ -49,7 +49,7 @@
       
       <div class="col-md-4 form-group">
         <li><b>Código del Origen del Bien:</b></li>
-          <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" placeholder="Introduzca el código según el catalogo" maxlength="10">
+          <input type="text" class="form-control" name="codOt2_1" id="codOt2_1" placeholder="Introduzca el código de origen del bien" maxlength="10">
       </div>
 
       <div class="col-md-4 form-group">

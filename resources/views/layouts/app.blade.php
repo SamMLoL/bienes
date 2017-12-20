@@ -105,7 +105,7 @@
                                        <li><a href="histoMarcas">Marcas</a></li>
                                        <li><a href="histoModelos">Modelos</a></li>
                                        <li><a href="regComponentes">Componentes</a></li>
-                                       <li><a href="registroT8">Bienes</a></li>
+                                       <li><a href="regBienes">Bienes</a></li>
                                        <li><a href="registroT9">Equipo de Transporte</a></li>
                                        <li><a href="registroT10">Semovientes</a></li>
                                        <li><a href="registroT11">Bienes Muebles e Inmuebles</a></li>

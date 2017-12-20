@@ -131,6 +131,7 @@ Route::get('/regResponsables', 'con_responsablesVer@index');
 Route::get('/histoMarcas', 'con_histoMarcas@index');
 Route::get('/histoModelos', 'con_histoModelos@index');
 Route::get('/regComponentes', 'con_componentesVer@index');
+Route::get('/regBienes', 'con_bienesVer@index');
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
