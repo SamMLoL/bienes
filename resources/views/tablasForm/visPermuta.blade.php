@@ -33,7 +33,7 @@
           </div>
       </div>
 
-      <div class="row separar">
+      <div class="row">
           <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
@@ -53,10 +53,12 @@
       </div>
 
       <div class="row"> 
-          <div class="col-md-12 li separar moverIzq">
+          <div class="col-md-12 li moverIzq">
               <ul class="js-errors li"></ul>
           </div>
       </div>
+
+<hr>
 
    	  <form role="form" id="formValidaT26" name="formValidaT26" method="POST" action="{{url('permuta')}}">
     	{{ csrf_field() }}

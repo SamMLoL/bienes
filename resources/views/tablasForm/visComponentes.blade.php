@@ -20,7 +20,7 @@
           </div>
       </div>
 
-      <div class="row separar">
+      <div class="row">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar7"> Código </b>
@@ -33,10 +33,10 @@
               </b>
             </div>
         </div>
-    <hr>
+<hr>
 
       <div class="row"> 
-          <div class="col-md-12 li separar moverIzq">
+          <div class="col-md-12 li moverIzq">
               <ul class="js-errors li"></ul>
           </div>
       </div>

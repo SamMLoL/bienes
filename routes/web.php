@@ -150,6 +150,7 @@ Route::get('seleccionResponsables/{id}', 'con_responsablesVer@selectId');
 Route::get('seleccionMarcas/{id}', 'con_histoMarcas@selectId');
 Route::get('seleccionModelos/{id}', 'con_histoModelos@selectId');
 Route::get('seleccionComponentes/{id}', 'con_componentesVer@selectId');
+Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...

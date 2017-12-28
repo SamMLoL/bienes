@@ -9,6 +9,14 @@
       </div>
 
       <div class="row">
+        <div class="col-md-12 separar">
+          <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
+           <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
+        </div>
+      </div>
+
+
+      <div class="row">
           <div class="col-md-12 desvanecer">
             @if(session()->has('msj'))
               <center><div  class="col-md-12  alert alert-success" >{{session('msj')}}</div></center>
@@ -20,7 +28,7 @@
           </div>
       </div>
       
-      <div class="row separar">
+      <div class="row">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
@@ -36,10 +44,11 @@
         </div> 
 
       <div class="row"> 
-          <div class="col-md-12 li separar moverIzq">
+          <div class="col-md-12 li moverIzq">
               <ul class="js-errors li"></ul>
           </div>
       </div>
+<hr>
    
    	<form role="form" id="formValidaT8" name="formValidaT8" method="POST" action="{{url('bienes')}}">
     	{{ csrf_field() }}
@@ -119,7 +128,7 @@
   <div class="col-md-12">
     <div class="col-md-4 form-group">
         <li>Valor de Adquisición del Bien:</li>
-          <input type="text" id="valorAdq" name="valorAdq" class="form-control" placeholder="Introduzca el valor del bien" maxlength="26">
+          <input type="text" id="valorAdq" name="valorAdq" class="form-control money" placeholder="Introduzca el valor del bien" maxlength="26">
     </div>
 
     <div class="col-md-4 form-group">
@@ -251,10 +260,23 @@
     </div>
 
     <div class="col-md-4 form-group">
+      <li>Otras Especificaciones de Descripción del Bien:</li>
+          <input type="text" id="otraDescBien" name="otraDescBien" class="form-control" placeholder="Introduzca otra descripción del bien" maxlength="255">
+    </div>
+
+    <div class="col-md-4 form-group">
       <li>Garantía:</li>
           <input type="text" id="garantia" name="garantia" class="form-control" placeholder="Introduzca la garantía del bien" maxlength="5">
     </div>
 
+    
+  </div>
+</div>
+
+<hr>
+
+<div class="row separar">
+  <div class="col-md-12">
     <div class="col-md-4 form-group">
       <li><b>Unidad de Medida de la Garantía:</b></li>
         <select name="unidadMedi" id="unidadMedi" class="form-control">
@@ -264,13 +286,7 @@
               @endforeach
         </select>
     </div>
-  </div>
-</div>
 
-<hr>
-
-<div class="row separar">
-  <div class="col-md-12">
     <div class="col-md-4 form-group">
       <li>Fecha Inicio de la garantía:</li>
       <div class="input-group">
@@ -287,6 +303,11 @@
       </div>
     </div>
 
+    </div>
+</div>
+
+<div class="row separar">
+  <div class="col-md-12">
     <div class="col-md-4 form-group">
       <li><b>Posee Componentes:</b></li>
         <select name="poseeCompo" id="poseeCompo" class="form-control">
@@ -296,11 +317,7 @@
               @endforeach
         </select>
       </div>
-    </div>
-</div>
 
-<div class="row">
-  <div class="col-md-12">
     <div class="col-md-4 form-group">
       <li><b>Se encuentra asegurado el Bien:</b></li>
         <select name="seguroBien" id="seguroBien" class="form-control">

@@ -50,7 +50,6 @@ class controladorBienes extends Controller
     {
          $form_t8 = new modeloBienes();
          $form_t8->codOt2_1 = $request->codOt2_1;
-         $form_t8->codCata = $request->codCata;
          $form_t8->depAdmRes = $request->depAdmRes;
          $form_t8->sedeOrgano = $request->sedeOrgano;
          $form_t8->estatuBien = $request->estatuBien;
@@ -65,7 +64,22 @@ class controladorBienes extends Controller
          $form_t8->seguroBien = $request->seguroBien;
          $form_t8->revisadot8 = 1;
 
+
+         if($form_t8->codCata = $request->codCata == '')
+         {
+          $form_t8->codCata = '1';
+
+         }else{
+          $form_t8->codCata = $request->codCata;
+         }
          
+         if($form_t8->sedeOrgano = $request->sedeOrgano == '')
+         {
+          $form_t8->sedeOrgano = '1';
+
+         }else{
+          $form_t8->sedeOrgano = $request->sedeOrgano;
+         }
 
          if($form_t8->codRespAdm = $request->codRespAdm == '')
          {

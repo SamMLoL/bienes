@@ -12,4 +12,9 @@ class sel_seguros2 extends Model
     {
         return $this->hasOne('App\modeloSeguros', 'moneda');
     }
+
+     public function selectSeguros()
+    {
+        return $this->hasOne('App\modeloBienes', 'moneda');
+    }
 }

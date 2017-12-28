@@ -20,4 +20,9 @@ use SoftDeletes;
     {
         return $this->belongsTo('App\modeloMarcas', 'codMarca');
     }
+
+    public function selectModelbien()
+    {
+        return $this->hasOne('App\modeloBienes', 'codModel');
+    }
 }

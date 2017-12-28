@@ -12,4 +12,9 @@ class sel_responsables1 extends Model
     {
         return $this->hasOne('App\modeloResponsables', 'depAdmRes');
     }
+
+    public function selectDependencia()
+    {
+        return $this->hasOne('App\modeloBienes', 'depAdmRes');
+    }
 }
