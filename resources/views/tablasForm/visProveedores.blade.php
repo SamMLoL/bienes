@@ -85,12 +85,22 @@
         </div> 
 
           @endforeach
-        </div> 
-    </div>
+       
+
+          @foreach($selectt2 as $posicion => $valor)
+             <div class="col-md-1 form-group ">
+                <label for="{{$selectt2[$posicion][0]}}"></label>
+                   <select name="{{$selectt2[$posicion][0]}}" id="{{$selectt2[$posicion][0]}}" class="form-control">
+                      <option value="1" >{{$selectt2[$posicion][4]}}</option>
+                      <option value="2" >{{$selectt2[$posicion][5]}}</option>
+                      <option value="3" >{{$selectt2[$posicion][6]}}</option>
+                   </select>
+             </div>
+          @endforeach
     
         @foreach($input3 as $posicion => $valor)
 
-        <div class="col-md-4 form-group {{$input3[$posicion][4]}}">
+        <div class="col-md-3 form-group {{$input3[$posicion][4]}}">
           
            <label for="{{$input3[$posicion][0]}}">{{$input3[$posicion][1]}}</label>
         
@@ -111,7 +121,6 @@
           @endforeach
       </div>
     </div>
-
 
          <!--FINAL DEL ROW | FOREACH DE LA TABLA t1dpbpoe | controladorT1-->
          <!--FINAL OF THE ROW | FOREACH OF THE TABLE t1dpbpoe | controllerT1 -->

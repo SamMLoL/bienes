@@ -27,14 +27,18 @@ class controladorProveedores extends Controller
           );
 
         $input3= array(
-          array("rifProvee","RIF:","Introducir número RIF","20",""),
+          array("rifProvee","RIF:","Introduzca el número de RIF","20",""),
           );
 
         $selectt1=array(
                array("tipProvee","Tipo de Proveedor:","select","1","col-md-push-4"),
           );
 
-        return view('tablasForm.visProveedores', compact('input1','input2','input3','sel_proveedores','selectt1','lastCod'));
+        $selectt2 = array(
+          array("grupo","","1","col-md-push-4","J","V","G"),
+          );
+
+        return view('tablasForm.visProveedores', compact('input1','input2','input3','sel_proveedores','selectt1','selectt2','lastCod'));
 
     } 
           
@@ -49,6 +53,7 @@ class controladorProveedores extends Controller
         $form_t1->codProvee = $request->codProvee;
         $form_t1->descProvee = $request->descProvee;
         $form_t1->tipProvee = $request->tipProvee;
+        $form_t1->grupo = $request->grupo;
         $form_t1->revisadot1 = 1;
 
         
@@ -96,6 +101,7 @@ class controladorProveedores extends Controller
         $form_t1 = modeloProveedores::find($id);
         $form_t1->descProvee = $request->descProvee;
         $form_t1->tipProvee = $request->tipProvee;
+        $form_t1->grupo = $request->grupo;
         $form_t1->rifProvee = $request->rifProvee;
         if ($form_t1->otraDesc = $request->otraDesc == '') {
         $form_t1->otraDesc = '0';

@@ -45,6 +45,7 @@ class controladorAddModelos extends Controller
         $form_t6->denModFab = $request->denModFab;
         $form_t6->codMarca = $request->codMarca;
         $form_t6->codSegModel = $request->codSegModel;
+        $form_t6->revisadot6 = 1;
         $form_t6->save();
 
 

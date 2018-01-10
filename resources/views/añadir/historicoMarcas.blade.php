@@ -22,6 +22,8 @@
             </div>
         </div>    
 
+              
+
          <table id="tablaT1" class="tabla table-striped table-responsive table-bordered table-hover">
 
                 <thead>
@@ -36,9 +38,22 @@
             <tbody>
           
                @foreach($a as $im)
-                  <tr> 
+                  @if($im->denComar == '0') 
+                  <tr>
+                        @if($im->revisadot5 == '1')
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionMarcas/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->denComar}}</b></a></td>
+                        @else 
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionMarcas/{{$im->id}}"> {{$im->denComar}}</a></td>
+                        @endif
+                  @else
+                        @if($im->revisadot5 == '1')
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionMarcas/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->denComar}}</b></a></td>
+                        @else
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionMarcas/{{$im->id}}"> {{$im->denComar}}</a></td>
+                        @endif
+                  @endif
+
                       <td class="text-center">{{$im->codMarca}} </td>
-                      <td class="text-center">{{$im->denComar}}</td>
                       <td class="text-center">{{$im->nomFabri}}</td>
                       <td class="text-center">{{$im->created_at->format('d/m/Y - h:i A')}}</td>
                       <td class="text-center"><a href="seleccionMarcas/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>

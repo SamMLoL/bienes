@@ -68,9 +68,11 @@
                     <div class="pull-right col-md-4 form-group">
                       <label for="tipProvee">Tipo de Proveedor</label>
                          <select name="tipProvee" id="tipProvee" class="form-control">
-                              <option value="{{$form_t1->selectProvee->id}}" disabled>{{$form_t1->selectProvee->opcion}}</option>
+                              <option value="{{$form_t1->selectProvee->id}}".00>{{$form_t1->selectProvee->opcion}}</option>
                             @foreach($sel_proveedores as $form)
+                              @if($form->id != $form_t1->selectProvee->id)
                               <option value="{{$form->id}}">{{$form->opcion}}</option> 
+                              @endif
                             @endforeach
                          </select>
                     </div>
@@ -79,7 +81,16 @@
 <!--FIN DEL PRIMER ROW DE INPUT-->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-md-4">
+                    <div class="col-md-1 form-group ">
+                      <label></label>
+                         <select name="grupo" id="grupo" class="form-control">
+                            <option value="1" >J</option>
+                            <option value="2" >V</option>
+                            <option value="3" >G</option>
+                         </select>
+                    </div>
+
+                    <div class="col-md-3">
                       <label for="rifProvee">RIF</label>   
                        <input type="text" class="form-control" name="rifProvee" id="rifProvee" value="{{$form_t1->rifProvee}}" maxlength="20"> 
                     </div>

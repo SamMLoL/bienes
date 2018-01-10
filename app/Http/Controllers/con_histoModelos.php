@@ -20,6 +20,7 @@ class con_histoModelos extends Controller
     {
 
         $seleccion = modeloModelos::find($id);
+        $seleccion->revisadot6 = 0;
         $seleccion->save();
 
        return view('añadir.fichaModelos', compact('seleccion'));

@@ -63,9 +63,11 @@
                     <div class="col-md-4 form-group">
                       <label for="codAdquisicion">Código de la Forma de Adquisición</label>
                         <select name="codAdquisicion" id="codAdquisicion" class="form-control">
-                          <option value="{{$form_t2->selectConcurso->id}}" disabled>{{$form_t2->selectConcurso->opcion}}</option>
-                            @foreach($infoSelect as $form)
+                          <option value="{{$form_t2->selectConcurso->id}}">{{$form_t2->selectConcurso->opcion}}</option>
+                        @foreach($infoSelect as $form)
+                            @if($form->id != $form_t2->selectConcurso->id)
                           <option value="{{$form->id}}">{{$form->opcion}}</option> 
+                            @endif
                         @endforeach
                       </select>
                     </div>

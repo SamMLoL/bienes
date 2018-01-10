@@ -16,7 +16,7 @@ use SoftDeletes;
     protected $dates = ['deleted_at'];
     
     protected $fillable = [
-    'codProvee','descProvee','tipProvee','rifProvee','otraDesc','revisadot1'];
+    'codProvee','descProvee','tipProvee','rifProvee','grupo','otraDesc','revisadot1'];
 
 
      public function selectProvee()

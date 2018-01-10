@@ -59,9 +59,11 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="tipoResp">Tipo de Responsable</label>
 		                <select name="tipoResp" id="tipoResp" class="form-control">
-		                    <option value="{{$form_t4->selectResponsables->id}}" disabled>{{$form_t4->selectResponsables->opcion}}</option>
+		                    <option value="{{$form_t4->selectResponsables->id}}">{{$form_t4->selectResponsables->opcion}}</option>
 		                  @foreach($infoSelect as $form)
+		                  	@if($form->id != $form_t4->selectResponsables->id)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                    @endif
 		                  @endforeach
 		                </select>
 					</div>
@@ -113,9 +115,11 @@
 				    <div class="col-md-4 form-group">
 		           	    <label for="depAdmRes">Tipo de Responsable</label>
 		                <select name="depAdmRes" id="depAdmRes" class="form-control">
-		                 <option value="{{$form_t4->selectResponsables1->id}}" disabled>{{$form_t4->selectResponsables1->opcion}}</option>
+		                 <option value="{{$form_t4->selectResponsables1->id}}">{{$form_t4->selectResponsables1->opcion}}</option>
 		                @foreach($infoSelect1 as $form)
+		                	@if($form->id != $form_t4->selectResponsables1->id)
 		                 <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                 	@endif
 		                @endforeach
 		                </select>
 			  		</div>

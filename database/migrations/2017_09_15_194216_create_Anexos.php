@@ -20,6 +20,7 @@ class CreateAnexos extends Migration
             $table->string('codProvee', 10)->nullable();
             $table->string('descProvee', 100)->nullable();
             $table->integer('tipProvee')->nullable();
+            $table->integer('grupo')->nullable();
             $table->string('rifProvee', 20)->nullable();
             $table->string('otraDesc', 200)->nullable();
             $table->integer('revisadot1')->nullable();
@@ -231,6 +232,7 @@ class CreateAnexos extends Migration
             $table->string('codMarca', 10)->nullable();
             $table->string('denComar', 100)->nullable();
             $table->string('nomFabri', 100)->nullable();
+            $table->integer('revisadot5')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -242,6 +244,7 @@ class CreateAnexos extends Migration
             $table->integer('codMarca')->unsigned();
             $table->foreign('codMarca')->references('id')->on('marcas');
             $table->string('codSegModel', 10)->nullable();
+            $table->integer('revisadot6')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -291,7 +294,7 @@ class CreateAnexos extends Migration
             $table->string('otraDescBien', 255)->nullable();
             $table->string('garantia')->nullable();
             $table->integer('unidadMedi')->unsigned();
-            $table->foreign('unidadMedi')->references('id')->on('sel_seguros3');
+            $table->foreign('unidadMedi')->references('id')->on('sel_garantiabien');
             $table->date('feIniGarantia', 10)->nullable();
             $table->date('feFinGarantia', 10)->nullable();
             $table->integer('poseeCompo')->unsigned();

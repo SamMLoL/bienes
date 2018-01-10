@@ -12,6 +12,10 @@ class modeloBienes extends Model
     public static function selectBienes($id){
          return modeloModelos::where('codMarca', $id)->get();
      }
+
+    public static function selectBienesmodif($id){
+         return modeloModelos::where('codMarca', $id)->get();
+     }
      
     public function selectEstatus()
     {
@@ -41,6 +45,21 @@ class modeloBienes extends Model
     public function selectModelbien()
     {
         return $this->belongsTo('App\modeloModelos', 'codModel');
+    }
+
+    public function selectUnidad()
+    {
+        return $this->belongsTo('App\sel_garantiabien', 'unidadMedi');
+    }
+
+    public function selectComponente()
+    {
+        return $this->belongsTo('App\sel_seguros3', 'poseeCompo');
+    }
+
+    public function selectColorbien()
+    {
+        return $this->belongsTo('App\sel_colorbien', 'codColorBien');
     }
 
 }

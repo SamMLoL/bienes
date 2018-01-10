@@ -95,11 +95,11 @@ Route::get('/responsables', 'controladorResponsables@index');
 Route::resource('responsables', 'controladorResponsables');
 
 
-#ANEXO T5 = Ruta marcaAdd para acceder a la vista añadir una marca nueva y ruta selMarca para guardar datos de dicha vista
-Route::get('/marcas', 'controladorAddMarca@index');
-Route::post('marcas', 'controladorAddMarca@store');
+#ANEXO T5 = Marcas
 
-#ANEXO T6 = modelos
+Route::resource('marcas', 'controladorAddMarca');
+
+#ANEXO T6 = Modelos
 Route::get('/modelos', 'controladorAddModelos@index');
 Route::resource('modelos', 'controladorAddModelos');
 
@@ -113,6 +113,8 @@ Route::resource('bienes', 'controladorBienes');
 
 #SELECT DINAMICOS
 Route::get('dropdown/{id}','controladorBienes@getBienes');
+Route::get('dropdown2/{id}','controladorBienes@getBienesmodif');
+
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
 Route::get('/regProveedores', 'con_proveedoresVer@index');

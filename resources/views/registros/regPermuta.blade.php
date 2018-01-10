@@ -38,6 +38,7 @@
                        <td id="letrasb" class="text-center">Nombre Licitación</td>
                        <td id="letrasb" class="text-center">Número Licitación</td>
                        <td id="letrasb" class="text-center">Fecha  Licitación</td>
+                       <td id="letrasb" class="text-center">Fecha de Registro</td>
                        <!--<td id="letrasb" class="text-center">Fecha Registro</td>-->
                        <td id="letrasb" class="text-center">Ver más</td>
                     </tr>
@@ -96,6 +97,12 @@
                         <td class="text-center">xxx</td>
                        @else
                         <td class="text-center">{{$reg26->feLic}}</td>
+                       @endif
+
+                       @if($reg26->feReg == '1111-11-11')
+                        <td class="text-center">11111111</td>
+                       @else
+                        <td class="text-center">{{$reg26->feReg}}</td>
                        @endif
 
                         <td class="text-center"><a href="seleccionPermuta/{{$reg26->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>

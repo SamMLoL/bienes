@@ -14,7 +14,6 @@
     </head>
 <body>
 
-  
 
 <div class="container" id="sha">
     <div class="col-md-12">
@@ -42,7 +41,7 @@
                   @if($seleccion->codCata == '1')
                   <div class="col-md-4 form-group">
                       <label>Código según el catalogo</label>
-                          <br>noaplica
+                          <br>xxx
                   </div>
                   @else
                   <div class="col-md-4 form-group">
@@ -57,11 +56,9 @@
                   </div>
               </div>
           </div>
-
+      
           <div class="row separar40">
               <div class="col-md-12">
-                 
-
                   <div class="col-md-4 form-group">
                   @if($seleccion->sedeOrgano == '1')
                       <label>Sede del Órgano o Ente Donde se Encuentra el Bien</label>
@@ -73,7 +70,7 @@
                   </div>
                   @endif
 
-                  @if($seleccion->montoAse == '0')
+                  @if($seleccion->codRespAdm == '1')
                   <div class="col-md-4 form-group">
                       <label>Código del Responsable Administrativo</label>
                         <br>xxx
@@ -96,11 +93,10 @@
                             <br>{{$seleccion->codResBien}}
                     </div>
                    @endif
-
               </div>
           </div>
-
-          <div class="row separar40">
+       
+          <div class="row separar">
               <div class="col-md-12">
                    @if($seleccion->codInterno == '1')
                     <div class="col-md-4 form-group">
@@ -132,10 +128,9 @@
                     @endif
               </div>
           </div>
-             
+        <hr>     
           <div class="row separar40">
               <div class="col-md-12">
-                    
                     @if($seleccion->valorAdq == '0')
                     <div class="col-md-4 form-group">
                         <label>Valor de Adquisición del Bien</label>
@@ -156,7 +151,7 @@
                     @if($seleccion->espeMoneda == '1')
                     <div class="col-md-4 form-group">
                         <label>Especifique la Otra Moneda</label>
-                            <br>xxx
+                            <br>noaplica
                     </div>
                     @else
                     <div class="col-md-4 form-group">
@@ -164,13 +159,11 @@
                             <br>{{$seleccion->espeMoneda}}
                     </div>
                     @endif
-
               </div>
           </div>
 
-          <div class="row separar">
+          <div class="row separar40">
             <div class="col-md-12">
-                    
                     @if($seleccion->feAdqBien == '11111111')
                     <div class="col-md-4 form-group">
                         <label>Fecha de Adquisición del Bien</label>
@@ -195,14 +188,16 @@
                     </div>
                     @endif
 
+                  
                     <div class="col-md-4 form-group">
                         <label>Estado del Bien</label>
                             <br>{{$seleccion->edoBien}}
                     </div>
-              </div>
-            </div>
-       
+                  
 
+                </div>
+            </div>
+        
           <div class="row separar">
               <div class="col-md-12">
                     @if($seleccion->espOtroEdo == '1')
@@ -242,8 +237,8 @@
                     @endif
               </div>
           </div>
-
-          <div class="row separar">
+        <hr>
+          <div class="row separar40">
             <div class="col-md-12">
               <div class="col-md-4 form-group">
                   <label>Código de la Marca del Bien</label>
@@ -268,13 +263,20 @@
               @endif
             </div>
           </div>
-
-          <div class="row separar">
+  
+          <div class="row separar40">
             <div class="col-md-12">
+              @if($seleccion->codColorBien == '1')
               <div class="col-md-4 form-group">
-                  <label>Código del Color del Bien</label>
+                  <label>Especificación de Color</label>
+                         <br>noaplica
+              </div>
+              @else
+              <div class="col-md-4 form-group">
+                  <label>Especificación de Color</label>
                          <br>{{$seleccion->codColorBien}}
               </div>
+              @endif
               
               @if($seleccion->espeColor == '1')
               <div class="col-md-4 form-group">
@@ -301,7 +303,7 @@
               @endif
             </div>
           </div>
-
+        
           <div class="row separar">
             <div class="col-md-12">
               @if($seleccion->espeTecBien == '1')
@@ -341,17 +343,89 @@
               @endif
             </div>
           </div>
-       
+        <hr>
+          <div class="row separar40">
+            <div class="col-md-12">
+              
+              <div class="col-md-4 form-group">
+                  <label>Unidad de Medida de la Garantía</label>
+                        <br>{{$seleccion->unidadMedi}}
+              </div>
+             
 
-         
+              @if($seleccion->feIniGarantia == '11111111')
+              <div class="col-md-4 form-group">
+                  <label>Fecha Inicio de la garantía</label>
+                        <br>11111111
+              </div>
+              @else
+              <div class="col-md-4 form-group">
+                  <label>Fecha Inicio de la garantía</label>
+                            <br>{{$seleccion->feIniGarantia}}
+              </div>
+              @endif
+
+              @if($seleccion->feFinGarantia == '11111111')
+              <div class="col-md-4 form-group">
+                  <label>Fecha Fin de la garantía</label>
+                        <br>11111111
+              </div>
+              @else
+              <div class="col-md-4 form-group">
+                  <label>Fecha Fin de la garantía</label>
+                            <br>{{$seleccion->feFinGarantia}}
+              </div>
+              @endif
+            </div>
+          </div>
+        
+          <div class="row separar40">
+            <div class="col-md-12">
+              @if($seleccion->poseeCompo == '1')
+              <div class="col-md-4 form-group">
+                  <label>Posee Componentes</label>
+                        <br>S
+              </div>
+              @else
+              <div class="col-md-4 form-group">
+                  <label>Posee Componentes</label>
+                            <br>N
+              </div>
+              @endif
+
+              @if($seleccion->seguroBien == '1')
+              <div class="col-md-4 form-group">
+                  <label>Se encuentra asegurado el Bien</label>
+                        <br>S
+              </div>
+              @else
+              <div class="col-md-4 form-group">
+                  <label>Se encuentra asegurado el Bien</label>
+                            <br>N
+              </div>
+              @endif
+
+              @if($seleccion->codRegSeguro == '1')
+              <div class="col-md-4 form-group">
+                  <label>Código del Registro de Seguro:</label>
+                        <br>99
+              </div>
+              @else
+              <div class="col-md-4 form-group">
+                  <label>Código del Registro de Seguro:</label>
+                            <br>{{$seleccion->codRegSeguro}}
+              </div>
+              @endif
+            </div>
+          </div>
           
           <div class="row text-center separar">
              	<div class="col-md-12 separar form-group">
                    <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT3" title="AnularT3"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
-                   <a href="{{url('bienes')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+                   <a href="{{url('regBienes')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                       
-                   <a href="{{url ('seguros/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a> 
+                   <a href="{{url ('bienes/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a> 
              	</div>
           </div>
        </div>

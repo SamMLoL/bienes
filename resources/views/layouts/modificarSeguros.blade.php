@@ -62,9 +62,11 @@
 					<div class="col-md-4 form-group">
 		           	   <label for="compAse">Compañía Aseguradoras</label>
 		                 <select name="compAse" id="compAse" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros->id}}" disabled>{{$form_t3->selectSeguros->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros->id}}">{{$form_t3->selectSeguros->opcion}}</option>
 		                  @foreach($infoSelect as $form)
+		                  	@if($form->id != $form_t3->selectSeguros->id)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                    @endif
 		                  @endforeach
 		                 </select>
 					</div>
@@ -94,9 +96,11 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="tipPoli">Tipo de Póliza</label>
 		                 <select name="tipPoli" id="tipPoli" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros1->id}}" disabled>{{$form_t3->selectSeguros1->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros1->id}}">{{$form_t3->selectSeguros1->opcion}}</option>
 		                  @foreach($infoSelect1 as $form)
-		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                  	@if($form->id != $form_t3->selectSeguros1->id)
+		                    <option value="{{$form->id}}">{{$form->opcion}}</option>
+		                    @endif 
 		                  @endforeach
 		                 </select>
 					</div>
@@ -119,7 +123,9 @@
 		               <select name="moneda" id="moneda" class="form-control">
 		                    <option value="{{$form_t3->selectSeguros2->id}}" disabled>{{$form_t3->selectSeguros2->opcion}}</option>
 		                  @foreach($infoSelect2 as $form)
+		                  	@if($form->id != $form_t3->selectSeguros2->id)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                    @endif
 		                  @endforeach
 		               </select>
 					</div>
@@ -158,9 +164,11 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="poseRes">Posee Responsabilidad Civil</label>
 		               	<select name="poseRes" id="poseRes" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros3->id}}" disabled>{{$form_t3->selectSeguros3->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros3->id}}">{{$form_t3->selectSeguros3->opcion}}</option>
 		                  @foreach($infoSelect3 as $form)
+		                  	@if($form->id != $form_t3->selectSeguros3->id)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                    @endif
 		                  @endforeach
 		              	</select>
 					</div>
@@ -168,9 +176,11 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="tipoCobe">Tipo de Cobertura de la Póliza </label>
 		               	<select name="tipoCobe" id="tipoCobe" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros4->id}}" disabled>{{$form_t3->selectSeguros4->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros4->id}}">{{$form_t3->selectSeguros4->opcion}}</option>
 		                  @foreach($infoSelect4 as $form)
+		                  	@if($form->id != $form_t3->selectSeguros4->id)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+		                    @endif
 		                  @endforeach
 		              	</select>
 					</div>

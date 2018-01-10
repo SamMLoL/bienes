@@ -35,15 +35,23 @@
                     </tr>
                 </thead>
             <tbody>
-          
-               @foreach($verT6 as $im)
+
+        
+              @foreach($verT6 as $im)
+                @if($im->codModel == '0') 
                   <tr>
-                    
-                    @if($im->revisadot6 == '1')
-                     <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionModelos/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codModel}}</b></a></td>
-                    @else
-                     <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionModelos/{{$im->id}}">{{$im->codModel}}</a></td>
-                    @endif 
+                        @if($im->revisadot6 == '1')
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionModelos/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codModel}}</b></a></td>
+                        @else 
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionModelos/{{$im->id}}"> {{$im->codModel}}</a></td>
+                        @endif
+                  @else
+                        @if($im->revisadot6 == '1')
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionModelos/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codModel}}</b></a></td>
+                        @else
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionModelos/{{$im->id}}"> {{$im->codModel}}</a></td>
+                        @endif
+                  @endif
 
                       <td class="text-center">{{$im->denModFab}}</td>
                       <td class="text-center">{{$im->selectMarca->codMarca}}</td>
@@ -52,7 +60,7 @@
                       <td class="text-center"><a href="seleccionModelos/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                   
                   </tr>     
-               @endforeach
+              @endforeach
            </tbody>
         </table>
     </div>

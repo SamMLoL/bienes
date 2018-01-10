@@ -63,9 +63,11 @@
 					<div class="col-md-4 form-group">
 			           	<label for="codAdq">Código de Adquisición</label>
 			                <select name="codAdq" id="codAdq" class="form-control">
-			                    <option value="{{$form_t21->selectDirecta->id}}" disabled>{{$form_t21->selectDirecta->opcion}}</option>
+			                    <option value="{{$form_t21->selectDirecta->id}}">{{$form_t21->selectDirecta->opcion}}</option>
 			                  @foreach($infoSelect as $form)
+			                  	@if($form->id != $form_t21->selectDirecta->id)
 			                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
+			                    @endif
 			                  @endforeach
 			               </select>
 					</div>
@@ -73,9 +75,11 @@
 					<div class="col-md-4">
 						<label for="codProvee">Código de Proveedor</label>
 							<select name="codProvee" id="codProvee" class="form-control">
-				                <option value="{{$form_t21->selectCodProvee->id}}" disabled>{{$form_t21->selectCodProvee->codProvee}}</option>
+				                <option value="{{$form_t21->selectCodProvee->id}}">{{$form_t21->selectCodProvee->codProvee}}</option>
 				              @foreach($infoSelect2 as $form)
+				              	@if($form->id != $form_t21->selectCodProvee->id))
 			                    <option value="{{$form->id}}" >{{$form->codProvee}}</option>
+			                    @endif
 			                  @endforeach
 				            </select> 
 					</div>

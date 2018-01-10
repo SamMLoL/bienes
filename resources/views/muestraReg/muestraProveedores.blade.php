@@ -55,7 +55,21 @@
                   <div class="col-md-12">
                       <div class="col-md-4 form-group">
                           <label for="rifProvee">Número de Rif</label>
-                              <br>{{$seleccion->rifProvee}}
+                             <br>
+                              <?php
+                              if($seleccion->grupo == '1'){
+                                echo 'J-'."".$seleccion->rifProvee;
+                              }
+                             
+                              elseif($seleccion->grupo == '2'){
+                                echo 'V-'."".$seleccion->rifProvee;
+                              }
+                             
+                              else{
+                                echo 'G-'."".$seleccion->rifProvee;
+                              }
+                             
+                              ?>
                       </div>
                      
                       @if($seleccion->otraDesc == '0')

@@ -37,15 +37,15 @@
 
             <div class="row separar40 ">
                 <div class="col-md-12">
+                    <div class="col-md-4 form-group">
+                         <label>Denominación de la Marca </label>
+                          <br>{{$seleccion->denComar}}
+                    </div>
+                    
                    	<div class="col-md-4 form-group">
-                   	    <label>Denominación de la Marca</label>
+                   	    <label>Código de la Marca</label>
                     	    <br>{{$seleccion->codMarca}}
                    	</div>
-
-                	  <div class="col-md-4 form-group">
-                   	     <label>Código de la Marca</label>
-                       	  <br>{{$seleccion->denComar}}
-                    </div>
 
                     <div class="col-md-4 form-group">
                         <label>Nombre del Fabricante</label>
@@ -68,6 +68,9 @@
                      <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT5" title="AnularT5"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
                      <a href="{{url('histoMarcas')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
+
+                     
+                     <a href="{{url ('marcas/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a>
                         
                	</div>
             </div>

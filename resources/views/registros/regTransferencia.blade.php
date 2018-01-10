@@ -40,6 +40,7 @@
                        <td id="letrasb" class="text-center">Número Autorización</td>
                        <td id="letrasb" class="text-center">Fecha  Autorización</td>
                        <td id="letrasb" class="text-center">Nombre Registro Notaría</td>
+                       <td id="letrasb" class="text-center">Fecha de Registro</td>
                        <td id="letrasb" class="text-center">Ver más</td>
                     </tr>
                 </thead>
@@ -96,6 +97,12 @@
                         <td class="text-center">xxx</td>
                        @else
                         <td class="text-center">{{$reg27->nomRegn}}</td>
+                       @endif
+
+                       @if($reg27->feReg == '1111-11-11')
+                        <td class="text-center">11111111</td>
+                       @else
+                        <td class="text-center">{{$reg27->feReg}}</td>
                        @endif
                       
                         <td class="text-center"><a href="seleccionTransferencia/{{$reg27->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>

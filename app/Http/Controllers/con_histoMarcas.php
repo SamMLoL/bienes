@@ -21,7 +21,8 @@ class con_histoMarcas extends Controller
      public function selectId($id){
 
       	$seleccion = modeloMarcas::find($id);
-   
+        $seleccion->revisadot5 = 0;
+        $seleccion->save();
 
        return view('añadir.fichaMarca',compact('seleccion'));
     }

@@ -12,4 +12,9 @@ class sel_seguros3 extends Model
     {
         return $this->hasOne('App\modeloSeguros', 'poseRes');
     }
+
+    public function selectComponente()
+    {
+        return $this->hasOne('App\modeloBIenes', 'poseeCompo');
+    }
 }

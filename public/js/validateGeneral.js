@@ -6,19 +6,19 @@ $(document).ready(function() {
            
            codProvee: { required:true},
            descProvee: { required:true},
-           tipProvee: {required:true},
-           rifProvee: {required:true},
-           
+           tipProvee: { required:true},
+           grupo: { required:true},
+           rifProvee: { required:true},
             
         },
+
         messages: {
            
             codProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el código del proveedor!",
             descProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca la descripción del proveedor!",
             tipProvee : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el tipo de proveedor !",
+            grupo : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el grupo de contribuyente !",
             rifProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el número de rif !",
-            
-        
 
         },
 
@@ -280,6 +280,7 @@ $(document).ready(function() {
     });
 
     // INPUT DISABLED EN TABLA DE BIENES AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
+    //ANEXO T8 = BIENES
   $(document).ready(function(){
     $("#espOtro").attr("disabled", true);
     $("#estatuBien").change(function(){
@@ -332,7 +333,7 @@ $(document).ready(function() {
     })
   });
 
-  //ANEXO T8 = BIENES
+  
 
 
  });

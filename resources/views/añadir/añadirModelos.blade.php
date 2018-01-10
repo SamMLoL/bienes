@@ -22,7 +22,7 @@
           <div class="row">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar5"> Código del Proveedor</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código del  Modelo</b>
               <b id="espaciar">
               @if($lastCod)
                 {{$lastCod->codModel}}
@@ -65,11 +65,6 @@
            
         </div>
       
-
-        
-
-        
-
           @foreach($selectCod as $posicion => $valor)
             
              <div class="col-md-4 {{$selectCod[$posicion][4]}} form-group  separar">
@@ -83,8 +78,6 @@
                    </select>
              </div>
           @endforeach
-
-
 
           @foreach($arrayBien as $posicion => $valor)
 
