@@ -171,6 +171,7 @@ Route::get('/anularAdjud/{id}', 'con_adjudicacionVer@anularAdjud');
 Route::get('/anularMarca/{id}', 'con_histoMarcas@anularMarca');
 Route::get('/anularModelo/{id}', 'con_histoModelos@anularModelo');
 Route::get('/anularComponentes/{id}', 'con_componentesVer@anularComponentes');
+Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
 
 	Route::get('/home', function () {
     return view('/home');

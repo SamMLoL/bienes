@@ -30,10 +30,9 @@ class con_bienesVer extends Controller
 
     public function anularBienes($id)
     {
-        $seleccion= modeloBienes::find($id);
+      $seleccion= modeloBienes::find($id);
         
-        
-       if($seleccion->delete()){
+        if($seleccion->delete()){
 
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];

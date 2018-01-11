@@ -29,8 +29,9 @@
                 <h4>Ficha de Registro <b id="colorInstruccion">N°# {{$seleccion->id}}</b></h4>
             </div>
         </div>
-        <hr>
+<hr>
         
+@include('eliminarReg.anularBienes')
           <div class="row separar40">
               <div class="col-md-12">
                  	<div class="col-md-4 form-group">
@@ -203,7 +204,7 @@
                     @if($seleccion->espOtroEdo == '1')
                     <div class="col-md-4 form-group">
                         <label>Especifique Otro Estado del Bien</label>
-                            <br>xxx
+                            <br>noaplica
                     </div>
                     @else
                     <div class="col-md-4 form-group">
@@ -250,17 +251,10 @@
                          <br>{{$seleccion->selectModelbien->codModel}}
               </div>
               
-              @if($seleccion->anoFabriBien == '1')
-              <div class="col-md-4 form-group">
-                  <label>Año de Fabricación del Bien</label>
-                         <br>99
-              </div>
-              @else
               <div class="col-md-4 form-group">
                   <label>Año de Fabricación del Bien</label>
                          <br>{{$seleccion->anoFabriBien}}
               </div>
-              @endif
             </div>
           </div>
   
@@ -421,7 +415,7 @@
           
           <div class="row text-center separar">
              	<div class="col-md-12 separar form-group">
-                   <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT3" title="AnularT3"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
+                   <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT8" title="AnularT8"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
                    <a href="{{url('regBienes')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                       

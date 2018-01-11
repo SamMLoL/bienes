@@ -281,6 +281,62 @@ $(document).ready(function() {
 
     // INPUT DISABLED EN TABLA DE BIENES AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
     //ANEXO T8 = BIENES
+
+    $("#formValidaT8").validate({
+        rules: {
+           codOt2_1: { required:true},
+           depAdmRes: { required:true},
+           estatuBien: { required:true},
+           valorAdq: { required:true},
+           moneda: { required:true},
+           edoBien: { required:true},
+           codMarca: { required:true},
+           codModel: { required:true},
+           anoFabriBien: { required:true},
+           codColorBien: { required:true},
+           unidadMedi: { required:true},
+           poseeCompo: { required:true},
+           seguroBien: { required:true},
+           
+        },
+        
+        messages: {
+           codOt2_1 : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del biendepAdmRes !",
+           depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
+           estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del uso del bien !",
+           valorAdq : "* Campo obligatorio, ¡ Por favor, introduzca el valor de adquisición !",
+           moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
+           edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
+           codMarca : "* Campo obligatorio, ¡ Por favor, seleccione el código de la marca del bien !",
+           codModel : "* Campo obligatorio, ¡ Por favor, seleccione el código del modelo del bien !",
+           anoFabriBien : "* Campo obligatorio, ¡ Por favor, introduzca el año de fabricación del bien !",
+           codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
+           unidadMedi : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida de la garantía !",
+           poseeCompo : "* Campo obligatorio, ¡ Por favor, seleccione si el bien posee componentes !",
+           seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
+           
+         
+        },
+        
+      highlight: function(element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+          // Keeps the default behaviour, adding error class to element but seems to break the default radio group behaviour but the below fixes that
+                  $(element).closest('ul').addClass(errorClass);
+          // add error class to ul element for checkbox groups and radio inputs
+              },
+              unhighlight: function(element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+          // keeps the default behaviour removing error class from elements
+                  $(element).closest('ul').removeClass(errorClass);
+          // remove error class from ul element for checkbox groups and radio inputs
+              },
+        // FIX END
+ 
+        errorLabelContainer: ".js-errors",
+        errorElement: "li", 
+   
+    });
+
   $(document).ready(function(){
     $("#espOtro").attr("disabled", true);
     $("#estatuBien").change(function(){
@@ -288,7 +344,7 @@ $(document).ready(function() {
     if(id == 11){
       $("#espOtro").attr("disabled", false);
     }else{
-      $("#espOtro").attr("disabled", true);
+      $("#espOtro").attr("disabled", true).prop($('#espOtro').val('noaplica'));
     
       }
     })
@@ -301,7 +357,7 @@ $(document).ready(function() {
     if(id == 4){
       $("#espeMoneda").attr("disabled", false);
     }else{
-      $("#espeMoneda").attr("disabled", true);
+      $("#espeMoneda").attr("disabled", true).prop($('#espeMoneda').val('noaplica'));
     
       }
     })
@@ -314,7 +370,7 @@ $(document).ready(function() {
     if(id == 7){
       $("#espOtroEdo").attr("disabled", false);
     }else{
-      $("#espOtroEdo").attr("disabled", true);
+      $("#espOtroEdo").attr("disabled", true).prop($('#espOtroEdo').val('noaplica'));
     
       }
     })
@@ -327,13 +383,10 @@ $(document).ready(function() {
     if(id == 37){
       $("#espeColor").attr("disabled", false);
     }else{
-      $("#espeColor").attr("disabled", true);
+      $("#espeColor").attr("disabled", true).prop($('#espeColor').val('noaplica'));
     
       }
     })
   });
-
-  
-
 
  });

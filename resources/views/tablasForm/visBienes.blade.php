@@ -28,7 +28,7 @@
           </div>
       </div>
       
-      <div class="row">
+      <div class="row separar">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
@@ -230,8 +230,8 @@
         <div class="col-md-12">
             <div class="col-md-4 form-group">
               <li>Código del Color del Bien:</li>
-                  <select name="codColorBien" id="codColorBien" class="form-control">
-                    <option value="0" >Seleccione</option>
+                  <select name="codColorBien" id="codColorBien" class="form-control " >
+                    <option value="0" disabled selected>Seleccione</option>
                       @foreach($colorBien as $traeDir)
                     <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
                       @endforeach
