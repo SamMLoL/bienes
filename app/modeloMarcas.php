@@ -26,4 +26,9 @@ use SoftDeletes;
         return $this->hasMany('App\modeloBienes', 'codMarca');
     }
 
+    public function selectMarcatrans()
+    {
+        return $this->hasMany('App\modeloEqtransporte', 'codMarca');
+    }
+
 }

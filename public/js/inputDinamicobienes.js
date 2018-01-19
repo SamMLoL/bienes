@@ -50,3 +50,33 @@ $(document).ready(function(){
       }
     })
   });
+
+//EQUIPO DE TRANSPORTE
+
+$(document).ready(function(){
+    $("#espeClase").attr("disabled", true);
+    $("#claseBien").change(function(){
+      var id = $("#claseBien").val();
+    if(id != 4){
+      $("#espeClase").attr("disabled", true).prop($('#espeClase').val('noaplica'));
+    }else{
+      $("#espeClase").attr("disabled", false);
+    
+      }
+    })
+  });
+
+$(document).ready(function(){
+    $("#espOtroUso").attr("disabled", true);
+    $("#estatuBien").change(function(){
+      var id = $("#estatuBien").val();
+    if(id != 11){
+      $("#espOtroUso").attr("disabled", true).prop($('#espOtroUso').val('noaplica'));
+    }else{
+      $("#espOtroUso").attr("disabled", false);
+    
+      }
+    })
+  });
+
+

@@ -56,7 +56,6 @@ $(document).ready(function() {
   });
 
 
-
   //TABLA SEGUROS
     $("#formValidaT3").validate({
         rules: {

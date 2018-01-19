@@ -14,4 +14,9 @@ class sel_colorbien extends Model
     {
         return $this->hasOne('App\modeloBienes', 'codColorBien');
     }
+
+    public function selectColorbientr()
+    {
+        return $this->hasOne('App\modeloEqtransporte', 'codColorBien');
+    }
 }

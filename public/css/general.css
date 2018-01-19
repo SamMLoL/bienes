@@ -55,6 +55,20 @@ height:50px;
 margin-top:8px;
 }
 
+textarea {
+  width: 100%;
+}
+
+.rojo{
+  color:red;
+}
+
+#negro{
+  font-weight: bold;
+}
+
+
+
 .desvanecer{
    
     top: 0;

@@ -25,4 +25,9 @@ use SoftDeletes;
     {
         return $this->hasOne('App\modeloBienes', 'codModel');
     }
+
+    public function selectModeltrans()
+    {
+        return $this->hasOne('App\modeloEqtransporte', 'codModel');
+    }
 }

@@ -17,4 +17,9 @@ class sel_seguros3 extends Model
     {
         return $this->hasOne('App\modeloBIenes', 'poseeCompo');
     }
+
+     public function selectComponentetr()
+    {
+        return $this->hasOne('App\sel_seguros3', 'poseeCompo');
+    }
 }

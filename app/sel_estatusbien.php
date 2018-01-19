@@ -12,4 +12,9 @@ class sel_estatusbien extends Model
     {
         return $this->hasOne('App\modeloBienes', 'estatuBien');
     }
+
+    public function selectEstatustr()
+    {
+        return $this->hasOne('App\modeloEqtransporte', 'estatuBien');
+    }
 }

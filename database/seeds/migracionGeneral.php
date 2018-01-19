@@ -213,6 +213,14 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
+      $dato = array("Vehículos de transporte terrestre","Vehículos de transporte marítimo","Vehículos de transporte aéreo","Otra clase");
+
+      foreach ($dato as $v) {
+        DB::table('sel_clasebien')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
 
     }
 }

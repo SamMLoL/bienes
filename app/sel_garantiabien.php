@@ -12,4 +12,9 @@ class sel_garantiabien extends Model
     {
         return $this->hasOne('App\modeloBienes', 'unidadMedi');
     }
+
+    public function selectUnidadtr()
+    {
+        return $this->hasOne('App\modeloEqtransporte', 'unidadMedi');
+    }
 }

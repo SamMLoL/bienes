@@ -71,7 +71,7 @@
                                     <li><a href="modelos">Modelos</a></li>
                                     <li><a href="componentes">Componentes</a></li>
                                     <li><a href="bienes">Bienes</a></li>
-                                    <li><a href="tablat2">Equipo de Transporte</a></li>
+                                    <li><a href="transporte">Equipo de Transporte</a></li>
                                     <li><a href="tablat2">Semovientes</a></li>
                                     <li><a href="tablat2">Bienes Muebles e Inmuebles</a></li>
                                     <li><a href="tablat2">Bienes de Inmuebles del Organo</a></li>
@@ -106,7 +106,7 @@
                                        <li><a href="histoModelos">Modelos</a></li>
                                        <li><a href="regComponentes">Componentes</a></li>
                                        <li><a href="regBienes">Bienes</a></li>
-                                       <li><a href="registroT9">Equipo de Transporte</a></li>
+                                       <li><a href="regTransporte">Equipo de Transporte</a></li>
                                        <li><a href="registroT10">Semovientes</a></li>
                                        <li><a href="registroT11">Bienes Muebles e Inmuebles</a></li>
                                        <li><a href="registroT12">Bienes de Inmuebles del Órgano</a></li>
@@ -185,6 +185,8 @@
     <script src="{{ asset('js/tabla.datatable.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+    <script src="{{ asset('js/contadorTextarea.js') }}"></script>
    
    
 

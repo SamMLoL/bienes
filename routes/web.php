@@ -107,9 +107,13 @@ Route::resource('modelos', 'controladorAddModelos');
 Route::get('/componentes', 'controladorComponentes@index');
 Route::resource('componentes', 'controladorComponentes');
 
-#ANEXO T8 = bienes
+#ANEXO T8 = Bienes
 Route::get('/bienes', 'controladorBienes@index');
 Route::resource('bienes', 'controladorBienes');
+
+#ANEXO T9 = Equipo de Transporte
+Route::get('/transporte', 'controladorEqtransporte@index');
+Route::resource('transporte', 'controladorEqtransporte');
 
 #SELECT DINAMICOS
 Route::get('dropdown/{id}','controladorBienes@getBienes');
@@ -134,6 +138,7 @@ Route::get('/histoMarcas', 'con_histoMarcas@index');
 Route::get('/histoModelos', 'con_histoModelos@index');
 Route::get('/regComponentes', 'con_componentesVer@index');
 Route::get('/regBienes', 'con_bienesVer@index');
+Route::get('/regTransporte', 'con_EqtransporteVer@index');
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
@@ -153,6 +158,7 @@ Route::get('seleccionMarcas/{id}', 'con_histoMarcas@selectId');
 Route::get('seleccionModelos/{id}', 'con_histoModelos@selectId');
 Route::get('seleccionComponentes/{id}', 'con_componentesVer@selectId');
 Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
+Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
@@ -172,6 +178,7 @@ Route::get('/anularMarca/{id}', 'con_histoMarcas@anularMarca');
 Route::get('/anularModelo/{id}', 'con_histoModelos@anularModelo');
 Route::get('/anularComponentes/{id}', 'con_componentesVer@anularComponentes');
 Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
+Route::get('/anularEqtransporte/{id}', 'con_EqtransporteVer@anularTransporte');
 
 	Route::get('/home', function () {
     return view('/home');

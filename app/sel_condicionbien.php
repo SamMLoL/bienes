@@ -12,4 +12,11 @@ class sel_condicionbien extends Model
     {
         return $this->hasOne('App\modeloBienes', 'edoBien');
     }
+
+    public function selectCondiciontr()
+    {
+        return $this->hasOne('App\modeloEqtransporte', 'edoBien');
+    }
+
+    
 }

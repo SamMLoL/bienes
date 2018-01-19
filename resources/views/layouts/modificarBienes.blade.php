@@ -58,9 +58,9 @@
 					<div class="col-md-4">
 						<label for="codCata">Código según el catalogo</label>
 							@if($form_t8->codCata == '1')
-							 <input type="text" class="form-control" name="codCata" id="codCata" value="xxx" maxlength="12">
+							 <input type="text" class="form-control" name="codCata" id="codCata" value="xxx" maxlength="10">
 							@else
-							 <input type="text" class="form-control" name="codCata" id="codCata" value="{{$form_t8->codCata}}" maxlength="12">
+							 <input type="text" class="form-control" name="codCata" id="codCata" value="{{$form_t8->codCata}}" maxlength="10">
 							@endif
 					</div>
 
@@ -144,6 +144,7 @@
 				</div>
 			</div>
 <hr>
+<hr>
 			<div class="row separar">
 				<div class="col-md-12">
 					<div class="col-md-4">
@@ -174,29 +175,33 @@
 			 	</div>
 			</div>
 			
-			<div class="row">
+			<div class="row col-md-offset-1 separar">
 				<div class="col-md-12">
-					<div class="col-md-4">
+					<div class="col-md-5">
 	                    <li>Fecha de Adquisición del Bien</li>
-	                      @if($form_t8->feAdqBien == '0')
-	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="xxx" maxlength="10">
+	                      @if($form_t8->feAdqBien == '1111-11-11')
+	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="11111111" maxlength="10">
 	                       
 	                      @else
 	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="{{$form_t8->feAdqBien}}" maxlength="10">
 	                      @endif
                     </div>
 
-                    <div class="col-md-4">
-	                    <li>Fecha de Ingreso del Bien en el Órgano o Ente</li>
-	                      @if($form_t8->feIngBien == '0')
-	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="xxx" maxlength="10">
+                    <div class="col-md-5">
+	                    <li>Fecha de Ingreso del Bien en el Ente</li>
+	                      @if($form_t8->feIngBien == '1111-11-11')
+	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="11111111" maxlength="10">
 	                       
 	                      @else
 	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="{{$form_t8->feIngBien}}" maxlength="10">
 	                      @endif
                     </div>
+				</div>
+			</div>
 
-                    <div class="col-md-4 form-group">
+			<div class="row separar">
+				<div class="col-md-12">
+					<div class="col-md-4 form-group">
 		                <li><b>Estado del Bien</b></li>
 		                  <select name="edoBien" id="edoBien" class="form-control">
 		                    <option value="{{$form_t8->selectCondicion->id}}">{{$form_t8->selectCondicion->opcion}}</option>
@@ -207,28 +212,14 @@
 		                      @endforeach
 		                  </select>
 	            	</div>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-4">
+	            	<div class="col-md-4">
 	                    <li>Especifique el Otro Estado del Bien</li>
 	                      @if($form_t8->espOtroEdo == '1')
 	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30">
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="{{$form_t8->espOtroEdo}}" maxlength="30">
-	                      @endif
-                    </div>
-
-                    <div class="col-md-4">
-	                    <li>Descripción del Estado del Bien</li>
-	                      @if($form_t8->descEdoBien == '1')
-	                           <input type="text" class="form-control" name="descEdoBien" id="descEdoBien" value="xxx" maxlength="200">
-	                       
-	                      @else
-	                           <input type="text" class="form-control" name="descEdoBien" id="descEdoBien" value="{{$form_t8->descEdoBien}}" maxlength="200">
 	                      @endif
                     </div>
 
@@ -243,8 +234,28 @@
                     </div>
 				</div>
 			</div>
+
+			<div class="row col-md-offset-1">
+				<div class="col-md-12">
+                    <div class="col-md-10 form-estilo">
+						<li>Descripción del Estado del Bien:</li>
+	                      @if($form_t8->descEdoBien == '1')
+	                       
+		                 	<textarea name="descEdoBien" id="descEdoBien" value="xxx" class="form-control" maxlength="255" rows="4">xxx</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes">0/255</div> </div>
+	                       
+	                      @else
+	                
+		                   <textarea name="descEdoBien" id="descEdoBien" class="form-control" maxlength="255" rows="4">{{$form_t8->descEdoBien}}</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes">0/255</div> </div>
+	                           
+	                      @endif
+                    </div>
+				</div>
+			</div>
 <hr>
-			<div class="row">
+<hr>
+			<div class="row separar">
 				<div class="col-md-12">
 					<div class="col-md-4 form-group">
                 		<li><b>Código de la Marca del Bien:</b></li>
@@ -277,9 +288,9 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row col-md-offset-1 separar">
 				<div class="col-md-12">
-					<div class="col-md-4 form-group">
+					<div class="col-md-5 form-group">
 		                <li><b>Código del Color del Bien</b></li>
 		                  <select name="codColorBien" id="codColorBien" class="form-control">
 		                    <option value="{{$form_t8->selectColorbien->id}}">{{$form_t8->selectColorbien->opcion}}</option>
@@ -291,7 +302,7 @@
 		                  </select>
 	            	</div>
 
-	            	<div class="col-md-4">
+	            	<div class="col-md-5">
 	                    <li>Especificación de Color</li>
 	                      @if($form_t8->espeColor == '1')
 	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="xxx" maxlength="50">
@@ -300,14 +311,53 @@
 	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="{{$form_t8->espeColor}}" maxlength="50">
 	                      @endif
                     </div>
+				</div>
+			</div>
 
-                    <div class="col-md-4">
-	                    <li>Otras Especificación de Color</li>
+			<div class="row separar col-md-offset-1">
+				<div class="col-md-12">
+					<div class="col-md-10 form-estilo">
+						<li>Otras Especificación de Color:</li>
 	                      @if($form_t8->otraEspeColor == '1')
-	                           <input type="text" class="form-control" name="otraEspeColor" id="otraEspeColor" value="xxx" maxlength="255">
+	                        
+		                  	 <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4">xxx</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
 	                       
 	                      @else
-	                           <input type="text" class="form-control" name="otraEspeColor" id="otraEspeColor" value="{{$form_t8->otraEspeColor}}" maxlength="255">
+	                        
+		                  	 <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4">{{$form_t8->otraEspeColor}}</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
+	                      @endif
+                    </div>
+                </div>
+			</div>
+<hr>
+<hr>
+			<div class="row separar">
+				<div class="col-md-12">
+					<div class="col-md-6 form-estilo">
+	                    <li>Especificaciones Técnicas del Bien</li>
+	                      @if($form_t8->espeTecBien == '1')
+
+	                      <textarea name="espeTecBien" id="espeTecBien" class="form-control" maxlength="255" rows="4">xxx</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes2">0/255</div> </div>
+
+	                      @else
+	                      <textarea name="espeTecBien" id="espeTecBien" class="form-control" maxlength="255" rows="4">{{$form_t8->espeTecBien}}</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
+	                      @endif
+                    </div>
+
+                    <div class="col-md-6 form-estilo">
+	                    <li>Otras Especificaciones de Descripción del Bien</li>
+	                      @if($form_t8->otraDescBien == '1')
+	                      <textarea name="otraDescBien" id="otraDescBien" class="form-control" maxlength="255" rows="4">xxx</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes3">0/255</div> </div>
+	                       
+	                      @else
+	                      <textarea name="otraDescBien" id="otraDescBien" class="form-control" maxlength="255" rows="4">{{$form_t8->otraDescBien}}</textarea>
+		                  <div id="negro" for="contador">Caracteres: <div id="conbienes3">0/255</div> </div>
+	                           
 	                      @endif
                     </div>
 				</div>
@@ -316,25 +366,6 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="col-md-4">
-	                    <li>Especificaciones Técnicas del Bien</li>
-	                      @if($form_t8->espeTecBien == '1')
-	                           <input type="text" class="form-control" name="espeTecBien" id="espeTecBien" value="xxx" maxlength="255">
-	                      @else
-	                           <input type="text" class="form-control" name="espeTecBien" id="espeTecBien" value="{{$form_t8->espeTecBien}}" maxlength="255">
-	                      @endif
-                    </div>
-
-                    <div class="col-md-4">
-	                    <li>Otras Especificaciones de Descripción del Bien</li>
-	                      @if($form_t8->otraDescBien == '1')
-	                           <input type="text" class="form-control" name="otraDescBien" id="otraDescBien" value="xxx" maxlength="255">
-	                       
-	                      @else
-	                           <input type="text" class="form-control" name="otraDescBien" id="otraDescBien" value="{{$form_t8->otraDescBien}}" maxlength="255">
-	                      @endif
-                    </div>
-
-                    <div class="col-md-4">
 	                    <li>Garantía</li>
 	                      @if($form_t8->garantia == '1')
 	                           <input type="text" class="form-control" name="garantia" id="garantia" value="99" maxlength="5">
@@ -343,12 +374,8 @@
 	                           <input type="text" class="form-control" name="garantia" id="garantia" value="{{$form_t8->garantia}}" maxlength="5">
 	                      @endif
                     </div>
-				</div>
-			</div>
-<hr>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-4 form-group">
+
+                    <div class="col-md-4 form-group">
 		                <li><b>Unidad de Medida de la Garantía</b></li>
 		                  <select name="unidadMedi" id="unidadMedi" class="form-control">
 		                    <option value="{{$form_t8->selectUnidad->id}}">{{$form_t8->selectUnidad->opcion}}</option>
@@ -360,31 +387,32 @@
 		                  </select>
 	            	</div>
 
-		            <div class="col-md-4">
+	            	<div class="col-md-4">
 		                    <li>Fecha Inicio de la garantía</li>
-		                      @if($form_t8->feIniGarantia == '0')
-		                           <input type="text" class="form-control calendario" name="feIniGarantia" id="feIniGarantia" value="xxx" maxlength="10">
+		                      @if($form_t8->feIniGarantia == '1111-11-11')
+		                           <input type="text" class="form-control calendario" name="feIniGarantia" id="feIniGarantia" value="11111111" maxlength="10">
 		                       
 		                      @else
 		                           <input type="text" class="form-control calendario" name="feIniGarantia" id="feIniGarantia" value="{{$form_t8->feIniGarantia}}" maxlength="10">
 		                      @endif
 	                </div>
-
+				</div>
+			</div>
+<hr>
+<hr>
+			<div class="row">
+				<div class="col-md-12">
 	                <div class="col-md-4">
 		                    <li>Fecha Fin de la garantía</li>
-		                      @if($form_t8->feFinGarantia == '0')
-		                           <input type="text" class="form-control calendario" name="feFinGarantia" id="feFinGarantia" value="xxx" maxlength="10">
+		                      @if($form_t8->feFinGarantia == '1111-11-11')
+		                           <input type="text" class="form-control calendario" name="feFinGarantia" id="feFinGarantia" value="11111111" maxlength="10">
 		                       
 		                      @else
 		                           <input type="text" class="form-control calendario" name="feFinGarantia" id="feFinGarantia" value="{{$form_t8->feFinGarantia}}" maxlength="10">
 		                      @endif
 	                </div>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-4 form-group">
+	                <div class="col-md-4 form-group">
 		                <li><b>Posee Componentes</b></li>
 		                  <select name="poseeCompo" id="poseeCompo" class="form-control">
 		                    <option value="{{$form_t8->selectComponente->id}}">{{$form_t8->selectComponente->opcion}}</option>
@@ -407,7 +435,11 @@
 		                      @endforeach
 		                  </select>
 	            	</div>
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="col-md-12">
 	            	<div class="col-md-4">
 		                    <li>Código del Registro de Seguro</li>
 		                      @if($form_t8->codRegSeguro == '1')
@@ -443,5 +475,6 @@
     <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
+ 	<script src="{{ asset('js/contadorTextarea.js') }}"></script>
 
  
