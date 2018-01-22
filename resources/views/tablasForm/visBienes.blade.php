@@ -120,9 +120,6 @@
         </div>
     </div>
 
-<hr>
-<hr>
-
     <div class="row separar">
         <div class="col-md-12">
             <div class="col-md-4 form-group">
@@ -147,26 +144,8 @@
         </div>
     </div>
 
-    <div class="row separar ">
-        <div class="col-md-12">
-            <div class="col-md-6 form-group">
-              <li>Fecha de Adquisición del Bien:</li>
-                <div class="input-group">
-                <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
-                <input type="text" id="feAdqBien" name="feAdqBien" class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
-                </div>
-            </div>
-
-            <div class="col-md-6 form-group">
-              <li>Fecha de Ingreso del Bien:</li>
-              <div class="input-group">
-              <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
-              <input type="text" id="feIngBien" name="feIngBien" class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
-              </div>
-            </div>
-        </div>
-    </div>
-
+<hr>
+<hr>
     <div class="row separar">
         <div class="col-md-12">
             <div class="col-md-4 form-group">
@@ -190,6 +169,28 @@
             </div>
         </div>
     </div>
+
+    <div class="row separar col-md-offset-1">
+        <div class="col-md-12">
+            <div class="col-md-5 form-group">
+              <li>Fecha de Adquisición del Bien:</li>
+                <div class="input-group">
+                <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
+                <input type="text" id="feAdqBien" name="feAdqBien" class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
+                </div>
+            </div>
+
+            <div class="col-md-5 form-group">
+              <li>Fecha de Ingreso del Bien:</li>
+              <div class="input-group">
+              <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
+              <input type="text" id="feIngBien" name="feIngBien" class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
+              </div>
+            </div>
+        </div>
+    </div>
+
+    
 
     <div class="row col-md-offset-1">
         <div class="col-md-12">
@@ -233,9 +234,9 @@
         </div>
     </div>
 
-    <div class="row separar">
+    <div class="row separar col-md-offset-1">
         <div class="col-md-12">
-            <div class="col-md-6 form-group">
+            <div class="col-md-5 form-group">
               <li>Código del Color del Bien:</li>
                   <select name="codColorBien" id="codColorBien" class="form-control " >
                     <option value="0" disabled selected>Seleccione</option>
@@ -245,7 +246,7 @@
                 </select>
             </div>
 
-            <div class="col-md-6 form-group">
+            <div class="col-md-5 form-group">
               <li>Especificación de Color:</li>
                   <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50">
             </div>

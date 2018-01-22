@@ -380,7 +380,7 @@
 	                      @if($form_t9->otraEspeColor == '1')
 	                        
 		                  	 <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4">xxx</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
 	                       
 	                      @else
 	                        
@@ -523,7 +523,7 @@
 		                <li>Especificaciones Sistema de Rastreo Instalado</li>
   	                      @if($form_t9->espeSistema == '1')
 	                      <textarea name="espeSistema" id="espeSistema" class="form-control" maxlength="255" rows="4">xxx</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contodi2">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contodi3">0/255</div> </div>
 	                       
 	                      @else
 	                      <textarea name="espeSistema" id="espeSistema" class="form-control" maxlength="255" rows="4">{{$form_t9->espeSistema}}</textarea>

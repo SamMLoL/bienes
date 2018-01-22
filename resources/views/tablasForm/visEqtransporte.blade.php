@@ -121,6 +121,7 @@
     </div>
 
 <hr>
+<hr>
 
     <div class="row separar">
         <div class="col-md-12">
@@ -146,9 +147,9 @@
         </div>
     </div>
 
-    <div class="row separar">
+    <div class="row separar col-md-offset-1">
         <div class="col-md-12">
-            <div class="col-md-4 form-group">
+            <div class="col-md-5 form-group">
               <li>Fecha de Adquisición del Bien:</li>
                 <div class="input-group">
                 <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
@@ -156,15 +157,19 @@
                 </div>
             </div>
 
-            <div class="col-md-4 form-group">
+            <div class="col-md-5 form-group">
               <li>Fecha de Ingreso del Bien:</li>
               <div class="input-group">
               <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
               <input type="text" id="feIngBien" name="feIngBien" class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
               </div>
             </div>
-            
-            <div class="col-md-4 form-group">
+        </div>
+    </div>
+
+    <div class="row separar col-md-offset-1">
+        <div class="col-md-12">
+            <div class="col-md-5 form-group">
                 <li><b>Estado del Bien:</b></li>
                   <select name="edoBien" id="edoBien" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
@@ -173,22 +178,31 @@
                       @endforeach
                   </select>
             </div>
-        </div>
-    </div>
 
-    <div class="row separar">
-        <div class="col-md-12">
-            <div class="col-md-4 form-group">
+            <div class="col-md-5 form-group">
               <li>Especifique el Otro Estado del Bien:</li>
                   <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30">
             </div>
+        </div>
+    </div>
 
-            <div class="col-md-4 form-group">
-              <li>Descripción del Estado del Bien:</li>
-                  <input type="text" id="descEdoBien" name="descEdoBien" class="form-control" placeholder="Introduzca la descripción del estado del bien" maxlength="255">
+    <div class="row separar col-md-offset-1">
+        <div class="col-md-12">
+            <div class="col-md-10 form-estilo">
+                <li>Descripción del Estado del Bien:</li>
+                 <textarea name="descEdoBien" id="descEdoBien" class="form-control" maxlength="255" rows="4"></textarea>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
             </div>
+        </div>
+    </div>
 
-            <div class="col-md-4 form-group">
+    
+<hr> 
+<hr> 
+    
+    <div class="row separar col-md-offset-1">
+        <div class="col-md-12">
+            <div class="col-md-5 form-group">
                 <li><b>Clase del Bien:</b></li>
                   <select name="claseBien" id="claseBien" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
@@ -197,17 +211,16 @@
                       @endforeach
                   </select>
             </div>
-        </div>
-    </div>
-<hr> 
-    <div class="row separar">
-        <div class="col-md-12">
-            <div class="col-md-4 form-group">
+
+            <div class="col-md-5 form-group">
               <li>Especifique la otra clase:</li>
                   <input type="text" id="espeClase" name="espeClase" class="form-control" placeholder="Especifique la otra clase del bien" maxlength="100">
             </div>
-        
+        </div>
+    </div>
 
+    <div class="row separar">
+        <div class="col-md-12">
             <div class="col-md-4 form-group">
                 <li><b>Código de la Marca del Bien:</b></li>
                   <select name="codMarca" id="codMarca" class="form-control">
@@ -226,16 +239,17 @@
                         <option value="{{$traeDir->id}}">{{$traeDir->codModel}}</option> 
                           @endforeach
                     </select>
-             </div>
+            </div>
+
+            <div class="col-md-4 form-group">
+              <li>Año de Fabricación del Bien:</li>
+                  <input type="text" id="anoFabriBien" name="anoFabriBien" class="form-control" placeholder="Introduzca el año de fabricación del bien" maxlength="4">
+            </div>
         </div>
     </div>
 
     <div class="row separar">
         <div class="col-md-12">
-             <div class="col-md-4 form-group">
-              <li>Año de Fabricación del Bien:</li>
-                  <input type="text" id="anoFabriBien" name="anoFabriBien" class="form-control" placeholder="Introduzca el año de fabricación del bien" maxlength="4">
-            </div>
 
             <div class="col-md-4 form-group">
               <li>Serial de Carrocería del Bien:</li>
@@ -246,27 +260,22 @@
               <li>Serial del Motor del Bien:</li>
                   <input type="text" id="serialMotor" name="serialMotor" class="form-control" placeholder="Introduzca el serial de la carrocería del bien" maxlength="50">
             </div>
-        </div>
-    </div>
 
-    <div class="row col-md-offset-1 separar">
-        <div class="col-md-12">
-            <div class="col-md-5 form-group">
+            <div class="col-md-4 form-group">
                   <li>Placas / Siglas del Bien:</li>
                       <input type="text" id="placaBien" name="placaBien" class="form-control" placeholder="Introduzca el serial de placas del bien" maxlength="20">
             </div>
+        </div>
+    </div>
 
-            <div class="col-md-5 form-group">
+    <div class="row separar">
+        <div class="col-md-12">
+            <div class="col-md-4 form-group">
                   <li>Número del Título de Propiedad:</li>
                       <input type="text" id="numTituPro" name="numTituPro" class="form-control" placeholder="Introduzca el número del titulo de propiedad" maxlength="30">
             </div>
-        </div>
-    </div>
-<hr>
-<hr>
-    <div class="row col-md-offset-1 separar">
-        <div class="col-md-12">
-            <div class="col-md-5 form-group">
+
+            <div class="col-md-4 form-group">
                 <li>Código del Color del Bien:</li>
                     <select name="codColorBien" id="codColorBien" class="form-control " >
                       <option value="0" disabled selected>Seleccione</option>
@@ -276,22 +285,23 @@
                   </select>
             </div>
 
-            <div class="col-md-5 form-group">
+            <div class="col-md-4 form-group">
               <li>Especificación de Otro Color:</li>
                   <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50">
             </div>
         </div>
     </div>
-
+    
     <div class="row col-md-offset-1 separar">
         <div class="col-md-12">
             <div class="col-md-10 form-estilo">
                 <li>Otras Especificación de Color:</li>
                  <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contodi">0/255</div> </div>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
             </div>
         </div>
     </div>
+<hr>
 <hr>
     <div class="row separar">
         <div class="col-md-12">

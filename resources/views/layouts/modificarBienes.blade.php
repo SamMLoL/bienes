@@ -143,8 +143,7 @@
                     </div>
 				</div>
 			</div>
-<hr>
-<hr>
+
 			<div class="row separar">
 				<div class="col-md-12">
 					<div class="col-md-4">
@@ -174,31 +173,9 @@
 					</div>
 			 	</div>
 			</div>
+<hr>
+<hr>
 			
-			<div class="row col-md-offset-1 separar">
-				<div class="col-md-12">
-					<div class="col-md-5">
-	                    <li>Fecha de Adquisición del Bien</li>
-	                      @if($form_t8->feAdqBien == '1111-11-11')
-	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="11111111" maxlength="10">
-	                       
-	                      @else
-	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="{{$form_t8->feAdqBien}}" maxlength="10">
-	                      @endif
-                    </div>
-
-                    <div class="col-md-5">
-	                    <li>Fecha de Ingreso del Bien en el Ente</li>
-	                      @if($form_t8->feIngBien == '1111-11-11')
-	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="11111111" maxlength="10">
-	                       
-	                      @else
-	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="{{$form_t8->feIngBien}}" maxlength="10">
-	                      @endif
-                    </div>
-				</div>
-			</div>
-
 			<div class="row separar">
 				<div class="col-md-12">
 					<div class="col-md-4 form-group">
@@ -235,6 +212,30 @@
 				</div>
 			</div>
 
+			<div class="row col-md-offset-1 separar">
+				<div class="col-md-12">
+					<div class="col-md-5">
+	                    <li>Fecha de Adquisición del Bien</li>
+	                      @if($form_t8->feAdqBien == '1111-11-11')
+	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="11111111" maxlength="10">
+	                       
+	                      @else
+	                           <input type="text" class="form-control calendario" name="feAdqBien" id="feAdqBien" value="{{$form_t8->feAdqBien}}" maxlength="10">
+	                      @endif
+                    </div>
+
+                    <div class="col-md-5">
+	                    <li>Fecha de Ingreso del Bien en el Ente</li>
+	                      @if($form_t8->feIngBien == '1111-11-11')
+	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="11111111" maxlength="10">
+	                       
+	                      @else
+	                           <input type="text" class="form-control calendario" name="feIngBien" id="feIngBien" value="{{$form_t8->feIngBien}}" maxlength="10">
+	                      @endif
+                    </div>
+				</div>
+			</div>
+
 			<div class="row col-md-offset-1">
 				<div class="col-md-12">
                     <div class="col-md-10 form-estilo">
@@ -242,12 +243,12 @@
 	                      @if($form_t8->descEdoBien == '1')
 	                       
 		                 	<textarea name="descEdoBien" id="descEdoBien" value="xxx" class="form-control" maxlength="255" rows="4">xxx</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
 	                       
 	                      @else
 	                
 		                   <textarea name="descEdoBien" id="descEdoBien" class="form-control" maxlength="255" rows="4">{{$form_t8->descEdoBien}}</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
 	                           
 	                      @endif
                     </div>
@@ -321,12 +322,12 @@
 	                      @if($form_t8->otraEspeColor == '1')
 	                        
 		                  	 <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4">xxx</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
 	                       
 	                      @else
 	                        
 		                  	 <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4">{{$form_t8->otraEspeColor}}</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
 	                      @endif
                     </div>
                 </div>
@@ -340,11 +341,11 @@
 	                      @if($form_t8->espeTecBien == '1')
 
 	                      <textarea name="espeTecBien" id="espeTecBien" class="form-control" maxlength="255" rows="4">xxx</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes2">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes2">0/255</div> </div>
 
 	                      @else
 	                      <textarea name="espeTecBien" id="espeTecBien" class="form-control" maxlength="255" rows="4">{{$form_t8->espeTecBien}}</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes1">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
 	                      @endif
                     </div>
 
@@ -356,7 +357,7 @@
 	                       
 	                      @else
 	                      <textarea name="otraDescBien" id="otraDescBien" class="form-control" maxlength="255" rows="4">{{$form_t8->otraDescBien}}</textarea>
-		                  <div id="negro" for="contador">Caracteres: <div id="conbienes3">0/255</div> </div>
+		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes3">0/255</div> </div>
 	                           
 	                      @endif
                     </div>
