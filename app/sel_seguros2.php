@@ -22,4 +22,9 @@ class sel_seguros2 extends Model
     {
         return $this->hasOne('App\modeloEqtransporte', 'moneda');
     }
+
+    public function selectSegurosemo()
+    {
+        return $this->hasOne('App\modeloSemovientes', 'moneda');
+    }
 }

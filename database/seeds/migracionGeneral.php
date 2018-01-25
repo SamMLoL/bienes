@@ -176,7 +176,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-       $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En proceso de disposición","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En Almacén o Depósito para su asignación","Otro uso");
+       $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En proceso de disposición","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En almacén o Depósito para su asignación","Otro uso");
 
       foreach ($dato as $v) {
         DB::table('sel_estatusbien')->insert([
@@ -217,6 +217,42 @@ class migracionGeneral extends Seeder
 
       foreach ($dato as $v) {
         DB::table('sel_clasebien')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("Vacunos","Equinos","Caprinos","Porcinos","Aves","Búfalos","Peces","Otro tipo");
+
+      foreach ($dato as $v) {
+        DB::table('sel_tipoanimal')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("Engorde","Ordeño","Doble propósito","Cría","Científicos","Educativos","Otro propósito");
+
+      foreach ($dato as $v) {
+        DB::table('sel_proposito')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("Hectárea","Kilómetro Cuadrado","Metro Cuadrado","Centímetro Cuadrado","Milímetro Cuadrado","Tonelada","Kilogramo","Gramo","Libra","Metro Cúbico","Centímetro Cúbico","Litro","Mililitro","Kilometro","Metro","Centímetro","Milímetro","Otra medida");
+
+      foreach ($dato as $v) {
+        DB::table('sel_medidapeso')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("Hembra","Macho");
+
+      foreach ($dato as $v) {
+        DB::table('sel_genero')->insert([
            'opcion' => $v,
 
           ]);   

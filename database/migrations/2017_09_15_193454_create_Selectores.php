@@ -151,6 +151,29 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
+        Schema::create('sel_tipoanimal', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
+
+        Schema::create('sel_proposito', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
+
+        Schema::create('sel_medidapeso', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
+
+        Schema::create('sel_genero', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
         
     }
 

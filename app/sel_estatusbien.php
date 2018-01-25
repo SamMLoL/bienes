@@ -17,4 +17,9 @@ class sel_estatusbien extends Model
     {
         return $this->hasOne('App\modeloEqtransporte', 'estatuBien');
     }
+
+    public function selectEstatusemo()
+    {
+        return $this->hasOne('App\modeloSemovientes', 'estatuBien');
+    }
 }

@@ -442,13 +442,13 @@
 			<div class="row">
 				<div class="col-md-12">
 	            	<div class="col-md-4">
-		                    <li>Código del Registro de Seguro</li>
-		                      @if($form_t8->codRegSeguro == '1')
-		                           <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="99" maxlength="10">
+		                <li>Código del Registro de Seguro</li>
+		                   @if($form_t8->codRegSeguro == '1')
+		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="99" maxlength="10">
 		                       
-		                      @else
-		                           <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="{{$form_t8->codRegSeguro}}" maxlength="10">
-		                      @endif
+		                   @else
+		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="{{$form_t8->codRegSeguro}}" maxlength="10">
+		                   @endif
 	                </div>
 				</div>
 			</div>

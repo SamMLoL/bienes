@@ -22,4 +22,11 @@ class sel_responsables1 extends Model
     {
         return $this->hasOne('App\modeloEqtransporte', 'depAdmRes');
     }
+
+    public function selectDependenciasemo()
+    {
+        return $this->hasOne('App\modeloSemovientes', 'depAdmRes');
+    }
+
+    
 }

@@ -79,4 +79,33 @@ $(document).ready(function(){
     })
   });
 
+//SEMOVIENTES
+
+$(document).ready(function(){
+    $("#espeOtroTipo").attr("disabled", true);
+    $("#tipoAnimal").change(function(){
+      var id = $("#tipoAnimal").val();
+    if(id != 8){
+      $("#espeOtroTipo").attr("disabled", true).prop($('#espeOtroTipo').val('noaplica'));
+    }else{
+      $("#espeOtroTipo").attr("disabled", false);
+    
+      }
+    })
+  });
+
+$(document).ready(function(){
+    $("#espeOtroPro").attr("disabled", true);
+    $("#proposito").change(function(){
+      var id = $("#proposito").val();
+    if(id != 7){
+      $("#espeOtroPro").attr("disabled", true).prop($('#espeOtroPro').val('noaplica'));
+    }else{
+      $("#espeOtroPro").attr("disabled", false);
+    
+      }
+    })
+  });
+
+
 

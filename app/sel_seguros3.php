@@ -15,11 +15,16 @@ class sel_seguros3 extends Model
 
     public function selectComponente()
     {
-        return $this->hasOne('App\modeloBIenes', 'poseeCompo');
+        return $this->hasOne('App\modeloBienes', 'poseeCompo');
     }
 
      public function selectComponentetr()
     {
-        return $this->hasOne('App\sel_seguros3', 'poseeCompo');
+        return $this->hasOne('App\modeloComponentes', 'poseeCompo');
+    }
+
+     public function selectSegurobiensemo()
+    {
+        return $this->hasOne('App\modeloSemovientes', 'seguroBien');
     }
 }

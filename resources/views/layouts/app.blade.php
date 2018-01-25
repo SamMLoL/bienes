@@ -72,7 +72,7 @@
                                     <li><a href="componentes">Componentes</a></li>
                                     <li><a href="bienes">Bienes</a></li>
                                     <li><a href="transporte">Equipo de Transporte</a></li>
-                                    <li><a href="tablat2">Semovientes</a></li>
+                                    <li><a href="semovientes">Semovientes</a></li>
                                     <li><a href="tablat2">Bienes Muebles e Inmuebles</a></li>
                                     <li><a href="tablat2">Bienes de Inmuebles del Organo</a></li>
                                    
@@ -107,7 +107,7 @@
                                        <li><a href="regComponentes">Componentes</a></li>
                                        <li><a href="regBienes">Bienes</a></li>
                                        <li><a href="regTransporte">Equipo de Transporte</a></li>
-                                       <li><a href="registroT10">Semovientes</a></li>
+                                       <li><a href="regSemovientes">Semovientes</a></li>
                                        <li><a href="registroT11">Bienes Muebles e Inmuebles</a></li>
                                        <li><a href="registroT12">Bienes de Inmuebles del Órgano</a></li>
                                       

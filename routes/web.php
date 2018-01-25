@@ -44,59 +44,58 @@ Route::get('/bitacora', 'controladorBitacora@enviarVariable');
 //Route::get('denCoMarcas/{id}','controladorRegMarca@getMarcas');
 //Route::get('nomFabricante/{id}','controladorRegMarca@getFabri');
 
-// ANEXOS DE REGISTROS 
+# ANEXOS DE REGISTROS 
 
-//ANEXO T1 = proveedores
+#ANEXO T1 = proveedores
 Route::get('/proveedores', 'controladorProveedores@index');
 Route::resource('proveedores', 'controladorProveedores');
 
-//ANEXO T2 = concurso
+#ANEXO T2 = concurso
 Route::get('/concurso', 'controladorConcurso@index');
 Route::resource('concurso', 'controladorConcurso');
 
-//ANEXO T2-1 = directa
+#ANEXO T2-1 = directa
 Route::get('/directa', 'controladorDirecta@index');
 Route::resource('directa', 'controladorDirecta');
 
-//ANEXO T2-2 = confiscacion
+#ANEXO T2-2 = confiscacion
 Route::get('/confiscacion', 'controladorConfiscacion@index');
 Route::resource('confiscacion', 'controladorConfiscacion');
 
-//ANEXO T2-3 = dacion
+#ANEXO T2-3 = dacion
 Route::get('/dacion', 'controladorDacion@index');
 Route::resource('dacion', 'controladorDacion');
 
-//ANEXO T2-4 = donacion
+#ANEXO T2-4 = donacion
 Route::get('/donacion', 'controladorDonacion@index');
 Route::resource('donacion', 'controladorDonacion');
 
-//ANEXO T2-5 = expropiacion
+#ANEXO T2-5 = expropiacion
 Route::get('/expropiacion', 'controladorExpropiacion@index');
 Route::resource('expropiacion', 'controladorExpropiacion');
 
-//ANEXO T2-6 = permuta
+#ANEXO T2-6 = permuta
 Route::get('/permuta', 'controladorPermuta@index');
 Route::resource('permuta', 'controladorPermuta');
 
-//ANEXO T2-7 = transferencia
+#ANEXO T2-7 = transferencia
 Route::get('/transferencia', 'controladorTransferencia@index');
 Route::resource('transferencia', 'controladorTransferencia');
 
-//ANEXO T2-8 = adjudicacion
+#ANEXO T2-8 = adjudicacion
 Route::get('/adjudicacion', 'controladorAdjudicacion@index');
 Route::resource('adjudicacion', 'controladorAdjudicacion');
 
-//ANEXO T3 = seguros
+#ANEXO T3 = seguros
 Route::get('/seguros', 'controladorSeguros@index');
 Route::resource('seguros', 'controladorSeguros');
 
-//ANEXO T4 = responsables
+#ANEXO T4 = responsables
 Route::get('/responsables', 'controladorResponsables@index');
 Route::resource('responsables', 'controladorResponsables');
 
 
 #ANEXO T5 = Marcas
-
 Route::resource('marcas', 'controladorAddMarca');
 
 #ANEXO T6 = Modelos
@@ -114,6 +113,10 @@ Route::resource('bienes', 'controladorBienes');
 #ANEXO T9 = Equipo de Transporte
 Route::get('/transporte', 'controladorEqtransporte@index');
 Route::resource('transporte', 'controladorEqtransporte');
+
+#ANEXO T10 = Semovientes
+Route::get('/semovientes', 'controladorSemovientes@index');
+Route::resource('semovientes', 'controladorSemovientes');
 
 #SELECT DINAMICOS
 Route::get('dropdown/{id}','controladorBienes@getBienes');
@@ -139,6 +142,7 @@ Route::get('/histoModelos', 'con_histoModelos@index');
 Route::get('/regComponentes', 'con_componentesVer@index');
 Route::get('/regBienes', 'con_bienesVer@index');
 Route::get('/regTransporte', 'con_EqtransporteVer@index');
+Route::get('/regSemovientes', 'con_semovientesVer@index');
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
@@ -159,6 +163,7 @@ Route::get('seleccionModelos/{id}', 'con_histoModelos@selectId');
 Route::get('seleccionComponentes/{id}', 'con_componentesVer@selectId');
 Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
 Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
+Route::get('seleccionSemovientes/{id}', 'con_semovientesVer@selectId');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
@@ -179,6 +184,7 @@ Route::get('/anularModelo/{id}', 'con_histoModelos@anularModelo');
 Route::get('/anularComponentes/{id}', 'con_componentesVer@anularComponentes');
 Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
 Route::get('/anularEqtransporte/{id}', 'con_EqtransporteVer@anularTransporte');
+Route::get('/anularSemo/{id}', 'con_semovientesVer@anularSemo');
 
 	Route::get('/home', function () {
     return view('/home');

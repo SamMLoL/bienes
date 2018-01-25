@@ -23,13 +23,13 @@ class controladorBienes extends Controller
 
      $lastCod = modeloBienes::select('codOt2_1')->get()->last();
      $dependecia = sel_responsables1::all();
-     $estatusBien = sel_estatusbien::all();
+     $estatusBien = sel_estatusbien::orderBy('opcion')->get();
      $moneda = sel_seguros2::all();
-     $condicion = sel_condicionbien::all();
+     $condicion = sel_condicionbien::orderBy('opcion')->get();
      $marcas = modeloMarcas::all();
      $modelos = modeloModelos::all();
-     $colorBien = sel_colorbien::all();
-     $unidadGarantia = sel_garantiabien::all();
+     $colorBien = sel_colorbien::orderBy('opcion')->get();
+     $unidadGarantia = sel_garantiabien::orderBy('opcion')->get();
      $poseeComponente = sel_seguros3::all();
           
      return view('tablasForm.visBienes', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));

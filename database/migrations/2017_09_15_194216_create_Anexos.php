@@ -367,6 +367,55 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        Schema::create('semovientes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('codBien', 12)->nullable();
+            $table->string('codCata', 10)->nullable();
+            $table->integer('depAdmRes')->nullable();
+            $table->foreign('depAdmRes')->references('id')->on('sel_responsables1');
+            $table->string('sedeOrgano', 10)->nullable();
+            $table->string('codRespAdm', 10)->nullable();
+            $table->string('codResBien', 10)->nullable();
+            $table->string('codInterno', 20)->nullable();
+            $table->integer('estatuBien')->nullable();
+            $table->foreign('estatuBien')->references('id')->on('sel_estatusbien');
+            $table->string('espOtroUso', 100)->nullable();
+            $table->string('valorAdq', 26)->nullable();
+            $table->integer('moneda')->unsigned();
+            $table->foreign('moneda')->references('id')->on('sel_seguros2');
+            $table->string('espeMoneda', 30)->nullable();
+            $table->date('feAdqBien', 10)->nullable();
+            $table->date('feIngBien', 10)->nullable();
+            $table->integer('edoBien')->nullable();
+            $table->string('espOtroEdo', 30)->nullable();
+            $table->string('descEdoBien', 200)->nullable();
+            $table->string('raza', 50)->nullable();
+            $table->integer('genero')->nullable();
+            $table->integer('tipoAnimal')->nullable();
+            $table->foreign('tipoAnimal')->references('id')->on('sel_tipoanimal');
+            $table->string('espeOtroTipo', 100)->nullable();
+            $table->integer('proposito')->nullable();
+            $table->foreign('proposito')->references('id')->on('sel_proposito');
+            $table->string('espeOtroPro', 100)->nullable();
+            $table->integer('codColorBien')->nullable();
+            $table->foreign('codColorBien')->references('id')->on('sel_colorbien');
+            $table->string('espeColor', 50)->nullable();
+            $table->string('otraEspeColor', 255)->nullable();
+            $table->string('peso', 18)->nullable();
+            $table->integer('unidadPeso')->nullable();
+            $table->foreign('unidadPeso')->references('id')->on('sel_medidapeso');
+            $table->date('feNacimiento', 10)->nullable();
+            $table->string('numHierro', 15)->nullable();
+            $table->string('seParticulares', 255)->nullable();
+            $table->string('otrasEspecifi', 255)->nullable();
+            $table->integer('seguroBien')->nullable();
+            $table->foreign('seguroBien')->references('id')->on('sel_seguros3');
+            $table->string('codRegSeguro', 10)->nullable();
+            $table->integer('revisadot10')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
         Schema::create('bitacora', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user')->unsigned();
@@ -374,6 +423,7 @@ class CreateAnexos extends Migration
             $table->integer('accion')->unsigned();
             $table->foreign('accion')->references('id')->on('acciones');
             $table->string('referencia')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 

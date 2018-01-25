@@ -424,7 +424,7 @@ $("#formValidaT9").validate({
            anoFabriBien : "* Campo obligatorio, ¡ Por favor, introduzca el año de fabricación del bien !",
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
            unidadMedi : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida de la garantía !",
-           tieneSistema : "* Campo obligatorio, ¡ Por favor, seleccione si posee sistema de rastreo y localización en uso !",
+           tieneSistema : "* Campo obligatorio, ¡ Por favor, seleccione si posee, sistema de rastreo y localización en uso !",
            poseeCompo : "* Campo obligatorio, ¡ Por favor, seleccione si el bien posee componentes !",
            seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
            
@@ -449,3 +449,57 @@ $("#formValidaT9").validate({
         errorElement: "li", 
    
     });
+
+$("#formValidaT10").validate({
+        rules: {
+           codBien: { required:true},
+           depAdmRes: { required:true},
+           estatuBien: { required:true},
+           valorAdq: { required:true},
+           moneda: { required:true},
+           edoBien: { required:true},
+           genero: { required:true},
+           tipoAnimal: { required:true},
+           proposito: { required:true},
+           codColorBien: { required:true},
+           peso: { required:true},
+           seguroBien: { required:true},
+           
+        },
+        
+        messages: {
+           codBien : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
+           depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
+           estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del uso del bien !",
+           valorAdq : "* Campo obligatorio, ¡ Por favor, introduzca el valor de adquisición !",
+           moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
+           edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
+           genero : "* Campo obligatorio, ¡ Por favor, seleccione el genero !",
+           tipoAnimal : "* Campo obligatorio, ¡ Por favor, seleccione el tipo de animal !",
+           proposito : "* Campo obligatorio, ¡ Por favor, seleccione el propósito !",
+           codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
+           peso : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del peso !",
+           seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
+           
+         
+        },
+        
+      highlight: function(element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+          // Keeps the default behaviour, adding error class to element but seems to break the default radio group behaviour but the below fixes that
+                  $(element).closest('ul').addClass(errorClass);
+          // add error class to ul element for checkbox groups and radio inputs
+              },
+              unhighlight: function(element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+          // keeps the default behaviour removing error class from elements
+                  $(element).closest('ul').removeClass(errorClass);
+          // remove error class from ul element for checkbox groups and radio inputs
+              },
+        // FIX END
+ 
+        errorLabelContainer: ".js-errors",
+        errorElement: "li", 
+   
+    });
+
