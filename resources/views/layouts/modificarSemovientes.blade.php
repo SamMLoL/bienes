@@ -373,7 +373,7 @@
 				<div class="col-md-12">
 	                <div class="col-md-4">
                		   <li>Peso:</li>
-                 		<input type="text" id="peso" name="peso" value="{{$form_t10->peso}}" class="form-control money" placeholder="Introduzca el peso del animal" maxlength="26">
+                 		<input type="text" id="peso" name="peso" value="{{$form_t10->peso}}" class="form-control money" placeholder="Introduzca el peso del animal" maxlength="18">
             		</div>
 					
 					<div class="col-md-4 form-group">

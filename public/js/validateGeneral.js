@@ -405,7 +405,6 @@ $("#formValidaT9").validate({
            codColorBien: { required:true},
            unidadMedi: { required:true},
            tieneSistema: { required:true},
-           
            poseeCompo: { required:true},
            seguroBien: { required:true},
            
@@ -462,7 +461,7 @@ $("#formValidaT10").validate({
            tipoAnimal: { required:true},
            proposito: { required:true},
            codColorBien: { required:true},
-           peso: { required:true},
+           unidadPeso: { required:true},
            seguroBien: { required:true},
            
         },
@@ -478,7 +477,7 @@ $("#formValidaT10").validate({
            tipoAnimal : "* Campo obligatorio, ¡ Por favor, seleccione el tipo de animal !",
            proposito : "* Campo obligatorio, ¡ Por favor, seleccione el propósito !",
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
-           peso : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del peso !",
+           unidadPeso : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del peso !",
            seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
            
          

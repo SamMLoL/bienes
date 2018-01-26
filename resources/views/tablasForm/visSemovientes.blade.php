@@ -206,7 +206,7 @@
 
             <div class="col-md-5 form-group">
               <li>Genero:</li>
-                  <select name="tipoAnimal" id="tipoAnimal" class="form-control " >
+                  <select name="genero" id="genero" class="form-control " >
                     <option value="0" disabled selected>Seleccione</option>
                       @foreach($genero as $traeDir)
                     <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
@@ -289,7 +289,7 @@
         <div class="col-md-12">
             <div class="col-md-4">
                <li>Peso:</li>
-                  <input type="text" id="peso" name="peso" class="form-control money" placeholder="Introduzca el peso del animal" maxlength="26">
+                  <input type="text" id="peso" name="peso" class="form-control money" placeholder="Introduzca el peso del animal" maxlength="18">
             </div>
 
             <div class="col-md-4 form-group">
@@ -332,7 +332,7 @@
         <div class="col-md-12">
             <div class="col-md-4">
                <li>Número de Hierro:</li>
-                  <input type="text" id="numHierro" name="numHierro" class="form-control money" placeholder="Número de hierro de identificación del animal" maxlength="15">
+                  <input type="text" id="numHierro" name="numHierro" class="form-control" placeholder="Número de hierro de identificación del animal" maxlength="15">
            </div>
 
             <div class="col-md-4">

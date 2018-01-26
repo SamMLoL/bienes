@@ -388,7 +388,7 @@ class CreateAnexos extends Migration
             $table->date('feIngBien', 10)->nullable();
             $table->integer('edoBien')->nullable();
             $table->string('espOtroEdo', 30)->nullable();
-            $table->string('descEdoBien', 200)->nullable();
+            $table->string('descEdoBien', 255)->nullable();
             $table->string('raza', 50)->nullable();
             $table->integer('genero')->nullable();
             $table->integer('tipoAnimal')->nullable();
