@@ -502,3 +502,38 @@ $("#formValidaT10").validate({
    
     });
 
+$("#formValidaT11").validate({
+        rules: {
+           codBien: { required:true},
+           codMarca: { required:true},
+           codModel: { required:true},
+           
+        },
+        
+        messages: {
+           codBien : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
+           codMarca : "* Campo obligatorio, ¡ Por favor, seleccione el código de la marca !",
+           codModel : "* Campo obligatorio, ¡ Por favor, seleccione el código del modelo !",
+           
+         
+        },
+        
+      highlight: function(element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+          // Keeps the default behaviour, adding error class to element but seems to break the default radio group behaviour but the below fixes that
+                  $(element).closest('ul').addClass(errorClass);
+          // add error class to ul element for checkbox groups and radio inputs
+              },
+              unhighlight: function(element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+          // keeps the default behaviour removing error class from elements
+                  $(element).closest('ul').removeClass(errorClass);
+          // remove error class from ul element for checkbox groups and radio inputs
+              },
+        // FIX END
+ 
+        errorLabelContainer: ".js-errors",
+        errorElement: "li", 
+   
+    });
+

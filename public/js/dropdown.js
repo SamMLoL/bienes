@@ -32,3 +32,20 @@ $("#codMarca").change(function(event){
      });
     });
 
+
+//MODIFICAR DATOS BIENES
+
+    $("#codMarca3").change(function(event){
+      var rut = $('#rut').val();
+    $.get(rut+'/'+event.target.value+"",function(response,codMarca){
+  //recorrer respuentas e incluir en el select las areas
+  $('#codModel3').removeAttr('disabled');
+  
+   $("#codModel3").empty();
+    $("#codModel3").append("<option value='0' disabled selected>Seleccione... </option>");
+     for(i=0; i<response.length; i++){
+        $("#codModel3").append("<option value='"+response[i].id+ "'> "+response[i].codModel+"</option>");
+
+      }
+     });
+    });

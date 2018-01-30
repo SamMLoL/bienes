@@ -48,7 +48,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Registrar<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                             <ul class="dropdown-menu" role="menu">
+                        <ul class="dropdown-menu" role="menu">
                             <!--SUB-MENU DE ANEXOS T-->
                             <li><a href="proveedores">Proveedores</a></li>
                                 <li class="dropdown-submenu"><a href="">Modalidades</a>
@@ -73,13 +73,12 @@
                                     <li><a href="bienes">Bienes</a></li>
                                     <li><a href="transporte">Equipo de Transporte</a></li>
                                     <li><a href="semovientes">Semovientes</a></li>
-                                    <li><a href="tablat2">Bienes Muebles e Inmuebles</a></li>
-                                    <li><a href="tablat2">Bienes de Inmuebles del Organo</a></li>
-                                   
-                                        
-                                    </ul>
-                                </li>
-                            </ul>
+                                    <li><a href="datosbienes">Bienes Muebles e Inmuebles</a></li>
+                                    <li><a href="datosinmuebles">Bienes de Inmuebles del Organo</a></li>
+                                                                           
+                        </ul>
+                    </li>
+                </ul>
 
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -108,12 +107,23 @@
                                        <li><a href="regBienes">Bienes</a></li>
                                        <li><a href="regTransporte">Equipo de Transporte</a></li>
                                        <li><a href="regSemovientes">Semovientes</a></li>
-                                       <li><a href="registroT11">Bienes Muebles e Inmuebles</a></li>
+                                       <li><a href="regDatosbienes">Bienes Muebles e Inmuebles</a></li>
                                        <li><a href="registroT12">Bienes de Inmuebles del Órgano</a></li>
-                                      
-                                    </ul>
-                                </li>
+                                        
                             </ul>
+                        </li>
+                    </ul>
+                        
+                        <!-- Right Side Of Navbar -->
+                         <ul class="nav navbar-nav">
+                         <!-- Authentication Links-->
+                      
+                            <li class="dropdown">
+                                    <a href="{{ url('/bitacora') }}">
+                                        Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
+                                    </a>
+                           </li>
+                        </ul>
                     
                          <!-- Right Side Of Navbar -->
                          <ul class="nav navbar-nav navbar-right">
@@ -144,9 +154,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url('/bitacora') }}">
-                                        Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
-                                        </a>
+                                        
 
                                     </li>
                                 </ul>

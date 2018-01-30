@@ -3,10 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class modeloBienes extends Model
 {
+use SoftDeletes;
+
     protected $table = 'bienes';
+    
+    protected $dates = ['deleted_at'];
+
     protected $fillable = ['codOt2_1','codCata','depAdmRes','sedeOrgano','codResBien','codInterno','estatuBien','espOtro','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','serialBien','codMarca','codModel','añoFabriBien','codColorBien','espeColor','otraEspeColor','espeTecBien','otraDescBien','garantia','unidadMedi','feIniGarantia','feFinGarantia','poseeCompo','seguroBien','codRegSeguro','revisadot8'];
 
     public static function selectBienes($id){

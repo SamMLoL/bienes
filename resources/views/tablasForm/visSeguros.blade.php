@@ -41,7 +41,7 @@
             @else
                EMPRSE-G000
             @endif
-            </b>
+            </b></li></li>
         </div>
     </div>
 

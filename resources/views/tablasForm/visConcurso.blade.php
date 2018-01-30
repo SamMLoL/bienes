@@ -48,7 +48,7 @@
                   <b id="espaciar3">A2012000</b>
               @endif
               
-                </b>
+                </b></li></li>
             </div>
         </div>
 

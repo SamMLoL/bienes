@@ -30,4 +30,9 @@ use SoftDeletes;
     {
         return $this->hasOne('App\modeloEqtransporte', 'codModel');
     }
+
+    public function selectModeldatosb()
+    {
+        return $this->hasOne('App\modeloDatosbienes', 'codModel');
+    }
 }

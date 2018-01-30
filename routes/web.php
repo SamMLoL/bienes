@@ -118,6 +118,14 @@ Route::resource('transporte', 'controladorEqtransporte');
 Route::get('/semovientes', 'controladorSemovientes@index');
 Route::resource('semovientes', 'controladorSemovientes');
 
+#ANEXO T11 = Datos de los Bienes
+Route::get('/datosbienes', 'controladorDatosbienes@index');
+Route::resource('datosbienes', 'controladorDatosbienes');
+
+#ANEXO T12 = Datos de los Inmuebles
+Route::get('/datosinmuebles', 'controladorInmuebles@index');
+Route::resource('datosinmuebles', 'controladorInmuebles');
+
 #SELECT DINAMICOS
 Route::get('dropdown/{id}','controladorBienes@getBienes');
 Route::get('dropdown2/{id}','controladorBienes@getBienesmodif');
@@ -143,6 +151,7 @@ Route::get('/regComponentes', 'con_componentesVer@index');
 Route::get('/regBienes', 'con_bienesVer@index');
 Route::get('/regTransporte', 'con_EqtransporteVer@index');
 Route::get('/regSemovientes', 'con_semovientesVer@index');
+Route::get('/regDatosbienes', 'con_datosbienesVer@index');
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
@@ -164,6 +173,7 @@ Route::get('seleccionComponentes/{id}', 'con_componentesVer@selectId');
 Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
 Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
 Route::get('seleccionSemovientes/{id}', 'con_semovientesVer@selectId');
+Route::get('seleccionDatosbien/{id}', 'con_datosbienesVer@selectId');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
@@ -185,6 +195,7 @@ Route::get('/anularComponentes/{id}', 'con_componentesVer@anularComponentes');
 Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
 Route::get('/anularEqtransporte/{id}', 'con_EqtransporteVer@anularTransporte');
 Route::get('/anularSemo/{id}', 'con_semovientesVer@anularSemo');
+Route::get('/anularDatos/{id}', 'con_datosbienesVer@anularDatos');
 
 	Route::get('/home', function () {
     return view('/home');

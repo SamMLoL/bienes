@@ -29,7 +29,7 @@
               @else
                 MOD000
               @endif
-              </b>
+              </b></li></li>
             </div>
         </div>
 

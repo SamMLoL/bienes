@@ -44,7 +44,7 @@
               @else
                 VPRBV-P000
               @endif
-              </b>
+              </b></li></li>
             </div>
         </div>
     <hr>

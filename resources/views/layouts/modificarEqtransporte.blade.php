@@ -230,15 +230,12 @@
                     <div class="col-md-10 form-estilo">
 						<li>Descripción del Estado del Bien:</li>
 	                      @if($form_t9->descEdoBien == '1')
-	                       
 		                 	<textarea name="descEdoBien" id="descEdoBien" value="xxx" class="form-control" maxlength="255" rows="4">xxx</textarea>
 		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
 	                       
 	                      @else
-	                
 		                   <textarea name="descEdoBien" id="descEdoBien" class="form-control" maxlength="255" rows="4">{{$form_t9->descEdoBien}}</textarea>
 		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
-	                           
 	                      @endif
                     </div>
 				</div>

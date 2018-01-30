@@ -46,7 +46,7 @@
 
                       <div class="col-md-4 form-group">
                           <label for="tipProvee">Tipo de Proveedor</label>
-                              <br>{{$seleccion->selectProvee->opcion}}
+                              <br>{{$seleccion->tipProvee}}
                       </div>
                   </div>
               </div>

@@ -48,7 +48,7 @@
                   <b id="espaciar3">G2012000</b>
               @endif
               
-                </b>
+                </b></li></li>
           </div>
       </div>
 

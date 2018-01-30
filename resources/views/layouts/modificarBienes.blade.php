@@ -453,11 +453,11 @@
 				</div>
 			</div>
 
-			<input type="hidden" id="rut" value="{{url('dropdown2')}}">
 
 			<div class="row">
 	              <div class="col-md-12 form-group"><br>
 	                <center><button type="submit" class="btn btn-sm btn-info" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i> <b>Modificar</b></button>
+	                
 	                 <a href="{{ url('/regBienes') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
 	              </div>
 	        </div>
@@ -467,6 +467,7 @@
 </form>
 </body>
 </html>
+
  	<script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
