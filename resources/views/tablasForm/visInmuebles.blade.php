@@ -5,7 +5,7 @@
 <div class="row">
    <div class="col-md-12">
   	  <div class="row">
-  	     <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> BIENES / DATOS DE LOS BIENES MUEBLES DEL ÓRGANO O ENTE</b></h5></div>
+  	     <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> INMUEBLES / DATOS DE LOS BIENES INMUEBLES DEL ÓRGANO O ENTE</b></h5></div>
       </div>
 
       <div class="row">
