@@ -38,7 +38,7 @@ class controladorExpropiacion extends Controller
         array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
         );
 
-      return view('tablasForm.visExpropiacion', compact('infoSelect','arrayT25','selectT25','dateT25','date2T25','lastCod'));
+      return view('AnexosT.visExpropiacion', compact('infoSelect','arrayT25','selectT25','dateT25','date2T25','lastCod'));
 
     }
 
@@ -130,7 +130,7 @@ class controladorExpropiacion extends Controller
         $form_t25 = modeloExpropiacion::find($id);
         $infoSelect = sel_expropiacion::all();
 
-       return view('layouts.modificarExpropiacion',compact('form_t25','infoSelect'));
+       return view('layouts.ModificarAnexosT.modificarExpropiacion',compact('form_t25','infoSelect'));
     }
 
    

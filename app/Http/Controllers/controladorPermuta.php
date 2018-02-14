@@ -43,7 +43,7 @@ class controladorPermuta extends Controller
         array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
         );
 
-        return view('tablasForm.visPermuta', compact('infoSelect','arrayT26','selectT26','dateT26','date2T26','date3T26','lastCod'));
+        return view('AnexosT.visPermuta', compact('infoSelect','arrayT26','selectT26','dateT26','date2T26','date3T26','lastCod'));
     }
 
     public function store(Request $request)
@@ -145,7 +145,7 @@ class controladorPermuta extends Controller
         $form_t26 = modeloPermuta::find($id);
         $infoSelect = sel_permuta::all();
 
-        return view('layouts.modificarPermuta', compact('form_t26','infoSelect'));
+        return view('layouts.ModificarAnexosT.modificarPermuta', compact('form_t26','infoSelect'));
     }
 
  

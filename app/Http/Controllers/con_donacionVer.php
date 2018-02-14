@@ -12,7 +12,7 @@ class con_donacionVer extends Controller
       	
       	$verT24= modeloDonacion::all();
 
-      	return view('registros.regDonacion', compact('verT24'));
+      	return view('RegistrosT.regDonacion', compact('verT24'));
 
     }
 
@@ -22,7 +22,7 @@ class con_donacionVer extends Controller
         $seleccion->revisadot24 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraDonacion',compact('seleccion'));
+       return view('MuestraAnexosT.muestraDonacion',compact('seleccion'));
     }
 
     public function anularDonac($id)

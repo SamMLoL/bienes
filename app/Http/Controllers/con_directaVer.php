@@ -12,7 +12,7 @@ class con_directaVer extends Controller
       	
       	$verT21= modeloDirecta::all();
 
-      	return view('registros.regDirecta', compact('verT21'));
+      	return view('RegistrosT.regDirecta', compact('verT21'));
 
     }
 
@@ -22,7 +22,7 @@ class con_directaVer extends Controller
         $seleccion->revisadot21 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraDirecta',compact('seleccion'));
+       return view('MuestraAnexosT.muestraDirecta',compact('seleccion'));
     }
 
      /*FUNCIÓN anularDirec es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/

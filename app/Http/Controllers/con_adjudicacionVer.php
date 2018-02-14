@@ -12,7 +12,7 @@ class con_adjudicacionVer extends Controller
         
         $verT28= modeloAdjudicacion::all();
 
-        return view('registros.regAdjudicacion', compact('verT28'));
+        return view('RegistrosT.regAdjudicacion', compact('verT28'));
 
     }
 
@@ -22,7 +22,7 @@ class con_adjudicacionVer extends Controller
         $seleccion->revisadot28 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraAdjudicacion',compact('seleccion'));
+       return view('MuestraAnexosT..muestraAdjudicacion',compact('seleccion'));
     }
 
     public function anularAdjud($id)

@@ -16,7 +16,7 @@ class controladorDatosbienes extends Controller
 		$marcas = modeloMarcas::all();
      	$modelos = modeloModelos::all();
 
-     	return view('tablasForm.visDatosbienes', compact('lastCod','marcas','modelos'));
+     	return view('AnexosT.visDatosbienes', compact('lastCod','marcas','modelos'));
     }
 
     public function store(Request $request)
@@ -75,7 +75,7 @@ class controladorDatosbienes extends Controller
      	  $modelos = modeloModelos::all();
          
 
-        return view('layouts.modificarDatosbienes', compact('form_t11','lastCod','marcas','modelos'));
+        return view('layouts.ModificarAnexosT.modificarDatosbienes', compact('form_t11','lastCod','marcas','modelos'));
     }
 
      public function update(Request $request, $id)

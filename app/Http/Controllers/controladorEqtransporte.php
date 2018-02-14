@@ -33,7 +33,7 @@ class controladorEqtransporte extends Controller
       $claseBien = sel_clasebien::all();
 
 
-        return view('tablasForm.visEqtransporte', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
+        return view('AnexosT.visEqtransporte', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
     }
 
     public function store(Request $request)
@@ -48,7 +48,6 @@ class controladorEqtransporte extends Controller
          $form_t9->codMarca = $request->codMarca;
          $form_t9->codModel = $request->codModel;
          $form_t9->codColorBien = $request->codColorBien;
-         $form_t9->anoFabriBien = $request->anoFabriBien;
          $form_t9->unidadMedi = $request->unidadMedi;
          $form_t9->tieneSistema = $request->tieneSistema;
          $form_t9->poseeCompo = $request->poseeCompo;
@@ -117,6 +116,14 @@ class controladorEqtransporte extends Controller
 
          }else{
           $form_t9->espeMoneda = $request->espeMoneda;
+         }
+
+         if($form_t9->anoFabriBien = $request->anoFabriBien == ''){
+         
+          $form_t9->anoFabriBien = '0';
+
+         }else{
+          $form_t9->anoFabriBien = $request->anoFabriBien;
          }
 
          if($form_t9->feAdqBien = $request->feAdqBien == ''){
@@ -325,7 +332,7 @@ class controladorEqtransporte extends Controller
         $poseeComponente = sel_seguros3::all();
         $claseBien = sel_clasebien::all();
 
-       return view('layouts.modificarEqtransporte',compact('form_t9','lastCod','dependecia','estatusBien','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
+       return view('layouts.ModificarAnexosT.modificarEqtransporte',compact('form_t9','lastCod','dependecia','estatusBien','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
     }
 
      public function update(Request $request, $id)
@@ -340,7 +347,6 @@ class controladorEqtransporte extends Controller
          $form_t9->codMarca = $request->codMarca;
          $form_t9->codModel = $request->codModel;
          $form_t9->codColorBien = $request->codColorBien;
-         $form_t9->anoFabriBien = $request->anoFabriBien;
          $form_t9->unidadMedi = $request->unidadMedi;
          $form_t9->tieneSistema = $request->tieneSistema;
          $form_t9->poseeCompo = $request->poseeCompo;
@@ -412,8 +418,18 @@ class controladorEqtransporte extends Controller
 
          if($form_t9->feAdqBien = $request->feAdqBien == ''){
           $form_t9->feAdqBien = '11111111';
+
           }else{
+
           $form_t9->feAdqBien = $request->feAdqBien;  
+         }
+
+         if($form_t9->anoFabriBien = $request->anoFabriBien == ''){
+         
+          $form_t9->anoFabriBien = '0';
+
+         }else{
+          $form_t9->anoFabriBien = $request->anoFabriBien;
          }
 
         if($form_t9->feIngBien = $request->feIngBien == ''){

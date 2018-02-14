@@ -13,7 +13,7 @@ class con_bienesVer extends Controller
       	
       	$verT8= modeloBienes::all();
 
-      	return view('registros.regBienes', compact('verT8'));
+      	return view('RegistrosT.regBienes', compact('verT8'));
 
     }
 
@@ -23,7 +23,7 @@ class con_bienesVer extends Controller
         $seleccion->revisadot8 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraBienes',compact('seleccion'));
+       return view('MuestraAnexosT.muestraBienes',compact('seleccion'));
     }
 
      /*FUNCIÓN anularBienes es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/

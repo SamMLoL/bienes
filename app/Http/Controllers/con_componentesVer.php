@@ -13,7 +13,7 @@ class con_componentesVer extends Controller
 
     {
     	$verT7 = modeloComponentes::all();
-    	return view('registros.regComponentes', compact('verT7'));
+    	return view('RegistrosT.regComponentes', compact('verT7'));
     }
 
     public function selectId($id)
@@ -22,7 +22,7 @@ class con_componentesVer extends Controller
 	    $seleccion->revisadot7 = 0;
 	    $seleccion->save();
 
-       return view('muestraReg.muestraComponentes',compact('seleccion'));
+       return view('MuestraAnexosT.muestraComponentes',compact('seleccion'));
     }
    
     public function anularComponentes($id)

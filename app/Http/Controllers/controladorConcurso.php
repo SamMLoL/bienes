@@ -45,7 +45,7 @@ class controladorConcurso extends Controller
            array("codAdquisicion","Código de la Forma de adquisición:","col-md-push-4"),
             );
 
-           return view('tablasForm.visConcurso', compact('infoSelect','arrayt2','datet2','date2t2','date3t2','selectT2','lastCod'));
+           return view('AnexosT.visConcurso', compact('infoSelect','arrayt2','datet2','date2t2','date3t2','selectT2','lastCod'));
     }
 
     public function store(Request $request)
@@ -153,7 +153,7 @@ class controladorConcurso extends Controller
         $form_t2 = modeloConcurso::find($id);
         $infoSelect = sel_concurso::all();
         
-        return view('layouts.modificarConcurso', compact('form_t2','infoSelect'));
+        return view('layouts.ModificarAnexosT.modificarConcurso', compact('form_t2','infoSelect'));
     }
 
     public function update(Request $request, $id)

@@ -291,7 +291,6 @@ $(document).ready(function() {
            edoBien: { required:true},
            codMarca: { required:true},
            codModel: { required:true},
-           anoFabriBien: { required:true},
            codColorBien: { required:true},
            unidadMedi: { required:true},
            poseeCompo: { required:true},
@@ -308,7 +307,6 @@ $(document).ready(function() {
            edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
            codMarca : "* Campo obligatorio, ¡ Por favor, seleccione el código de la marca del bien !",
            codModel : "* Campo obligatorio, ¡ Por favor, seleccione el código del modelo del bien !",
-           anoFabriBien : "* Campo obligatorio, ¡ Por favor, introduzca el año de fabricación del bien !",
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
            unidadMedi : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida de la garantía !",
            poseeCompo : "* Campo obligatorio, ¡ Por favor, seleccione si el bien posee componentes !",
@@ -401,7 +399,6 @@ $("#formValidaT9").validate({
            claseBien: { required:true},
            codMarca: { required:true},
            codModel: { required:true},
-           anoFabriBien: { required:true},
            codColorBien: { required:true},
            unidadMedi: { required:true},
            tieneSistema: { required:true},
@@ -420,7 +417,6 @@ $("#formValidaT9").validate({
            claseBien : "* Campo obligatorio, ¡ Por favor, seleccione la clase del bien !",
            codMarca : "* Campo obligatorio, ¡ Por favor, seleccione el código de la marca del bien !",
            codModel : "* Campo obligatorio, ¡ Por favor, seleccione el código del modelo del bien !",
-           anoFabriBien : "* Campo obligatorio, ¡ Por favor, introduzca el año de fabricación del bien !",
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
            unidadMedi : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida de la garantía !",
            tieneSistema : "* Campo obligatorio, ¡ Por favor, seleccione si posee, sistema de rastreo y localización en uso !",
@@ -460,6 +456,7 @@ $("#formValidaT10").validate({
            genero: { required:true},
            tipoAnimal: { required:true},
            proposito: { required:true},
+           peso: { required:true},
            codColorBien: { required:true},
            unidadPeso: { required:true},
            seguroBien: { required:true},
@@ -476,6 +473,7 @@ $("#formValidaT10").validate({
            genero : "* Campo obligatorio, ¡ Por favor, seleccione el genero !",
            tipoAnimal : "* Campo obligatorio, ¡ Por favor, seleccione el tipo de animal !",
            proposito : "* Campo obligatorio, ¡ Por favor, seleccione el propósito !",
+           peso : "* Campo obligatorio, ¡ Por favor, introduzca el peso !",
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
            unidadPeso : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del peso !",
            seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
@@ -536,4 +534,42 @@ $("#formValidaT11").validate({
         errorElement: "li", 
    
     });
+
+$("#formValidaS1").validate({
+        rules: {
+           
+           codSigecof: { required:true},
+           grupo: { required:true},
+           rifProvee: { required:true},
+            
+        },
+
+        messages: {
+           
+            codSigecof : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el código SIGECOF!",
+            rifProvee : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el número de rif !",
+
+        },
+
+         highlight: function(element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+          // Keeps the default behaviour, adding error class to element but seems to break the default radio group behaviour but the below fixes that
+                  $(element).closest('ul').addClass(errorClass);
+          // add error class to ul element for checkbox groups and radio inputs
+              },
+              unhighlight: function(element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+          // keeps the default behaviour removing error class from elements
+                  $(element).closest('ul').removeClass(errorClass);
+          // remove error class from ul element for checkbox groups and radio inputs
+              },
+        // FIX END
+ 
+        errorLabelContainer: ".js-errors",
+        errorElement: "li",
+                
+    });
+
+
+
 

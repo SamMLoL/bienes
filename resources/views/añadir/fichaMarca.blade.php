@@ -37,15 +37,15 @@
 
             <div class="row separar40 ">
                 <div class="col-md-12">
-                    <div class="col-md-4 form-group">
-                         <label>Denominación de la Marca </label>
-                          <br>{{$seleccion->denComar}}
-                    </div>
-                    
                    	<div class="col-md-4 form-group">
                    	    <label>Código de la Marca</label>
                     	    <br>{{$seleccion->codMarca}}
                    	</div>
+
+                    <div class="col-md-4 form-group">
+                         <label>Denominación de la Marca </label>
+                          <br>{{$seleccion->denComar}}
+                    </div>
 
                     <div class="col-md-4 form-group">
                         <label>Nombre del Fabricante</label>

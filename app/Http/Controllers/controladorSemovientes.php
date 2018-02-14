@@ -33,7 +33,7 @@ class controladorSemovientes extends Controller
       $peso = sel_medidapeso::orderBy('opcion')->get();
 
 
-        return view('tablasForm.visSemovientes', compact('lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
+        return view('AnexosT.visSemovientes', compact('lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
     }
 
      public function store(Request $request)
@@ -262,7 +262,7 @@ class controladorSemovientes extends Controller
           $proposito = sel_proposito::orderBy('opcion')->get();
           $peso = sel_medidapeso::orderBy('opcion')->get();
 
-        return view('layouts.modificarSemovientes', compact('form_t10','lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
+        return view('layouts.ModificarAnexosT.modificarSemovientes', compact('form_t10','lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
     }
 
     public function update(Request $request, $id)
@@ -372,6 +372,7 @@ class controladorSemovientes extends Controller
          }else{
           $form_t10->descEdoBien = $request->descEdoBien;
         }
+
 
         if($form_t10->raza = $request->raza == '')
          {

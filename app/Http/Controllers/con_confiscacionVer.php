@@ -12,7 +12,7 @@ class con_confiscacionVer extends Controller
       	
       $verT22= modeloConfiscacion::all();
 
-      return view('registros.regConfiscacion', compact('verT22'));
+      return view('RegistrosT.regConfiscacion', compact('verT22'));
 
     }
 
@@ -22,7 +22,7 @@ class con_confiscacionVer extends Controller
       $seleccion->revisadot22 = 0;
       $seleccion->save();
 
-       return view('muestraReg.muestraConfiscacion',compact('seleccion'));
+       return view('MuestraAnexosT.muestraConfiscacion',compact('seleccion'));
     }
 
     public function anularConfis($id)

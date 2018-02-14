@@ -39,7 +39,7 @@ class controladorDacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visDacion', compact('infoSelect','arrayT23','selectT23','dateT23','date2T23','lastCod'));
+        return view('AnexosT.visDacion', compact('infoSelect','arrayT23','selectT23','dateT23','date2T23','lastCod'));
 
     }
 
@@ -130,7 +130,7 @@ class controladorDacion extends Controller
         $form_t23 = modeloDacion::find($id);
         $infoSelect = sel_dacion::all();
 
-       return view('layouts.modificarDacion',compact('form_t23','infoSelect'));
+       return view('layouts.ModificarAnexosT.modificarDacion',compact('form_t23','infoSelect'));
     }
 
     public function update(Request $request, $id)

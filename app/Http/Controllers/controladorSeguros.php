@@ -20,7 +20,6 @@ class controladorSeguros extends Controller
 
    # id / label / placeholder tabla->t3dsbmioe type="text" / posición: position del select y input >
   $lastCod = modeloSeguros::select('codRegT3')->get()->last();
-
   $infoSelect = sel_seguros::all();
   $infoSelect1 = sel_seguros1::all();
   $infoSelect2 = sel_seguros2::all();
@@ -75,7 +74,7 @@ class controladorSeguros extends Controller
   );
 
  
-  return view('tablasForm.visSeguros', compact('infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4','arrayT3','select','select1','select2','select3','select4','datet1','datet2','arrayT31','desMoneda','lastCod'));
+  return view('AnexosT.visSeguros', compact('infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4','arrayT3','select','select1','select2','select3','select4','datet1','datet2','arrayT31','desMoneda','lastCod'));
 
     }
 
@@ -188,7 +187,7 @@ class controladorSeguros extends Controller
   		$infoSelect3 = sel_seguros3::all();
   		$infoSelect4 = sel_seguros4::all();
 
-        return view('layouts.modificarSeguros', compact('form_t3','infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4'));
+        return view('layouts.ModificarAnexosT.modificarSeguros', compact('form_t3','infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4'));
     }
 
    

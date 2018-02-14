@@ -13,8 +13,8 @@ class CreateAnexos extends Migration
      */
     public function up()
     {
-
-
+        //ANEXOS T
+        #T1
         Schema::create('proveedores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codProvee', 10)->nullable();
@@ -28,6 +28,8 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        //MODALIDADES
+        #T2
         Schema::create('concurso', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOrigen', 12)->nullable();
@@ -47,6 +49,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.1
         Schema::create('directa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_1', 12)->nullable();
@@ -64,6 +67,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.2
         Schema::create('confiscacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_2', 12)->nullable();
@@ -82,6 +86,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.3
         Schema::create('dacionPago', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_3', 12)->nullable();
@@ -99,6 +104,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.4
         Schema::create('donacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_4', 12)->nullable();
@@ -116,6 +122,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.5
         Schema::create('expropiacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_5', 12)->nullable();
@@ -134,6 +141,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.6
         Schema::create('permuta', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_6', 12)->nullable();
@@ -154,6 +162,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.7
         Schema::create('transferencia', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_7', 12)->nullable();
@@ -171,6 +180,7 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #T2.8
         Schema::create('adjudicacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codOt2_8', 12)->nullable();
@@ -189,6 +199,8 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        //ANEXOS T
+        #T3
         Schema::create('seguros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codRegT3', 10)->nullable();
@@ -286,7 +298,7 @@ class CreateAnexos extends Migration
             $table->foreign('codMarca')->references('id')->on('marcas');
             $table->integer('codModel')->unsigned();
             $table->foreign('codModel')->references('id')->on('modelos');
-            $table->integer('anoFabriBien')->nullable();
+            $table->string('anoFabriBien')->nullable();
             $table->integer('codColorBien')->nullable();
             $table->foreign('codColorBien')->references('id')->on('sel_colorbien');
             $table->string('espeColor', 50)->nullable();
@@ -335,7 +347,7 @@ class CreateAnexos extends Migration
             $table->foreign('codMarca')->references('id')->on('marcas');
             $table->integer('codModel')->unsigned();
             $table->foreign('codModel')->references('id')->on('modelos');
-            $table->integer('anoFabriBien')->nullable();
+            $table->string('anoFabriBien')->nullable();
             $table->string('serialCarro', 50)->nullable();
             $table->string('serialMotor', 50)->nullable();
             $table->string('placaBien', 20)->nullable();
@@ -493,6 +505,25 @@ class CreateAnexos extends Migration
             $table->foreign('seguroBien')->references('id')->on('sel_seguros3');
             $table->string('codRegSeguro', 10)->nullable();
             $table->integer('revisadot12')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        //ANEXOS S
+        #S1
+        Schema::create('basicos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('codSigecof', 17)->nullable();
+            $table->string('siglas', 15)->nullable();
+            $table->integer('grupo')->nullable();
+            $table->string('rifProvee', 20)->nullable();
+            $table->string('razonSocial', 255)->nullable();
+            $table->string('telfEnte', 20)->nullable();
+            $table->string('direcWeb', 100)->nullable();
+            $table->string('correEnte', 100)->nullable();
+            $table->date('feGaceta', 10)->nullable();
+            $table->string('numGaceta', 10)->nullable();
+            $table->integer('revisadoS1')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

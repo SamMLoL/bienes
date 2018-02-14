@@ -39,7 +39,7 @@ class controladorTransferencia extends Controller
             array("feLic","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visTransferencia', compact('infoSelect','arrayT27','selectT27','dateT27','date2T27','lastCod'));
+        return view('AnexosT.visTransferencia', compact('infoSelect','arrayT27','selectT27','dateT27','date2T27','lastCod'));
     }
 
    
@@ -130,7 +130,7 @@ class controladorTransferencia extends Controller
         $form_t27 = modeloTransferencia::find($id);
         $infoSelect = sel_transferencia::all();
 
-        return view('layouts.modificarTransferencia', compact('form_t27','infoSelect'));
+        return view('layouts.ModificarAnexosT.modificarTransferencia', compact('form_t27','infoSelect'));
     }
 
    

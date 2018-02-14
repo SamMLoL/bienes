@@ -28,7 +28,7 @@
               @if($lastCod)
                 {{$lastCod->codMarca}}
               @else
-                MARCA000 
+                MARCA001 
               @endif
               </b></li></li>
             </div>

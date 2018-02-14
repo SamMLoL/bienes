@@ -12,7 +12,7 @@ class con_permutaVer extends Controller
         
         $verT26= modeloPermuta::all();
 
-        return view('registros.regPermuta', compact('verT26'));
+        return view('RegistrosT.regPermuta', compact('verT26'));
 
     }
 
@@ -22,7 +22,7 @@ class con_permutaVer extends Controller
         $seleccion->revisadot26 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraPermuta',compact('seleccion'));
+       return view('MuestraAnexosT.muestraPermuta',compact('seleccion'));
     }
 
 

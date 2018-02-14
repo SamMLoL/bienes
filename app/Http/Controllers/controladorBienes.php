@@ -32,7 +32,7 @@ class controladorBienes extends Controller
      $unidadGarantia = sel_garantiabien::orderBy('opcion')->get();
      $poseeComponente = sel_seguros3::all();
           
-     return view('tablasForm.visBienes', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
+     return view('AnexosT.visBienes', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
 
     }
 
@@ -64,7 +64,6 @@ class controladorBienes extends Controller
          $form_t8->edoBien = $request->edoBien;
          $form_t8->codMarca = $request->codMarca;
          $form_t8->codModel = $request->codModel;
-         $form_t8->anoFabriBien = $request->anoFabriBien;
          $form_t8->codColorBien = $request->codColorBien;
          $form_t8->unidadMedi = $request->unidadMedi;
          $form_t8->poseeCompo = $request->poseeCompo;
@@ -127,6 +126,15 @@ class controladorBienes extends Controller
          }else{
           $form_t8->valorAdq = $request->valorAdq;
          }
+
+         if($form_t8->anoFabriBien = $request->anoFabriBien == '')
+         {
+          $form_t8->anoFabriBien = '0';
+
+         }else{
+          $form_t8->anoFabriBien = $request->anoFabriBien;
+         }
+
 
          if($form_t8->espeMoneda = $request->espeMoneda == '')
          {
@@ -262,7 +270,7 @@ class controladorBienes extends Controller
           $unidadGarantia = sel_garantiabien::all();
           $poseeComponente = sel_seguros3::all();
 
-        return view('layouts.modificarBienes', compact('form_t8','lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
+        return view('layouts.ModificarAnexosT.modificarBienes', compact('form_t8','lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
     }
 
      public function update(Request $request, $id)
@@ -275,7 +283,6 @@ class controladorBienes extends Controller
          $form_t8->edoBien = $request->edoBien;
          $form_t8->codMarca = $request->codMarca;
          $form_t8->codModel = $request->codModel;
-         $form_t8->anoFabriBien = $request->anoFabriBien;
          $form_t8->codColorBien = $request->codColorBien;
          $form_t8->unidadMedi = $request->unidadMedi;
          $form_t8->poseeCompo = $request->poseeCompo;
@@ -346,9 +353,19 @@ class controladorBienes extends Controller
           $form_t8->espeMoneda = $request->espeMoneda;
          }
 
+         if($form_t8->anoFabriBien = $request->anoFabriBien == ''){
+          $form_t8->anoFabriBien = '0';
+          
+          }else{
+
+          $form_t8->anoFabriBien = $request->anoFabriBien;  
+        }
+
          if($form_t8->feAdqBien = $request->feAdqBien == ''){
           $form_t8->feAdqBien = '11111111';
+          
           }else{
+
           $form_t8->feAdqBien = $request->feAdqBien;  
         }
 

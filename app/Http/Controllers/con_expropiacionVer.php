@@ -13,7 +13,7 @@ class con_expropiacionVer extends Controller
         
       $verT25= modeloExpropiacion::all();
 
-      return view('registros.regExpropiacion', compact('verT25'));
+      return view('RegistrosT.regExpropiacion', compact('verT25'));
 
     }
 
@@ -23,7 +23,7 @@ class con_expropiacionVer extends Controller
       $seleccion->revisadot25 = 0;
       $seleccion->save();
 
-       return view('muestraReg.muestraExpropiacion',compact('seleccion'));
+       return view('MuestraAnexosT.muestraExpropiacion',compact('seleccion'));
     }
 
 

@@ -45,7 +45,7 @@ class controladorDirecta extends Controller
         $dateT212=array(
             array("feFac","Fecha de la Factura:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
-        return view('tablasForm.visDirecta', compact('arrayT21','selectT21','selectT22','infoSelect','infoSelect2','dateT21','dateT211','dateT212','lastCod'));
+        return view('AnexosT.visDirecta', compact('arrayT21','selectT21','selectT22','infoSelect','infoSelect2','dateT21','dateT211','dateT212','lastCod'));
     }
 
   
@@ -128,7 +128,7 @@ class controladorDirecta extends Controller
         $infoSelect = sel_directa::all();
         $infoSelect2=modeloProveedores::all();
        
-        return view('layouts.modificarDirecta', compact('form_t21','infoSelect','infoSelect2'));
+        return view('layouts.ModificarAnexosT.modificarDirecta', compact('form_t21','infoSelect','infoSelect2'));
              
     }
 

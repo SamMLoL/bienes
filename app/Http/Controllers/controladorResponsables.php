@@ -27,7 +27,7 @@ class controladorResponsables extends Controller
             array("apeRes","Apellido del Responsable:","Introduzca el apellido del responsable","100","","",""),         
             array("telfRes","Teléfono del Responsable:","+58","10","","return soloNum(event)","telefono"),         
             array("cargoRes","Cargo del Responsable:","Introduzca el cargo del responsable","200","","",""),         
-            array("correRes","Correo Electrónico del Responsable:","¡Si se desconoce, deje el campo en blanco!","200","","",""),         
+            array("correRes","Correo Electrónico del Responsable:","Introduzca el correo elecrónico","200","","",""),         
             );
 
         $select = array(
@@ -38,7 +38,7 @@ class controladorResponsables extends Controller
             array("depAdmRes","Dependencia Administrativa:","2"),
             );
 
-        return view('tablasForm.visResponsables', compact('infoSelect','infoSelect1','arrayt4','select','select2','lastCod'));
+        return view('AnexosT.visResponsables', compact('infoSelect','infoSelect1','arrayt4','select','select2','lastCod'));
     }
 
     
@@ -86,7 +86,7 @@ class controladorResponsables extends Controller
         $infoSelect = sel_responsables::all();
         $infoSelect1 = sel_responsables1::all();
 
-        return view('layouts.modificarResponsables', compact('form_t4','infoSelect','infoSelect1'));
+        return view('layouts.ModificarAnexosT.modificarResponsables', compact('form_t4','infoSelect','infoSelect1'));
     }
 
     

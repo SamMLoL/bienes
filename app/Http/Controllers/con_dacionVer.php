@@ -13,7 +13,7 @@ class con_dacionVer extends Controller
       	
       	$verT23= modeloDacion::all();
 
-      	return view('registros.regDacion', compact('verT23'));
+      	return view('RegistrosT.regDacion', compact('verT23'));
 
     }
 
@@ -23,7 +23,7 @@ class con_dacionVer extends Controller
         $seleccion->revisadot23 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraDacion',compact('seleccion'));
+       return view('MuestraAnexosT.muestraDacion',compact('seleccion'));
     }
 
     public function anularDacion($id)

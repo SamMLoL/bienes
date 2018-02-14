@@ -73,7 +73,7 @@ class controladorAddModelos extends Controller
         $form_t6 = modeloModelos::find($id);
         $infoSelect = modeloMarcas::all();
  
-        return view('layouts.modificarModelos', compact('form_t6','infoSelect'));
+        return view('layouts.ModificarAnexosT.modificarModelos', compact('form_t6','infoSelect'));
              
     }
 

@@ -40,7 +40,7 @@ class controladorDonacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visDonacion', compact('infoSelect','arrayT24','selectT24','dateT24','date2T24','lastCod'));
+        return view('AnexosT.visDonacion', compact('infoSelect','arrayT24','selectT24','dateT24','date2T24','lastCod'));
     }
 
     public function store(Request $request)
@@ -125,7 +125,7 @@ class controladorDonacion extends Controller
         $form_t24 = modeloDonacion::find($id);
         $infoSelect = sel_donacion::all();
 
-       return view('layouts.modificarDonacion',compact('form_t24','infoSelect'));
+       return view('layouts.ModificarAnexosT.modificarDonacion',compact('form_t24','infoSelect'));
     }
 
     public function update(Request $request, $id)

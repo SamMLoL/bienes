@@ -34,6 +34,6 @@ class controladorInmuebles extends Controller
     	$unidadTerreno = sel_medidapeso::all();
     	$seguroBien = sel_seguros3::all();
 
-    	return view('tablasForm.visInmuebles', compact('lastCod','dependencia','corresBien','localizacion','codigoPais','codigoParroquia','codigoCiudad','estatusBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
+    	return view('AnexosT.visInmuebles', compact('lastCod','dependencia','corresBien','localizacion','codigoPais','codigoParroquia','codigoCiudad','estatusBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
     }
 }

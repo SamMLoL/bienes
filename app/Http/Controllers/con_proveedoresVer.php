@@ -12,7 +12,7 @@ class con_proveedoresVer extends Controller
     public function index()
     {
         $verT1 = modeloProveedores::all();
-        return view('registros.regProveedores',compact('verT1'));
+        return view('RegistrosT.regProveedores',compact('verT1'));
     }
 
   
@@ -25,7 +25,7 @@ class con_proveedoresVer extends Controller
        $seleccion->save();
 
 
-       return view('muestraReg.muestraProveedores',compact('seleccion'));
+       return view('MuestraAnexosT.muestraProveedores',compact('seleccion'));
 
     }
     

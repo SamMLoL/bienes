@@ -41,7 +41,7 @@ class controladorAdjudicacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visAdjudicacion', compact('infoSelect','arrayT28','selectT28','dateT28','date2T28','lastCod'));
+        return view('AnexosT.visAdjudicacion', compact('infoSelect','arrayT28','selectT28','dateT28','date2T28','lastCod'));
     }
 
     
@@ -133,7 +133,7 @@ class controladorAdjudicacion extends Controller
         $form_t28 = modeloAdjudicacion::find($id);
         $infoSelect = sel_adjudicacion::all();
 
-        return view('layouts.modificarAdjudicacion', compact('form_t28','infoSelect'));
+        return view('layouts.ModificarAnexosT.modificarAdjudicacion', compact('form_t28','infoSelect'));
     }
 
   

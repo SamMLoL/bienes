@@ -20,7 +20,7 @@ class controladorComponentes extends Controller
 
     		);
 
-    	return view('tablasForm.visComponentes', compact('arrayt7','lastCod'));
+    	return view('AnexosT.visComponentes', compact('arrayt7','lastCod'));
     }
 
   public function store(Request $request)
@@ -56,7 +56,7 @@ class controladorComponentes extends Controller
     {
         $form_t7 = modeloComponentes::find($id);
 
-        return view('layouts.modificarComponentes', compact('form_t7'));
+        return view('layouts.ModificarAnexosT.modificarComponentes', compact('form_t7'));
     }
     
     public function update(Request $request, $id)

@@ -13,7 +13,7 @@ class con_responsablesVer extends Controller
         
         $verT4= modeloResponsables::all();
 
-        return view('registros.regResponsables', compact('verT4'));
+        return view('RegistrosT.regResponsables', compact('verT4'));
 
     }
 
@@ -23,7 +23,7 @@ class con_responsablesVer extends Controller
     $seleccion->revisadot4 = 0;
     $seleccion->save();
 
-       return view('muestraReg.muestraResponsables',compact('seleccion'));
+       return view('MuestraAnexosT.muestraResponsables',compact('seleccion'));
     }
 
    

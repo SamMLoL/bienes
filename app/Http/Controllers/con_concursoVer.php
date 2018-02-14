@@ -11,7 +11,7 @@ class con_concursoVer extends Controller
      public function index(){
      
      $verT2 = modeloConcurso::all();
-     return view('registros.regConcurso', compact('verT2'));
+     return view('RegistrosT.regConcurso', compact('verT2'));
     }
 
      public function selectId($id){
@@ -19,7 +19,7 @@ class con_concursoVer extends Controller
        $seleccion = modeloConcurso::find($id);
        $seleccion->revisadot2 = 0;
        $seleccion->save();
-       return view('muestraReg.muestraConcurso',compact('seleccion'));
+       return view('MuestraAnexosT.muestraConcurso',compact('seleccion'));
     }
 
      public function anularConcur($id)

@@ -15,14 +15,13 @@ class controladorAddMarca extends Controller
       $infoSelectt = modeloMarcas::all();
 
     	$array= array(
-        array("denComar","Denominación de la Marca:","Introduzca el nombre de la marca ","100"),
-    		array("codMarca","Código de la Marca:","Introduzca el código de la marca ","10"),
+            array("codMarca","Código de la Marca:","Introduzca el código de la marca ","10"),
+            array("denComar","Denominación Comercial de la Marca:","Introduzca el nombre de la marca ","100"),
     		array("nomFabri","Nombre del Fabricante:","Introduzca el nombre del fabricante","100"),
     		);
 
     	return view('añadir.añadirMarcas', compact('array','lastCod','infoSelectt'));
     }
-
 
      public function store(Request $request)
     {
@@ -67,7 +66,7 @@ class controladorAddMarca extends Controller
     {
         $form_t5 = modeloMarcas::find($id);
 
-        return view('layouts.modificarMarcas', compact('form_t5'));
+        return view('layouts.ModificarAnexosT.modificarMarcas', compact('form_t5'));
     }
     
     public function update(Request $request, $id)

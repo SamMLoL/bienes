@@ -27,7 +27,7 @@
               @if($lastCod)
                 {{$lastCod->codModel}}
               @else
-                MOD000
+                MOD001
               @endif
               </b></li></li>
             </div>

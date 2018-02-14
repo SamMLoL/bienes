@@ -12,7 +12,7 @@ class con_EqtransporteVer extends Controller
         
         $verT9= modeloEqtransporte::all();
 
-        return view('registros.regEqtransporte', compact('verT9'));
+        return view('RegistrosT.regEqtransporte', compact('verT9'));
 
     }
 
@@ -22,7 +22,7 @@ class con_EqtransporteVer extends Controller
         $seleccion->revisadot9 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraEqtransporte',compact('seleccion'));
+       return view('MuestraAnexosT.muestraEqtransporte',compact('seleccion'));
     }
 
     public function anularTransporte($id)

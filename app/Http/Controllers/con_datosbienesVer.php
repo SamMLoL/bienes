@@ -12,7 +12,7 @@ class con_datosbienesVer extends Controller
         
     $verT11= modeloDatosbienes::all();
 
-    return view('registros.regDatosbienes', compact('verT11'));
+    return view('RegistrosT.regDatosbienes', compact('verT11'));
 
     }
 
@@ -22,7 +22,7 @@ class con_datosbienesVer extends Controller
     $seleccion->revisadot11 = 0;
     $seleccion->save();
 
-       return view('muestraReg.muestraDatosbienes',compact('seleccion'));
+       return view('MuestraAnexosT.muestraDatosbienes',compact('seleccion'));
     }
 
      /*FUNCIÓN anularT10 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/

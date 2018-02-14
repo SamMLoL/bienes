@@ -12,7 +12,7 @@ class con_segurosVer extends Controller
         
     $verT3= modeloSeguros::all();
 
-    return view('registros.regSeguros', compact('verT3'));
+    return view('RegistrosT.regSeguros', compact('verT3'));
 
     }
 
@@ -22,7 +22,7 @@ class con_segurosVer extends Controller
     $seleccion->revisadot3 = 0;
     $seleccion->save();
 
-       return view('muestraReg.muestraSeguros',compact('seleccion'));
+       return view('MuestraAnexosT.muestraSeguros',compact('seleccion'));
     }
 
      /*FUNCIÓN anularT3 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/

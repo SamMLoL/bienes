@@ -41,7 +41,7 @@ class controladorConfiscacion extends Controller
             array("feReg","Fecha de Registro:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
             );
 
-        return view('tablasForm.visConfiscacion', compact('infoSelect','selectT22','arrayT22','dateT22','date2T22','lastCod'));
+        return view('AnexosT.visConfiscacion', compact('infoSelect','selectT22','arrayT22','dateT22','date2T22','lastCod'));
     }
 
   
@@ -132,7 +132,7 @@ class controladorConfiscacion extends Controller
         $form_t22 = modeloConfiscacion::find($id);
         $infoSelect = sel_confiscacion::all();
        
-        return view('layouts.modificarConfiscacion', compact('form_t22','infoSelect'));
+        return view('layouts.ModificarAnexosT.modificarConfiscacion', compact('form_t22','infoSelect'));
              
     
     }

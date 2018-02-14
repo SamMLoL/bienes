@@ -22,6 +22,11 @@
   color: #8E2121;
 }
 
+#espaciarS{
+  margin-left: 55px;
+  color: #8E2121;
+}
+
 
 #espaciar2{
   margin-left: 27px;
@@ -192,7 +197,5 @@ margin-bottom: 40px;
   background-color: #8E2121;
 }
 
-#correRes::-webkit-input-placeholder { color: #A24040; opacity: 0.9; font-size: 13px;} /* WebKit */
-#correRes::-moz-placeholder { color:; #A24040; opacity: 0.9; font-size: 13px;} /* Firefox 19+ *
 
 

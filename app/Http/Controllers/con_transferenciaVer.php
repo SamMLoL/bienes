@@ -13,7 +13,7 @@ class con_transferenciaVer extends Controller
         
         $verT27= modeloTransferencia::all();
 
-        return view('registros.regTransferencia', compact('verT27'));
+        return view('RegistrosT.regTransferencia', compact('verT27'));
 
     }
 
@@ -23,7 +23,7 @@ class con_transferenciaVer extends Controller
         $seleccion->revisadot27 = 0;
         $seleccion->save();
 
-       return view('muestraReg.muestraTransferencia',compact('seleccion'));
+       return view('MuestraAnexosT.muestraTransferencia',compact('seleccion'));
     }
 
      /*FUNCIÓN anularT27 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/

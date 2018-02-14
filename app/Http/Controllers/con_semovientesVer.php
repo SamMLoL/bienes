@@ -13,7 +13,7 @@ class con_semovientesVer extends Controller
         
     $verT10= modeloSemovientes::all();
 
-    return view('registros.regSemovientes', compact('verT10'));
+    return view('RegistrosT.regSemovientes', compact('verT10'));
 
     }
 
@@ -23,7 +23,7 @@ class con_semovientesVer extends Controller
     $seleccion->revisadot10 = 0;
     $seleccion->save();
 
-       return view('muestraReg.muestraSemovientes',compact('seleccion'));
+       return view('MuestraAnexosT.muestraSemovientes',compact('seleccion'));
     }
 
      /*FUNCIÓN anularT10 es para simular la eliminacion del registro en el datatable CUANDO ESTA EN 0 SE MUESTRA Y CUANDO CAMBIA A 1 EL REGISTRO NO SE MUESTRA*/
