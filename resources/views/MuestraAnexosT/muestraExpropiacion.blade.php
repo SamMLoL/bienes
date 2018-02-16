@@ -14,7 +14,7 @@
     </head>
 <body>
 
-  @include('eliminarReg.anularExpropiacion')
+  @include('EliminarAnexosT.anularExpropiacion')
 
 <div class="container" id="sha">
     <div class="row">

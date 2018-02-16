@@ -528,6 +528,42 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #S2
+        Schema::create('maxima', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('cedula')->nullable();
+            $table->string('nombre', 100)->nullable();
+            $table->string('apellido', 100)->nullable();
+            $table->string('telefono', 20)->nullable();
+            $table->string('cargo', 100)->nullable();
+            $table->string('correo', 100)->nullable();
+            $table->string('numGaceta', 10)->nullable();
+            $table->date('feGaceta', 10)->nullable();
+            $table->string('numDecre', 10)->nullable();
+            $table->date('feDecre', 10)->nullable();
+            $table->integer('revisadoS2')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        #S3
+        Schema::create('patrimonial', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('cedula')->nullable();
+            $table->string('nombre', 100)->nullable();
+            $table->string('apellido', 100)->nullable();
+            $table->string('telefono', 20)->nullable();
+            $table->string('cargo', 100)->nullable();
+            $table->string('correo', 100)->nullable();
+            $table->string('numGaceta', 10)->nullable();
+            $table->date('feGaceta', 10)->nullable();
+            $table->string('numDecre', 10)->nullable();
+            $table->date('feDecre', 10)->nullable();
+            $table->integer('revisadoS3')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
         Schema::create('bitacora', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user')->unsigned();

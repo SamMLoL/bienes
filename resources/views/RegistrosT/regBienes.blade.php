@@ -43,7 +43,7 @@
                @foreach($verT8 as $reg8)
                   
                   <tr>
-                        @if($reg8->revisadot8== '1')
+                        @if($reg8->revisadot8 == '1')
                         <td class="text-center"><a href="#" hidden>{{$reg8->id}}</a><a href="seleccionBienes/{{$reg8->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$reg8->codOt2_1}}</b></a></td>
                         @else 
                         <td class="text-center"><a href="#" hidden>{{$reg8->id}}</a><a href="seleccionBienes/{{$reg8->id}}"> {{$reg8->codOt2_1}}</a> </td>

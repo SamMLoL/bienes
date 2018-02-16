@@ -137,7 +137,13 @@ Route::get('dropdown2/{id}','controladorBienes@getBienesmodif');
 Route::get('/basicos', 'controladorS1@index');
 Route::resource('basicos', 'controladorS1');
 
+#ANEXO S2 = Datos Máxima Autoridad
+Route::get('/maxima', 'controladorS2@index');
+Route::resource('maxima', 'controladorS2');
 
+#ANEXO S3 = Datos del Responsable Patrimonial
+Route::get('/patrimonial', 'controladorS3@index');
+Route::resource('patrimonial', 'controladorS3');
 
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
@@ -164,6 +170,7 @@ Route::get('/regSemovientes', 'con_semovientesVer@index');
 Route::get('/regDatosbienes', 'con_datosbienesVer@index');
 Route::get('/regInmuebles', 'con_datosbienesVer@index');
 Route::get('/regBasicos', 'con_s1Ver@index');
+Route::get('/regMaxima', 'con_s2Ver@index');
 
 
 #FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
@@ -188,6 +195,7 @@ Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
 Route::get('seleccionSemovientes/{id}', 'con_semovientesVer@selectId');
 Route::get('seleccionDatosbien/{id}', 'con_datosbienesVer@selectId');
 Route::get('seleccionBasicos/{id}', 'con_s1Ver@selectId');
+Route::get('seleccionMaxima/{id}', 'con_s2Ver@selectId');
 
 
 #ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
@@ -210,6 +218,8 @@ Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
 Route::get('/anularEqtransporte/{id}', 'con_EqtransporteVer@anularTransporte');
 Route::get('/anularSemo/{id}', 'con_semovientesVer@anularSemo');
 Route::get('/anularDatos/{id}', 'con_datosbienesVer@anularDatos');
+Route::get('/anularBasicos/{id}', 'con_s1Ver@anularBasicos');
+Route::get('/anularMaxima/{id}', 'con_s2Ver@anularMaxima');
 
 	Route::get('/home', function () {
     return view('/home');

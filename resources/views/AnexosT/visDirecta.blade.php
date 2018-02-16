@@ -37,19 +37,19 @@
         <div class="row">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
-            
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b>
+
               @if($lastCod)
                 @if($lastCod->codOt2_1 == 'B-1')
-                  <b id="espaciar4"> B-1 </b>
+                  <center><b id="color"> B-1 </b></center>
                 @else
-                  <b id="espaciar3"> {{$lastCod->codOt2_1}}</b>
+                  <center><b id="color"> {{$lastCod->codOt2_1}}</b></center>
                 @endif
               @else
-                  <b id="espaciar3">B2012001</b>
+                  <center><b id="color">B2012001</b></center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div>  
         

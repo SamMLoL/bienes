@@ -14,7 +14,7 @@
     </head>
 <body>
 
-@include('eliminarReg.anularModelos')
+@include('EliminarAnexosT.anularModelos')
 
 <div class="container" id="sha">
     <div class="row">

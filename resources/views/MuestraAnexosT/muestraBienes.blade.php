@@ -31,7 +31,8 @@
         </div>
 <hr>
         
-@include('eliminarReg.anularBienes')
+@include('EliminarAnexosT.anularBienes')
+
           <div class="row separar40">
               <div class="col-md-12">
                  	<div class="col-md-4 form-group">

@@ -33,7 +33,7 @@
             
         <hr>
         
-@include('eliminarReg.anularComponentes')
+@include('EliminarAnexosT.anularComponentes')
 
             <div class="row separar40 ">
                 <div class="col-md-12">

@@ -31,17 +31,14 @@ class con_transferenciaVer extends Controller
     public function anularTrans($id)
     {
         $seleccion= modeloTransferencia::find($id);
-        $seleccion->anulart27 = 1;
-        $seleccion->codOt2_7 = 'anulado';
         
-       if($seleccion->save()){
-
-       	  $bit = new modeloBitacora();
-          $bit->user = $_SESSION['id'];
-          $bit->accion  = 3;
-          $bit->referencia = 'Transferencia';
-          $bit->save();
-
+        if($seleccion->delete()){
+        $bit = new modeloBitacora();
+        $bit->user = $_SESSION['id'];
+        $bit->accion  = 3;
+        $bit->referencia = 'Transferencia';
+        $bit->save();
+          
          return redirect('regTransferencia')->with('msj', 'Registro Eliminado Exitosamente');
          } else {
          return redirect()->with('errormsj', 'Los datos no se guardaron');

@@ -31,7 +31,7 @@
         </div>
 <hr>
         
-@include('eliminarReg.anularSemovientes')
+@include('EliminarAnexosT.anularSemovientes')
           <div class="row separar40">
               <div class="col-md-12">
                  	<div class="col-md-4 form-group">

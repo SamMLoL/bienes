@@ -14,7 +14,7 @@
     </head>
 <body>
 
-  @include('eliminarReg.anularPermuta')
+  @include('EliminarAnexosT.anularPermuta')
 
 <div class="container" id="sha">
     <div class="row">

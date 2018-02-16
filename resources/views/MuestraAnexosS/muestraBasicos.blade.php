@@ -31,7 +31,9 @@
                 </div>
               </div>
         <hr>
-          
+        
+@include('EliminarAnexosS.anularBasicos')
+
               <div class="row separar40">
                   <div class="col-md-12">
                      	<div class="col-md-4 form-group">
@@ -155,7 +157,7 @@
 
             <div class="row text-center separar">
                	<div class="col-md-12 separar form-group">
-                     <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularR" title="AnularR"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
+                     <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularS1" title="AnularS1"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
                      <a href="{{url('regBasicos')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                         

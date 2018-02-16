@@ -83,7 +83,9 @@
                                 
                                 <li class="dropdown-submenu"><a href="">Anexos S</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="basicos">Datos Básicos</a></li>
+                                        <li><a href="basicos">Datos Básicos del Ente</a></li>
+                                        <li><a href="maxima">Datos de la Máxima Autoridad</a></li>
+                                        <li><a href="patrimonial">Datos del Responsable Patrimonial</a></li>
                                     </ul>
                                 </li>
                                                                            
@@ -128,6 +130,7 @@
                                 <li class="dropdown-submenu"><a href="">Anexos S</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="regBasicos">Datos Básicos</a></li>
+                                        <li><a href="regMaxima">Datos de la Máxima Autoridad</a></li>
                                     </ul>
                                 </li>
                             </ul>

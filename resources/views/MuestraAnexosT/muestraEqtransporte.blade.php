@@ -30,7 +30,8 @@
             </div>
         </div>
 <hr>
-   @include('eliminarReg.anularEqtransporte')     
+   @include('EliminarAnexosT.anularEqtransporte') 
+       
           <div class="row separar40">
               <div class="col-md-12">
                  	<div class="col-md-4 form-group">

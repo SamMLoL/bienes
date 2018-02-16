@@ -33,7 +33,7 @@
             
         <hr>
         
-@include('eliminarReg.anularMarca')
+@include('EliminarAnexosT.anularMarca')
 
             <div class="row separar40 ">
                 <div class="col-md-12">

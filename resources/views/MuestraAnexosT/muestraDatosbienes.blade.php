@@ -30,7 +30,7 @@
                 </div>
               </div>
         <hr>
-  @include('eliminarReg.anularDatosbienes') 
+  @include('EliminarAnexosT.anularDatosbienes') 
       
               <div class="row separar40">
                   <div class="col-md-12">

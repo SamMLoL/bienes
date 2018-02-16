@@ -13,7 +13,7 @@
     </head>
 <body>
 
-  @include('eliminarReg.anularConcurso')  
+  @include('EliminarAnexosT.anularConcurso')  
 
 <div class="container" id="sha">
     <div class="row">

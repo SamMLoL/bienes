@@ -14,7 +14,7 @@
     </head>
 <body>
 
-  @include('eliminarReg.anularSeguros')
+  @include('EliminarAnexosT.anularSeguros')
 
 <div class="container" id="sha">
     <div class="col-md-12">

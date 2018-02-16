@@ -36,19 +36,19 @@
         <div class="row">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> 
             
               @if($lastCod)
                 @if($lastCod->codOrigen == 'A-1')
-                  <b id="espaciar4"> A-1 </b>
+                  <center><b id="color"> A-1 </b></center>
                 @else
-                  <b id="espaciar3"> {{$lastCod->codOrigen}}</b>
+                  <center><b id="color"> {{$lastCod->codOrigen}}</b></center>
                 @endif
               @else
-                  <b id="espaciar3">A2012001</b>
+                  <center><b id="color">A2012001</b></center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div>
 

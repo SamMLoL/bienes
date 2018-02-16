@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> BÁSICOS / DATOS BÁSICOS DEL ÓRGANO O ENTE .</b></h5></div>
+            <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> RESPONSABLE PATRIMONIAL / DATOS DEL RESPONSABLE PATRIMONIAL DEL ORGAO O ENTE .</b></h5></div>
         </div>
             
         <div class="row">
@@ -37,19 +37,22 @@
         <div class="row separar">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código del Sigecof</b>
-              <b id="espaciarS">
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar1"> <center>Cédula</center></b>
               @if($lastCod)
-                {{$lastCod->codSigecof}}
+                @if($lastCod->cedula == '1')
+                <center><b id="color"> xxx </b></center>
+                @else
+                <center><b id="color"> {{$lastCod->cedula}}</center></b>
+                @endif
               @else
-                RGBP
+                <center><b id="color">00.000.000</b></center>
               @endif
-              </b></li></li>
+              </li></li>
             </div>
         </div>
     <hr>
 
-      <form role="form" id="formValidaS1" name="formValidaS1" method="POST" action="{{url('basicos')}}">
+      <form role="form" id="formValidaS3" name="formValidaS3" method="POST" action="{{url('patrimonial')}}">
            {{ csrf_field() }}
 
       <!--ARRAY DE INPUT PERTENECIENTE AL CONTROLADORS1 -->
@@ -57,46 +60,35 @@
       <div class="row separar">
         <div class="col-md-12">
 
-        @foreach($codSige as $posicion => $valor)
+        @foreach($cedula as $posicion => $valor)
              
           <div class="col-md-4 form-group ">
             
-             <label for="{{$codSige[$posicion][0]}}">{{$codSige[$posicion][1]}}</label>
+             <label for="{{$cedula[$posicion][0]}}">{{$cedula[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$codSige[$posicion][0]}}" id="{{$codSige[$posicion][0]}}" placeholder="{{$codSige[$posicion][2]}}" maxlength="{{$codSige[$posicion][3]}}" >
+             <input type="text" class="form-control" name="{{$cedula[$posicion][0]}}" id="{{$cedula[$posicion][0]}}" placeholder="{{$cedula[$posicion][2]}}" maxlength="{{$cedula[$posicion][3]}}" >
 
           </div>
         @endforeach
 
-        @foreach($siglas as $posicion => $valor)
+        @foreach($nombre as $posicion => $valor)
              
           <div class="col-md-4 form-group ">
             
-             <label for="{{$siglas[$posicion][0]}}">{{$siglas[$posicion][1]}}</label>
+             <label for="{{$nombre[$posicion][0]}}">{{$nombre[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$siglas[$posicion][0]}}" id="{{$siglas[$posicion][0]}}" placeholder="{{$siglas[$posicion][2]}}" maxlength="{{$siglas[$posicion][3]}}" >
+             <input type="text" class="form-control" name="{{$nombre[$posicion][0]}}" id="{{$nombre[$posicion][0]}}" placeholder="{{$nombre[$posicion][2]}}" maxlength="{{$nombre[$posicion][3]}}" >
 
           </div>
         @endforeach
 
-        @foreach($grupo as $posicion => $valor)
-             <div class="col-md-1 form-group ">
-                <label for="{{$grupo[$posicion][0]}}"></label>
-                   <select name="{{$grupo[$posicion][0]}}" id="{{$grupo[$posicion][0]}}" class="form-control">
-                      <option value="1" >{{$grupo[$posicion][4]}}</option>
-                      <option value="2" >{{$grupo[$posicion][5]}}</option>
-                      <option value="3" >{{$grupo[$posicion][6]}}</option>
-                   </select>
-             </div>
-          @endforeach
-
-        @foreach($rif as $posicion => $valor)
+        @foreach($apellido as $posicion => $valor)
              
-          <div class="col-md-3 form-group ">
+          <div class="col-md-4 form-group ">
             
-             <label for="{{$rif[$posicion][0]}}">{{$rif[$posicion][1]}}</label>
+             <label for="{{$apellido[$posicion][0]}}">{{$apellido[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$rif[$posicion][0]}}" id="{{$rif[$posicion][0]}}" placeholder="{{$rif[$posicion][2]}}" maxlength="{{$rif[$posicion][3]}}" >
+             <input type="text" class="form-control" name="{{$apellido[$posicion][0]}}" id="{{$apellido[$posicion][0]}}" placeholder="{{$apellido[$posicion][2]}}" maxlength="{{$apellido[$posicion][3]}}" >
 
           </div>
         @endforeach
@@ -104,21 +96,6 @@
         </div>
       </div>
 
-      <div class="row col-md-offset-1 separar">
-        <div class="col-md-12">
-          @foreach($razonSo as $posicion => $valor)
-             
-          <div class="col-md-10 form-estilo ">
-            
-             <label for="{{$razonSo[$posicion][0]}}">{{$razonSo[$posicion][1]}}</label>
-          
-             <textarea name="{{$razonSo[$posicion][0]}}" id="{{$razonSo[$posicion][0]}}" class="form-control" placeholder="{{$razonSo[$posicion][2]}}" maxlength="{{$razonSo[$posicion][3]}}" rows="{{$razonSo[$posicion][4]}}"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="basicos">0/255</div> </div>
-
-          </div>
-        @endforeach
-        </div>
-      </div>
 
       <div class="row separar">
         <div class="col-md-12">
@@ -133,22 +110,22 @@
           </div>
         @endforeach
 
-        @foreach($direcWeb as $posicion => $valor)
+        @foreach($cargo as $posicion => $valor)
              
           <div class="col-md-4 form-group ">
             
-             <label for="{{$direcWeb[$posicion][0]}}">{{$direcWeb[$posicion][1]}}</label>
+             <label for="{{$cargo[$posicion][0]}}">{{$cargo[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$direcWeb[$posicion][0]}}" id="{{$direcWeb[$posicion][0]}}" placeholder="{{$direcWeb[$posicion][2]}}" maxlength="{{$direcWeb[$posicion][3]}}">
+             <input type="text" class="form-control" name="{{$cargo[$posicion][0]}}" id="{{$cargo[$posicion][0]}}" placeholder="{{$cargo[$posicion][2]}}" maxlength="{{$cargo[$posicion][3]}}">
 
           </div>
         @endforeach
 
-        @foreach($correEnte as $posicion => $valor)
+        @foreach($correo as $posicion => $valor)
       
           <div class="col-md-4 form-group separar">
-                <label for="{{$correEnte[$posicion][0]}}">{{$correEnte[$posicion][1]}}</label>
-                  <input type="text" name="{{$correEnte[$posicion][0]}}" id="{{$correEnte[$posicion][0]}}" class="form-control" placeholder="{{$correEnte[$posicion][2]}}" maxlength="{{$correEnte[$posicion][3]}}">
+                <label for="{{$correo[$posicion][0]}}">{{$correo[$posicion][1]}}</label>
+                  <input type="text" name="{{$correo[$posicion][0]}}" id="{{$correo[$posicion][0]}}" class="form-control" placeholder="{{$correo[$posicion][2]}}" maxlength="{{$correo[$posicion][3]}}">
           </div>
         @endforeach
         </div>
@@ -156,6 +133,7 @@
 
       <div class="row separar">
         <div class="col-md-12">
+        @foreach($fechaGaceta as $posicion => $valor)
           <div class="col-md-4 form-group">
             <label for="{{$fechaGaceta[$posicion][0]}}">{{$fechaGaceta[$posicion][1]}}</label>  
                 <div class="{{$fechaGaceta[$posicion][3]}}">
@@ -166,6 +144,7 @@
                           
                 </div>
          </div>
+         @endforeach
 
          @foreach($numeroGaceta as $posicion => $valor)
       
@@ -174,6 +153,31 @@
                   <input type="text" name="{{$numeroGaceta[$posicion][0]}}" id="{{$numeroGaceta[$posicion][0]}}" class="form-control" placeholder="{{$numeroGaceta[$posicion][2]}}" maxlength="{{$numeroGaceta[$posicion][3]}}">
           </div>
         @endforeach
+
+        @foreach($numeroDecreto as $posicion => $valor)
+      
+          <div class="col-md-4 form-group separar">
+                <label for="{{$numeroDecreto[$posicion][0]}}">{{$numeroDecreto[$posicion][1]}}</label>
+                  <input type="text" name="{{$numeroDecreto[$posicion][0]}}" id="{{$numeroDecreto[$posicion][0]}}" class="form-control" placeholder="{{$numeroDecreto[$posicion][2]}}" maxlength="{{$numeroDecreto[$posicion][3]}}">
+          </div>
+        @endforeach
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+              @foreach($fechaDecreto as $posicion => $valor)
+            <div class="col-md-4 form-group">
+              <label for="{{$fechaDecreto[$posicion][0]}}">{{$fechaDecreto[$posicion][1]}}</label>  
+                <div class="{{$fechaDecreto[$posicion][3]}}">
+
+                <span class="{{$fechaDecreto[$posicion][4]}}"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="{{$fechaDecreto[$posicion][2]}}" ></i></span>
+                          
+                <input type="text" class="form-control fechaplaceholder calendario" onkeypress="return disable(event)" name="{{$fechaDecreto[$posicion][0]}}" id="{{$fechaDecreto[$posicion][0]}}" placeholder="{{$fechaDecreto[$posicion][2]}}" aria-describedby="{{$fechaDecreto[$posicion][5]}}">
+                          
+                </div>
+            </div>
+         @endforeach
         </div>
       </div>
     

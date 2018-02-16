@@ -13,7 +13,7 @@
         <link href="{{ asset('img/bandera.png') }}" rel="icon">
     </head>
 <body>
-  @include('eliminarReg.anularDonacion')
+  @include('EliminarAnexosT.anularDonacion')
 
 <div class="container" id="sha">
     <div class="row">
