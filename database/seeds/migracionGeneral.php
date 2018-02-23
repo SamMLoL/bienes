@@ -258,5 +258,25 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
+      #ANEXOS S
+
+      $dato = array("Sede Principal","Puerto","Aeropuerto","Campamento","Taller","Almacén","Galpón","Otra Tipo de Sede o Lugar");
+
+      foreach ($dato as $v) {
+        DB::table('sel_sedes')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("PB","1","2","3","4");
+
+      foreach ($dato as $v) {
+        DB::table('sel_piso')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
     }
 }

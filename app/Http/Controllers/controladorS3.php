@@ -158,7 +158,7 @@ class controladorS3 extends Controller
         $form_s3 = modeloS3::find($id);
         $lastCod = modeloS3::select('cedula')->get()->last();
         
-        return view('layouts.ModificarAnexosS.modificarMaxima', compact('form_s3','lastCod'));
+        return view('layouts.ModificarAnexosS.modificarPatrimonial', compact('form_s3','lastCod'));
     }
 
     public function update(Request $request, $id)

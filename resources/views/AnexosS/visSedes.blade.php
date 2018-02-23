@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> RESPONSABLE PATRIMONIAL / DATOS DEL RESPONSABLE PATRIMONIAL DEL ORGANO O ENTE .</b></h5></div>
+            <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> DATOS DE LAS SEDES / DATOS DE LAS SEDES Y SIMILARES DEL ORGANO O ENTE .</b></h5></div>
         </div>
             
         <div class="row">
@@ -36,23 +36,21 @@
 
         <div class="row separar">
             <div class="col-md-12">
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar1"> <center>Cédula</center></b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Sede</b> <b id="espaciar">  
+            
               @if($lastCod)
-                @if($lastCod->cedula == '1')
-                <center><b id="color"> xxx </b></center>
-                @else
-                <center><b id="color"> {{$lastCod->cedula}}</center></b>
-                @endif
+                  <b id="espaciar3"> {{$lastCod->codSede}}</b>
               @else
-                <center><b id="color">00.000.000</b></center>
+                  <b id="espaciar3">xxx</b>
               @endif
-              </li></li>
+              
+                </b></li></li>
             </div>
         </div>
     <hr>
 
-      <form role="form" id="formValidaS3" name="formValidaS3" method="POST" action="{{url('patrimonial')}}">
+      <form role="form" id="formValidaS4" name="formValidaS4" method="POST" action="{{url('patrimonial')}}">
            {{ csrf_field() }}
 
       <!--ARRAY DE INPUT PERTENECIENTE AL CONTROLADORS1 -->

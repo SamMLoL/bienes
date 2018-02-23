@@ -169,11 +169,13 @@ Route::get('/regTransporte', 'con_EqtransporteVer@index');
 Route::get('/regSemovientes', 'con_semovientesVer@index');
 Route::get('/regDatosbienes', 'con_datosbienesVer@index');
 Route::get('/regInmuebles', 'con_datosbienesVer@index');
+#MUESTRA REGISTRO DE LOS ANEXOS S
 Route::get('/regBasicos', 'con_s1Ver@index');
 Route::get('/regMaxima', 'con_s2Ver@index');
+Route::get('/regPatrimonial', 'con_s3Ver@index');
 
 
-#FUNCION DE REVISADO FUNCIÓN selectId => controladorVerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
+#FUNCION DE REVISADO FUNCIÓN selectId => con_VerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
 
 Route::get('seleccionProveedores/{id}', 'con_proveedoresVer@selectId');
 Route::get('seleccionConcurso/{id}', 'con_concursoVer@selectId');
@@ -194,11 +196,13 @@ Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
 Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
 Route::get('seleccionSemovientes/{id}', 'con_semovientesVer@selectId');
 Route::get('seleccionDatosbien/{id}', 'con_datosbienesVer@selectId');
+#FUNCIÓN DE REVISADO DE ANEXOS S selectId con_sN°Ver 
 Route::get('seleccionBasicos/{id}', 'con_s1Ver@selectId');
 Route::get('seleccionMaxima/{id}', 'con_s2Ver@selectId');
+Route::get('seleccionPatrimonial/{id}', 'con_s3Ver@selectId');
 
 
-#ELIMINAR REGISTRO DE TABLAS FUNCIÓN anulart =>controladorVer...
+#ELIMINAR REGISTRO DE TABLAS DE ANEXOS T =>con_Ver...
 Route::get('/anularProvee/{id}', 'con_proveedoresVer@anularProvee');
 Route::get('/anularConcur/{id}', 'con_concursoVer@anularConcur');
 Route::get('/anularDirec/{id}', 'con_directaVer@anularDirec');
@@ -218,8 +222,10 @@ Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
 Route::get('/anularEqtransporte/{id}', 'con_EqtransporteVer@anularTransporte');
 Route::get('/anularSemo/{id}', 'con_semovientesVer@anularSemo');
 Route::get('/anularDatos/{id}', 'con_datosbienesVer@anularDatos');
+#ELIMINAR REGISTRO DE TABLAS DE ANEXOS S =>con_Ver...
 Route::get('/anularBasicos/{id}', 'con_s1Ver@anularBasicos');
 Route::get('/anularMaxima/{id}', 'con_s2Ver@anularMaxima');
+Route::get('/anularPatrimonial/{id}', 'con_s3Ver@anularPatrimonial');
 
 	Route::get('/home', function () {
     return view('/home');

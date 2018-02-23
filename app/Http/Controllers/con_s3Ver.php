@@ -39,7 +39,7 @@ class con_s3Ver extends Controller
         $bit->referencia = 'Datos del Responsable Patrimonial';
         $bit->save();
 
-         return redirect('regMaxima')->with('msj', 'Registro Eliminado Exitosamente');
+         return redirect('regPatrimonial')->with('msj', 'Registro Eliminado Exitosamente');
          } else {
          return redirect()->with('errormsj', 'Los datos no se guardaron');
        }

@@ -131,6 +131,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="regBasicos">Datos Básicos</a></li>
                                         <li><a href="regMaxima">Datos de la Máxima Autoridad</a></li>
+                                        <li><a href="regPatrimonial">Datos del Responsable Patrimonial</a></li>
                                     </ul>
                                 </li>
                             </ul>

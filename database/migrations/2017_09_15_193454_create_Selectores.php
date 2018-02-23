@@ -198,6 +198,21 @@ class CreateSelectores extends Migration
             $table->string('opcion');
             $table->timestamps();
         });
+
+//ANEXO S3
+#SEDES
+        Schema::create('sel_sedes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
+
+        Schema::create('sel_piso', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('opcion');
+            $table->timestamps();
+        });
+
         
     }
 

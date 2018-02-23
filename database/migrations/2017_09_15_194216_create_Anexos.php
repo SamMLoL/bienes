@@ -564,6 +564,33 @@ class CreateAnexos extends Migration
             $table->timestamps();
         });
 
+        #S4
+        Schema::create('sedes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('codSede')->nullable();
+            $table->integer('tipoSede')->nullable();
+            $table->foreign('tipoSede')->references('id')->on('sel_sedes');
+            $table->string('espeSede', 100)->nullable();
+            $table->string('descSede', 255)->nullable();
+            $table->integer('localizacion')->nullable();
+            $table->foreign('localizacion')->references('id')->on('sel_proveedores');
+            $table->integer('codPais')->nullable();
+            $table->foreign('codPais')->references('id')->on('sel_paises');
+            $table->string('espeOtroPais', 100)->nullable();
+            $table->integer('codParroquia')->nullable();
+            $table->foreign('codParroquia')->references('id')->on('sel_parroquias');
+            $table->integer('codCiudad')->nullable();
+            $table->foreign('codCiudad')->references('id')->on('sel_ciudades');
+            $table->string('espeOtroCiudad', 100)->nullable();
+            $table->string('urbanizacion', 30)->nullable();
+            $table->string('calleAvenida', 50)->nullable();
+            $table->string('casaEdificio', 30)->nullable();
+            $table->string('piso', 20)->nullable();
+            $table->integer('revisadoS4')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
         Schema::create('bitacora', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user')->unsigned();
