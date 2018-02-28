@@ -174,16 +174,20 @@ class CreateSelectores extends Migration
             $table->string('opcion');
             $table->timestamps();
         });
-//DATOS INMUEBLES T12
+//ANEXOS S
         Schema::create('sel_paises', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion');
+            $table->string('codigo', 100);
+            $table->string('pais', 100);
+            $table->integer('revisadoAddPais')->nullable();
             $table->timestamps();
         });
 
         Schema::create('sel_parroquias', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion');
+            $table->string('codigo', 100);
+            $table->string('parroquia', 100);
+            $table->integer('revisadoAddParro')->nullable();
             $table->timestamps();
         });
 

@@ -571,5 +571,25 @@ $("#formValidaS1").validate({
     });
 
 
+$("#formValidaAddPais").validate({
+        rules: {
+           
+           codigo: { required:true},
+           codPais: { required:true},
+           
+            
+        },
+
+        messages: {
+           
+            codigo : "* Por favor, introduzca el código",
+            codPais : "*Por favor, introduzca el nombre país !",
+
+        },
+
+      });  
+
+
+
 
 

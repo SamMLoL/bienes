@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class sel_parroquias extends Model
+class modeloAddParroquias extends Model
 {
     protected $table = 'sel_parroquias';
-    protected $fillable = ['codigo','parroquia'];
 }

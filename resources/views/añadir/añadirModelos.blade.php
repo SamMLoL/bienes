@@ -7,8 +7,8 @@
            <div class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> MODELOS / DATOS DE LOS MODELOS DE LOS BIENES MUEBLES DEL ORGANO O ENTE</b></h5></div>
         </div>
 
-          <div class="row">
-            <div class="col-md-12 desvanecer">
+          <div class="row desvanecer">
+            <div class="col-md-12 ">
               @if(session()->has('msj'))
                 <center><div  class="col-md-12  alert alert-success" >{{session('msj')}}</div></center>
                   @endif

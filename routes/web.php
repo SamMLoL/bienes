@@ -145,7 +145,13 @@ Route::resource('maxima', 'controladorS2');
 Route::get('/patrimonial', 'controladorS3@index');
 Route::resource('patrimonial', 'controladorS3');
 
+#ANEXO S4 = Datos de la sede
+Route::get('/sedes', 'controladorS4@index');
+Route::resource('sedes', 'controladorS4');
 
+#AÑADIR  
+Route::resource('pais', 'controladorAddPaises');
+Route::resource('parroquia', 'controladorAddParroquia');
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
 Route::get('/regProveedores', 'con_proveedoresVer@index');
@@ -173,6 +179,11 @@ Route::get('/regInmuebles', 'con_datosbienesVer@index');
 Route::get('/regBasicos', 'con_s1Ver@index');
 Route::get('/regMaxima', 'con_s2Ver@index');
 Route::get('/regPatrimonial', 'con_s3Ver@index');
+Route::get('/visSede', 'con_s4Ver@index');
+
+#AÑADIR 
+Route::get('/histoPaises', 'con_histoPaises@index');
+Route::get('/histoParroquia', 'con_histoParro@index');
 
 
 #FUNCION DE REVISADO FUNCIÓN selectId => con_VerT./En: REVISED FUNCTION FUNCTION selectId => VT controller
@@ -200,6 +211,10 @@ Route::get('seleccionDatosbien/{id}', 'con_datosbienesVer@selectId');
 Route::get('seleccionBasicos/{id}', 'con_s1Ver@selectId');
 Route::get('seleccionMaxima/{id}', 'con_s2Ver@selectId');
 Route::get('seleccionPatrimonial/{id}', 'con_s3Ver@selectId');
+#AÑADIR PAISES
+Route::get('seleccionPaises/{id}', 'con_histoPaises@selectId');
+Route::get('seleccionParroquia/{id}', 'con_histoParro@selectId');
+
 
 
 #ELIMINAR REGISTRO DE TABLAS DE ANEXOS T =>con_Ver...
@@ -226,6 +241,10 @@ Route::get('/anularDatos/{id}', 'con_datosbienesVer@anularDatos');
 Route::get('/anularBasicos/{id}', 'con_s1Ver@anularBasicos');
 Route::get('/anularMaxima/{id}', 'con_s2Ver@anularMaxima');
 Route::get('/anularPatrimonial/{id}', 'con_s3Ver@anularPatrimonial');
+
+#ELIMINAR PAISES
+Route::get('/anularPaises/{id}', 'con_histoPaises@anularPaises');
+Route::get('/anularParroquia/{id}', 'con_histoParro@anularParroquia');
 
 	Route::get('/home', function () {
     return view('/home');

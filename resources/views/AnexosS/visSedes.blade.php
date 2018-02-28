@@ -37,20 +37,20 @@
         <div class="row separar">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Sede</b> <b id="espaciar">  
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Sede</b> 
             
               @if($lastCod)
-                  <b id="espaciar3"> {{$lastCod->codSede}}</b>
+                  <b id="color"> {{$lastCod->codSede}}</b>
               @else
-                  <b id="espaciar3">xxx</b>
+                  <center><b id="color">xxx</b></center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div>
     <hr>
 
-      <form role="form" id="formValidaS4" name="formValidaS4" method="POST" action="{{url('patrimonial')}}">
+      <form role="form" id="formValidaS4" name="formValidaS4" method="POST" action="{{url('sedes')}}">
            {{ csrf_field() }}
 
       <!--ARRAY DE INPUT PERTENECIENTE AL CONTROLADORS1 -->
@@ -58,35 +58,39 @@
       <div class="row separar">
         <div class="col-md-12">
 
-        @foreach($cedula as $posicion => $valor)
+        @foreach($codSede as $posicion => $valor)
              
           <div class="col-md-4 form-group ">
             
-             <label for="{{$cedula[$posicion][0]}}">{{$cedula[$posicion][1]}}</label>
+             <label for="{{$codSede[$posicion][0]}}">{{$codSede[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$cedula[$posicion][0]}}" id="{{$cedula[$posicion][0]}}" placeholder="{{$cedula[$posicion][2]}}" maxlength="{{$cedula[$posicion][3]}}" >
+             <input type="text" class="form-control" name="{{$codSede[$posicion][0]}}" id="{{$codSede[$posicion][0]}}" placeholder="{{$codSede[$posicion][2]}}" maxlength="{{$codSede[$posicion][3]}}" >
 
           </div>
+
+        @endforeach
+       
+        @foreach($selectSede as $posicion => $valor)
+
+        <div class="col-md-4 form-group separar">
+          <label for="{{$selectSede[$posicion][0]}}">{{$selectSede[$posicion][1]}}</label>
+              <select name="{{$selectSede[$posicion][0]}}" id="{{$selectSede[$posicion][0]}}" class="form-control">
+                  <option value="0" disabled selected>Seleccione</option>
+                @foreach($lugarSedes as $traeSelect)
+                 <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
+                @endforeach
+              </select>
+        </div>
+
         @endforeach
 
-        @foreach($nombre as $posicion => $valor)
+        @foreach($espeSede as $posicion => $valor)
              
           <div class="col-md-4 form-group ">
             
-             <label for="{{$nombre[$posicion][0]}}">{{$nombre[$posicion][1]}}</label>
+             <label for="{{$espeSede[$posicion][0]}}">{{$espeSede[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$nombre[$posicion][0]}}" id="{{$nombre[$posicion][0]}}" placeholder="{{$nombre[$posicion][2]}}" maxlength="{{$nombre[$posicion][3]}}" >
-
-          </div>
-        @endforeach
-
-        @foreach($apellido as $posicion => $valor)
-             
-          <div class="col-md-4 form-group ">
-            
-             <label for="{{$apellido[$posicion][0]}}">{{$apellido[$posicion][1]}}</label>
-          
-             <input type="text" class="form-control" name="{{$apellido[$posicion][0]}}" id="{{$apellido[$posicion][0]}}" placeholder="{{$apellido[$posicion][2]}}" maxlength="{{$apellido[$posicion][3]}}" >
+             <input type="text" class="form-control" name="{{$espeSede[$posicion][0]}}" id="{{$espeSede[$posicion][0]}}" placeholder="{{$espeSede[$posicion][2]}}" maxlength="{{$espeSede[$posicion][3]}}" >
 
           </div>
         @endforeach
@@ -94,91 +98,121 @@
         </div>
       </div>
 
-
-      <div class="row separar">
+      <div class="row col-md-offset-1">
         <div class="col-md-12">
-        @foreach($telefono as $posicion => $valor)
-             
-          <div class="col-md-4 form-group ">
-            
-             <label for="{{$telefono[$posicion][0]}}">{{$telefono[$posicion][1]}}</label>
-          
-             <input type="text" class="form-control" name="{{$telefono[$posicion][0]}}" id="{{$telefono[$posicion][0]}}" placeholder="{{$telefono[$posicion][2]}}" maxlength="{{$telefono[$posicion][3]}}" onkeypress="{{$telefono[$posicion][4]}}">
-
-          </div>
-        @endforeach
-
-        @foreach($cargo as $posicion => $valor)
-             
-          <div class="col-md-4 form-group ">
-            
-             <label for="{{$cargo[$posicion][0]}}">{{$cargo[$posicion][1]}}</label>
-          
-             <input type="text" class="form-control" name="{{$cargo[$posicion][0]}}" id="{{$cargo[$posicion][0]}}" placeholder="{{$cargo[$posicion][2]}}" maxlength="{{$cargo[$posicion][3]}}">
-
-          </div>
-        @endforeach
-
-        @foreach($correo as $posicion => $valor)
+        @foreach($descSede as $posicion => $valor)
       
-          <div class="col-md-4 form-group separar">
-                <label for="{{$correo[$posicion][0]}}">{{$correo[$posicion][1]}}</label>
-                  <input type="text" name="{{$correo[$posicion][0]}}" id="{{$correo[$posicion][0]}}" class="form-control" placeholder="{{$correo[$posicion][2]}}" maxlength="{{$correo[$posicion][3]}}">
-          </div>
-        @endforeach
-        </div>
-      </div>
-
-      <div class="row separar">
-        <div class="col-md-12">
-        @foreach($fechaGaceta as $posicion => $valor)
-          <div class="col-md-4 form-group">
-            <label for="{{$fechaGaceta[$posicion][0]}}">{{$fechaGaceta[$posicion][1]}}</label>  
-                <div class="{{$fechaGaceta[$posicion][3]}}">
-
-                <span class="{{$fechaGaceta[$posicion][4]}}"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="{{$fechaGaceta[$posicion][2]}}" ></i></span>
-                          
-                <input type="text" class="form-control fechaplaceholder calendario" onkeypress="return disable(event)" name="{{$fechaGaceta[$posicion][0]}}" id="{{$fechaGaceta[$posicion][0]}}" placeholder="{{$fechaGaceta[$posicion][2]}}" aria-describedby="{{$fechaGaceta[$posicion][5]}}">
-                          
-                </div>
-         </div>
-         @endforeach
-
-         @foreach($numeroGaceta as $posicion => $valor)
-      
-          <div class="col-md-4 form-group separar">
-                <label for="{{$numeroGaceta[$posicion][0]}}">{{$numeroGaceta[$posicion][1]}}</label>
-                  <input type="text" name="{{$numeroGaceta[$posicion][0]}}" id="{{$numeroGaceta[$posicion][0]}}" class="form-control" placeholder="{{$numeroGaceta[$posicion][2]}}" maxlength="{{$numeroGaceta[$posicion][3]}}">
-          </div>
-        @endforeach
-
-        @foreach($numeroDecreto as $posicion => $valor)
-      
-          <div class="col-md-4 form-group separar">
-                <label for="{{$numeroDecreto[$posicion][0]}}">{{$numeroDecreto[$posicion][1]}}</label>
-                  <input type="text" name="{{$numeroDecreto[$posicion][0]}}" id="{{$numeroDecreto[$posicion][0]}}" class="form-control" placeholder="{{$numeroDecreto[$posicion][2]}}" maxlength="{{$numeroDecreto[$posicion][3]}}">
-          </div>
-        @endforeach
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-              @foreach($fechaDecreto as $posicion => $valor)
-            <div class="col-md-4 form-group">
-              <label for="{{$fechaDecreto[$posicion][0]}}">{{$fechaDecreto[$posicion][1]}}</label>  
-                <div class="{{$fechaDecreto[$posicion][3]}}">
-
-                <span class="{{$fechaDecreto[$posicion][4]}}"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="{{$fechaDecreto[$posicion][2]}}" ></i></span>
-                          
-                <input type="text" class="form-control fechaplaceholder calendario" onkeypress="return disable(event)" name="{{$fechaDecreto[$posicion][0]}}" id="{{$fechaDecreto[$posicion][0]}}" placeholder="{{$fechaDecreto[$posicion][2]}}" aria-describedby="{{$fechaDecreto[$posicion][5]}}">
-                          
-                </div>
+            <div class="col-md-10 form-estilo">
+                <label for="{{$descSede[$posicion][0]}}">{{$descSede[$posicion][1]}}</label>
+                 <textarea name="{{$descSede[$posicion][0]}}" id="{{$descSede[$posicion][0]}}" class="form-control" maxlength="{{$descSede[$posicion][2]}}" rows="4"></textarea>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
             </div>
-         @endforeach
+        
+        @endforeach
         </div>
       </div>
-    
+
+      <div class="row separar">
+        <div class="col-md-12">
+        @foreach($localizacion as $posicion => $valor)
+
+        <div class="col-md-4 form-group separar">
+          <label for="{{$localizacion[$posicion][0]}}">{{$localizacion[$posicion][1]}}</label>
+              <select name="{{$localizacion[$posicion][0]}}" id="{{$localizacion[$posicion][0]}}" class="form-control">
+                  <option value="0" disabled selected>Seleccione</option>
+                @foreach($selectLoca as $traeSelect)
+                 <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
+                @endforeach
+              </select>
+        </div>
+
+        @endforeach
+        
+        @foreach($codPais as $posicion => $valor)
+
+        <div class="col-md-4 form-group separar">
+          <label for="{{$codPais[$posicion][0]}}">{{$codPais[$posicion][1]}}</label>
+              <select name="{{$codPais[$posicion][0]}}" id="{{$codPais[$posicion][0]}}" class="form-control">
+                  <option value="0" disabled selected>Seleccione</option>
+                @foreach($selectPais as $traeSelect)
+                 <option value="{{$traeSelect->id}}">{{$traeSelect->codigo}}</option> 
+                @endforeach
+              </select>
+        </div>
+
+        @endforeach
+
+        @foreach($espePais as $posicion => $valor)
+        
+            <div class="col-md-4 form-group separar">
+                  <label for="{{$espePais[$posicion][0]}}">{{$espePais[$posicion][1]}}</label>
+                    <input type="text" name="{{$espePais[$posicion][0]}}" id="{{$espePais[$posicion][0]}}" class="form-control" placeholder="{{$espePais[$posicion][2]}}" maxlength="{{$espePais[$posicion][3]}}">
+            </div>
+        @endforeach
+       
+        </div>
+      </div>
+
+      <div class="row separar">
+        <div class="col-md-12">
+          @foreach($codParroquia as $posicion => $valor)
+
+            <div class="col-md-4 form-group separar">
+              <label for="{{$codParroquia[$posicion][0]}}">{{$codParroquia[$posicion][1]}}</label>
+                  <select name="{{$codParroquia[$posicion][0]}}" id="{{$codParroquia[$posicion][0]}}" class="form-control">
+                      <option value="0" disabled selected>Seleccione</option>
+                    @foreach($selectParroquia as $traeSelect)
+                     <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
+                    @endforeach
+                  </select>
+            </div>
+          @endforeach
+
+          @foreach($espeCiudad as $posicion => $valor)
+        
+            <div class="col-md-4 form-group separar">
+                  <label for="{{$espeCiudad[$posicion][0]}}">{{$espeCiudad[$posicion][1]}}</label>
+                    <input type="text" name="{{$espeCiudad[$posicion][0]}}" id="{{$espeCiudad[$posicion][0]}}" class="form-control" placeholder="{{$espeCiudad[$posicion][2]}}" maxlength="{{$espeCiudad[$posicion][3]}}">
+            </div>
+          @endforeach
+
+          @foreach($urbanizacion as $posicion => $valor)
+        
+            <div class="col-md-4 form-group separar">
+                  <label for="{{$urbanizacion[$posicion][0]}}">{{$urbanizacion[$posicion][1]}}</label>
+                    <input type="text" name="{{$urbanizacion[$posicion][0]}}" id="{{$urbanizacion[$posicion][0]}}" class="form-control" placeholder="{{$urbanizacion[$posicion][2]}}" maxlength="{{$urbanizacion[$posicion][3]}}">
+            </div>
+          @endforeach
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+          @foreach($calleAvenida as $posicion => $valor)
+      
+          <div class="col-md-4 form-group separar">
+                <label for="{{$calleAvenida[$posicion][0]}}">{{$calleAvenida[$posicion][1]}}</label>
+                  <input type="text" name="{{$calleAvenida[$posicion][0]}}" id="{{$calleAvenida[$posicion][0]}}" class="form-control" placeholder="{{$calleAvenida[$posicion][2]}}" maxlength="{{$calleAvenida[$posicion][3]}}">
+          </div>
+         @endforeach  
+
+         @foreach($casaEdificio as $posicion => $valor)
+      
+          <div class="col-md-4 form-group separar">
+                <label for="{{$casaEdificio[$posicion][0]}}">{{$casaEdificio[$posicion][1]}}</label>
+                  <input type="text" name="{{$casaEdificio[$posicion][0]}}" id="{{$casaEdificio[$posicion][0]}}" class="form-control" placeholder="{{$casaEdificio[$posicion][2]}}" maxlength="{{$casaEdificio[$posicion][3]}}">
+          </div>
+         @endforeach
+
+         @foreach($piso as $posicion => $valor)
+      
+          <div class="col-md-4 form-group separar">
+                <label for="{{$piso[$posicion][0]}}">{{$piso[$posicion][1]}}</label>
+                  <input type="text" name="{{$piso[$posicion][0]}}" id="{{$piso[$posicion][0]}}" class="form-control" placeholder="{{$piso[$posicion][2]}}" maxlength="{{$piso[$posicion][3]}}">
+          </div>
+         @endforeach   
+        </div>
+      </div>
 
             <div class="row">
                 <div class="col-md-12 form-group" ><br>

@@ -86,6 +86,7 @@
                                         <li><a href="basicos">Datos Básicos del Ente</a></li>
                                         <li><a href="maxima">Datos de la Máxima Autoridad</a></li>
                                         <li><a href="patrimonial">Datos del Responsable Patrimonial</a></li>
+                                        <li><a href="sedes">Datos de las Sedes y Similares del Ente</a></li>
                                     </ul>
                                 </li>
                                                                            
@@ -168,8 +169,16 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         
-                                   <a href="{{ url('/bitacora') }}">
+                                    <a href="{{ url('/bitacora') }}">
                                         Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
+                                    </a> 
+
+                                    <a href="{{ url('/pais') }}">
+                                        Añadir Países  <i class="fa fa-plus-circle"></i>
+                                    </a> 
+
+                                    <a href="{{ url('/parroquia') }}">
+                                        Añadir Parroquias  <i class="fa fa-plus-circle"></i>
                                     </a> 
 
                                     </li>

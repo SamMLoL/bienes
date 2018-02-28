@@ -277,6 +277,7 @@ class migracionGeneral extends Seeder
 
           ]);   
       }
+      
 
     }
 }

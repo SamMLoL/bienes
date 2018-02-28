@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -5,7 +6,7 @@
 <div class="row">
       <div class="col-md-12">
           <div class="row">
-              <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> DATOS DE LAS MARCAS DE LOS BIENES MUEBLES DEL ÓRGANO O ENTE </b></h5></div>
+              <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> AÑADIR PARROQUIAS </b></h5></div>
           </div>
       
           <div class="row desvanecer">
@@ -22,44 +23,51 @@
 
           <div class="row">
             <div class="col-md-12">
-              <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"><b id="espaciar4"> Código de la Marca</b>
-              <b id="espaciar">
+              <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <center>Ultimo Registro</center>
+              <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <center> Código de la Parroquia</center>
+              
               @if($lastCod)
-                {{$lastCod->codMarca}}
+               <center id="color" >{{$lastCod->codigo}}</center>
               @else
-                MARCA001 
+               <center id="color" > 000 </center> 
               @endif
-              </b></li></li>
+              </li></li>
             </div>
         </div>
-<hr>
+
+    <hr>
         
           <div class="row"> 
              <div class="col-md-12 li moverIzq">
-                <ul class="js-errors li"></ul>
+                 <ul class="js-errors li"></ul>
              </div>
           </div>
 
 
-      <form role="form" id="formValidaAdd4" name="formValidaAdd5" method="POST" action="{{url('pais')}}">
+    <form role="form" id="formValidaAddParro" name="formValidaAddParro" method="POST" action="{{url('parroquia')}}">
       {{ csrf_field() }}
   
-    
-      @foreach($array as $posicion => $valor)
-    
-          <div class="col-md-4  form-group separar">
-              <label for="{{$array[$posicion][0]}}">{{$array[$posicion][1]}}</label>
-                <input type="text" class="form-control" name="{{$array[$posicion][0]}}" id="{{$array[$posicion][0]}}" placeholder="{{$array[$posicion][2]}}" maxlength="{{$array[$posicion][3]}}" >
-          </div>
-      @endforeach
-
+    <div class="row col-md-offset-3 separar40">
+    	<div class="col-md-12">
+		    @foreach($array as $posicion => $valor)
+		    
+		          <div class="col-md-4  form-group separar">
+		              <label for="{{$array[$posicion][0]}}">{{$array[$posicion][1]}}</label>
+		                <input type="text" class="form-control" name="{{$array[$posicion][0]}}" id="{{$array[$posicion][0]}}" placeholder="{{$array[$posicion][2]}}" maxlength="{{$array[$posicion][3]}}" >
+		          </div>
+		    @endforeach
+        </div>
+	</div>
            <div class="row">
                 <div class="col-md-12 form-group" ><br>
                     <center>
+                    	
                         <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
 
+                        <a href="{{url('/histoParroquia')}}"  class="btn btn-md btn-danger" ><i class="fa fa-archive" aria-hidden="true"></i> <b>Consultar</b></a>
+
                         <a href="{{url('/home')}}"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> <b>Salir</b></a>
+
                     </center> 
                 </div>
            </div>
