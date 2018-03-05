@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class sel_parroquias extends Model
 {
     protected $table = 'sel_parroquias';
-    protected $fillable = ['codigo','parroquia'];
+    protected $fillable = ['codParroquia','parroquia'];
 }

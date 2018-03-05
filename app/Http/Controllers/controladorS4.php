@@ -8,7 +8,7 @@ use App\sel_proveedores;
 use App\sel_sedes;
 use App\sel_paises;
 use App\sel_parroquias;
-use App\sel_ciudades;
+use App\sel_ciudad;
 use App\modeloBitacora;		
 
 
@@ -21,7 +21,7 @@ class controladorS4 extends Controller
 		$selectLoca = sel_proveedores::all();
     	$selectPais = sel_paises::all();
     	$selectParroquia = sel_parroquias::all();
-        $codigoCiudad = sel_ciudades::all();
+        $selectCiudad = sel_ciudad::all();
     	
 
     	$codSede = array(
@@ -56,8 +56,8 @@ class controladorS4 extends Controller
             array("codParroquia","Código de Parroquia donde se Ubica el Ente:","2"),
             );
 
-        $codigoCiudad = array(
-            array("codCiudad","Código de la Ciudad donde se Ubica el Órgano o Ente:","2"),
+        $codCiudad = array(
+            array("codCiudad","Código de la Ciudad donde se Ubica el Ente:","2"),
             );
 
 
@@ -83,6 +83,6 @@ class controladorS4 extends Controller
 
 
 
-    	return view('AnexosS.visSedes', compact('lastCod','lugarSedes','selectLoca','selectPais','selectParroquia','codigoCiudad','codSede','selectSede','espeSede','descSede','localizacion','codPais','espePais','codParroquia','espeCiudad','urbanizacion','calleAvenida','casaEdificio','piso'));
+    	return view('AnexosS.visSedes', compact('lastCod','lugarSedes','selectLoca','selectPais','selectParroquia','selectCiudad','codSede','selectSede','espeSede','descSede','localizacion','codPais','espePais','codParroquia','codCiudad','espeCiudad','urbanizacion','calleAvenida','casaEdificio','piso'));
     }
 }

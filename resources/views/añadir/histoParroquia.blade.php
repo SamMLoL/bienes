@@ -35,18 +35,18 @@
             <tbody>
           
                 @foreach($verParro as $im)
-                  @if($im->codigo == '0') 
+                  @if($im->codParroquia == '0') 
                   <tr>
                         @if($im->revisadoAddParro == '1')
-                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codigo}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codParroquia}}</b></a></td>
                         @else 
-                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"> {{$im->codigo}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"> {{$im->codParroquia}}</a></td>
                         @endif
                   @else
                         @if($im->revisadoAddParro == '1')
-                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codigo}}</b></a></td>
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> {{$im->codParroquia}}</b></a></td>
                         @else
-                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"> {{$im->codigo}}</a></td>
+                        <td class="text-center"><a href="#" hidden>{{$im->id}}</a><a href="seleccionParroquia/{{$im->id}}"> {{$im->codParroquia}}</a></td>
                         @endif
                   @endif
 

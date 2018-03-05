@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class sel_paises extends Model
 {
     protected $table = 'sel_paises';
-    protected $fillable = ['codigo','pais','revisadoAddPais'];
+    protected $fillable = ['codPais','pais','revisadoAddPais'];
 }

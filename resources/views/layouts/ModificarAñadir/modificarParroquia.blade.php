@@ -52,8 +52,8 @@
             <div class="row separar">
                 <div class="col-md-12">
                     <div class="col-md-4">
-                       <label for="codigo">Código de la Parroquia</label>
-                          <input type="text" class="form-control" name="codigo" id="codigo" value="{{$form_add->codigo}}"  placeholder="Introduzca nombres" maxlength="100" disabled> 
+                       <label for="codParroquia">Código de la Parroquia</label>
+                          <input type="text" class="form-control" name="codParroquia" id="codParroquia" value="{{$form_add->codParroquia}}"  placeholder="Introduzca nombres" maxlength="100" disabled> 
                     </div>
                
                     <div class="col-md-4">

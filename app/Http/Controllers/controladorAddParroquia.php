@@ -10,11 +10,11 @@ class controladorAddParroquia extends Controller
 {
     public function index(){
 
-      $lastCod = modeloAddParroquias::select('codigo')->get()->last();
+      $lastCod = modeloAddParroquias::select('codParroquia')->get()->last();
       $infoSelect = modeloAddParroquias::all();
 
     	$array= array(
-            array("codigo","Código de la Parroquia:","Introduzca el código de la parroquia ","100"),
+            array("codParroquia","Código de la Parroquia:","Introduzca el código de la parroquia ","100"),
            
     		array("parroquia","Nombre de la Parroquia:","Introduzca el nombre del parroquia","100"),
     		);
@@ -25,7 +25,7 @@ class controladorAddParroquia extends Controller
      public function store(Request $request)
     {
 
-      $duplicado = modeloAddParroquias::where('codigo', $request->codigo)->get();
+      $duplicado = modeloAddParroquias::where('codParroquia', $request->codParroquia)->get();
       $duplicado2 = modeloAddParroquias::where('parroquia', $request->parroquia)->get();
 
     
@@ -34,7 +34,7 @@ class controladorAddParroquia extends Controller
         if($duplicado2 == '[]'){
         
         $form_add = new modeloAddParroquias();
-        $form_add->codigo = $request->codigo;
+        $form_add->codParroquia = $request->codParroquia;
         $form_add->parroquia = $request->parroquia;
         $form_add->revisadoAddParro = 1;
 
@@ -55,7 +55,7 @@ class controladorAddParroquia extends Controller
       } 
 
     }else{
-      return back()->with('errormsj', 'El Código de la Parroquia "#'.$request->codigo.'" ya existe, por favor siga el orden establecido e introduzca una parroquia nueva');
+      return back()->with('errormsj', 'El Código de la Parroquia "#'.$request->codParroquia.'" ya existe, por favor siga el orden establecido e introduzca una parroquia nueva');
       }  
 
     }

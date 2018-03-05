@@ -177,7 +177,7 @@ class CreateSelectores extends Migration
 //ANEXOS S
         Schema::create('sel_paises', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo', 100);
+            $table->string('codPais', 100);
             $table->string('pais', 100);
             $table->integer('revisadoAddPais')->nullable();
             $table->timestamps();
@@ -185,15 +185,17 @@ class CreateSelectores extends Migration
 
         Schema::create('sel_parroquias', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo', 100);
+            $table->string('codParroquia', 100);
             $table->string('parroquia', 100);
             $table->integer('revisadoAddParro')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('sel_ciudades', function (Blueprint $table) {
+        Schema::create('sel_ciudad', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion');
+            $table->string('codCiudad', 100);
+            $table->string('ciudad', 100);
+            $table->integer('revisadoAddCiudad')->nullable();
             $table->timestamps();
         });
 

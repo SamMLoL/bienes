@@ -135,7 +135,7 @@
               <select name="{{$codPais[$posicion][0]}}" id="{{$codPais[$posicion][0]}}" class="form-control">
                   <option value="0" disabled selected>Seleccione</option>
                 @foreach($selectPais as $traeSelect)
-                 <option value="{{$traeSelect->id}}">{{$traeSelect->codigo}}</option> 
+                 <option value="{{$traeSelect->id}}">{{$traeSelect->codPais}}</option> 
                 @endforeach
               </select>
         </div>
@@ -162,7 +162,20 @@
                   <select name="{{$codParroquia[$posicion][0]}}" id="{{$codParroquia[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
                     @foreach($selectParroquia as $traeSelect)
-                     <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
+                     <option value="{{$traeSelect->id}}">{{$traeSelect->codParroquia}}</option> 
+                    @endforeach
+                  </select>
+            </div>
+          @endforeach
+
+          @foreach($codCiudad as $posicion => $valor)
+
+            <div class="col-md-4 form-group separar">
+              <label for="{{$codCiudad[$posicion][0]}}">{{$codCiudad[$posicion][1]}}</label>
+                  <select name="{{$codCiudad[$posicion][0]}}" id="{{$codCiudad[$posicion][0]}}" class="form-control">
+                      <option value="0" disabled selected>Seleccione</option>
+                    @foreach($selectCiudad as $traeSelect)
+                     <option value="{{$traeSelect->id}}">{{$traeSelect->codCiudad}}</option> 
                     @endforeach
                   </select>
             </div>
@@ -176,18 +189,19 @@
             </div>
           @endforeach
 
-          @foreach($urbanizacion as $posicion => $valor)
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+           @foreach($urbanizacion as $posicion => $valor)
         
             <div class="col-md-4 form-group separar">
                   <label for="{{$urbanizacion[$posicion][0]}}">{{$urbanizacion[$posicion][1]}}</label>
                     <input type="text" name="{{$urbanizacion[$posicion][0]}}" id="{{$urbanizacion[$posicion][0]}}" class="form-control" placeholder="{{$urbanizacion[$posicion][2]}}" maxlength="{{$urbanizacion[$posicion][3]}}">
             </div>
           @endforeach
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-12">
           @foreach($calleAvenida as $posicion => $valor)
       
           <div class="col-md-4 form-group separar">
@@ -204,13 +218,18 @@
           </div>
          @endforeach
 
-         @foreach($piso as $posicion => $valor)
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          @foreach($piso as $posicion => $valor)
       
           <div class="col-md-4 form-group separar">
                 <label for="{{$piso[$posicion][0]}}">{{$piso[$posicion][1]}}</label>
                   <input type="text" name="{{$piso[$posicion][0]}}" id="{{$piso[$posicion][0]}}" class="form-control" placeholder="{{$piso[$posicion][2]}}" maxlength="{{$piso[$posicion][3]}}">
           </div>
-         @endforeach   
+         @endforeach  
         </div>
       </div>
 

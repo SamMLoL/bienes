@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Modificar Países</title>
+    <title>Modificar Ciudad</title>
 
      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
      <link href="{{ asset('css/appstilo.css') }}" rel="stylesheet">  
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="panel">
                      <img src="{{URL::asset('/img/cintillo.jpg')}}" id="banner" alt="Cintillo Web">
-                   <div class="panel-heading text-center"><h5><b>MODIFICAR PAÍSES <i class="fa fa-pencil-square-o" aria-hidden="true"></i></b></h5></div>
+                   <div class="panel-heading text-center"><h5><b>MODIFICAR CIUDAD <i class="fa fa-pencil-square-o" aria-hidden="true"></i></b></h5></div>
                 </div>
             </div>
 
@@ -45,20 +45,20 @@
                 </div>
             </div>
 
-    <form role="form" method="POST" action="{{route('pais.update', $form_add->id)}}">
+    <form role="form" method="POST" action="{{route('ciudad.update', $form_add->id)}}">
         <input type="hidden" name="_method" value="PUT">
            {{ csrf_field() }}
 
             <div class="row separar">
                 <div class="col-md-12">
                     <div class="col-md-4">
-                       <label for="codPais">Código del País</label>
-                          <input type="text" class="form-control" name="codPais" id="codPais" value="{{$form_add->codPais}}"  placeholder="Introduzca nombres" maxlength="100" disabled> 
+                       <label for="codCiudad">Código de la Ciudad</label>
+                          <input type="text" class="form-control" name="codCiudad" id="codCiudad" value="{{$form_add->codCiudad}}"  placeholder="Introduzca nombres" maxlength="100" disabled> 
                     </div>
                
                     <div class="col-md-4">
-                       <label for="pais">Nombre del País</label> 
-                          <input type="text" class="form-control" name="pais" id="pais" value="{{$form_add->pais}}" maxlength="100">
+                       <label for="ciudad">Nombre de la Ciudad</label> 
+                          <input type="text" class="form-control" name="ciudad" id="ciudad" value="{{$form_add->ciudad}}" maxlength="100">
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
               <div class="row">
                   <div class="col-md-12 form-group"><br>
                     <center><button type="submit" class="btn btn-sm btn-info" name="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <b>Modificar</b></button>
-                     <a href="{{ url('/histoPaises') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
+                     <a href="{{ url('/histoCiudad') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
 
                   </div>
               </div>

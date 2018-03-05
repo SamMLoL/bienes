@@ -462,7 +462,7 @@ class CreateAnexos extends Migration
             $table->integer('codParroquia')->nullable();
             $table->foreign('codParroquia')->references('id')->on('sel_parroquias');
             $table->integer('codCiudad')->nullable();
-            $table->foreign('codCiudad')->references('id')->on('sel_ciudades');
+            $table->foreign('codCiudad')->references('id')->on('sel_ciudad');
             $table->string('espeOtroCiudad', 100)->nullable();
             $table->string('urbanizacion', 30)->nullable();
             $table->string('calleAvenida', 50)->nullable();
@@ -580,7 +580,7 @@ class CreateAnexos extends Migration
             $table->integer('codParroquia')->nullable();
             $table->foreign('codParroquia')->references('id')->on('sel_parroquias');
             $table->integer('codCiudad')->nullable();
-            $table->foreign('codCiudad')->references('id')->on('sel_ciudades');
+            $table->foreign('codCiudad')->references('id')->on('sel_ciudad');
             $table->string('espeOtroCiudad', 100)->nullable();
             $table->string('urbanizacion', 30)->nullable();
             $table->string('calleAvenida', 50)->nullable();

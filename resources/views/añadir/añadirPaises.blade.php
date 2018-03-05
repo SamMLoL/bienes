@@ -27,7 +27,7 @@
               <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <center> Código del País</center>
               
               @if($lastCod)
-               <center id="color" >{{$lastCod->codigo}}</center>
+               <center id="color" >{{$lastCod->codPais}}</center>
               @else
                <center id="color" > 000 </center> 
               @endif

@@ -6,7 +6,7 @@
 <div class="row">
       <div class="col-md-12">
           <div class="row">
-              <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> AÑADIR PARROQUIAS </b></h5></div>
+              <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> AÑADIR CIUDAD </b></h5></div>
           </div>
       
           <div class="row desvanecer">
@@ -24,10 +24,10 @@
           <div class="row">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <center>Ultimo Registro</center>
-              <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <center> Código de la Parroquia</center>
+              <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <center> Código de la Ciudad</center>
               
               @if($lastCod)
-               <center id="color" >{{$lastCod->codParroquia}}</center>
+               <center id="color" >{{$lastCod->codCiudad}}</center>
               @else
                <center id="color" > 000 </center> 
               @endif
@@ -44,7 +44,7 @@
           </div>
 
 
-    <form role="form" id="formValidaAddParro" name="formValidaAddParro" method="POST" action="{{url('parroquia')}}">
+    <form role="form" id="formValidaAddCiudad" name="formValidaAddCiudad" method="POST" action="{{url('ciudad')}}">
       {{ csrf_field() }}
   
     <div class="row col-md-offset-3 separar40">
@@ -64,7 +64,7 @@
                     	
                         <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
 
-                        <a href="{{url('/histoParroquia')}}"  class="btn btn-md btn-danger" ><i class="fa fa-archive" aria-hidden="true"></i> <b>Consultar</b></a>
+                        <a href="{{url('/histoCiudad')}}"  class="btn btn-md btn-danger" ><i class="fa fa-archive" aria-hidden="true"></i> <b>Consultar</b></a>
 
                         <a href="{{url('/home')}}"  class="btn btn-md btn-danger" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> <b>Salir</b></a>
 

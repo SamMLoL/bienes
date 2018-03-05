@@ -10,11 +10,11 @@ class controladorAddPaises extends Controller
 {
     public function index(){
 
-      $lastCod = modeloAddPaises::select('codigo')->get()->last();
+      $lastCod = modeloAddPaises::select('codPais')->get()->last();
       $infoSelect = modeloAddPaises::all();
 
     	$array= array(
-            array("codigo","Código del País:","Introduzca el código del país ","100"),
+            array("codPais","Código del País:","Introduzca el código del país ","100"),
            
     		array("pais","Nombre del País:","Introduzca el nombre del pais","100"),
     		);
@@ -25,7 +25,7 @@ class controladorAddPaises extends Controller
      public function store(Request $request)
     {
 
-      $duplicado = modeloAddPaises::where('codigo', $request->codigo)->get();
+      $duplicado = modeloAddPaises::where('codPais', $request->codPais)->get();
       $duplicado2 = modeloAddPaises::where('pais', $request->pais)->get();
 
     
@@ -34,7 +34,7 @@ class controladorAddPaises extends Controller
         if($duplicado2 == '[]'){
         
         $form_add = new modeloAddPaises();
-        $form_add->codigo = $request->codigo;
+        $form_add->codPais = $request->codPais;
         $form_add->pais = $request->pais;
         $form_add->revisadoAddPais = 1;
 
@@ -55,7 +55,7 @@ class controladorAddPaises extends Controller
       } 
 
     }else{
-      return back()->with('errormsj', 'El Código del País "#'.$request->codigo.'" ya existe, por favor siga el orden establecido e introduzca un código nuevo');
+      return back()->with('errormsj', 'El Código del País "#'.$request->codPais.'" ya existe, por favor siga el orden establecido e introduzca un código nuevo');
       }  
 
     }

@@ -38,7 +38,7 @@
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">
                    	    <label>Código de la Parroquia</label>
-                    	    <br>{{$seleccion->codigo}}
+                    	    <br>{{$seleccion->codParroquia}}
                    	</div>
 
                     <div class="col-md-4 form-group">

@@ -181,6 +181,10 @@
                                         Añadir Parroquias  <i class="fa fa-plus-circle"></i>
                                     </a> 
 
+                                    <a href="{{ url('/ciudad') }}">
+                                        Añadir Ciudad  <i class="fa fa-plus-circle"></i>
+                                    </a> 
+
                                     </li>
                                 </ul>
                             </li>
