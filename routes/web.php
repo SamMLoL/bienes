@@ -149,6 +149,10 @@ Route::resource('patrimonial', 'controladorS3');
 Route::get('/sedes', 'controladorS4@index');
 Route::resource('sedes', 'controladorS4');
 
+#SELECT LOCALIZACIÓN Y SELECT CODIGO DE PARROQUIA PARA CUANDO SELECCIONE INTERNACIONAL SE COLOQUE 99 EN CASO CONTRARIO TRAIGA LAS OPCIONES DEL OPTION(SELECT)
+Route::get('s4/', 'controladorS4@selectLocaParro');
+Route::get('s4Ciudad/', 'controladorS4@selectLocaCiudad');
+
 #AÑADIR  
 Route::resource('pais', 'controladorAddPaises');
 Route::resource('parroquia', 'controladorAddParroquia');

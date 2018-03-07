@@ -277,7 +277,37 @@ class migracionGeneral extends Seeder
 
           ]);   
       }
+
       
+      $dato = array(
+        array("001","Otro País"),
+          );
+
+      foreach ($dato as $v) {
+        DB::table('sel_paises')->insert([
+           'codPais' => $v[0],
+           'pais' => $v[1],
+        
+
+          ]); 
+      }
+
+      $dato = array(
+        array("001","Otra Ciudad"),
+          );
+
+      foreach ($dato as $v) {
+        DB::table('sel_ciudad')->insert([
+           'codCiudad' => $v[0],
+           'ciudad' => $v[1],
+        
+
+          ]); 
+      }
+
+
+
+
 
     }
 }

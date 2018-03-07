@@ -26,11 +26,11 @@ class controladorSemovientes extends Controller
     	$moneda = sel_seguros2::all();
     	$condicion = sel_condicionbien::all();
       $genero = sel_genero::all();
-      $colorBien = sel_colorbien::orderBy('opcion')->get();
+      $colorBien = sel_colorbien::all();
       $seguroBien = sel_seguros3::all();
-      $tiposAnimal = sel_tipoanimal::orderBy('opcion')->get();
-      $proposito = sel_proposito::orderBy('opcion')->get();
-      $peso = sel_medidapeso::orderBy('opcion')->get();
+      $tiposAnimal = sel_tipoanimal::all();
+      $proposito = sel_proposito::all();
+      $peso = sel_medidapeso::all();
 
 
         return view('AnexosT.visSemovientes', compact('lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
@@ -256,11 +256,11 @@ class controladorSemovientes extends Controller
           $moneda = sel_seguros2::all();
           $condicion = sel_condicionbien::all();
           $genero = sel_genero::all();
-          $colorBien = sel_colorbien::orderBy('opcion')->get();
+          $colorBien = sel_colorbien::all();
           $seguroBien = sel_seguros3::all();
-          $tiposAnimal = sel_tipoanimal::orderBy('opcion')->get();
-          $proposito = sel_proposito::orderBy('opcion')->get();
-          $peso = sel_medidapeso::orderBy('opcion')->get();
+          $tiposAnimal = sel_tipoanimal::all();
+          $proposito = sel_proposito::all();
+          $peso = sel_medidapeso::all();
 
         return view('layouts.ModificarAnexosT.modificarSemovientes', compact('form_t10','lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
     }

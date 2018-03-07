@@ -14,6 +14,23 @@ use App\modeloBitacora;
 
 class controladorS4 extends Controller
 {
+    
+    public function selectLocaParro(Request $request)
+    {
+         if($request->ajax()){
+            $s4 = sel_parroquias::selectParroquias();
+          return response()->json($s4);
+      }
+    }
+
+    public function selectLocaCiudad(Request $request)
+    {
+         if($request->ajax()){
+            $s4 = sel_ciudad::selectCiudad();
+          return response()->json($s4);
+      }
+    }
+
     public function index()
     {
 		$lastCod = modeloS4::select('codSede')->get()->last();

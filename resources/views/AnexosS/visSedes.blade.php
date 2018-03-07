@@ -135,7 +135,7 @@
               <select name="{{$codPais[$posicion][0]}}" id="{{$codPais[$posicion][0]}}" class="form-control">
                   <option value="0" disabled selected>Seleccione</option>
                 @foreach($selectPais as $traeSelect)
-                 <option value="{{$traeSelect->id}}">{{$traeSelect->codPais}}</option> 
+                 <option value="{{$traeSelect->id}}">{{$traeSelect->pais}}</option> 
                 @endforeach
               </select>
         </div>
@@ -162,7 +162,7 @@
                   <select name="{{$codParroquia[$posicion][0]}}" id="{{$codParroquia[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
                     @foreach($selectParroquia as $traeSelect)
-                     <option value="{{$traeSelect->id}}">{{$traeSelect->codParroquia}}</option> 
+                     <option value="{{$traeSelect->id}}">{{$traeSelect->parroquia}}</option> 
                     @endforeach
                   </select>
             </div>
@@ -175,7 +175,7 @@
                   <select name="{{$codCiudad[$posicion][0]}}" id="{{$codCiudad[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
                     @foreach($selectCiudad as $traeSelect)
-                     <option value="{{$traeSelect->id}}">{{$traeSelect->codCiudad}}</option> 
+                     <option value="{{$traeSelect->id}}">{{$traeSelect->ciudad}}</option> 
                     @endforeach
                   </select>
             </div>
