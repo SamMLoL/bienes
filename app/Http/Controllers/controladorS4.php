@@ -102,4 +102,109 @@ class controladorS4 extends Controller
 
     	return view('AnexosS.visSedes', compact('lastCod','lugarSedes','selectLoca','selectPais','selectParroquia','selectCiudad','codSede','selectSede','espeSede','descSede','localizacion','codPais','espePais','codParroquia','codCiudad','espeCiudad','urbanizacion','calleAvenida','casaEdificio','piso'));
     }
+
+    public function store(Request $request)
+    {
+        $form_s4 = new modeloS4();
+        $form_s4->tipoSede = $request->tipoSede;
+        $form_s4->localizacion = $request->localizacion;
+        $form_s4->codPais = $request->codPais;
+        $form_s4->revisadoS4 = 1;
+
+        if($form_s4->codSede = $request->codSede == '')
+        {
+            $form_s4->codSede = '1';
+        }else{
+            $form_s4->codSede = $request->codSede;
+        }
+
+
+        if($form_s4->codParroquia = $request->codParroquia == '99')
+        {
+            $form_s4->codParroquia = '1';
+        }else{
+            $form_s4->codParroquia = $request->codParroquia;
+        }
+
+        if($form_s4->codCiudad = $request->codCiudad == '99')
+        {
+            $form_s4->codCiudad = '1';
+        }else{
+            $form_s4->codCiudad = $request->codCiudad;
+        }
+
+
+
+
+        if($form_s4->espeSede = $request->espeSede == '')
+        {
+            $form_s4->espeSede = '1';
+        }else{
+            $form_s4->espeSede = $request->espeSede;
+        }
+
+        if($form_s4->descSede = $request->descSede == '')
+        {
+            $form_s4->descSede = '1';
+        }else{
+            $form_s4->descSede = $request->descSede;
+        }
+
+        if($form_s4->espeOtroPais = $request->espeOtroPais == '')
+        {
+            $form_s4->espeOtroPais = '1';
+        }else{
+            $form_s4->espeOtroPais = $request->espeOtroPais;
+        }
+
+        if($form_s4->espeOtroCiudad = $request->espeOtroCiudad == '')
+        {
+            $form_s4->espeOtroCiudad = '1';
+        }else{
+            $form_s4->espeOtroCiudad = $request->espeOtroCiudad;
+        }
+
+        if($form_s4->urbanizacion = $request->urbanizacion == '')
+        {
+            $form_s4->urbanizacion = '1';
+        }else{
+            $form_s4->urbanizacion = $request->urbanizacion;
+        }
+
+        if($form_s4->calleAvenida = $request->calleAvenida == '')
+        {
+            $form_s4->calleAvenida = '1';
+        }else{
+            $form_s4->calleAvenida = $request->calleAvenida;
+        }
+
+        if($form_s4->casaEdificio = $request->casaEdificio == '')
+        {
+            $form_s4->casaEdificio = '1';
+        }else{
+            $form_s4->casaEdificio = $request->casaEdificio;
+        }
+
+        if($form_s4->piso = $request->piso == '')
+        {
+            $form_s4->piso = '1';
+        }else{
+            $form_s4->piso = $request->piso;
+        }
+
+        if($form_s4->save()){
+
+          $bit = new modeloBitacora();
+          $bit->user = $_SESSION['id'];
+          $bit->accion  = 1;
+          $bit->referencia = 'Datos de las Sedes y Similares del Ente';
+          $bit->save();
+
+         
+
+        return back()->with('msj', 'Datos Registrados Exitosamente');
+        }else {
+        return back()->with('errormsj', 'Los datos no se guardaron');
+        }
+    }
 }

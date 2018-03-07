@@ -12,4 +12,9 @@ class sel_ciudad extends Model
     public static function selectCiudad(){
          return sel_ciudad::all();
      }
+
+     public function selectCodCiudad()
+    {
+        return $this->hasOne('App\modeloS4', 'codCiudad');
+    }
 }

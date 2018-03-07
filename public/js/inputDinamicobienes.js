@@ -111,6 +111,20 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
+    $("#espeSede").attr("disabled", true);
+    $("#tipoSede").change(function(){
+      var id = $("#tipoSede").val();
+    if(id != 8){
+      $("#espeSede").attr("disabled", true).prop($('#espeSede').val('noaplica'));
+    }else{
+      $("#espeSede").attr("disabled", false).prop($('#espeSede').val(''));
+    
+      }
+    })
+  });
+
+$(document).ready(function(){
+
     $("#espeOtroPais").attr("disabled", true);
     $("#codPais").change(function(){
       var id = $("#codPais").val();

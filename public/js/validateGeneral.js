@@ -570,6 +570,47 @@ $("#formValidaS1").validate({
                 
     });
 
+$("#formValidaS4").validate({
+        rules: {
+           
+           tipoSede: { required:true},
+           localizacion: { required:true},
+           codPais: { required:true},
+           codParroquia: { required:true},
+           codCiudad: { required:true},
+            
+        },
+
+        messages: {
+           
+            tipoSede : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el tipo de sede !",
+            localizacion : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la localización !",
+            codPais : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el país donde se ubica la sede !",
+            codParroquia : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la parroquia donde se ubica la sede !",
+            codCiudad : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la ciudad donde se ubica la sede !",
+
+        },
+
+         highlight: function(element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+          // Keeps the default behaviour, adding error class to element but seems to break the default radio group behaviour but the below fixes that
+                  $(element).closest('ul').addClass(errorClass);
+          // add error class to ul element for checkbox groups and radio inputs
+              },
+              unhighlight: function(element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+          // keeps the default behaviour removing error class from elements
+                  $(element).closest('ul').removeClass(errorClass);
+          // remove error class from ul element for checkbox groups and radio inputs
+              },
+        // FIX END
+ 
+        errorLabelContainer: ".js-errors",
+        errorElement: "li",
+                
+    });
+
+
 
 $("#formValidaAddPais").validate({
         rules: {

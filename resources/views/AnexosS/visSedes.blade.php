@@ -13,6 +13,9 @@
             <div class="col-md-12">
                <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
                 <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
+
+                <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
+                <b id="colorInstruccion">INSTRUCCIONES: RECUERDE DIRIGIRSE AL MENÚ, EN EL ICONO  (<i class="fa fa-cog" aria-hidden="true"></i>)  Y AGREGUE LAS OPCIONES DE PAÍS, PARROQUIA Y CIUDAD PARA COMPLETAR EL ENVÍO DEL REGISTRO.</b></h6>
             </div>
         </div>
 
@@ -39,10 +42,10 @@
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Sede</b> 
             
-              @if($lastCod)
-                  <b id="color"> {{$lastCod->codSede}}</b>
+              @if($lastCod->codSede == '1')
+                  <center><b id="color"> xxx</b></center>
               @else
-                  <center><b id="color">xxx</b></center>
+                  <center><b id="color">{{$lastCod->codSede}}</b></center>
               @endif
               
                 </li></li>
