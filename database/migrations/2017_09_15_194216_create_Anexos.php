@@ -567,7 +567,7 @@ class CreateAnexos extends Migration
         #S4
         Schema::create('sedes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('codSede')->nullable();
+            $table->string('codSede',40)->nullable();
             $table->integer('tipoSede')->nullable();
             $table->foreign('tipoSede')->references('id')->on('sel_sedes');
             $table->string('espeSede', 100)->nullable();

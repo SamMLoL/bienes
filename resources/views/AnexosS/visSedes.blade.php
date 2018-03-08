@@ -13,8 +13,12 @@
             <div class="col-md-12">
                <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
                 <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
+            </div>
+        </div>
 
-                <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
+        <div class="row">
+            <div class="col-md-12">
+               <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
                 <b id="colorInstruccion">INSTRUCCIONES: RECUERDE DIRIGIRSE AL MENÚ, EN EL ICONO  (<i class="fa fa-cog" aria-hidden="true"></i>)  Y AGREGUE LAS OPCIONES DE PAÍS, PARROQUIA Y CIUDAD PARA COMPLETAR EL ENVÍO DEL REGISTRO.</b></h6>
             </div>
         </div>

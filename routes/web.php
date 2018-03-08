@@ -184,7 +184,7 @@ Route::get('/regInmuebles', 'con_datosbienesVer@index');
 Route::get('/regBasicos', 'con_s1Ver@index');
 Route::get('/regMaxima', 'con_s2Ver@index');
 Route::get('/regPatrimonial', 'con_s3Ver@index');
-Route::get('/visSede', 'con_s4Ver@index');
+Route::get('/regSedes', 'con_s4Ver@index');
 
 #AÑADIR 
 Route::get('/histoPaises', 'con_histoPaises@index');
@@ -213,10 +213,13 @@ Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
 Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
 Route::get('seleccionSemovientes/{id}', 'con_semovientesVer@selectId');
 Route::get('seleccionDatosbien/{id}', 'con_datosbienesVer@selectId');
+
 #FUNCIÓN DE REVISADO DE ANEXOS S selectId con_sN°Ver 
 Route::get('seleccionBasicos/{id}', 'con_s1Ver@selectId');
 Route::get('seleccionMaxima/{id}', 'con_s2Ver@selectId');
 Route::get('seleccionPatrimonial/{id}', 'con_s3Ver@selectId');
+Route::get('seleccionSedes/{id}', 'con_s4Ver@selectId');
+
 #AÑADIR PAISES
 Route::get('seleccionPaises/{id}', 'con_histoPaises@selectId');
 Route::get('seleccionParroquia/{id}', 'con_histoParro@selectId');

@@ -21,6 +21,11 @@ class modeloS4 extends Model
         return $this->belongsTo('App\sel_sedes', 'tipoSede');
     }
 
+    public function selectLocalizacion()
+    {
+        return $this->belongsTo('App\sel_proveedores', 'localizacion');
+    }
+
     public function selectPais()
     {
         return $this->belongsTo('App\sel_paises', 'codPais');

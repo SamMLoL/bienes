@@ -133,6 +133,7 @@
                                         <li><a href="regBasicos">Datos Básicos</a></li>
                                         <li><a href="regMaxima">Datos de la Máxima Autoridad</a></li>
                                         <li><a href="regPatrimonial">Datos del Responsable Patrimonial</a></li>
+                                        <li><a href="regSedes">Datos de las Sedes y Similares</a></li>
                                     </ul>
                                 </li>
                             </ul>

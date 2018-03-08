@@ -13,4 +13,9 @@ class sel_proveedores extends Model
     {
         return $this->hasOne('App\modeloProveedores', 'tipProvee');
     }
+
+    public function selectLocalizacion()
+    {
+        return $this->hasOne('App\modeloS4', 'localizacion');
+    }
 }
