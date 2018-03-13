@@ -107,6 +107,47 @@ $(document).ready(function(){
     })
   });
 
+//ANEXO INMUEBLES
+$(document).ready(function(){
+    $("#otroUsoInmu").attr("disabled", true);
+    $("#usoBienInmu").change(function(){
+      var id = $("#usoBienInmu").val();
+    if(id != 9){
+      $("#otroUsoInmu").attr("disabled", true).prop($('#otroUsoInmu').val('noaplica'));
+    }else{
+      $("#otroUsoInmu").attr("disabled", false).prop($('#otroUsoInmu').val(''));
+    
+      }
+    })
+  });
+
+$(document).ready(function(){
+    $("#espeOtraUnidad").attr("disabled", true);
+    $("#unidadConstru").change(function(){
+      var id = $("#unidadConstru").val();
+    if(id != 18){
+      $("#espeOtraUnidad").attr("disabled", true).prop($('#espeOtraUnidad').val('noaplica'));
+    }else{
+      $("#espeOtraUnidad").attr("disabled", false).prop($('#espeOtraUnidad').val(''));
+    
+      }
+    })
+  });
+
+$(document).ready(function(){
+    $("#espeOtraTerre").attr("disabled", true);
+    $("#unidadTerreno").change(function(){
+      var id = $("#unidadTerreno").val();
+    if(id != 18){
+      $("#espeOtraTerre").attr("disabled", true).prop($('#espeOtraTerre').val('noaplica'));
+    }else{
+      $("#espeOtraTerre").attr("disabled", false).prop($('#espeOtraTerre').val(''));
+    
+      }
+    })
+  });
+
+
 //ANEXO S4
 
 $(document).ready(function(){

@@ -488,11 +488,11 @@ class CreateAnexos extends Migration
             $table->integer('tomo')->nullable();
             $table->integer('folio')->nullable();
             $table->string('protocolo', 20)->nullable();
-            $table->integer('numRegistro')->nullable();
+            $table->string('numRegistro', 20)->nullable();
             $table->date('feRegistro', 10)->nullable();
             $table->string('propieAnt', 200)->nullable();
             $table->string('depenIntegra', 255)->nullable();
-            $table->string('areaConstru', 23)->nullable();
+            $table->string('areaConstru', 22)->nullable();
             $table->integer('unidadConstru')->nullable();
             $table->foreign('unidadConstru')->references('id')->on('sel_medidapeso');
             $table->string('espeOtraUnidad', 100)->nullable();

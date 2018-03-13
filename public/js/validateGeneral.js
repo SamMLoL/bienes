@@ -535,6 +535,65 @@ $("#formValidaT11").validate({
    
     });
 
+//ANEXO INMUEBLES
+
+$("#formValidaT12").validate({
+        rules: {
+           codBien: { required:true},
+           depAdmRes: { required:true},
+           corresBien: { required:true},
+           localizacion: { required:true},
+           codPais: { required:true},
+           codParroquia: { required:true},
+           codCiudad: { required:true},
+           estatuBien: { required:true},
+           moneda: { required:true},
+           edoBien: { required:true},
+           usoBienInmu: { required:true},
+           unidadConstru: { required:true},
+           unidadTerreno: { required:true},
+           seguroBien: { required:true},
+           
+        },
+        
+        messages: {
+           codBien : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
+           depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
+           corresBien : "* Campo obligatorio, ¡ Por favor, seleccione si el inmueble corresponde a alguna sede del ente !",
+           localizacion : "* Campo obligatorio, ¡ Por favor, seleccione la localización !",
+           codPais : "* Campo obligatorio, ¡ Por favor, seleccione el país !",
+           codParroquia : "* Campo obligatorio, ¡ Por favor, seleccione la parroquia !",
+           codCiudad : "* Campo obligatorio, ¡ Por favor, seleccione la ciudad !",
+           estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del bien !",
+           moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
+           edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
+           usoBienInmu : "* Campo obligatorio, ¡ Por favor, seleccione el uso del bien inmueble !",
+           unidadConstru : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del área de construcción !",
+           unidadTerreno : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del área del terreno !",
+           seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si se encuentra asegurado el bien !",
+           
+         
+        },
+        
+      highlight: function(element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+          // Keeps the default behaviour, adding error class to element but seems to break the default radio group behaviour but the below fixes that
+                  $(element).closest('ul').addClass(errorClass);
+          // add error class to ul element for checkbox groups and radio inputs
+              },
+              unhighlight: function(element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+          // keeps the default behaviour removing error class from elements
+                  $(element).closest('ul').removeClass(errorClass);
+          // remove error class from ul element for checkbox groups and radio inputs
+              },
+        // FIX END
+ 
+        errorLabelContainer: ".js-errors",
+        errorElement: "li", 
+   
+    });
+
 $("#formValidaS1").validate({
         rules: {
            

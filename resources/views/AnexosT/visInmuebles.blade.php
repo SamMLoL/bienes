@@ -31,15 +31,15 @@
       <div class="row separar">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b><b id="espaciar">  
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b>  
             
               @if($lastCod)
-                  <b id="espaciar3"> {{$lastCod->codBien}}</b>
-              @else
-                  <b id="espaciar3">I2012001</b>
+                  <center id="color"> {{$lastCod->codBien}}</center>
+              @else()
+                  <center id="color">I2012001</center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div> 
 
@@ -50,7 +50,7 @@
       </div>
 <hr>
    
-   	<form role="form" id="formValidaT12" name="formValidaT12" method="POST" action="{{url('datosInmuebles')}}">
+   	<form role="form" id="formValidaT12" name="formValidaT12" method="POST" action="{{url('datosinmuebles')}}">
     	{{ csrf_field() }}
     
     <div class="row separar">
@@ -291,7 +291,7 @@
 
             <div class="col-md-5 form-group">
               <li>Otro Uso:</li>
-                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="100">
+                  <input type="text" id="otroUsoInmu" name="otroUsoInmu" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="100">
             </div>
         </div>
     </div>
@@ -301,13 +301,13 @@
             <div class="col-md-5 form-estilo">
                 <li>Oficina de Registro/Notaria:</li>
                  <textarea name="ofiRegistro" id="ofiRegistro" class="form-control" maxlength="255" rows="4"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contaReg">0/255</div> </div>
             </div>
 
             <div class="col-md-5 form-estilo">
                 <li>Referencia del Registro:</li>
                  <textarea name="refRegistro" id="refRegistro" class="form-control" maxlength="255" rows="4"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contaRef">0/255</div> </div>
             </div>
         </div>
     </div>
@@ -336,7 +336,7 @@
         <div class="col-md-12">
             <div class="col-md-4 form-group">
                 <li>Número de Registro:</li>
-                    <input type="text" id="numRegistro" name="numRegistro" class="form-control" placeholder="Introzduca el número de registro" maxlength="20">
+                    <input type="text" id="numRegistro" name="numRegistro" class="form-control" placeholder="Introzduca el número de registro" maxlength="20" onkeypress="return soloNum(event)">
             </div>
 
             <div class="col-md-4 form-group">
@@ -349,7 +349,7 @@
 
             <div class="col-md-4 form-group">
                 <li>Propietario Anterior:</li>
-                    <input type="text" id="propieAnt" name="propieAnt" class="form-control" placeholder="Introzduca el propietario anterior" maxlength="20">
+                    <input type="text" id="propieAnt" name="propieAnt" class="form-control" placeholder="Introzduca el propietario anterior" maxlength="200">
             </div>
         </div>
     </div>
@@ -359,7 +359,7 @@
             <div class="col-md-10 form-estilo">
                 <li>Dependencias que lo Integran:</li>
                  <textarea name="depenIntegra" id="depenIntegra" class="form-control" maxlength="255" rows="4"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contaDepen">0/255</div> </div>
             </div>
         </div>
     </div>
@@ -369,7 +369,7 @@
         <div class="col-md-12">
             <div class="col-md-4 form-group">
                 <li>Área de Construcción:</li>
-                    <input type="text" id="areaConstru" name="areaConstru" class="form-control money" placeholder="Indique el área de construcción" maxlength="23">
+                    <input type="text" id="areaConstru" name="areaConstru" class="form-control money" placeholder="Indique el área de construcción" maxlength="22">
             </div>
 
             <div class="col-md-4 form-group">
@@ -383,7 +383,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-              <li>Especifique la Otra Unidad de Medida:</li>
+              <li>Especifique la Otra Unidad de Medida (Construcción):</li>
                   <input type="text" id="espeOtraUnidad" name="espeOtraUnidad" class="form-control" placeholder="Especifique la otra unidad del área de construcción" maxlength="100">
             </div>
         </div>
@@ -393,7 +393,7 @@
         <div class="col-md-12">
             <div class="col-md-4 form-group">
                 <li>Área del Terreno:</li>
-                    <input type="text" id="areaTerreno" name="areaTerreno" class="form-control money" placeholder="Indique el área de terreno" maxlength="23">
+                    <input type="text" id="areaTerreno" name="areaTerreno" class="form-control money" placeholder="Indique el área de terreno" maxlength="22">
             </div>
 
             <div class="col-md-4 form-group">
@@ -407,7 +407,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-              <li>Especifique la Otra Unidad de Medida:</li>
+              <li>Especifique la Otra Unidad de Medida (Terreno):</li>
                   <input type="text" id="espeOtraTerre" name="espeOtraTerre" class="form-control" placeholder="Especifique la otra unidad del área del terreno" maxlength="100">
             </div>
         </div>
@@ -418,7 +418,7 @@
             <div class="col-md-10 form-estilo">
                 <li>Otras Especificaciones:</li>
                  <textarea name="otrasEspecifi" id="otrasEspecifi" class="form-control" maxlength="255" rows="4"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes">0/255</div> </div>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="contaEspe">0/255</div> </div>
             </div>
          </div>
     </div>
