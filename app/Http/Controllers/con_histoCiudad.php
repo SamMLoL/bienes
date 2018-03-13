@@ -36,7 +36,7 @@ class con_histoCiudad extends Controller
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];
           $bit->accion  = 3;
-          $bit->referencia = 'Ciudad';
+          $bit->referencia = 'Eliminó Ciudad';
           $bit->save();
 
           return redirect('histoCiudad')->with('msj', 'Registro Eliminado Exitosamente');

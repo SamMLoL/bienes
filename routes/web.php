@@ -152,6 +152,10 @@ Route::resource('sedes', 'controladorS4');
 #SELECT LOCALIZACIÓN Y SELECT CODIGO DE PARROQUIA PARA CUANDO SELECCIONE INTERNACIONAL SE COLOQUE 99 EN CASO CONTRARIO TRAIGA LAS OPCIONES DEL OPTION(SELECT)
 Route::get('s4/', 'controladorS4@selectLocaParro');
 Route::get('s4Ciudad/', 'controladorS4@selectLocaCiudad');
+#Modificar
+Route::get('modificarParro/{id}', 'controladorS4@modifiLocaParro');
+Route::get('modificarCiudad/{id}', 'controladorS4@modifiLocaCiudad');
+
 
 #AÑADIR  
 Route::resource('pais', 'controladorAddPaises');

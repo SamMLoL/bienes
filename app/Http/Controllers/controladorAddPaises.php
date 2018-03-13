@@ -42,7 +42,7 @@ class controladorAddPaises extends Controller
         $bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 1;
-        $bit->referencia = 'Países';
+        $bit->referencia = 'Añadió Países';
         $bit->save();
 
     }
@@ -77,7 +77,7 @@ class controladorAddPaises extends Controller
         $bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 2;
-        $bit->referencia = 'Países';
+        $bit->referencia = 'Modificó Países';
         $bit->save();
 
             return back()->with('msj', 'Datos Modificados Exitosamente');

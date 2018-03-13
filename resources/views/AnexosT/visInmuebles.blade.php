@@ -61,7 +61,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-              <li>Código según el catalogo:</li>
+              <li>Código Según el Catalogo:</li>
                 <input type="text" class="form-control" name="codCata" id="codCata" placeholder="Introduzca el código según el catalogo" maxlength="10">
             </div>
 
@@ -81,11 +81,11 @@
         <div class="col-md-12">
             <div class="col-md-4 form-group">
                <li>Código del Responsable Administrativo:</li>
-                  <input type="text" id="codRespAdm" name="codRespAdm" class="form-control" placeholder="Introduzca el código del responsable del bien" maxlength="10">
+                  <input type="text" id="codRespAdm" name="codRespAdm" class="form-control" placeholder="Introduzca el código del responsable" maxlength="10">
             </div>
 
             <div class="col-md-4 form-group">
-              <li>Correspondencia del Bien Inmueble:</li>
+              <li>Bien Inmueble Corresponde a Alguna Sede del Ente:</li>
                 <select name="corresBien" id="corresBien" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
                       @foreach($corresBien as $traeDir)
@@ -95,7 +95,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-               <li>Código de la Sede del Órgano o Ente:</li>
+               <li>Código de Sede del Ente donde Corresponde el Bien:</li>
                   <input type="text" id="codSede" name="codSede" class="form-control" placeholder="Introduzca el código del responsable del bien" maxlength="10">
             </div>
         </div>
@@ -117,8 +117,8 @@
               <li>Código del País donde se Ubica la Sede:</li>
                 <select name="codPais" id="codPais" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
-                      @foreach($codigoPais as $traeDir)
-                        <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
+                      @foreach($selectPais as $traeDir)
+                        <option value="{{$traeDir->id}}">{{$traeDir->pais}}</option> 
                       @endforeach
                 </select>
             </div>
@@ -136,18 +136,18 @@
               <li>Código de la Parroquia donde se Ubica el Inmueble:</li>
                 <select name="codParroquia" id="codParroquia" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
-                      @foreach($codigoParroquia as $traeDir)
-                        <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
+                      @foreach($selectParroquia as $traeDir)
+                        <option value="{{$traeDir->id}}">{{$traeDir->parroquia}}</option> 
                       @endforeach
                 </select>
             </div>
-
+            
             <div class="col-md-4 form-group">
               <li>Código de la Ciudad donde se Ubica el Bien:</li>
                 <select name="codCiudad" id="codCiudad" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
-                      @foreach($codigoParroquia as $traeDir)
-                        <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
+                      @foreach($selectCiudad as $traeDir)
+                        <option value="{{$traeDir->id}}">{{$traeDir->ciudad}}</option> 
                       @endforeach
                 </select>
             </div>
@@ -182,7 +182,7 @@
      <div class="row separar">
         <div class="col-md-12">
             <div class="col-md-4 form-group">
-                <li>Código interno del Bien:</li>
+                <li>Código Interno del Bien:</li>
                   <input type="text" id="codInterno" name="codInterno" class="form-control" placeholder="Introduzca el código interno del bien" maxlength="20">
             </div>
 
@@ -198,7 +198,7 @@
 
             <div class="col-md-4 form-group">
                 <li>Especifique el Otro Uso:</li>
-                  <input type="text" id="espOtro" name="espOtro" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
+                  <input type="text" id="espOtroUso" name="espOtroUso" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -222,7 +222,7 @@
               
             <div class="col-md-4 form-group">
                 <li>Especifique la Otra Moneda:</li>
-                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="26">
+                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="30">
             </div>
         </div>
     </div>
@@ -254,7 +254,7 @@
                 <li><b>Estado del Bien:</b></li>
                   <select name="edoBien" id="edoBien" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
-                      @foreach($estatusBien as $traeDir)
+                      @foreach($estadoBien as $traeDir)
                         <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
                       @endforeach
                   </select>

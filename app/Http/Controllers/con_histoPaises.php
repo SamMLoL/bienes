@@ -36,7 +36,7 @@ class con_histoPaises extends Controller
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];
           $bit->accion  = 3;
-          $bit->referencia = 'Países';
+          $bit->referencia = 'Eliminó Países';
           $bit->save();
 
           return redirect('histoPaises')->with('msj', 'Registro Eliminado Exitosamente');

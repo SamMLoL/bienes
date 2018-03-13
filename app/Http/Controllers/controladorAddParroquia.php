@@ -42,7 +42,7 @@ class controladorAddParroquia extends Controller
         $bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 1;
-        $bit->referencia = 'Parroquia';
+        $bit->referencia = 'Añadió Parroquia';
         $bit->save();
 
     }
@@ -77,7 +77,7 @@ class controladorAddParroquia extends Controller
         $bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 2;
-        $bit->referencia = 'Parroquia';
+        $bit->referencia = 'Modificó Parroquia';
         $bit->save();
 
             return back()->with('msj', 'Datos Modificados Exitosamente');

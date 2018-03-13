@@ -14,6 +14,11 @@ class sel_parroquias extends Model
      }
 
 
+
+     public static function modifiqueParroquias($id){
+         return sel_parroquias::all('parroquia', $id)->get();
+     }
+
     public function selectParroquia()
     {
         return $this->hasOne('App\modeloS4', 'codParroquia');

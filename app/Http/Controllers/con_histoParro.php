@@ -36,7 +36,7 @@ class con_histoParro extends Controller
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];
           $bit->accion  = 3;
-          $bit->referencia = 'Países';
+          $bit->referencia = 'Eliminó Parroquia';
           $bit->save();
 
           return redirect('histoParroquia')->with('msj', 'Registro Eliminado Exitosamente');

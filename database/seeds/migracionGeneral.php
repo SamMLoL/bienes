@@ -258,6 +258,26 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
+      #ANEXO T
+
+      $dato = array("Residencial","Agrícola","Turístico","Comercial","Educativo","Asistencial","De oficina","Industrial","Otro uso");
+
+      foreach ($dato as $v) {
+        DB::table('sel_usos')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
+      $dato = array("Hembra","Macho");
+
+      foreach ($dato as $v) {
+        DB::table('sel_genero')->insert([
+           'opcion' => $v,
+
+          ]);   
+      }
+
       #ANEXOS S
 
       $dato = array("Sede Principal","Puerto","Aeropuerto","Campamento","Taller","Almacén","Galpón","Otra Tipo de Sede o Lugar");
@@ -300,7 +320,7 @@ class migracionGeneral extends Seeder
         DB::table('sel_ciudad')->insert([
            'codCiudad' => $v[0],
            'ciudad' => $v[1],
-        
+      
 
           ]); 
       }

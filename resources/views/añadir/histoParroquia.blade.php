@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <div class="row separar">
             <div class="col-md-12">
-              <center><h4><b>Añadir Parroquia</b> <i id='color' class="fa fa-plus-circle"></i></h4></center>
+              <center><h4><b>Registro de Parroquias</b> <i id="color" class="fa fa-folder-open"></i></h4></center>
             </div>
         </div>
     <hr>
@@ -28,7 +28,6 @@
                     <tr>
                        <td id="letrasb" class="text-center">Código de la Parroquia</td>
                        <td id="letrasb" class="text-center">Nombre de la Parroquia</td>
-                       <td id="letrasb" class="text-center">Fecha y Hora del Registro</td>
                        <td id="letrasb" class="text-center">Ver más</td>
                     </tr>
                 </thead>
@@ -51,7 +50,6 @@
                   @endif
 
                       <td class="text-center">{{$im->parroquia}} </td>
-                      <td class="text-center">{{$im->created_at->format('d/m/Y - h:i A')}}</td>
                       <td class="text-center"><a href="seleccionParroquia/{{$im->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
                   </tr>     
               @endforeach

@@ -23,11 +23,27 @@ class controladorS4 extends Controller
       }
     }
 
+    public function modifiLocaParro(Request $request, $id)
+    {
+         if($request->ajax()){
+            $modificarParro = sel_parroquias::modifiqueParroquias($id);
+          return response()->json($modificarParro);
+      }
+    }
+
     public function selectLocaCiudad(Request $request)
     {
          if($request->ajax()){
             $s4 = sel_ciudad::selectCiudad();
           return response()->json($s4);
+      }
+    }
+
+    public function modifiLocaCiudad(Request $request, $id)
+    {
+         if($request->ajax()){
+            $modificarCiudad = sel_ciudad::modifiqueCiudades($id);
+          return response()->json($modificarCiudad);
       }
     }
 
@@ -222,7 +238,7 @@ class controladorS4 extends Controller
     public function update(Request $request, $id)
     {
         $form_s4 = new modeloS4();
-        $form_s4->tipoSede = $request->tipoSede;
+        $form_s4->tipoSede= $request->tipoSede;
         $form_s4->localizacion = $request->localizacion;
         $form_s4->codPais = $request->codPais;
 

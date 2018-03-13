@@ -64,7 +64,7 @@
                
                     <div class="col-md-4 form-group separar">
                       <label for="tipoSedes">Tipo de Sede</label>
-                         <select name="tipoSedes" id="tipoSedes" class="form-control">
+                         <select name="tipoSede" id="tipoSede" class="form-control">
                               <option value="{{$form_s4->selectSedes->id}}">{{$form_s4->selectSedes->opcion}}</option>
                             @foreach($lugarSedes as $form)
                               @if($form->id != $form_s4->selectSedes->id)
@@ -102,7 +102,7 @@
                 <div class="col-md-12">
                     <div class="col-md-4 form-group">
                       <label for="localizacion">Tipo de Sede</label>
-                         <select name="localizacion" id="localizacion" class="form-control">
+                         <select name="localizacion" id="localizacion2" class="form-control">
                               <option value="{{$form_s4->selectLocalizacion->id}}">{{$form_s4->selectLocalizacion->opcion}}</option>
                             @foreach($selectLoca as $form)
                               @if($form->id != $form_s4->selectLocalizacion->id)
@@ -139,7 +139,7 @@
                 <div class="col-md-12">    
                     <div class="col-md-4 form-group">
                       <label for="codParroquia">Código de Parroquia donde se Ubica el Ente</label>
-                         <select name="codParroquia" id="codParroquia" class="form-control">
+                         <select name="codParroquia" id="codParroquia2" class="form-control">
                               <option value="{{$form_s4->selectParroquia->id}}">{{$form_s4->selectParroquia->parroquia}}</option>
                             @foreach($selectParroquia as $form)
                               @if($form->id != $form_s4->selectParroquia->id)
@@ -151,11 +151,11 @@
 
                     <div class="col-md-4 form-group separar">
                       <label for="codCiudad">Código de la Ciudad donde se Ubica el Ente </label>
-                         <select name="codCiudad" id="codCiudad" class="form-control">
+                         <select name="codCiudad" id="codCiudad2" class="form-control">
                               <option value="{{$form_s4->selectCodCiudad->id}}">{{$form_s4->selectCodCiudad->ciudad}}</option>
                             @foreach($selectCiudad as $form)
-                              @if($form->id != $form_s4->selectCodCiudad->id)
-                              <option value="{{$form->id}}">{{$form->ciudad}}</option> 
+                               @if($form->id != $form_s4->selectCodCiudad->id)
+                                <option value="{{$form->id}}">{{$form->ciudad}}</option> 
                               @endif
                             @endforeach
                          </select>
@@ -171,7 +171,9 @@
                     </div>
                 </div> 
             </div>
+
 <!--FIN DEL SEGUNDO ROW DE INPUT-->
+            
             <div class="row form-group separar">
                 <div class="col-md-12">
                     <div class="col-md-4">
@@ -215,10 +217,14 @@
                     </div>
                 </div>
             </div>
+
+            <input id="ruta" value="{{url('modificarParro')}}" hidden>
+            <input id="ruta2" value="{{url('modificarCiudad')}}" hidden>
+
               <div class="row">
                   <div class="col-md-12 form-group"><br>
                     <center><button type="submit" class="btn btn-sm btn-info" name="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <b>Modificar</b></button>
-                     <a href="{{ url('/regPatrimonial') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
+                     <a href="{{ url('/regSedes') }}"  class="btn btn-sm btn-danger" ><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a></center>  
                   </div>
               </div>
         </div>

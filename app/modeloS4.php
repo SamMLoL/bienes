@@ -16,6 +16,16 @@ class modeloS4 extends Model
 
       #FUNCION DE SELECT
 
+    public static function modifiqueParroquias(){
+         return sel_parroquias::all();
+     }
+
+    public static function modifiqueCiudad(){
+         return sel_ciudad::all();
+     }
+
+
+
      public function selectSedes()
     {
         return $this->belongsTo('App\sel_sedes', 'tipoSede');
@@ -40,4 +50,6 @@ class modeloS4 extends Model
     {
         return $this->belongsTo('App\sel_ciudad', 'codCiudad');
     }
+
+
 }

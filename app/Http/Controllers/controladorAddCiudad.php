@@ -42,7 +42,7 @@ class controladorAddCiudad extends Controller
         $bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 1;
-        $bit->referencia = 'Ciudad';
+        $bit->referencia = 'Añadió Ciudad';
         $bit->save();
 
     }
@@ -77,7 +77,7 @@ class controladorAddCiudad extends Controller
         $bit = new modeloBitacora();
         $bit->user = $_SESSION['id'];
         $bit->accion  = 2;
-        $bit->referencia = 'Ciudad';
+        $bit->referencia = 'Modificó Ciudad';
         $bit->save();
 
             return back()->with('msj', 'Datos Modificados Exitosamente');

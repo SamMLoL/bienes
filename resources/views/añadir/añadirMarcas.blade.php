@@ -42,7 +42,7 @@
           </div>
 
 
-      <form role="form" id="formValidaAdd4" name="formValidaAdd5" method="POST" action="{{url('pais')}}">
+      <form role="form" id="formValidaAdd4" name="formValidaAdd5" method="POST" action="{{url('marcas')}}">
       {{ csrf_field() }}
   
     

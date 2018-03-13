@@ -46,10 +46,14 @@
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Sede</b> 
             
-              @if($lastCod->codSede == '1')
-                  <center><b id="color"> xxx</b></center>
+              @if($lastCod)
+                @if($lastCod->codSede == '1')
+                <center><b id="color"> xxx </b></center>
+                @else
+                <center><b id="color"> {{$lastCod->codSede}}</center></b>
+                @endif
               @else
-                  <center><b id="color">{{$lastCod->codSede}}</b></center>
+                <center><b id="color">001</b></center>
               @endif
               
                 </li></li>
@@ -112,7 +116,7 @@
             <div class="col-md-10 form-estilo">
                 <label for="{{$descSede[$posicion][0]}}">{{$descSede[$posicion][1]}}</label>
                  <textarea name="{{$descSede[$posicion][0]}}" id="{{$descSede[$posicion][0]}}" class="form-control" maxlength="{{$descSede[$posicion][2]}}" rows="4"></textarea>
-                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
+                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="consedes">0/255</div> </div>
             </div>
         
         @endforeach

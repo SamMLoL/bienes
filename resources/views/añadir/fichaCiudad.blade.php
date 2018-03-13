@@ -36,7 +36,7 @@
                 <div class="col-md-12">
                    	<div class="col-md-4 form-group">
                    	    <label>Código de la Ciudad</label>
-                    	    <br>{{$seleccion->ciudad}}
+                    	    <br>{{$seleccion->codCiudad}}
                    	</div>
 
                     <div class="col-md-4 form-group">
@@ -46,14 +46,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-4 form-group">
-                        <label>Fecha y Hora de Agregación</label>
-                          <br>{{$seleccion->created_at->format('d/m/Y - h:i A')}}
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="row text-center separar">
                	<div class="col-md-12 separar form-group">
