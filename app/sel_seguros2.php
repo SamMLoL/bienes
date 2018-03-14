@@ -27,4 +27,9 @@ class sel_seguros2 extends Model
     {
         return $this->hasOne('App\modeloSemovientes', 'moneda');
     }
+
+    public function selectMonedainmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'moneda');
+    }
 }

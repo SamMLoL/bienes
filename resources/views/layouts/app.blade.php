@@ -125,7 +125,7 @@
                                        <li><a href="regTransporte">Equipo de Transporte</a></li>
                                        <li><a href="regSemovientes">Semovientes</a></li>
                                        <li><a href="regDatosbienes">Bienes Muebles e Inmuebles</a></li>
-                                       <li><a href="registroT12">Bienes de Inmuebles del Órgano</a></li>
+                                       <li><a href="regInmuebles">Bienes de Inmuebles del Órgano</a></li>
                                     </ul>
                                 </li> 
                                 <li class="dropdown-submenu"><a href="">Anexos S</a>

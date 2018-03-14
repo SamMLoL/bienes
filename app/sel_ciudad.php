@@ -27,4 +27,9 @@ class sel_ciudad extends Model
     {
         return $this->hasOne('App\modeloS4', 'codCiudad');
     }
+
+     public function selectCiudadinmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'codCiudad');
+    }
 }

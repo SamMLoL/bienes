@@ -28,5 +28,9 @@ class sel_responsables1 extends Model
         return $this->hasOne('App\modeloSemovientes', 'depAdmRes');
     }
 
+    public function selectDepeninmueble()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'depAdmRes');
+    }
     
 }

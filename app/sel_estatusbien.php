@@ -8,7 +8,8 @@ class sel_estatusbien extends Model
 {
     protected $table = 'sel_estatusbien';
 
-     public function selectEstatus()
+
+    public function selectEstatus()
     {
         return $this->hasOne('App\modeloBienes', 'estatuBien');
     }
@@ -21,5 +22,10 @@ class sel_estatusbien extends Model
     public function selectEstatusemo()
     {
         return $this->hasOne('App\modeloSemovientes', 'estatuBien');
+    }
+
+    public function selectEstatuinmu()
+    {
+        return $this->hasOne('App\modeloInmueble', 'estatuBien');
     }
 }

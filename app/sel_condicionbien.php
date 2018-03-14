@@ -22,5 +22,10 @@ class sel_condicionbien extends Model
     {
         return $this->hasOne('App\modeloSemovientes', 'edoBien');
     }
+
+    public function selectCondicioninmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'edoBien');
+    }
     
 }

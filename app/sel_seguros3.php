@@ -8,7 +8,7 @@ class sel_seguros3 extends Model
 {
     protected $table = 'sel_seguros3';
 
-     public function selectSeguros3()
+    public function selectSeguros3()
     {
         return $this->hasOne('App\modeloSeguros', 'poseRes');
     }
@@ -26,5 +26,10 @@ class sel_seguros3 extends Model
      public function selectSegurobiensemo()
     {
         return $this->hasOne('App\modeloSemovientes', 'seguroBien');
+    }
+
+     public function selectCorresinmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'corresBien');
     }
 }

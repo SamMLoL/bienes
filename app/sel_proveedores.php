@@ -18,4 +18,9 @@ class sel_proveedores extends Model
     {
         return $this->hasOne('App\modeloS4', 'localizacion');
     }
+
+    public function selectLocalinmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'localizacion');
+    }
 }

@@ -183,7 +183,7 @@ Route::get('/regBienes', 'con_bienesVer@index');
 Route::get('/regTransporte', 'con_EqtransporteVer@index');
 Route::get('/regSemovientes', 'con_semovientesVer@index');
 Route::get('/regDatosbienes', 'con_datosbienesVer@index');
-Route::get('/regInmuebles', 'con_datosbienesVer@index');
+Route::get('/regInmuebles', 'con_inmueblesVer@index');
 #MUESTRA REGISTRO DE LOS ANEXOS S
 Route::get('/regBasicos', 'con_s1Ver@index');
 Route::get('/regMaxima', 'con_s2Ver@index');
@@ -217,6 +217,7 @@ Route::get('seleccionBienes/{id}', 'con_bienesVer@idBienes');
 Route::get('seleccionEqtransporte/{id}', 'con_EqtransporteVer@selectId');
 Route::get('seleccionSemovientes/{id}', 'con_semovientesVer@selectId');
 Route::get('seleccionDatosbien/{id}', 'con_datosbienesVer@selectId');
+Route::get('seleccionInmuebles/{id}', 'con_inmueblesVer@selectId');
 
 #FUNCIÓN DE REVISADO DE ANEXOS S selectId con_sN°Ver 
 Route::get('seleccionBasicos/{id}', 'con_s1Ver@selectId');

@@ -13,4 +13,12 @@ class sel_paises extends Model
     {
         return $this->hasOne('App\modeloS4', 'codPais');
     }
+
+    public function selectPaisesinmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'codPais');
+    }
+
+
+    
 }
