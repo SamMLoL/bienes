@@ -148,6 +148,10 @@ $(document).ready(function(){
   });
 
 
+<!---->
+
+
+//REGISTRAR SEDES = S4
 //ANEXO S4
 
 $(document).ready(function(){
@@ -164,24 +168,10 @@ $(document).ready(function(){
     })
   });
 
+
+/*SELECT LOCALIZACIÓN Y SELECT si se selecciona nacional te trae venezuela si se selecciona internacional te trae otro país CODIGO DE PARROQUIA PARA CUANDO SELECCIONE INTERNACIONAL SE COLOQUE 99 EN CASO CONTRARIO TRAIGA LAS OPCIONES DEL OPTION(SELECT)*/  
 $(document).ready(function(){
 
-    $("#espeOtroPais").attr("disabled", true);
-    $("#codPais").change(function(){
-      var id = $("#codPais").val();
-    if(id != 1){
-      $("#espeOtroPais").attr("disabled", true).prop($('#espeOtroPais').val('noaplica'));
-    }else{
-      $("#espeOtroPais").attr("disabled", false).prop($('#espeOtroPais').val(''));
-    
-      }
-    })
-  });
-
-
-
-/*SELECT LOCALIZACIÓN Y SELECT CODIGO DE PARROQUIA PARA CUANDO SELECCIONE INTERNACIONAL SE COLOQUE 99 EN CASO CONTRARIO TRAIGA LAS OPCIONES DEL OPTION(SELECT)*/  
-$(document).ready(function(){
     $("#localizacion").change(function(){
       var id = $("#localizacion").val();
         if(id != 2){
@@ -193,15 +183,22 @@ $(document).ready(function(){
       }
 
           })
+
+          $("#codPais").empty();
+          $("#codPais").append("<option value='1'>Venezuela </option>");
+     
        
         }else{
+          
+          $("#codPais").empty();
+          $("#codPais").append("<option value='2'>Otro País </option>");
+
           //$("#codParroquia").attr("disabled", true);
           $("#codParroquia").empty();
           $("#codParroquia").append("<option value='99'>99 </option>");
         
           }
       })
-
 
     $("#localizacion").change(function(){
       var id = $("#localizacion").val();
@@ -212,78 +209,48 @@ $(document).ready(function(){
                  for(i=0; i<response.length; i++){
                   $("#codCiudad").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
           
-         
       
       }
       //Esta función tiene que estar fuera del for
-        $("#espeOtroCiudad").attr("disabled", true).prop($('#espeOtroCiudad').val('noaplica'));
+
+
           })
-       
+
+        
+
         }else{
-          //$("#codCiudad").attr("disabled", true);
+ 
           $("#codCiudad").empty();
           $("#codCiudad").append("<option value='99'>99 </option>");
-           
-        
+       
+     
+         
           }
+      
+         
       //Esta función tiene que estar fuera del for
-        $("#espeOtroCiudad").attr("disabled", false).prop($('#espeOtroCiudad').val(''));
+       
       })
+      
+          
+
 });
 
-//MODIFICAR SEDES = S4
+
 
 $(document).ready(function(){
-    $("#localizacion2").change(function(){
-      var id = $("#localizacion2").val();
-      var ruta = $('#ruta').val();
-        if(id != 2){
-          $.get(ruta+'/'+event.target.value+"",function(response,parroquia){
-             $("#codParroquia2").empty();
-                $("#codParroquia2").append("<option value='0' disabled selected>Seleccione... </option>");
-                 for(i=0; i<response.length; i++){
-                  $("#codParroquia2").append("<option value='"+response[i].id+ "'> "+response[i].parroquia+"</option>");
+
+    $("#espeOtroPais").attr("disabled", true);
+    $("#codPais").change(function(){
+      var id = $("#codPais").val();
+    if(id != 2){
+      $("#espeOtroPais").attr("disabled", true).prop($('#espeOtroPais').val('noaplica'));
+    }else{
+      $("#espeOtroPais").attr("disabled", false).prop($('#espeOtroPais').val(''));
+    
       }
-
-          })
-       
-        }else{
-          //$("#codParroquia").attr("disabled", true);
-          $("#codParroquia2").empty();
-          $("#codParroquia2").append("<option value='99'>99 </option>");
-        
-          }
-      })
-
-    $("#localizacion2").change(function(){
-      var id = $("#localizacion2").val();
-      var ruta2 = $('#ruta2').val();
-        if(id != 2){
-          $.get(ruta2+'/'+event.target.value+"",function(response,ciudad){
-             $("#codCiudad2").empty();
-                $("#codCiudad2").append("<option value='0' disabled selected>Seleccione... </option>");
-                 for(i=0; i<response.length; i++){
-                  $("#codCiudad2").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
-          
-         
-      
-      }
-      //Esta función tiene que estar fuera del for
-        $("#espeOtroCiudad").attr("disabled", true).prop($('#espeOtroCiudad').val('noaplica'));
-          })
-
-       
-        }else{
-          //$("#codCiudad").attr("disabled", true);
-          $("#codCiudad2").empty();
-          $("#codCiudad2").append("<option value='99'>99 </option>");
-          $("#espeOtroCiudad").attr("disabled", false).prop($('#espeOtroCiudad').val(''));
-        
-          }
-      //Esta función tiene que estar fuera del for
-        
-      })
-});
+    })
+  });
 
 
 $(document).ready(function(){
@@ -291,7 +258,7 @@ $(document).ready(function(){
     $("#espeOtroCiudad").attr("disabled", true);
     $("#codCiudad").change(function(){
       var id = $("#codCiudad").val();
-    if(id != 1){
+    if(id != 2){
       $("#espeOtroCiudad").attr("disabled", true).prop($('#espeOtroCiudad').val('noaplica'));
     }else{
       $("#espeOtroCiudad").attr("disabled", false).prop($('#espeOtroCiudad').val(''));
@@ -300,6 +267,8 @@ $(document).ready(function(){
     })
   });
 
+
+//MODIFICAR SEDES = S4
 $(document).ready(function(){
 
     $("#espeOtroCiudad").attr("disabled", true);

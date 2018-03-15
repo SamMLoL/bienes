@@ -300,7 +300,8 @@ class migracionGeneral extends Seeder
 
       
       $dato = array(
-        array("001","Otro País"),
+        array("001","Venezuela"),
+        array("002","Otro País"),
           );
 
       foreach ($dato as $v) {
@@ -313,7 +314,8 @@ class migracionGeneral extends Seeder
       }
 
       $dato = array(
-        array("001","Otra Ciudad"),
+        array("001","Caracas"),
+        array("002","Otra Ciudad"),
           );
 
       foreach ($dato as $v) {
@@ -324,7 +326,6 @@ class migracionGeneral extends Seeder
 
           ]); 
       }
-
 
 
 

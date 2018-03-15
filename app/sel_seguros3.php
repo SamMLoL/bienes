@@ -32,4 +32,9 @@ class sel_seguros3 extends Model
     {
         return $this->hasOne('App\modeloInmuebles', 'corresBien');
     }
+
+    public function selectSeguroinmu()
+    {
+        return $this->hasOne('App\sel_seguros3', 'seguroBien');
+    }
 }

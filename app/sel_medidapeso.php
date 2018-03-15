@@ -13,4 +13,14 @@ class sel_medidapeso extends Model
     {
         return $this->hasOne('App\modeloSemovientes', 'unidadPeso');
     }
+
+    public function selectContrucinmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'unidadConstru');
+    }
+
+    public function selectTerrenoinmu()
+    {
+        return $this->hasOne('App\modeloInmuebles', 'unidadTerreno');
+    }
 }

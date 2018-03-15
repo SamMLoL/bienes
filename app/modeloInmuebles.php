@@ -59,6 +59,20 @@ class modeloInmuebles extends Model
         return $this->belongsTo('App\sel_usos', 'usoBienInmu');
     }
 
+    public function selectContrucinmu()
+    {
+        return $this->belongsTo('App\sel_medidapeso', 'unidadConstru');
+    }
+
+    public function selectTerrenoinmu()
+    {
+        return $this->belongsTo('App\sel_medidapeso', 'unidadTerreno');
+    }
+
+    public function selectSeguroinmu()
+    {
+        return $this->belongsTo('App\sel_seguros3', 'seguroBien');
+    }
 
     
 }

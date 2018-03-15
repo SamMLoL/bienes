@@ -28,7 +28,7 @@ class controladorInmuebles extends Controller
     	$selectPais = sel_paises::all();
     	$selectParroquia = sel_parroquias::all();
     	$selectCiudad = sel_ciudad::all();
-        $estatusBien = sel_estatusbien::all();
+      $estatusBien = sel_estatusbien::all();
     	$estadoBien = sel_condicionbien::all();
     	$moneda = sel_seguros2::all();
     	$usoInmueble = sel_usos::all();
@@ -345,5 +345,26 @@ class controladorInmuebles extends Controller
         }
         
 
+    }
+
+    public function edit($id)
+    {
+        $form_t12 = modeloInmuebles::find($id);
+        $lastCod = modeloInmuebles::select('codBien')->get()->last();
+        $dependencia = sel_responsables1::all();
+        $corresBien = sel_seguros3::all();
+        $localizacion = sel_proveedores::all();
+        $selectPais = sel_paises::all();
+        $selectParroquia = sel_parroquias::all();
+        $selectCiudad = sel_ciudad::all();
+        $estatusBien = sel_estatusbien::all();
+        $estadoBien = sel_condicionbien::all();
+        $moneda = sel_seguros2::all();
+        $usoInmueble = sel_usos::all();
+        $unidadConstru = sel_medidapeso::all();
+        $unidadTerreno = sel_medidapeso::all();
+        $seguroBien = sel_seguros3::all();
+
+       return view('layouts.ModificarAnexosT.modificarInmuebles',compact('form_t12','lastCod','dependencia','corresBien','localizacion','selectPais','selectParroquia','selectCiudad','estatusBien','estadoBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
     }
 }

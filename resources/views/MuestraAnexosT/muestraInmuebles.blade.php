@@ -108,7 +108,7 @@
 
                     <div class="col-md-4">
                       <label>Código del País donde se Ubica la Sede</label>
-                          <br>{{$seleccion->pais}}
+                          <br>{{$seleccion->codPais}}
                     </div>
 
                     @if($seleccion->espeOtroPais == '1')
@@ -228,12 +228,12 @@
         <hr>
         <hr> 
           <div class="row separar40">
-            <div class="col-md-12 form">
+            <div class="col-md-12 ">
               
               @if($seleccion->valorAdq == '0')
               <div class="col-md-4">
                   <label>Valor de Adquisición del Bien</label>
-                         <br>xxx
+                         <br>99
               </div>
               @else
               <div class="col-md-4">
@@ -249,7 +249,7 @@
 
               @if($seleccion->espeMoneda == '1')
               <div class="col-md-4">
-                  <label>Valor de Adquisición del Bien</label>
+                  <label>Especifique la Otra Moneda</label>
                          <br>noaplica
               </div>
               @else
@@ -262,7 +262,7 @@
           </div>
   
           <div class="row separar40">
-            <div class="col-md-12 form">
+            <div class="col-md-12 ">
               @if($seleccion->feAdqBien == '1111-11-11')
               <div class="col-md-4">
                   <label>Fecha de Adquisición del Bien</label>
@@ -374,7 +374,7 @@
               @if($seleccion->tomo == '0')
               <div class="col-md-4">
                   <label>Tomo</label>
-                        <br>xxx
+                        <br>99
               </div>
               @else
               <div class="col-md-4">
@@ -386,7 +386,7 @@
               @if($seleccion->folio == '0')
               <div class="col-md-4">
                   <label>Folio</label>
-                        <br>xxx
+                        <br>99
               </div>
               @else
               <div class="col-md-4">
@@ -411,7 +411,7 @@
 
           <div class="row separar40">
             <div class="col-md-12 form">
-              @if($seleccion->numRegistro == '1')
+              @if($seleccion->numRegistro == '0')
               <div class="col-md-4">
                   <label>Número de Registro</label>
                         <br>xxx
@@ -423,10 +423,10 @@
               </div>
               @endif
 
-              @if($seleccion->feRegistro == '11111111')
+              @if($seleccion->feRegistro == '1111-11-11')
               <div class="col-md-4">
                   <label>Fecha de Registro</label>
-                        <br>xxx
+                        <br>11111111
               </div>
               @else
               <div class="col-md-4">
@@ -464,10 +464,10 @@
               </div>
               @endif
 
-              @if($seleccion->areaConstru == '1')
+              @if($seleccion->areaConstru == '0')
               <div class="col-md-4">
                   <label>Área de Construcción</label>
-                        <br>xxx
+                        <br>99
               </div>
               @else
               <div class="col-md-4">
@@ -500,7 +500,7 @@
               @if($seleccion->areaTerreno == '0')
               <div class="col-md-4">
                   <label>Área del Terreno</label>
-                        <br>xxx
+                        <br>99
               </div>
               @else
               <div class="col-md-4">
@@ -521,7 +521,7 @@
               @if($seleccion->espeOtraTerre == '1')
               <div class="col-md-4">
                   <label>Especifique la Otra Unidad de Medida</label>
-                        <br>xxx
+                        <br>noaplica
               </div>
               @else
               <div class="col-md-4">
@@ -570,7 +570,7 @@
 
                    <a href="{{url('regInmuebles')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>
                       
-                   <a href="{{url ('inmuebles/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a> 
+                   <a href="{{url ('datosinmuebles/'.$seleccion->id) }}/edit" class="btn btn-info" title="Modificar"><i class="fa fa-pencil-square-o" aria-hidden="true"> <b>Modificar</b></i></a> 
              	</div>
           </div>
        </div>

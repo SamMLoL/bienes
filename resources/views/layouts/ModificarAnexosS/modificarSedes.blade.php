@@ -140,6 +140,7 @@
                     <div class="col-md-4 form-group">
                       <label for="codParroquia">Código de Parroquia donde se Ubica el Ente</label>
                          <select name="codParroquia" id="codParroquia2" class="form-control">
+                             
                               <option value="{{$form_s4->selectParroquia->id}}">{{$form_s4->selectParroquia->parroquia}}</option>
                             @foreach($selectParroquia as $form)
                               @if($form->id != $form_s4->selectParroquia->id)
@@ -244,3 +245,56 @@
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
     <script src="{{ asset('js/contadorTextarea.js') }}"></script>
+    <script> 
+        $(document).ready(function(){
+    $("#localizacion2").change(function(){
+      var id = $("#localizacion2").val();
+      var ruta = $('#ruta').val();
+        if(id != 2){
+          $.get(ruta+'/'+event.target.value+"",function(response,parroquia){
+             $("#codParroquia2").empty();
+                $("#codParroquia2").append("<option value='0' disabled selected>Seleccione... </option>");
+                 for(i=0; i<response.length; i++){
+                  $("#codParroquia2").append("<option value='"+response[i].id+ "'> "+response[i].parroquia+"</option>");
+      }
+
+          })
+       
+        }else{
+          //$("#codParroquia").attr("disabled", true);
+          $("#codParroquia2").empty();
+          $("#codParroquia2").append("<option value='99'>99 </option>");
+        
+          }
+      })
+
+    $("#localizacion2").change(function(){
+      var id = $("#localizacion2").val();
+      var ruta2 = $('#ruta2').val();
+        if(id != 2){
+          $.get(ruta2+'/'+event.target.value+"",function(response,ciudad){
+             $("#codCiudad2").empty();
+                $("#codCiudad2").append("<option value='0' disabled selected>Seleccione... </option>");
+                 for(i=0; i<response.length; i++){
+                  $("#codCiudad2").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
+          
+         
+      
+      }
+      //Esta función tiene que estar fuera del for
+        $("#espeOtroCiudad").attr("disabled", true).prop($('#espeOtroCiudad').val('noaplica'));
+          })
+
+       
+        }else{
+          //$("#codCiudad").attr("disabled", true);
+          $("#codCiudad2").empty();
+          $("#codCiudad2").append("<option value='99'>99 </option>");
+          $("#espeOtroCiudad").attr("disabled", false).prop($('#espeOtroCiudad').val(''));
+        
+          }
+      //Esta función tiene que estar fuera del for
+        
+      })
+});
+    </script>
