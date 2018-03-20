@@ -111,12 +111,12 @@ class controladorBienes extends Controller
           $form_t8->codInterno = $request->codInterno;
          }
 
-         if($form_t8->espOtro = $request->espOtro == '')
+         if($form_t8->espOtroUso = $request->espOtroUso == '')
          {
-          $form_t8->espOtro = '1';
+          $form_t8->espOtroUso = '1';
 
          }else{
-          $form_t8->espOtro = $request->espOtro;
+          $form_t8->espOtroUso = $request->espOtroUso;
          }
 
          if($form_t8->valorAdq = $request->valorAdq == '')
@@ -329,12 +329,12 @@ class controladorBienes extends Controller
           $form_t8->codInterno = $request->codInterno;
          }
 
-         if($form_t8->espOtro = $request->espOtro == '')
+         if($form_t8->espOtroUso = $request->espOtroUso == '')
          {
-          $form_t8->espOtro = '1';
+          $form_t8->espOtroUso = '1';
 
          }else{
-          $form_t8->espOtro = $request->espOtro;
+          $form_t8->espOtroUso = $request->espOtroUso;
          }
 
          if($form_t8->valorAdq = $request->valorAdq == '')

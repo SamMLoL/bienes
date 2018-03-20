@@ -99,7 +99,7 @@
                       <label for="otraDesc">Otra Descripción</label>
 
                     @if($form_t1->otraDesc == '0')
-                      <input type="text" class="form-control" name="otraDesc" id="otraDesc" value="xxx"  placeholder="Introduzca nombres" maxlength="200">
+                      <input type="text" class="form-control" name="otraDesc" id="otraDesc" value="xxx"  placeholder="Introduzca nombres" maxlength="200" disabled>
                     </div>
 
                     @else
@@ -121,3 +121,11 @@
 </form>
 </body>
 </html>
+
+    <script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('js/validate.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
+

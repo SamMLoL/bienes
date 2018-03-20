@@ -13,7 +13,7 @@ class CreateAnexos extends Migration
      */
     public function up()
     {
-        //ANEXOS T
+        //ANEXOS T estatuBien
         #T1
         Schema::create('proveedores', function (Blueprint $table) {
             $table->increments('id');
@@ -211,7 +211,7 @@ class CreateAnexos extends Migration
             $table->string('montoAse',26)->nullable();
             $table->integer('moneda')->unsigned();
             $table->foreign('moneda')->references('id')->on('sel_seguros2');
-            $table->string('espMone', 30)->nullable();
+            $table->string('espeMoneda', 30)->nullable();
             $table->date('feiniPoli', 10)->nullable();
             $table->date('fefinPoli', 10)->nullable();
             $table->string('poseRes', 2)->nullable();
@@ -283,7 +283,7 @@ class CreateAnexos extends Migration
             $table->string('codInterno', 20)->nullable();
             $table->integer('estatuBien')->nullable();
             $table->foreign('estatuBien')->references('id')->on('sel_estatusbien');
-            $table->string('espOtro', 100)->nullable();
+            $table->string('espOtroUso', 100)->nullable();
             $table->string('valorAdq', 26)->nullable();
             $table->integer('moneda')->unsigned();
             $table->foreign('moneda')->references('id')->on('sel_seguros2');

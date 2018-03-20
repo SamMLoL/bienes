@@ -81,7 +81,7 @@
                       @endif
 
                       @if($reg3->montoAse == '0')
-                        <td class="text-center">xxx</td>
+                        <td class="text-center">99.99</td>
                       @else
                         <td class="text-center">{{$reg3->montoAse}}</td>
                       @endif

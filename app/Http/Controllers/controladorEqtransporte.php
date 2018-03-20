@@ -22,13 +22,13 @@ class controladorEqtransporte extends Controller
     {
     	$lastCod = modeloEqtransporte::select('codBien')->get()->last();
     	$dependecia = sel_responsables1::all();
-    	$estatusBien = sel_estatusbien::orderBy('opcion')->get();
+    	$estatusBien = sel_estatusbien::all();
     	$moneda = sel_seguros2::all();
-    	$condicion = sel_condicionbien::orderBy('opcion')->get();
+    	$condicion = sel_condicionbien::all();
     	$marcas = modeloMarcas::all();
       $modelos = modeloModelos::all();
-      $colorBien = sel_colorbien::orderBy('opcion')->get();
-      $unidadGarantia = sel_garantiabien::orderBy('opcion')->get();
+      $colorBien = sel_colorbien::all();
+      $unidadGarantia = sel_garantiabien::all();
       $poseeComponente = sel_seguros3::all();
       $claseBien = sel_clasebien::all();
 

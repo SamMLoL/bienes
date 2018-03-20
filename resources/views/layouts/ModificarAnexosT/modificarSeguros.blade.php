@@ -74,7 +74,7 @@
 					<div class="col-md-4">
 						<label for="otraCom">Otra Compañía Aseguradora</label>
 						@if($form_t3->otraCom == '1')
-						 <input type="text" class="form-control" name="otraCom" id="otraCom" value="noaplica" maxlength="100">
+						 <input type="text" class="form-control" name="otraCom" id="otraCom" value="noaplica" maxlength="100" disabled>
 						@else
 						 <input type="text" class="form-control" name="otraCom" id="otraCom" value="{{$form_t3->otraCom}}" maxlength="100">
 						@endif
@@ -87,7 +87,7 @@
 					<div class="col-md-4">
 						<label for="numPoli">Número de Póliza</label>
 						@if($form_t3->numPoli == '0')
-						 <input type="text" class="form-control" name="numPoli" id="numPoli" value="noaplica" maxlength="30">
+						 <input type="text" class="form-control" name="numPoli" id="numPoli" value="xxx" maxlength="30">
 						@else
 						 <input type="text" class="form-control" name="numPoli" id="numPoli" value="{{$form_t3->numPoli}}" maxlength="30">
 						@endif
@@ -108,7 +108,7 @@
 					<div class="col-md-4">
 						<label for="montoAse">Monto Asegurado</label>
 						@if($form_t3->montoAse == '0')
-						 <input type="text" class="form-control money" name="montoAse" id="montoAse"  placeholder="¡ Si se desconoce el campo dejarlo en blanco !" value="xxx" maxlength="26">
+						 <input type="text" class="form-control money" name="montoAse" id="montoAse" value="99.99" maxlength="26">
 						@else
 						 <input type="text" class="form-control money" name="montoAse" id="montoAse" value="{{$form_t3->montoAse}}" maxlength="26">
 						@endif
@@ -121,7 +121,7 @@
 					<div class="col-md-4 form-group">
 		           	  <label for="moneda">Moneda</label>
 		               <select name="moneda" id="moneda" class="form-control">
-		                    <option value="{{$form_t3->selectSeguros2->id}}" disabled>{{$form_t3->selectSeguros2->opcion}}</option>
+		                    <option value="{{$form_t3->selectSeguros2->id}}">{{$form_t3->selectSeguros2->opcion}}</option>
 		                  @foreach($infoSelect2 as $form)
 		                  	@if($form->id != $form_t3->selectSeguros2->id)
 		                    <option value="{{$form->id}}">{{$form->opcion}}</option> 
@@ -131,11 +131,11 @@
 					</div>
 					
 				    <div class="col-md-4">
-						<label for="espMone">Especifique la Moneda</label>
-						@if($form_t3->espMone == '1')
-						 <input type="text" class="form-control" name="espMone" id="espMone" value="noaplica" maxlength="30">
+						<label for="espeMoneda">Especifique la Moneda</label>
+						@if($form_t3->espeMoneda == '1')
+						 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30" disabled>
 						@else
-						 <input type="text" class="form-control" name="espMone" id="espMone" value="{{$form_t3->espMone}}" maxlength="30">
+						 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="{{$form_t3->espeMoneda}}" maxlength="30" >
 						@endif
 					</div>
 				
@@ -192,7 +192,7 @@
 					<div class="col-md-4 form-group">
 						<label for="espeCobe">Especifique el Tipo de Cobertura </label>
 							@if($form_t3->espeCobe == '1')
-							 <input type="text" class="form-control" name="espeCobe" id="espeCobe" value="xxx" maxlength="100">
+							 <input type="text" class="form-control" name="espeCobe" id="espeCobe" value="noaplica" maxlength="100" disabled>
 							@else
 							 <input type="text" class="form-control" name="espeCobe" id="espeCobe" value="{{$form_t3->espeCobe}}" maxlength="100">
 							@endif
@@ -201,9 +201,9 @@
 					<div class="col-md-4 form-group">
 						<label for="descCobe">Descripción de la Cobertura </label>
 							@if($form_t3->descCobe == '1')
-							 <input type="text" class="form-control" name="descCobe" id="descCobe" value="xxx" maxlength="120">
+							 <input type="text" class="form-control" name="descCobe" id="descCobe" value="xxx" maxlength="200">
 							@else
-							 <input type="text" class="form-control" name="descCobe" id="descCobe" value="{{$form_t3->descCobe}}" maxlength="120">
+							 <input type="text" class="form-control" name="descCobe" id="descCobe" value="{{$form_t3->descCobe}}" maxlength="200">
 							@endif
 					</div>
 				</div>
@@ -227,5 +227,7 @@
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
+    <script src="{{ asset('js/dropdown.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-    <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
+ 	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>

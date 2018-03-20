@@ -136,7 +136,7 @@
                     @if($seleccion->valorAdq == '0')
                     <div class="col-md-4 form-group">
                         <label>Valor de Adquisición del Bien</label>
-                            <br>xxx
+                            <br>99.99
                     </div>
                     @else
                     <div class="col-md-4 form-group">
@@ -356,7 +356,7 @@
               @if($seleccion->otraEspeColor == '1')
               <div class="col-md-4 form-group">
                   <label>Otras Especificación del Color</label>
-                         <br>noaplica
+                         <br>xxx
               </div>
               @else
               <div class="col-md-4 form-group">

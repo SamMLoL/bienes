@@ -28,20 +28,20 @@
 
     <div class="row">
         <div class="col-md-12">
-            <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
-            <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar5"> Código del Proveedor</b>
-            <b id="espaciar">
+            <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <center><b>Ultimo Registro</b></center>
+            <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><center><b>Código del Proveedor</b></center>
+           
             @if($lastCod)
                 @if($lastCod->codRegT3 == '99')
-                  <b id="espaciar4"> 99 </b>
+                  <center><b id="color"> 99 </b></center>
                 @else
-                  <b id="espaciar6"> {{$lastCod->codRegT3}}</b>
+                  <center><b id="color"> {{$lastCod->codRegT3}}</b></center>
                 @endif
                </b>
             @else
-               EMPRSEG001
+               <center>EMPRSEG001</center>
             @endif
-            </b></li></li>
+            </li></li>
         </div>
     </div>
 
@@ -58,14 +58,21 @@
    	  <form role="form" id="formValidaT3" name="formValidaT3" method="POST" action="{{url('seguros')}}">
     	{{ csrf_field() }}
 
-    <!--ARRAY SELECT select PERTENECIENTE AL CONTROLADORT3, TABLA RELACIONADA EN LA BD => mig_selectT3 Y T3-->
-    <!--ARRAY SELECT select BELONGING TO CONTROLADORT3, TABLE RELATED IN THE BD => mig_selectT3 AND T3-->
 
-      @foreach($select as $posicion => $valor)
+      @foreach($codRegT3 as $posicion => $valor)
+      
+      <div class="col-md-4 form-group separar">
+          <label for="{{$codRegT3[$posicion][0]}}">{{$codRegT3[$posicion][1]}}</label>
+          <input type="text" name="{{$codRegT3[$posicion][0]}}" id="{{$codRegT3[$posicion][0]}}" class="form-control" placeholder="{{$codRegT3[$posicion][2]}}" maxlength="{{$codRegT3[$posicion][3]}}">
+      </div>
+      @endforeach
+      
+    
+      @foreach($selectCompAse as $posicion => $valor)
 
-      <div class="col-md-4 form-group {{$select[$posicion][3]}} separar">
-        <label for="{{$select[$posicion][0]}}">{{$select[$posicion][1]}}</label>
-            <select name="{{$select[$posicion][0]}}" id="{{$select[$posicion][0]}}" class="form-control">
+      <div class="col-md-4 form-group  separar">
+        <label for="{{$selectCompAse[$posicion][0]}}">{{$selectCompAse[$posicion][1]}}</label>
+            <select name="{{$selectCompAse[$posicion][0]}}" id="{{$selectCompAse[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
               @foreach($infoSelect as $traeSelect)
                <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
@@ -74,26 +81,31 @@
       </div>
 
       @endforeach
-    
-    <!--ARRAY DE INPUT-TEXT arrayT3 PERTENECIENTE AL CONTROLADORT3, TABLA RELACIONADA EN LA BD => T3-->
-    <!--ARRAY OF INPUT-TEXT arrayT3 BELONGING TO CONTROLADORT3, TABLE RELATED IN THE BD => T3-->
-
-      @foreach($arrayT3 as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$arrayT3[$posicion][4]}} separar">
-          <label for="{{$arrayT3[$posicion][0]}}">{{$arrayT3[$posicion][1]}}</label>
-          <input type="text" name="{{$arrayT3[$posicion][0]}}" id="{{$arrayT3[$posicion][0]}}" class="form-control {{$arrayT3[$posicion][5]}}" placeholder="{{$arrayT3[$posicion][2]}}" maxlength="{{$arrayT3[$posicion][3]}}">
+
+      @foreach($otraCompa as $posicion => $valor)
+      
+      <div class="col-md-4 form-group {{$otraCompa[$posicion][4]}} separar">
+          <label for="{{$otraCompa[$posicion][0]}}">{{$otraCompa[$posicion][1]}}</label>
+          <input type="text" name="{{$otraCompa[$posicion][0]}}" id="{{$otraCompa[$posicion][0]}}" class="form-control" placeholder="{{$otraCompa[$posicion][2]}}" maxlength="{{$otraCompa[$posicion][3]}}" disabled>
       </div>
       @endforeach
 
-    <!--ARRAY SELECT select1 PERTENECIENTE AL CONTROLADORT3, TABLA RELACIONADA EN LA BD => mig_selectT31 Y T3-->
-    <!--ARRAY SELECT select1 BELONGING TO CONTROLADORT3, TABLE RELATED IN THE BD => mig_selectT31 AND T3-->  
 
-      @foreach($select1 as $posicion => $valor)
+      @foreach($numPoli as $posicion => $valor)
+      
+      <div class="col-md-4 form-group {{$numPoli[$posicion][4]}} separar">
+          <label for="{{$numPoli[$posicion][0]}}">{{$numPoli[$posicion][1]}}</label>
+          <input type="text" name="{{$numPoli[$posicion][0]}}" id="{{$numPoli[$posicion][0]}}" class="form-control" placeholder="{{$numPoli[$posicion][2]}}" maxlength="{{$numPoli[$posicion][3]}}">
+      </div>
+      @endforeach
 
-      <div class="col-md-4 {{$select1[$posicion][2]}} form-group  separar">
-        <label for="{{$select1[$posicion][0]}}">{{$select1[$posicion][1]}}</label>
-            <select name="{{$select1[$posicion][0]}}" id="{{$select1[$posicion][0]}}" class="form-control">
+
+    @foreach($selectPoli as $posicion => $valor)
+
+      <div class="col-md-4 form-group  separar">
+        <label for="{{$selectPoli[$posicion][0]}}">{{$selectPoli[$posicion][1]}}</label>
+            <select name="{{$selectPoli[$posicion][0]}}" id="{{$selectPoli[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
               @foreach($infoSelect1 as $traeSelect)
                <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
@@ -102,15 +114,22 @@
       </div>
 
       @endforeach
+  
+
+      @foreach($montoAse as $posicion => $valor)
+      
+      <div class="col-md-4 form-group {{$montoAse[$posicion][4]}} separar">
+          <label for="{{$montoAse[$posicion][0]}}">{{$montoAse[$posicion][1]}}</label>
+          <input type="text" name="{{$montoAse[$posicion][0]}}" id="{{$montoAse[$posicion][0]}}" class="form-control money" placeholder="{{$montoAse[$posicion][2]}}" maxlength="{{$montoAse[$posicion][3]}}">
+      </div>
+      @endforeach
+      
     
-    <!--ARRAY SELECT select2 PERTENECIENTE AL CONTROLADORT3, TABLA RELACIONADA EN LA BD => mig_selectT32 Y T3-->
-    <!--ARRAY SELECT select2 BELONGING TO CONTROLADORT3, TABLE RELATED IN THE BD => mig_selectT32 AND T3-->  
+      @foreach($selectMoneda as $posicion => $valor)
 
-      @foreach($select2 as $posicion => $valor)
-
-      <div class="col-md-4 {{$select2[$posicion][2]}} form-group  separar">
-        <label for="{{$select2[$posicion][0]}}">{{$select2[$posicion][1]}}</label>
-            <select name="{{$select2[$posicion][0]}}" id="{{$select2[$posicion][0]}}" class="form-control">
+      <div class="col-md-4 {{$selectMoneda[$posicion][2]}} form-group  separar">
+        <label for="{{$selectMoneda[$posicion][0]}}">{{$selectMoneda[$posicion][1]}}</label>
+            <select name="{{$selectMoneda[$posicion][0]}}" id="{{$selectMoneda[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
               @foreach($infoSelect2 as $traeSelect)
                <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
@@ -124,12 +143,10 @@
       
       <div class="col-md-4 form-group {{$desMoneda[$posicion][4]}} separar">
           <label for="{{$desMoneda[$posicion][0]}}">{{$desMoneda[$posicion][1]}}</label>
-          <input type="text" name="{{$desMoneda[$posicion][0]}}" id="{{$desMoneda[$posicion][0]}}" class="form-control {{$desMoneda[$posicion][5]}}" placeholder="{{$desMoneda[$posicion][2]}}" maxlength="{{$desMoneda[$posicion][3]}}">
+          <input type="text" name="{{$desMoneda[$posicion][0]}}" id="{{$desMoneda[$posicion][0]}}" class="form-control" placeholder="{{$desMoneda[$posicion][2]}}" maxlength="{{$desMoneda[$posicion][3]}}" disabled>
       </div>
       @endforeach
 
-    <!--ARRAY DE FECHA datet1 PERTENECIENTE AL CONTROLADORT1, TABLA RELACIONADA EN LA BD => T1--> 
-    <!--ARRAY OF DATE datet1 BELONGING TO CONTROLADORT1, TABLE RELATED IN THE BD => T1-->
 
       @foreach($datet1 as $posicion => $valor)
        
@@ -145,8 +162,6 @@
          </div>
       @endforeach
 
-    <!--ARRAY DE FECHA datet2 PERTENECIENTE AL CONTROLADORT3, TABLA RELACIONADA EN LA BD => T3--> 
-    <!--ARRAY OF DATE datet2 BELONGING TO CONTROLADORT3, TABLE RELATED IN THE BD => T3-->
 
       @foreach($datet2 as $posicion => $valor)
        
@@ -163,11 +178,11 @@
 
       @endforeach
 
-      @foreach($select3 as $posicion => $valor)
+      @foreach($selectRes as $posicion => $valor)
 
       <div class="col-md-4 form-group separar">
-        <label for="{{$select3[$posicion][0]}}">{{$select3[$posicion][1]}}</label>
-            <select name="{{$select3[$posicion][0]}}" id="{{$select3[$posicion][0]}}" class="form-control">
+        <label for="{{$selectRes[$posicion][0]}}">{{$selectRes[$posicion][1]}}</label>
+            <select name="{{$selectRes[$posicion][0]}}" id="{{$selectRes[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
               @foreach($infoSelect3 as $traeSelect)
                <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
@@ -177,13 +192,11 @@
 
       @endforeach
 
-
-
-      @foreach($select4 as $posicion => $valor)
+      @foreach($selectCobe as $posicion => $valor)
 
       <div class="col-md-4 form-group separar">
-        <label for="{{$select4[$posicion][0]}}">{{$select4[$posicion][1]}}</label>
-            <select name="{{$select4[$posicion][0]}}" id="{{$select4[$posicion][0]}}" class="form-control">
+        <label for="{{$selectCobe[$posicion][0]}}">{{$selectCobe[$posicion][1]}}</label>
+            <select name="{{$selectCobe[$posicion][0]}}" id="{{$selectCobe[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
               @foreach($infoSelect4 as $traeSelect)
                <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
@@ -193,11 +206,19 @@
 
       @endforeach
 
-      @foreach($arrayT31 as $posicion => $valor)
+      @foreach($espeCobe as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$arrayT31[$posicion][4]}} separar">
-            <label for="{{$arrayT31[$posicion][0]}}">{{$arrayT31[$posicion][1]}}</label>
-              <input type="text" name="{{$arrayT31[$posicion][0]}}" id="{{$arrayT31[$posicion][0]}}" class="form-control"  placeholder="{{$arrayT31[$posicion][2]}}" maxlength="{{$arrayT31[$posicion][3]}}">
+      <div class="col-md-4 form-group separar">
+            <label for="{{$espeCobe[$posicion][0]}}">{{$espeCobe[$posicion][1]}}</label>
+              <input type="text" name="{{$espeCobe[$posicion][0]}}" id="{{$espeCobe[$posicion][0]}}" class="form-control"  placeholder="{{$espeCobe[$posicion][2]}}" maxlength="{{$espeCobe[$posicion][3]}}" disabled>
+          </div>
+      @endforeach
+
+      @foreach($descCobe as $posicion => $valor)
+      
+      <div class="col-md-4 form-group separar">
+            <label for="{{$descCobe[$posicion][0]}}">{{$descCobe[$posicion][1]}}</label>
+              <input type="text" name="{{$descCobe[$posicion][0]}}" id="{{$descCobe[$posicion][0]}}" class="form-control"  placeholder="{{$descCobe[$posicion][2]}}" maxlength="{{$descCobe[$posicion][3]}}">
           </div>
       @endforeach
 

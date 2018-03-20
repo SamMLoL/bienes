@@ -25,38 +25,46 @@ class controladorSeguros extends Controller
   $infoSelect2 = sel_seguros2::all();
   $infoSelect3 = sel_seguros3::all();
   $infoSelect4 = sel_seguros4::all();
-
-  $arrayT3=array(
-    array("codRegT3","Código del Registro:","Introduzca el código de registro","10","col-md-pull-4",""),
-    array("otraCom","Otra Compañía Aseguradora:","Introduzca otra compañoa aseguradora","100","col-md-push-0",""),
-    array("numPoli","Número de Póliza:","Indique el número de la póliza emitido","30","",""),
-    array("montoAse","Monto Asegurado:","Indique el monto asegurado","26","","money"),
-   
-    
+ 
+  
+  $codRegT3 = array(
+      array("codRegT3","Código del Registro:","Introduzca el código de registro","10"),
     );
 
-  $select= array(
-    array("compAse","Compañía Aseguradora:","5","col-md-push-4"),
+  $numPoli = array(
+      array("numPoli","Número de Póliza:","Indique el número de la póliza emitido","30","",""),
     );
 
-  $select1= array(
-    array("tipPoli","Tipo de Póliza:","1"),
+  $montoAse=array(
+      array("montoAse","Monto Asegurado:","Indique el monto asegurado","26","","money"),
     );
 
-  $select2= array(
-    array("moneda","Moneda:","5"),
+  $otraCompa = array(
+      array("otraCom","Otra Compañía Aseguradora:","Introduzca otra compañoa aseguradora","100",""),
+    );
+ 
+  $selectCompAse= array(
+      array("compAse","Compañía Aseguradora:","5"),
     );
 
-  $select3= array(
-    array("poseRes","Posee Responsabilidad Civil:","2"),
+  $selectPoli= array(
+      array("tipPoli","Tipo de Póliza:","1"),
+    );
+
+  $selectMoneda= array(
+      array("moneda","Moneda:","5"),
+    );
+
+  $selectRes= array(
+      array("poseRes","Posee Responsabilidad Civil:","2"),
     );
 
   $desMoneda = array(
-    array("espMone","Especifique la Moneda:","Especifique la moneda:","Especifique otra moneda","30",'col-md-push-4'),
+     array("espeMoneda","Especifique la Moneda:","especifique la moneda","Especifique otra moneda","30"),
     );
 
-  $select4= array(
-    array("tipoCobe","Tipo Cobertura de la Póliza:","5"),
+  $selectCobe= array(
+     array("tipoCobe","Tipo Cobertura de la Póliza:","5"),
     );
 
 
@@ -68,13 +76,18 @@ class controladorSeguros extends Controller
     array("fefinPoli","Fecha Fin de la Póliza:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
     );
 
-  $arrayT31= array(
-  array("espeCobe","Especifique el Tipo de Cobertura:","Especifique el tipo de cobertura","100","col-md-pull-0"),
-  array("descCobe","Descripción de la Cobertura:","Describa el tipo de cobertura","200","col-md-push-0"),
+  $espeCobe= array(
+  array("espeCobe","Especifique el Tipo de Cobertura:","especifique el tipo de cobertura","100"),
+
+  );
+
+  $descCobe= array(
+  array("descCobe","Descripción de la Cobertura:","describa la cobertura","200"),
+
   );
 
  
-  return view('AnexosT.visSeguros', compact('infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4','arrayT3','select','select1','select2','select3','select4','datet1','datet2','arrayT31','desMoneda','lastCod'));
+  return view('AnexosT.visSeguros', compact('lastCod','infoSelect','infoSelect1','infoSelect2','infoSelect3','infoSelect4','codRegT3','numPoli','montoAse','otraCompa','selectCompAse','selectPoli','selectMoneda','selectRes','selectCobe','datet1','datet2','espeCobe','desMoneda','descCobe'));
 
     }
 
@@ -116,10 +129,10 @@ class controladorSeguros extends Controller
           $form_t3->moneda = $request->moneda;
 
 
-        if($form_t3->espMone = $request->espMone == ''){
-          $form_t3->espMone = '1';
+        if($form_t3->espeMoneda = $request->espeMoneda == ''){
+          $form_t3->espeMoneda = '1';
           }else{
-          $form_t3->espMone = $request->espMone;  
+          $form_t3->espeMoneda = $request->espeMoneda;  
         }
 
 
@@ -227,10 +240,10 @@ class controladorSeguros extends Controller
           $form_t3->moneda = $request->moneda;
 
 
-        if($form_t3->espMone = $request->espMone == ''){
-          $form_t3->espMone = '1';
+        if($form_t3->espeMoneda = $request->espeMoneda == ''){
+          $form_t3->espeMoneda = '1';
           }else{
-          $form_t3->espMone = $request->espMone;  
+          $form_t3->espeMoneda = $request->espeMoneda;  
         }
 
         if($form_t3->feiniPoli = $request->feiniPoli == ''){

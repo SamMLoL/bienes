@@ -139,7 +139,7 @@
               
             <div class="col-md-4 form-group">
                 <li>Especifique la Otra Moneda:</li>
-                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="30">
+                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="30" disabled>
             </div>
         </div>
     </div>
@@ -179,7 +179,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especifique el Otro Estado del Bien:</li>
-                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30">
+                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30" disabled>
             </div>
         </div>
     </div>
@@ -230,7 +230,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especifique el Otro Tipo:</li>
-                  <input type="text" id="espeOtroTipo" name="espeOtroTipo" class="form-control" placeholder="Especifique el otro tipo" maxlength="100">
+                  <input type="text" id="espeOtroTipo" name="espeOtroTipo" class="form-control" placeholder="Especifique el otro tipo" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -249,7 +249,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especifique el Otro Propósito:</li>
-                  <input type="text" id="espeOtroPro" name="espeOtroPro" class="form-control" placeholder="Especifique el otro tipo" maxlength="100">
+                  <input type="text" id="espeOtroPro" name="espeOtroPro" class="form-control" placeholder="Especifique el otro tipo" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -268,7 +268,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especificación del Otro Color:</li>
-                  <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50">
+                  <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50" disabled>
             </div>
         </div>
     </div>

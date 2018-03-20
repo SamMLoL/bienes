@@ -152,7 +152,7 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/dropdown.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
     <script src="{{ asset('js/contadorTextarea.js') }}"></script>

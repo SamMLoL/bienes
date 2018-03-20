@@ -31,15 +31,15 @@
       <div class="row separar">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> 
             
               @if($lastCod)
-                  <b id="espaciar3"> {{$lastCod->codBien}}</b>
+                  <center><b id="color"> {{$lastCod->codBien}}</b></center>
               @else
-                  <b id="espaciar3">E2012001</b>
+                  <center><b id="color">E2012001</b></center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div> 
 
@@ -90,7 +90,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-              <li>Código del Responsable del uso directo del Bien:</li>
+              <li>Código del Responsable del uso Directo del Bien:</li>
                   <input type="text" id="codResBien" name="codResBien" class="form-control" placeholder="Introduzca el código del responsable administrativo" maxlength="10">
             </div>
         </div>
@@ -99,12 +99,12 @@
     <div class="row separar">
         <div class="col-md-12">
             <div class="col-md-4 form-group">
-                <li>Código interno del Bien:</li>
+                <li>Código Interno del Bien:</li>
                   <input type="text" id="codInterno" name="codInterno" class="form-control" placeholder="Introduzca el código interno del bien" maxlength="20">
             </div>
 
             <div class="col-md-4 form-group">
-                <li>Estatus del uso del Bien</li>
+                <li>Estatus del Uso del Bien</li>
                   <select name="estatuBien" id="estatuBien" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
                         @foreach($estatusBien as $traeDir)
@@ -114,8 +114,8 @@
             </div>
 
             <div class="col-md-4 form-group">
-                <li>Especifique el otro uso:</li>
-                  <input type="text" id="espOtro" name="espOtro" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
+                <li>Especifique el Otro Uso:</li>
+                  <input type="text" id="espOtroUso" name="espOtroUso" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@
               
             <div class="col-md-4 form-group">
                 <li>Especifique la Otra Moneda:</li>
-                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="26">
+                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="26" disabled>
             </div>
         </div>
     </div>
@@ -181,7 +181,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especifique el Otro Estado del Bien:</li>
-                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30">
+                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30" disabled>
             </div>
         </div>
     </div>
@@ -212,8 +212,8 @@
             </div>
 
             <div class="col-md-5 form-group">
-              <li>Especifique la otra clase:</li>
-                  <input type="text" id="espeClase" name="espeClase" class="form-control" placeholder="Especifique la otra clase del bien" maxlength="100">
+              <li>Especifique la Otra clase:</li>
+                  <input type="text" id="espeClase" name="espeClase" class="form-control" placeholder="Especifique la otra clase del bien" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -286,7 +286,7 @@
 
             <div class="col-md-4 form-group">
               <li>Especificación de Otro Color:</li>
-                  <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50">
+                  <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50" disabled>
             </div>
         </div>
     </div>
@@ -359,7 +359,7 @@
     <div class="row separar">
         <div class="col-md-12">
             <div class="col-md-4 form-group">
-              <li>Fecha Inicio de la garantía:</li>
+              <li>Fecha Inicio de la Garantía:</li>
               <div class="input-group">
               <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
               <input type="text" id="feIniGarantia" name="feIniGarantia"  class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
@@ -367,7 +367,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-              <li>Fecha Fin de la garantía:</li>
+              <li>Fecha Fin de la Garantía:</li>
               <div class="input-group">
               <span class="input-group-addon"><i style="color:#8E2121;" class="fa fa-info-circle" aria-hidden="true" title="¡Si se desconoce, deje el campo en blanco!" ></i></span>
               <input type="text" id="feFinGarantia" name="feFinGarantia"  class="form-control calendario fechaplaceholder" placeholder="¡Si se desconoce, deje el campo en blanco!" aria-describedby="inputGroupprimary3Status">
@@ -375,7 +375,7 @@
             </div>
             
             <div class="col-md-4 form-group">
-              <li><b>Tiene sistema de rastreo y localización instalado:</b></li>
+              <li><b>Tiene Sistema de Rastreo y Localización Instalado:</b></li>
                 <select name="tieneSistema" id="tieneSistema" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
                       @foreach($poseeComponente as $traeDir)
@@ -389,7 +389,7 @@
     <div class="row col-md-offset-1 separar">
         <div class="col-md-12">
             <div class="col-md-10 form-estilo">
-                <li>Especificaciones sistema de rastreo instalado:</li>
+                <li>Especificaciones Sistema de Rastreo Instalado:</li>
                  <textarea name="espeSistema" id="espeSistema" class="form-control" maxlength="255" rows="4"></textarea>
                   <div id="negro" for="contador">Caracteres: <div class="rojo" id="contodi3">0/255</div> </div>
             </div>
@@ -399,7 +399,7 @@
     <div class="row separar">
         <div class="col-md-12">
             <div class="col-md-4 form-group">
-              <li><b>Posee componentes:</b></li>
+              <li><b>Posee Componentes:</b></li>
                 <select name="poseeCompo" id="poseeCompo" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
                       @foreach($poseeComponente as $traeDir)
@@ -409,7 +409,7 @@
             </div>
 
             <div class="col-md-4 form-group">
-              <li><b>Se encuentra asegurado el Bien:</b></li>
+              <li><b>Se Encuentra Asegurado el Bien:</b></li>
                 <select name="seguroBien" id="seguroBien" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
                       @foreach($poseeComponente as $traeDir)

@@ -43,7 +43,7 @@
 	        	</div>
 	     	</div>
 			
-		<form role="form" method="POST" action="{{route('bienes.update', $form_t12->id)}}">
+		<form role="form" method="POST" action="{{route('datosinmuebles.update', $form_t12->id)}}">
        	  <input type="hidden" name="_method" value="PUT">
             {{ csrf_field() }}
 
@@ -102,7 +102,7 @@
 				    </div>
 					
 					<div class="col-md-4">
-						<li for="codSede">Código de Sede del Ente donde Corresponde el Bien</li>
+						<li for="codSede">Código Sede del Ente donde Corresponde el Bien</li>
 							@if($form_t12->codSede == '1')
 							 <input type="text" class="form-control" name="codSede" id="codSede" value="xxx" maxlength="10">
 							@else
@@ -249,7 +249,7 @@
 				    <div class="col-md-4">
 	                    <li>Especifique el Otro Uso</li>
 	                      @if($form_t12->espOtroUso == '1')
-	                           <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100">
+	                           <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="{{$form_t12->espOtroUso}}" maxlength="100">
@@ -285,7 +285,7 @@
             		<div class="col-md-4">
 	                    <li>Especifique la Otra Moneda</li>
 	                      @if($form_t12->espeMoneda == '1')
-	                           <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30">
+	                           <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="{{$form_t12->espeMoneda}}" maxlength="30">
@@ -336,7 +336,7 @@
 	            	<div class="col-md-5">
 	                    <li>Especifique el Otro Estado del Bien</li>
 	                      @if($form_t12->espOtroEdo == '1')
-	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30">
+	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="{{$form_t12->espOtroEdo}}" maxlength="30">
@@ -362,6 +362,34 @@
                     </div>
                 </div>
 			</div>
+
+			<div class="row col-md-offset-1 separar">
+				<div class="col-md-12 form-group">
+					<div class="col-md-5">
+		                <li><b>Uso del Bien Inmueble</b></li>
+		                  <select name="usoBienInmu" id="usoBienInmu" class="form-control">
+		                    <option value="{{$form_t12->selectUsoninmu->id}}">{{$form_t12->selectUsoninmu->opcion}}</option>
+		                      @foreach($estadoBien as $traeDir)
+		                      	@if($traeDir->id != $form_t12->selectUsoninmu->id)
+		                        <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
+		                        @endif
+		                      @endforeach
+		                  </select>
+	            	</div>
+
+	            	<div class="col-md-5">
+	                    <li>Otro Uso</li>
+	                      @if($form_t12->otroUsoInmu == '1')
+	                           <input type="text" class="form-control" name="otroUsoInmu" id="otroUsoInmu" value="noaplica" maxlength="100" disabled>
+	                       
+	                      @else
+	                           <input type="text" class="form-control" name="otroUsoInmu" id="otroUsoInmu" value="{{$form_t12->otroUsoInmu}}" maxlength="100">
+	                      @endif
+                    </div>
+				</div>
+			</div>
+
+
 <hr>
 <hr>
 			<div class="row separar">
@@ -483,10 +511,10 @@
 	            	<div class="col-md-4">
 		                <li>Área de Construcción</li>
 		                   @if($form_t12->areaConstru == '0')
-		                    <input type="text" class="form-control" name="areaConstru" id="areaConstru" value="99" maxlength="22">
+		                    <input type="text" class="form-control money" name="areaConstru" id="areaConstru" value="99.99" maxlength="22">
 		                       
 		                   @else
-		                    <input type="text" class="form-control" name="areaConstru" id="areaConstru" value="{{$form_t12->areaConstru}}" maxlength="22">
+		                    <input type="text" class="form-control money" name="areaConstru" id="areaConstru" value="{{$form_t12->areaConstru}}" maxlength="22">
 		                   @endif
 	                </div>
 
@@ -505,7 +533,7 @@
 	            	<div class="col-md-4">
 		                <li>Especifique Otra Unidad de Medida (Construcción)</li>
 		                   @if($form_t12->espeOtraUnidad == '1')
-		                    <input type="text" class="form-control" name="espeOtraUnidad" id="espeOtraUnidad" value="noaplica" maxlength="100">
+		                    <input type="text" class="form-control" name="espeOtraUnidad" id="espeOtraUnidad" value="noaplica" maxlength="100" disabled>
 		                       
 		                   @else
 		                    <input type="text" class="form-control" name="espeOtraUnidad" id="espeOtraUnidad" value="{{$form_t12->espeOtraUnidad}}" maxlength="100">
@@ -519,10 +547,10 @@
 	            	<div class="col-md-4">
 		                <li>Área del Terreno</li>
 		                   @if($form_t12->areaTerreno == '0')
-		                    <input type="text" class="form-control" name="areaTerreno" id="areaTerreno" value="99" maxlength="22">
+		                    <input type="text" class="form-control money" name="areaTerreno" id="areaTerreno" value="99.99" maxlength="22">
 		                       
 		                   @else
-		                    <input type="text" class="form-control" name="areaTerreno" id="areaTerreno" value="{{$form_t12->areaTerreno}}" maxlength="22">
+		                    <input type="text" class="form-control money" name="areaTerreno" id="areaTerreno" value="{{$form_t12->areaTerreno}}" maxlength="22">
 		                   @endif
 	                </div>
 
@@ -541,7 +569,7 @@
 	            	<div class="col-md-4">
 		                <li>Especifique Otra Unidad de Medida (Terreno)</li>
 		                   @if($form_t12->espeOtraTerre == '1')
-		                    <input type="text" class="form-control" name="espeOtraTerre" id="espeOtraTerre" value="noaplica" maxlength="100">
+		                    <input type="text" class="form-control" name="espeOtraTerre" id="espeOtraTerre" value="noaplica" maxlength="100" disabled>
 		                       
 		                   @else
 		                    <input type="text" class="form-control" name="espeOtraTerre" id="espeOtraTerre" value="{{$form_t12->espeOtraTerre}}" maxlength="100">
@@ -569,11 +597,11 @@
 			<div class="row separar">
 				<div class="col-md-12 col-md-offset-1 form-group">
 					<div class="col-md-5">
-		                <li><b>Se encuentra asegurado el Bien</b></li>
+		                <li><b>Se encuentra Asegurado el Bien</b></li>
 		                  <select name="seguroBien" id="seguroBien" class="form-control">
-		                    <option value="{{$form_t12->selectTerrenoinmu->id}}">{{$form_t12->selectTerrenoinmu->opcion}}</option>
+		                    <option value="{{$form_t12->selectSeguroinmu->id}}">{{$form_t12->selectSeguroinmu->opcion}}</option>
 		                      @foreach($seguroBien as $traeDir)
-		                      	@if($traeDir->id != $form_t12->selectTerrenoinmu->id)
+		                      	@if($traeDir->id != $form_t12->selectSeguroinmu->id)
 		                        <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
 		                        @endif
 		                      @endforeach
@@ -583,7 +611,7 @@
 	            	<div class="col-md-5">
 		                <li>Código del Registro de Seguro</li>
 		                   @if($form_t12->codRegSeguro == '1')
-		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="xxx" maxlength="100">
+		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="99" maxlength="100">
 		                       
 		                   @else
 		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="{{$form_t12->codRegSeguro}}" maxlength="100">
@@ -613,9 +641,8 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/dropdown.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
  	<script src="{{ asset('js/contadorTextarea.js') }}"></script>
-
  

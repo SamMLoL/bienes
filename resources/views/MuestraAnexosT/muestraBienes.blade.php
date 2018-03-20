@@ -86,12 +86,12 @@
 
                   @if($seleccion->codResBien == '1')
                     <div class="col-md-4 form-group">
-                        <label>Código del Responsable del uso directo del Bien</label>
+                        <label>Código del Responsable del Uso Directo del Bien</label>
                             <br>xxx
                     </div>
                    @else
                     <div class="col-md-4 form-group">
-                        <label>Código del Responsable del uso directo del Bien</label>
+                        <label>Código del Responsable del Uso Directo del Bien</label>
                             <br>{{$seleccion->codResBien}}
                     </div>
                    @endif
@@ -102,30 +102,30 @@
               <div class="col-md-12">
                    @if($seleccion->codInterno == '1')
                     <div class="col-md-4 form-group">
-                        <label>Código interno del Bien</label>
+                        <label>Código Interno del Bien</label>
                             <br>xxx
                     </div>
                    @else
                     <div class="col-md-4 form-group">
-                        <label>Código interno del Bien</label>
+                        <label>Código Interno del Bien</label>
                             <br>{{$seleccion->codInterno}}
                     </div>
                    @endif
 
                     <div class="col-md-4 form-group">
-                      <label>Estatus del uso del Bien</label>
+                      <label>Estatus del Uso del Bien</label>
                           <br>{{$seleccion->estatuBien}}
                     </div>
 
-                    @if($seleccion->espOtro == '1')
+                    @if($seleccion->espOtroUso == '1')
                     <div class="col-md-4 form-group">
-                        <label>Especifique el otro uso</label>
+                        <label>Especifique el Otro Uso</label>
                             <br>noaplica
                     </div>
                     @else
                     <div class="col-md-4 form-group">
-                        <label>Especifique el otro uso</label>
-                            <br>{{$seleccion->espOtro}}
+                        <label>Especifique el Otro Uso</label>
+                            <br>{{$seleccion->espOtroUso}}
                     </div>
                     @endif
               </div>
@@ -137,7 +137,7 @@
                     @if($seleccion->valorAdq == '0')
                     <div class="col-md-4 form-group">
                         <label>Valor de Adquisición del Bien</label>
-                            <br>xxx
+                            <br>99.99
                     </div>
                     @else
                     <div class="col-md-4 form-group">
@@ -270,38 +270,32 @@
   
           <div class="row separar40">
             <div class="col-md-12">
-              @if($seleccion->codColorBien == '1')
               <div class="col-md-4 form-group">
-                  <label>Especificación de Color</label>
-                         <br>noaplica
-              </div>
-              @else
-              <div class="col-md-4 form-group">
-                  <label>Especificación de Color</label>
+                  <label>Código del Color del Bien</label>
                          <br>{{$seleccion->codColorBien}}
               </div>
-              @endif
+            
               
               @if($seleccion->espeColor == '1')
               <div class="col-md-4 form-group">
-                  <label>Especificación de Color</label>
+                  <label>Especificación del color</label>
                          <br>noaplica
               </div>
               @else
               <div class="col-md-4 form-group">
-                  <label>Especificación de Color</label>
+                  <label>Especificación del color</label>
                          <br>{{$seleccion->espeColor}}
               </div>
               @endif
 
               @if($seleccion->otraEspeColor == '1')
               <div class="col-md-4 form-group">
-                  <label>Otras Especificación de Color</label>
-                         <br>noaplica
+                  <label>Otras Especificaciones del Color</label>
+                         <br>xxx
               </div>
               @else
               <div class="col-md-4 form-group">
-                  <label>Otras Especificación de Color</label>
+                  <label>Otras Especificaciones del Color</label>
                          <br>{{$seleccion->otraEspeColor}}
               </div>
               @endif
@@ -365,19 +359,19 @@
               </div>
               @else
               <div class="col-md-4 form-group">
-                  <label>Fecha Inicio de la garantía</label>
+                  <label>Fecha Inicio de la Garantía</label>
                             <br>{{$seleccion->feIniGarantia}}
               </div>
               @endif
 
               @if($seleccion->feFinGarantia == '1111-11-11')
               <div class="col-md-4 form-group">
-                  <label>Fecha Fin de la garantía</label>
+                  <label>Fecha Fin de la Garantía</label>
                         <br>11111111
               </div>
               @else
               <div class="col-md-4 form-group">
-                  <label>Fecha Fin de la garantía</label>
+                  <label>Fecha Fin de la Garantía</label>
                             <br>{{$seleccion->feFinGarantia}}
               </div>
               @endif
@@ -400,12 +394,12 @@
 
               @if($seleccion->seguroBien == '1')
               <div class="col-md-4 form-group">
-                  <label>Se encuentra asegurado el Bien</label>
+                  <label>Se Encuentra Asegurado el Bien</label>
                         <br>S
               </div>
               @else
               <div class="col-md-4 form-group">
-                  <label>Se encuentra asegurado el Bien</label>
+                  <label>Se Encuentra Asegurado el Bien</label>
                             <br>N
               </div>
               @endif

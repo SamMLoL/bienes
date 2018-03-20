@@ -13,7 +13,7 @@ use SoftDeletes;
     
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['codOt2_1','codCata','depAdmRes','sedeOrgano','codResBien','codInterno','estatuBien','espOtro','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','serialBien','codMarca','codModel','añoFabriBien','codColorBien','espeColor','otraEspeColor','espeTecBien','otraDescBien','garantia','unidadMedi','feIniGarantia','feFinGarantia','poseeCompo','seguroBien','codRegSeguro','revisadot8'];
+    protected $fillable = ['codOt2_1','codCata','depAdmRes','sedeOrgano','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','serialBien','codMarca','codModel','añoFabriBien','codColorBien','espeColor','otraEspeColor','espeTecBien','otraDescBien','garantia','unidadMedi','feIniGarantia','feFinGarantia','poseeCompo','seguroBien','codRegSeguro','revisadot8'];
 
     public static function selectBienes($id){
          return modeloModelos::where('codMarca', $id)->get();

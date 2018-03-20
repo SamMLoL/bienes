@@ -30,16 +30,16 @@
       
       <div class="row separar">
             <div class="col-md-12">
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><center><b>Ultimo Registro</b></center>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><center><b> Código de Origen</b></center> 
             
               @if($lastCod)
-                  <b id="espaciar3"> {{$lastCod->codOt2_1}}</b>
+                  <center><b id="color"> {{$lastCod->codOt2_1}}</b></center>
               @else
-                  <b id="espaciar3">B2012001</b>
+                  <center><b id="color">B2012001</b></center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div> 
 
@@ -115,7 +115,7 @@
 
             <div class="col-md-4 form-group">
                 <li>Especifique el otro uso:</li>
-                  <input type="text" id="espOtro" name="espOtro" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
+                  <input type="text" id="espOtroUso" name="espOtroUso" class="form-control" placeholder="Especifique otro uso del bien" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -139,7 +139,7 @@
               
             <div class="col-md-4 form-group">
                 <li>Especifique la Otra Moneda:</li>
-                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="26">
+                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="26" disabled>
             </div>
         </div>
     </div>
@@ -160,7 +160,7 @@
 
             <div class="col-md-4 form-group">
               <li>Especifique el Otro Estado del Bien:</li>
-                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30">
+                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30" disabled>
             </div>
             
             <div class="col-md-4 form-group">
@@ -248,7 +248,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especificación de Color:</li>
-                  <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50">
+                  <input type="text" id="espeColor" name="espeColor" class="form-control" placeholder="Especifique el color" maxlength="50" disabled>
             </div>
         </div>
     </div>

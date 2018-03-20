@@ -135,7 +135,7 @@
 					<div class="col-md-4">
 	    				<li for="espOtroUso">Especifique el otro uso</li>
 	                      @if($form_t10->espOtroUso == '1')
-	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100">
+	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100" disabled>
 	                    
 	                      @else
 	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="{{$form_t10->espOtroUso}}" maxlength="100" >
@@ -148,7 +148,11 @@
 				<div class="col-md-12  form-group">
 					<div class="col-md-4">
 						<li for="valorAdq">Valor de Adquisición</li>
+							 @if($form_t10->valorAdq == '0')
+							 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="99.99" maxlength="26">
+							 @else
 							 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="{{$form_t10->valorAdq}}" maxlength="26">
+							 @endif
 					</div>
 
 					<div class="col-md-4">
@@ -166,7 +170,7 @@
 					<div class="col-md-4">
 						<li for="codRespAdm">Especifique la Otra Moneda</li>
 						   @if($form_t10->espeMoneda == '1')
-							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30">
+							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30" disabled>
 						   @else
 							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="{{$form_t10->espeMoneda}}" maxlength="30">
 						   @endif
@@ -216,8 +220,7 @@
 	            	<div class="col-md-5">
 	                    <li>Especifique el Otro Estado del Bien</li>
 	                      @if($form_t10->espOtroEdo == '1')
-	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30">
-	                       
+	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30" disabled>
 	                      @else
 	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="{{$form_t10->espOtroEdo}}" maxlength="30">
 	                      @endif
@@ -289,7 +292,7 @@
 		            <div class="col-md-5">
 	                    <li>Especifique el Otro Tipo</li>
 	                      @if($form_t10->espeOtroTipo == '1')
-	                           <input type="text" class="form-control" name="espeOtroTipo" id="espeOtroTipo" value="noaplica" maxlength="100">
+	                           <input type="text" class="form-control" name="espeOtroTipo" id="espeOtroTipo" value="noaplica" maxlength="100" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espeOtroTipo" id="espeOtroTipo" value="{{$form_t10->espeOtroTipo}}" maxlength="100">
@@ -315,7 +318,7 @@
 		            <div class="col-md-5">
 	                    <li>Especifique el Otro Propósito</li>
 	                      @if($form_t10->espeOtroPro == '1')
-	                           <input type="text" class="form-control" name="espeOtroPro" id="espeOtroPro" value="noaplica" maxlength="100">
+	                           <input type="text" class="form-control" name="espeOtroPro" id="espeOtroPro" value="noaplica" maxlength="100" disabled> 
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espeOtroPro" id="espeOtroPro" value="{{$form_t10->espeOtroPro}}" maxlength="100">
@@ -341,7 +344,7 @@
 	            	<div class="col-md-5">
 	                    <li>Especificación del Otro Color</li>
 	                      @if($form_t10->espeColor == '1')
-	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="noaplica" maxlength="50">
+	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="noaplica" maxlength="50" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="{{$form_t10->espeColor}}" maxlength="50">
@@ -355,7 +358,6 @@
 					<div class="col-md-10 form-estilo">
 						<li>Otras Especificaciones del Color:</li>
 	                      @if($form_t10->otraEspeColor == '1')
-	                        
 		                  	 <textarea name="otraEspeColor" id="otraEspeColor" class="form-control" maxlength="255" rows="4">xxx</textarea>
 		                  <div id="negro" for="contador">Caracteres: <div class="rojo" id="conbienes1">0/255</div> </div>
 	                       
@@ -373,7 +375,11 @@
 				<div class="col-md-12 form-group">
 	                <div class="col-md-4">
                		   <li>Peso:</li>
+                 		@if($form_t10->peso == '0')
+                 		<input type="text" id="peso" name="peso" value="99.99" class="form-control money" placeholder="Introduzca el peso del animal" maxlength="18">
+                 		@else
                  		<input type="text" id="peso" name="peso" value="{{$form_t10->peso}}" class="form-control money" placeholder="Introduzca el peso del animal" maxlength="18">
+                 		@endif
             		</div>
 					
 					<div class="col-md-4 form-group">
@@ -416,11 +422,11 @@
             		<div class="col-md-6 form-estilo">
                 		<li>Otras Especificaciones:</li>
                 		@if($form_t10->otrasEspecifi == '1')
-                 			<textarea name="otrasEspecifies" id="otrasEspecifies" class="form-control" value="xxx" maxlength="255" rows="4">xxx</textarea>
-                  		<div id="negro" for="contador">Caracteres: <div class="rojo" id="conSemo">0/255</div> </div>
+                 			<textarea name="otrasEspecifi" id="otrasEspecifi" class="form-control" value="xxx" maxlength="255" rows="4">xxx</textarea>
+                  		<div id="negro" for="contador">Caracteres: <div class="rojo" id="conSemo1">0/255</div> </div>
                   		@else
-                  		    <textarea name="otrasEspecifies" id="otrasEspecifies" class="form-control" value="xxx" maxlength="255" rows="4">{{$form_t10->otrasEspecifi}}</textarea>
-                  		<div id="negro" for="contador">Caracteres: <div class="rojo" id="conSemo">0/255</div> </div>
+                  		    <textarea name="otrasEspecifi" id="otrasEspecifi" class="form-control" value="xxx" maxlength="255" rows="4">{{$form_t10->otrasEspecifi}}</textarea>
+                  		<div id="negro" for="contador">Caracteres: <div class="rojo" id="conSemo1">0/255</div> </div>
                   		@endif
             		</div>
 				</div>
@@ -456,7 +462,7 @@
 		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="99" maxlength="10">
 		                       
 		                  @else
-		                    <input type="text" class="form-control calendario" name="codRegSeguro" id="codRegSeguro" value="{{$form_t10->codRegSeguro}}" maxlength="10">
+		                    <input type="text" class="form-control" name="codRegSeguro" id="codRegSeguro" value="{{$form_t10->codRegSeguro}}" maxlength="10">
 		                  @endif
 	                </div>
 				</div>
@@ -480,7 +486,7 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/dropdown.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
  	<script src="{{ asset('js/contadorTextarea.js') }}"></script>

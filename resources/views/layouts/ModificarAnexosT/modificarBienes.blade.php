@@ -99,7 +99,7 @@
 					</div>
 
 					<div class="col-md-4">
-						<li for="codRespAdm">Código del Responsable del uso directo del Bien</li>
+						<li for="codRespAdm">Código del Responsable del Uso directo del Bien</li>
 							@if($form_t8->codResBien == '1')
 							 <input type="text" class="form-control" name="codResBien" id="codResBien" value="xxx" maxlength="10">
 							@else
@@ -133,12 +133,11 @@
     				</div>
 					
 					<div class="col-md-4 form-group">
-	    				<li for="espOtro">Especifique el otro uso</li>
-	                      @if($form_t8->espOtro == '1')
-	                        <input type="text" class="form-control" name="espOtro" id="espOtro" value="noaplica" maxlength="100">
-	                    
+	    				<li for="espOtroUso">Especifique el otro uso</li>
+	                      @if($form_t8->espOtroUso == '1')
+	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100" disabled>
 	                      @else
-	                        <input type="text" class="form-control" name="espOtro" id="espOtro" value="{{$form_t8->espOtro}}" maxlength="100" >
+	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="{{$form_t8->espOtroUso}}" maxlength="100">
 	                      @endif
                     </div>
 				</div>
@@ -148,7 +147,12 @@
 				<div class="col-md-12">
 					<div class="col-md-4">
 						<li for="valorAdq">Valor de Adquisición</li>
-							 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="{{$form_t8->valorAdq}}" maxlength="26">
+							@if($form_t8->valorAdq == '0')
+							 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="99.99" maxlength="26">
+							@else
+							<input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="{{$form_t8->valorAdq}}" maxlength="26">
+							@endif
+							
 					</div>
 
 					<div class="col-md-4 form-group">
@@ -166,9 +170,9 @@
 					<div class="col-md-4">
 						<li for="codRespAdm">Especifique la Otra Moneda</li>
 						   @if($form_t8->espeMoneda == '1')
-							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30">
+							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30" disabled>
 						   @else
-							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="{{$form_t8->espeMoneda}}" maxlength="30">
+							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="{{$form_t8->espeMoneda}}" maxlength="30" >
 						   @endif
 					</div>
 			 	</div>
@@ -193,7 +197,7 @@
 	            	<div class="col-md-4">
 	                    <li>Especifique el Otro Estado del Bien</li>
 	                      @if($form_t8->espOtroEdo == '1')
-	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30">
+	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="{{$form_t8->espOtroEdo}}" maxlength="30">
@@ -311,7 +315,7 @@
 	            	<div class="col-md-5">
 	                    <li>Especificación de Color</li>
 	                      @if($form_t8->espeColor == '1')
-	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="xxx" maxlength="50">
+	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="noaplica" maxlength="50" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="{{$form_t8->espeColor}}" maxlength="50">
@@ -479,7 +483,7 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/dropdown.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
  	<script src="{{ asset('js/contadorTextarea.js') }}"></script>

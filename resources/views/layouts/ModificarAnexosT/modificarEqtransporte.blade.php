@@ -99,7 +99,7 @@
 					</div>
 
 					<div class="col-md-4">
-						<li for="codRespAdm">Código del Responsable del uso directo del Bien</li>
+						<li for="codRespAdm">Código del Responsable del uso Directo del Bien</li>
 							@if($form_t9->codResBien == '1')
 							 <input type="text" class="form-control" name="codResBien" id="codResBien" value="xxx" maxlength="10">
 							@else
@@ -133,9 +133,9 @@
     				</div>
 					
 					<div class="col-md-4 form-group">
-	    				<li for="espOtroUso">Especifique el otro uso</li>
+	    				<li for="espOtroUso">Especifique el Otro Uso</li>
 	                      @if($form_t9->espOtroUso == '1')
-	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100">
+	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="noaplica" maxlength="100" disabled>
 	                    
 	                      @else
 	                        <input type="text" class="form-control" name="espOtroUso" id="espOtroUso" value="{{$form_t9->espOtroUso}}" maxlength="100" >
@@ -149,7 +149,12 @@
 				<div class="col-md-12">
 					<div class="col-md-4">
 						<li for="valorAdq">Valor de Adquisición</li>
-							 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="{{$form_t9->valorAdq}}" maxlength="26">
+						@if($form_t9->valorAdq == '0')
+							 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="99.99" maxlength="26">
+					    @else
+					    	 <input type="text" class="form-control money" name="valorAdq" id="valorAdq" value="{{$form_t9->valorAdq}}" maxlength="26">
+					    @endif
+					    
 					</div>
 
 					<div class="col-md-4 form-group">
@@ -167,7 +172,7 @@
 					<div class="col-md-4">
 						<li for="codRespAdm">Especifique la Otra Moneda</li>
 						   @if($form_t9->espeMoneda == '1')
-							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30">
+							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="noaplica" maxlength="30" disabled>
 						   @else
 							 <input type="text" class="form-control" name="espeMoneda" id="espeMoneda" value="{{$form_t9->espeMoneda}}" maxlength="30">
 						   @endif
@@ -216,7 +221,7 @@
 	            	<div class="col-md-5">
 	                    <li>Especifique el Otro Estado del Bien</li>
 	                      @if($form_t9->espOtroEdo == '1')
-	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30">
+	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="noaplica" maxlength="30" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espOtroEdo" id="espOtroEdo" value="{{$form_t9->espOtroEdo}}" maxlength="30">
@@ -259,8 +264,7 @@
             		<div class="col-md-5 form-group">
 	    				<li for="espeClase">Especifique la Otra Clase</li>
 	                      @if($form_t9->espeClase == '1')
-	                        <input type="text" class="form-control" name="espeClase" id="espeClase" value="noaplica" maxlength="100">
-	                    
+	                        <input type="text" class="form-control" name="espeClase" id="espeClase" value="noaplica" maxlength="100" disabled>
 	                      @else
 	                        <input type="text" class="form-control" name="espeClase" id="espeClase" value="{{$form_t9->espeClase}}" maxlength="100" >
 	                      @endif
@@ -305,7 +309,7 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row separar">
 				<div class="col-md-12">
 					<div class="col-md-4 form-group">
 	    				<li for="espeClase">Serial de Carrocería del Bien</li>
@@ -365,7 +369,7 @@
 	            	<div class="col-md-4">
 	                    <li>Especificación del Otro Color</li>
 	                      @if($form_t9->espeColor == '1')
-	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="noaplica" maxlength="50">
+	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="noaplica" maxlength="50" disabled>
 	                       
 	                      @else
 	                           <input type="text" class="form-control" name="espeColor" id="espeColor" value="{{$form_t9->espeColor}}" maxlength="50">
@@ -592,7 +596,7 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/dropdown.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+ 	<script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
  	<script src="{{ asset('js/contadorTextarea.js') }}"></script>

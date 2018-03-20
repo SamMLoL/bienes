@@ -34,7 +34,8 @@
         
           <div class="row separar40">
               <div class="col-md-12">
-                 	<div class="col-md-4 form-group">
+                 	
+                  <div class="col-md-4 form-group">
                  	    <label>Código de Origen</label>
                   	    <br>{{$seleccion->codRegT3}}
                  	</div>
@@ -86,7 +87,7 @@
                   @if($seleccion->montoAse == '0')
                   <div class="col-md-4 form-group">
                       <label>Monto Asegurado</label>
-                        <br>xxx
+                        <br>99.99
                   </div> 
                   @else 
                   <div class="col-md-4 form-group">
@@ -105,15 +106,15 @@
                             <br>{{$seleccion->moneda}}
                     </div>
 
-                   @if($seleccion->espMone == '1')
+                   @if($seleccion->espeMoneda == '1')
                     <div class="col-md-4 form-group">
-                        <label>Especifique</label>
+                        <label>Especifique la Moneda</label>
                             <br>noaplica
                     </div>
                    @else
                     <div class="col-md-4 form-group">
                         <label>Especifique la Moneda</label>
-                            <br>{{$seleccion->espMone}}
+                            <br>{{$seleccion->espeMoneda}}
                     </div>
                    @endif
 
@@ -168,7 +169,7 @@
                   @if($seleccion->espeCobe == '1')
                     <div class="col-md-4 form-group">
                         <label>Especifique el Tipo de Cobertura</label>
-                            <br>xxx
+                            <br>noaplica
                     </div>
                    @else
                     <div class="col-md-4 form-group">

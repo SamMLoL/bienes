@@ -125,7 +125,7 @@
 
             <div class="col-md-4 form-group">
                <li>Especifique el Otro País:</li>
-                  <input type="text" id="espeOtroPais" name="espeOtroPais" class="form-control" placeholder="Especifique el Otro País" maxlength="100">
+                  <input type="text" id="espeOtroPais" name="espeOtroPais" class="form-control" placeholder="Especifique el Otro País" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -154,7 +154,7 @@
 
             <div class="col-md-4 form-group">
                <li>Especifique la Otra Ciudad:</li>
-                  <input type="text" id="espeOtroCiudad" name="espeOtroCiudad" class="form-control" placeholder="Especifique la otra ciudad" maxlength="100">
+                  <input type="text" id="espeOtroCiudad" name="espeOtroCiudad" class="form-control" placeholder="Especifique la otra ciudad" maxlength="100" disabled>
             </div>
         </div>
     </div>
@@ -222,7 +222,7 @@
               
             <div class="col-md-4 form-group">
                 <li>Especifique la Otra Moneda:</li>
-                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="30">
+                  <input type="text" id="espeMoneda" name="espeMoneda" class="form-control" placeholder="Especifique la otra moneda" maxlength="30" disabled>
             </div>
         </div>
     </div>
@@ -262,7 +262,7 @@
 
             <div class="col-md-5 form-group">
               <li>Especifique el Otro Estado del Bien:</li>
-                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30">
+                  <input type="text" id="espOtroEdo" name="espOtroEdo" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="30" disabled>
             </div>
         </div>
     </div>
@@ -291,7 +291,7 @@
 
             <div class="col-md-5 form-group">
               <li>Otro Uso:</li>
-                  <input type="text" id="otroUsoInmu" name="otroUsoInmu" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="100">
+                  <input type="text" id="otroUsoInmu" name="otroUsoInmu" class="form-control" placeholder="Especifique el otro estado del bien" maxlength="100" disabled>
             </div>
         </div>
     </div>

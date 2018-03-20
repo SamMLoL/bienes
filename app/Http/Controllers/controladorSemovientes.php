@@ -48,7 +48,6 @@ class controladorSemovientes extends Controller
          $form_t10->tipoAnimal = $request->tipoAnimal;
          $form_t10->proposito = $request->proposito;
          $form_t10->codColorBien = $request->codColorBien;
-         $form_t10->peso = $request->peso;
          $form_t10->seguroBien = $request->seguroBien;
          $form_t10->revisadot10 = 1;
 
@@ -108,7 +107,15 @@ class controladorSemovientes extends Controller
          }else{
           $form_t10->valorAdq = $request->valorAdq;
          }
+  
+        if($form_t10->peso = $request->peso == '')
+         {
+          $form_t10->peso = '0';
 
+         }else{
+          $form_t10->peso = $request->peso;
+         }
+         
          if($form_t10->espeMoneda = $request->espeMoneda == '')
          {
           $form_t10->espeMoneda = '1';

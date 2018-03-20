@@ -33,25 +33,25 @@
         
 @include('EliminarAnexosT.anularSemovientes')
           <div class="row separar40">
-              <div class="col-md-12">
-                 	<div class="col-md-4 form-group">
+              <div class="col-md-12 form-group">
+                 	<div class="col-md-4">
                  	    <label>Código de Origen del Bien</label>
                   	    <br>{{$seleccion->codBien}}
                  	</div>
                   
                   @if($seleccion->codCata == '1')
-                  <div class="col-md-4 form-group">
+                  <div class="col-md-4">
                       <label>Código según el catalogo</label>
                           <br>xxx
                   </div>
                   @else
-                  <div class="col-md-4 form-group">
+                  <div class="col-md-4">
                       <label>Código según el catalogo</label>
                           <br>{{$seleccion->codCata}}
                   </div>    
                   @endif
 
-              	  <div class="col-md-4 form-group">
+              	  <div class="col-md-4">
                  	    <label>Dependencia Administrativa</label>
                      	    <br>{{$seleccion->selectDependenciasemo->opcion}}
                   </div>
@@ -59,8 +59,8 @@
           </div>
       
           <div class="row separar40">
-              <div class="col-md-12">
-                  <div class="col-md-4 form-group">
+              <div class="col-md-12 form-group">
+                  <div class="col-md-4">
                   @if($seleccion->sedeOrgano == '1')
                       <label>Sede del Órgano o Ente Donde se Encuentra el Bien</label>
                           <br>xxx
@@ -72,24 +72,24 @@
                   @endif
 
                   @if($seleccion->codRespAdm == '1')
-                  <div class="col-md-4 form-group">
+                  <div class="col-md-4">
                       <label>Código del Responsable Administrativo</label>
                         <br>xxx
                   </div> 
                   @else 
-                  <div class="col-md-4 form-group">
+                  <div class="col-md-4">
                       <label>Código del Responsable Administrativo</label>
                           <br>{{$seleccion->codRespAdm}}
                   </div> 
                   @endif
 
                   @if($seleccion->codResBien == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Código del Responsable del uso directo del Bien</label>
                             <br>xxx
                     </div>
                    @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Código del Responsable del uso directo del Bien</label>
                             <br>{{$seleccion->codResBien}}
                     </div>
@@ -98,31 +98,31 @@
           </div>
        
           <div class="row separar">
-              <div class="col-md-12">
+              <div class="col-md-12 form-group">
                    @if($seleccion->codInterno == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Código interno del Bien</label>
                             <br>xxx
                     </div>
                    @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Código interno del Bien</label>
                             <br>{{$seleccion->codInterno}}
                     </div>
                    @endif
 
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                       <label>Estatus del uso del Bien</label>
                           <br>{{$seleccion->estatuBien}}
                     </div>
 
                     @if($seleccion->espOtroUso == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Especifique el otro uso</label>
                             <br>noaplica
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Especifique el otro uso</label>
                             <br>{{$seleccion->espOtroUso}}
                     </div>
@@ -132,32 +132,33 @@
         <hr> 
         <hr>     
           <div class="row separar40">
-              <div class="col-md-12">
+              <div class="col-md-12 form-group">
                     @if($seleccion->valorAdq == '0')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Valor de Adquisición del Bien</label>
-                            <br>xxx
+                            <br>99.99
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
-                      <label>Valor de Adquisición del Bien</label>
+                    <div class="col-md-4">
+                        <label>Valor de Adquisición del Bien</label>
                             <br>{{$seleccion->valorAdq}}
                     </div>
                     @endif
                     
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Moneda</label>
                             <br>{{$seleccion->moneda}}
                     </div>
                   
                     @if($seleccion->espeMoneda == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Especifique la Otra Moneda</label>
                             <br>noaplica
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
-                    <label>Especifique la Otra Moneda</label>
+
+                    <div class="col-md-4">
+                        <label>Especifique la Otra Moneda</label>
                             <br>{{$seleccion->espeMoneda}}
                     </div>
                     @endif
@@ -165,32 +166,32 @@
           </div>
 
           <div class="row separar40">
-            <div class="col-md-12">
+            <div class="col-md-12 form-group">
                     @if($seleccion->feAdqBien == '1111-11-11')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Fecha de Adquisición del Bien</label>
                             <br>11111111
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                     <label>Fecha de Adquisición del Bien</label>
                             <br>{{$seleccion->feAdqBien}}
                     </div>
                     @endif 
 
                     @if($seleccion->feIngBien == '1111-11-11')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Fecha de Ingreso del Bien</label>
                             <br>11111111
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Fecha de Ingreso del Bien</label>
                             <br>{{$seleccion->feIngBien}}
                     </div>
                     @endif
 
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Estado del Bien</label>
                             <br>{{$seleccion->edoBien}}
                     </div>
@@ -198,38 +199,38 @@
             </div>
         
           <div class="row separar40">
-              <div class="col-md-12">
+              <div class="col-md-12 form-group">
                     @if($seleccion->espOtroEdo == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Especifique el Otro Estado del Bien</label>
                             <br>noaplica
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Especifique el Otro Estado del Bien</label>
                             <br>{{$seleccion->espOtroEdo}}
                     </div>
                     @endif
 
                     @if($seleccion->descEdoBien == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Descripción del Estado del Bien</label>
                             <br>xxx
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Descripción del Estado del Bien</label>
                             <br>{{$seleccion->descEdoBien}}
                     </div>
                     @endif
 
                     @if($seleccion->raza == '1')
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Raza</label>
                             <br>xxx
                     </div>
                     @else
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4">
                         <label>Raza</label>
                             <br>{{$seleccion->raza}}
                     </div>
@@ -238,26 +239,25 @@
           </div>
 
           <div class="row separar40">
-              <div class="col-md-12">
-                <div class="col-md-4 form-group">
+              <div class="col-md-12 form-group">
+                <div class="col-md-4">
                   <label>Genero</label>
                     <br>{{$seleccion->genero}}
                 </div>
-              
 
-                <div class="col-md-4 form-group">
+                <div class="col-md-4">
                     <label>Tipo de Animal</label>
                       <br>{{$seleccion->tipoAnimal}}
                 </div>
                 
                 @if($seleccion->espeOtroTipo == '1')
-                <div class="col-md-4 form-group">
-                  <label>espeOtroTipo</label>
-                    <br>xxx
+                <div class="col-md-4">
+                  <label>Especifique el Otro Tipo</label>
+                    <br>noaplica
                 </div>
                 @else
-                <div class="col-md-4 form-group">
-                  <label>espeOtroTipo</label>
+                <div class="col-md-4">
+                  <label>Especifique el Otro Tipo</label>
                     <br>{{$seleccion->espeOtroTipo}}
                 </div>
                 @endif
@@ -267,25 +267,25 @@
         <hr> 
 
           <div class="row separar40">
-              <div class="col-md-12">
-                <div class="col-md-4 form-group">
+              <div class="col-md-12 form-group">
+                <div class="col-md-4">
                     <label>Propósito</label>
                       <br>{{$seleccion->proposito}}
                 </div>
 
                 @if($seleccion->espeOtroPro == '1')
-                <div class="col-md-4 form-group">
+                <div class="col-md-4">
                     <label>Especifique el Otro Propósito</label>
                      <br>noaplica
                 </div>
                 @else
-                <div class="col-md-4 form-group">
+                <div class="col-md-4">
                     <label>Especifique el Otro Propósito</label>
                      <br>{{$seleccion->espeOtroPro}}
                 </div>
                 @endif
 
-                <div class="col-md-4 form-group">
+                <div class="col-md-4">
                     <label>Color del Bien</label>
                       <br>{{$seleccion->codColorBien}}
                 </div>
@@ -293,65 +293,72 @@
           </div>
 
           <div class="row separar40">
-            <div class="col-md-12">
+            <div class="col-md-12 form-group">
 
               @if($seleccion->espeColor == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Especificación del Otro Color</label>
                          <br>noaplica
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Especificación del Otro Color</label>
                          <br>{{$seleccion->espeColor}}
               </div>
               @endif
 
               @if($seleccion->otraEspeColor == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Otras Especificaciones del Color</label>
                          <br>noaplica
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Otras Especificaciones del Color</label>
                          <br>{{$seleccion->otraEspeColor}}
               </div>
               @endif
-
-              <div class="col-md-4 form-group">
+              
+              @if($seleccion->peso == '0')
+              <div class="col-md-4">
+                  <label>Peso</label>
+                         <br>99.99
+              </div>
+              @else
+              <div class="col-md-4">
                   <label>Peso</label>
                          <br>{{$seleccion->peso}}
               </div>
+              @endif
             </div>
           </div>
         
           <div class="row separar40">
-            <div class="col-md-12">   
-              <div class="col-md-4 form-group">
+            <div class="col-md-12 form-group">   
+              <div class="col-md-4">
                   <label>Unidad de Medida Peso</label>
                          <br>{{$seleccion->unidadPeso}}
               </div>
               
               @if($seleccion->feNacimiento == '1111-11-11')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Fecha de Nacimiento</label>
                          <br>11111111
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Fecha de Nacimiento</label>
                          <br>{{$seleccion->feNacimiento}}
               </div>
               @endif
 
               @if($seleccion->numHierro == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Número de Hierro</label>
                          <br>xxx
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Número de Hierro</label>
                          <br>{{$seleccion->numHierro}}
               </div>
@@ -360,38 +367,38 @@
           </div>
 
           <div class="row separar40">
-            <div class="col-md-12">
+            <div class="col-md-12 form-group">
               @if($seleccion->seParticulares == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Señas Particulares</label>
                          <br>xxx
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Señas Particulares</label>
                          <br>{{$seleccion->seParticulares}}
               </div>
               @endif
 
               @if($seleccion->otrasEspecifi == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Otras Especificaciones</label>
                          <br>xxx
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Otras Especificaciones</label>
                          <br>{{$seleccion->otrasEspecifi}}
               </div>
               @endif
 
               @if($seleccion->seguroBien == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Se encuentra asegurado el Bien</label>
                         <br>S
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Se encuentra asegurado el Bien</label>
                         <br>N
               </div>
@@ -400,16 +407,16 @@
           </div>
 
           <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 form-group">
               
 
               @if($seleccion->codRegSeguro == '1')
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Código del Registro de Seguro:</label>
                         <br>99
               </div>
               @else
-              <div class="col-md-4 form-group">
+              <div class="col-md-4">
                   <label>Código del Registro de Seguro:</label>
                             <br>{{$seleccion->codRegSeguro}}
               </div>
@@ -418,7 +425,7 @@
           </div>
           
           <div class="row text-center separar">
-             	<div class="col-md-12 separar form-group">
+             	<div class="col-md-12 separar">
                    <a  class="btn btn-danger"  data-toggle="modal" data-target="#AnularT10" title="AnularT10"  ><i class="fa fa-trash-o" aria-hidden="true"> <b>Eliminar</b></i></a> 
 
                    <a href="{{url('regSemovientes')}}"  class="btn btn-success"><i class="fa fa-reply " aria-hidden="true" title="Regresar"></i> <b>Regresar</b></a>

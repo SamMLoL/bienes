@@ -114,7 +114,7 @@
           
            <label for="{{$input2[$posicion][0]}}">{{$input2[$posicion][1]}}</label>
         
-           <input type="text" class="form-control" name="{{$input2[$posicion][0]}}" id="{{$input2[$posicion][0]}}" placeholder="{{$input2[$posicion][2]}}" maxlength="{{$input2[$posicion][3]}}"  >
+           <input type="text" class="form-control" name="{{$input2[$posicion][0]}}" id="{{$input2[$posicion][0]}}" placeholder="{{$input2[$posicion][2]}}" maxlength="{{$input2[$posicion][3]}}" disabled  >
 
         </div> 
           @endforeach

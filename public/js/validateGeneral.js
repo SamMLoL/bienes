@@ -42,18 +42,7 @@ $(document).ready(function() {
     });
 
   // INPUT DISABLED EN TABLA DE PROVEEDORES AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
-  $(document).ready(function(){
-    $("#otraDesc").attr("disabled", true);
-    $('#tipProvee').change(function(){
-        var id = $('#tipProvee').val();
-        if(id == 2){
-           $("#otraDesc").attr("disabled", false); 
-
-        }else{
-            $("#otraDesc").attr("disabled", true);
-        }
-    })
-  });
+ 
 
 
   //TABLA SEGUROS
@@ -94,35 +83,8 @@ $(document).ready(function() {
         errorLabelContainer: ".js-errors",
         errorElement: "li", 
                 
-            });
-
-    // INPUT DISABLED EN TABLA DE SEGUROS AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
-  $(document).ready(function(){
-    $("#espeCobe").attr("disabled", true);
-    $("#tipoCobe").change(function(){
-      var id = $("#tipoCobe").val();
-    if(id == 3){
-      $("#espeCobe").attr("disabled", false);
-    }else{
-      $("#espeCobe").attr("disabled", true);
-    
-      }
-    })
-  });
-
-  // INPUT DISABLED EN TABLA DE SEGUROS AL SELECCIONAR LA SEGUNDA OPCION SE DESABILITA EL INPUT OTRA DESCRIPCIÓN
-  $(document).ready(function(){
-    $("#espMone").attr("disabled", true);
-    $("#moneda").change(function(){
-      var id = $("#moneda").val();
-    if(id == 4){
-      $("#espMone").attr("disabled", false);
-    }else{
-      $("#espMone").attr("disabled", true);
-    
-      }
-    })
-  });
+    });
+ 
 
 
       //TABLA RESPONSABLE DE LOS BIENES
@@ -286,7 +248,6 @@ $(document).ready(function() {
            codOt2_1: { required:true},
            depAdmRes: { required:true},
            estatuBien: { required:true},
-           valorAdq: { required:true},
            moneda: { required:true},
            edoBien: { required:true},
            codMarca: { required:true},
@@ -302,7 +263,6 @@ $(document).ready(function() {
            codOt2_1 : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
            depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
            estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del uso del bien !",
-           valorAdq : "* Campo obligatorio, ¡ Por favor, introduzca el valor de adquisición !",
            moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
            edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
            codMarca : "* Campo obligatorio, ¡ Por favor, seleccione el código de la marca del bien !",
@@ -310,7 +270,7 @@ $(document).ready(function() {
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
            unidadMedi : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida de la garantía !",
            poseeCompo : "* Campo obligatorio, ¡ Por favor, seleccione si el bien posee componentes !",
-           seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
+           seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !",
            
          
         },
@@ -334,66 +294,12 @@ $(document).ready(function() {
    
     });
 
-  $(document).ready(function(){
-    $("#espOtro").attr("disabled", true);
-    $("#estatuBien").change(function(){
-      var id = $("#estatuBien").val();
-    if(id == 11){
-      $("#espOtro").attr("disabled", false);
-    }else{
-      $("#espOtro").attr("disabled", true).prop($('#espOtro').val('noaplica'));
-    
-      }
-    })
-  });
-
-  $(document).ready(function(){
-    $("#espeMoneda").attr("disabled", true);
-    $("#moneda").change(function(){
-      var id = $("#moneda").val();
-    if(id == 4){
-      $("#espeMoneda").attr("disabled", false);
-    }else{
-      $("#espeMoneda").attr("disabled", true).prop($('#espeMoneda').val('noaplica'));
-    
-      }
-    })
-  });
-
-  $(document).ready(function(){
-    $("#espOtroEdo").attr("disabled", true);
-    $("#edoBien").change(function(){
-      var id = $("#edoBien").val();
-    if(id == 7){
-      $("#espOtroEdo").attr("disabled", false);
-    }else{
-      $("#espOtroEdo").attr("disabled", true).prop($('#espOtroEdo').val('noaplica'));
-    
-      }
-    })
-  });
-
-  $(document).ready(function(){
-    $("#espeColor").attr("disabled", true);
-    $("#codColorBien").change(function(){
-      var id = $("#codColorBien").val();
-    if(id == 37){
-      $("#espeColor").attr("disabled", false);
-    }else{
-      $("#espeColor").attr("disabled", true).prop($('#espeColor').val('noaplica'));
-    
-      }
-    })
-  });
-
- });
 
 $("#formValidaT9").validate({
         rules: {
            codBien: { required:true},
            depAdmRes: { required:true},
            estatuBien: { required:true},
-           valorAdq: { required:true},
            moneda: { required:true},
            edoBien: { required:true},
            claseBien: { required:true},
@@ -411,7 +317,6 @@ $("#formValidaT9").validate({
            codBien : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
            depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
            estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del uso del bien !",
-           valorAdq : "* Campo obligatorio, ¡ Por favor, introduzca el valor de adquisición !",
            moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
            edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
            claseBien : "* Campo obligatorio, ¡ Por favor, seleccione la clase del bien !",
@@ -450,13 +355,11 @@ $("#formValidaT10").validate({
            codBien: { required:true},
            depAdmRes: { required:true},
            estatuBien: { required:true},
-           valorAdq: { required:true},
            moneda: { required:true},
            edoBien: { required:true},
            genero: { required:true},
            tipoAnimal: { required:true},
            proposito: { required:true},
-           peso: { required:true},
            codColorBien: { required:true},
            unidadPeso: { required:true},
            seguroBien: { required:true},
@@ -467,13 +370,11 @@ $("#formValidaT10").validate({
            codBien : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
            depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
            estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del uso del bien !",
-           valorAdq : "* Campo obligatorio, ¡ Por favor, introduzca el valor de adquisición !",
            moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
            edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",
            genero : "* Campo obligatorio, ¡ Por favor, seleccione el genero !",
            tipoAnimal : "* Campo obligatorio, ¡ Por favor, seleccione el tipo de animal !",
            proposito : "* Campo obligatorio, ¡ Por favor, seleccione el propósito !",
-           peso : "* Campo obligatorio, ¡ Por favor, introduzca el peso !",
            codColorBien : "* Campo obligatorio, ¡ Por favor, seleccione el color del bien !",
            unidadPeso : "* Campo obligatorio, ¡ Por favor, seleccione la unidad de medida del peso !",
            seguroBien : "* Campo obligatorio, ¡ Por favor, seleccione si el bien se encuentra asegurado !"
@@ -689,7 +590,7 @@ $("#formValidaAddPais").validate({
 
       });  
 
-
+}); 
 
 
 

@@ -87,12 +87,12 @@
 
                   @if($seleccion->codResBien == '1')
                   <div class="col-md-4">
-                        <label>Código de Sede del Ente donde Corresponde el Bien</label>
+                        <label>Código Sede del Ente donde Corresponde el Bien</label>
                             <br>xxx
                   </div>
                   @else
                     <div class="col-md-4">
-                        <label>Código de Sede del Ente donde Corresponde el Bien</label>
+                        <label>Código Sede del Ente donde Corresponde el Bien</label>
                             <br>{{$seleccion->codSede}}
                   </div>
                   @endif
@@ -198,7 +198,7 @@
                     @if($seleccion->codInterno == '1')
                     <div class="col-md-4">
                         <label>Código Interno del Bien</label>
-                            <br>noaplica
+                            <br>xxx
                     </div>
                     @else
                     <div class="col-md-4">
@@ -233,7 +233,7 @@
               @if($seleccion->valorAdq == '0')
               <div class="col-md-4">
                   <label>Valor de Adquisición del Bien</label>
-                         <br>99
+                         <br>99.99
               </div>
               @else
               <div class="col-md-4">
@@ -311,7 +311,7 @@
               @if($seleccion->descEdoBien == '1')
               <div class="col-md-4">
                   <label>Especifique el Otro Estado del Bien</label>
-                         <br>xxx
+                         <br>noaplica
               </div>
               @else
               <div class="col-md-4">
@@ -327,8 +327,6 @@
             </div>
           </div>
    
-        <hr>
-        <hr> 
           <div class="row separar40">
             <div class="col-md-12 form">
               @if($seleccion->otroUsoInmu == '1')
@@ -368,7 +366,8 @@
               @endif             
             </div>
           </div>
-
+        <hr>
+        <hr> 
           <div class="row separar40">
             <div class="col-md-12 form">
               @if($seleccion->tomo == '0')
@@ -448,8 +447,7 @@
               @endif
             </div>
           </div>
-      <hr>
-      <hr>
+      
           <div class="row separar40">
             <div class="col-md-12 form">
               @if($seleccion->depenIntegra == '1')
@@ -467,7 +465,7 @@
               @if($seleccion->areaConstru == '0')
               <div class="col-md-4">
                   <label>Área de Construcción</label>
-                        <br>99
+                        <br>99.99
               </div>
               @else
               <div class="col-md-4">
@@ -482,7 +480,8 @@
               </div>   
             </div>
           </div>
-      
+      <hr>
+      <hr> 
           <div class="row separar40">
             <div class="col-md-12 form">
               @if($seleccion->espeOtraUnidad == '1')
@@ -500,7 +499,7 @@
               @if($seleccion->areaTerreno == '0')
               <div class="col-md-4">
                   <label>Área del Terreno</label>
-                        <br>99
+                        <br>99.99
               </div>
               @else
               <div class="col-md-4">
@@ -554,7 +553,7 @@
               @if($seleccion->codRegSeguro == '1')
               <div class="col-md-4">
                   <label>Código del Registro de Seguro</label>
-                        <br>xxx
+                        <br>99
               </div>
               @else
               <div class="col-md-4">

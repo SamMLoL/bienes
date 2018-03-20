@@ -176,7 +176,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-       $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En proceso de disposición","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En almacén o Depósito para su asignación","Otro uso");
+       $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En desuso por obsolescencia","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En almacén o Depósito para su asignación","Otro uso");
 
       foreach ($dato as $v) {
         DB::table('sel_estatusbien')->insert([
