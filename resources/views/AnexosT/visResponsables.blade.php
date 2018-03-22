@@ -31,13 +31,13 @@
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 170px;"  class="listas"><b id="espaciar6"> Código del Responsable</b>
-              <b id="espaciar">
+      
               @if($lastCod)
-                {{$lastCod->codResp}}
+               <center><b id="color"> {{$lastCod->codResp}}</b></center>
               @else
-                VP00001 
+                <center><b id="color">VP00001 </b></center>
               @endif
-              </b></li></li>
+                </li></li>
             </div>
         </div>
 <hr>

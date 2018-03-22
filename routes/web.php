@@ -128,6 +128,8 @@ Route::resource('datosinmuebles', 'controladorInmuebles');
 
 #SELECT DINAMICOS
 Route::get('dropdown/{id}','controladorBienes@getBienes');
+
+
 Route::get('dropdown2/{id}','controladorBienes@getBienesmodif');
 
 

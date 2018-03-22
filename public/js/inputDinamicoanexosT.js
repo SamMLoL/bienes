@@ -1,5 +1,5 @@
 
-    // visProveedores = Anexo T1
+    // PROVEEDORES = Anexo T1
     $('#tipProvee').change(function(){
         var id = $('#tipProvee').val();
         if(id != 2){
@@ -10,7 +10,7 @@
         }
     })
 
-     //visSeguros = ANEXOS T3
+     //SEGUROS = ANEXOS T3
      $("#tipoCobe").change(function(){
        var id = $("#tipoCobe").val();
        if(id != 3){
@@ -31,7 +31,7 @@
         }
     })
 
-    //ANEXOS T8 , T9 , T10 , T12
+    //ANEXOS BIENES , TRANSPORTE , SEMOVIENTES , INMUEBLES
     // moneda y espeMoneda js presente en las siguientes visBienes = Anexo T8 
     // visTransporte = Anexo T9 visSemovientes = Anexo T10 , visInmuebles = Anexo T12
     $("#moneda").change(function(){
@@ -44,7 +44,7 @@
         }
     })
 
-    //ANEXOS T8 , T9 , T10 , T12
+    //ANEXOS BIENES , TRANSPORTE , SEMOVIENTES , INMUEBLES
     //estatuBien y espOtroUso |edoBien y espOtroEdo js presente en las siguientes visBienes = Anexo T8 , visTransporte = Anexo T9 , 
     //visSemovientes = Anexo T10 , visInmuebles = Anexos T12
     $("#estatuBien").change(function(){
@@ -57,7 +57,7 @@
       }
     })
 
-    //ANEXOS T8 , T9 , T10 , T12
+    //ANEXOS BIENES , TRANSPORTE , SEMOVIENTES , INMUEBLES
     //edoBien y espOtroEdo | js presente en las siguientes visBienes = Anexo T8 , visTransporte = Anexo T9 , 
     //visSemovientes = Anexo T10 , visInmuebles = Anexos T12
     $("#edoBien").change(function(){
@@ -70,7 +70,7 @@
         }
     })
 
-  //ANEXOS T8 , T9 , T10 
+  //ANEXOS BIENES , TRANSPORTE , SEMOVIENTES 
   //codColorBien y espeColor | js presente en las siguientes visBienes = Anexo T8 , visTransporte = Anexo T9 , 
   //visSemovientes = Anexo T10 
  
@@ -85,8 +85,7 @@
     })
 
 
-//ANEXO TRASPORTE
-
+//ANEXO TRANSPORTE
 
   
     $("#claseBien").change(function(){
@@ -160,6 +159,3 @@
         }
     })
   
-
-
-

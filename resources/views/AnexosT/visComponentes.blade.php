@@ -24,13 +24,13 @@
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar7"> Código </b>
-              <b id="espaciar">
+            
               @if($lastCod)
-                {{$lastCod->codigo}}
+                <center><b id="color">{{$lastCod->codigo}}</b></center>
               @else
-                VPRBV-P001
+                 <center><b id="color">VPRBV-P001</b></center>
               @endif
-              </b></li></li>
+                </li></li>
             </div>
         </div>
 <hr>

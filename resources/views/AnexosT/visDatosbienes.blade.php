@@ -34,9 +34,9 @@
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> 
             
               @if($lastCod)
-                  <center id="rojo"> {{$lastCod->codBien}}</center>
+                  <center id="color"> {{$lastCod->codBien}}</center>
               @else
-                  <center id="rojo">D2012001</center>
+                  <center id="color">D2012001</center>
               @endif
               
                 </li></li>

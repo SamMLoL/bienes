@@ -31,15 +31,15 @@
       <div class="row separar">
             <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b> <b id="espaciar">  
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b>   
             
               @if($lastCod)
-                  <b id="espaciar3"> {{$lastCod->codBien}}</b>
+                  <center><b id="color"> {{$lastCod->codBien}}</b></center>
               @else
-                  <b id="espaciar3">S2012001</b>
+                  <center><b id="color">S2012001</b></center>
               @endif
               
-                </b></li></li>
+                </li></li>
             </div>
         </div> 
 

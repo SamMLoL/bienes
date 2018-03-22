@@ -224,6 +224,7 @@
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
     <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/contadorTextarea.js') }}"></script>
    
    

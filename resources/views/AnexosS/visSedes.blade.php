@@ -101,7 +101,7 @@
             
              <label for="{{$espeSede[$posicion][0]}}">{{$espeSede[$posicion][1]}}</label>
           
-             <input type="text" class="form-control" name="{{$espeSede[$posicion][0]}}" id="{{$espeSede[$posicion][0]}}" placeholder="{{$espeSede[$posicion][2]}}" maxlength="{{$espeSede[$posicion][3]}}" >
+             <input type="text" class="form-control" name="{{$espeSede[$posicion][0]}}" id="{{$espeSede[$posicion][0]}}" placeholder="{{$espeSede[$posicion][2]}}" maxlength="{{$espeSede[$posicion][3]}}" disabled>
 
           </div>
         @endforeach
@@ -145,9 +145,7 @@
           <label for="{{$codPais[$posicion][0]}}">{{$codPais[$posicion][1]}}</label>
               <select name="{{$codPais[$posicion][0]}}" id="{{$codPais[$posicion][0]}}" class="form-control">
                   <option value="0" disabled selected>Seleccione</option>
-                @foreach($selectPais as $traeSelect)
-                 <option value="{{$traeSelect->id}}">{{$traeSelect->pais}}</option> 
-                @endforeach
+                
               </select>
         </div>
 
@@ -157,7 +155,7 @@
         
             <div class="col-md-4 form-group separar">
                   <label for="{{$espePais[$posicion][0]}}">{{$espePais[$posicion][1]}}</label>
-                    <input type="text" name="{{$espePais[$posicion][0]}}" id="{{$espePais[$posicion][0]}}" class="form-control" placeholder="{{$espePais[$posicion][2]}}" maxlength="{{$espePais[$posicion][3]}}">
+                    <input type="text" name="{{$espePais[$posicion][0]}}" id="{{$espePais[$posicion][0]}}" class="form-control" placeholder="{{$espePais[$posicion][2]}}" maxlength="{{$espePais[$posicion][3]}}" disabled>
             </div>
         @endforeach
        
@@ -172,9 +170,7 @@
               <label for="{{$codParroquia[$posicion][0]}}">{{$codParroquia[$posicion][1]}}</label>
                   <select name="{{$codParroquia[$posicion][0]}}" id="{{$codParroquia[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
-                    @foreach($selectParroquia as $traeSelect)
-                     <option value="{{$traeSelect->id}}">{{$traeSelect->parroquia}}</option> 
-                    @endforeach
+                   
                   </select>
             </div>
           @endforeach
@@ -185,9 +181,7 @@
               <label for="{{$codCiudad[$posicion][0]}}">{{$codCiudad[$posicion][1]}}</label>
                   <select name="{{$codCiudad[$posicion][0]}}" id="{{$codCiudad[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
-                    @foreach($selectCiudad as $traeSelect)
-                     <option value="{{$traeSelect->id}}">{{$traeSelect->ciudad}}</option> 
-                    @endforeach
+                   
                   </select>
             </div>
           @endforeach
@@ -196,7 +190,7 @@
         
             <div class="col-md-4 form-group separar">
                   <label for="{{$espeCiudad[$posicion][0]}}">{{$espeCiudad[$posicion][1]}}</label>
-                    <input type="text" name="{{$espeCiudad[$posicion][0]}}" id="{{$espeCiudad[$posicion][0]}}" class="form-control" placeholder="{{$espeCiudad[$posicion][2]}}" maxlength="{{$espeCiudad[$posicion][3]}}">
+                    <input type="text" name="{{$espeCiudad[$posicion][0]}}" id="{{$espeCiudad[$posicion][0]}}" class="form-control" placeholder="{{$espeCiudad[$posicion][2]}}" maxlength="{{$espeCiudad[$posicion][3]}}" disabled>
             </div>
           @endforeach
 
