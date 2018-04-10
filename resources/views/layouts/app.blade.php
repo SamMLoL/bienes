@@ -226,6 +226,7 @@
     <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/contadorTextarea.js') }}"></script>
+    <script src="{{ asset('js/select2.js') }}"></script>
    
    
 

@@ -251,4 +251,12 @@
    </div>
 </div>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+
+      $('#codPais').select2();
+  });
+
+</script>
+
 @endsection

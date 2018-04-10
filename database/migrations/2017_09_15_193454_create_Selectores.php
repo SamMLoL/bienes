@@ -21,25 +21,25 @@ class CreateSelectores extends Migration
 
         Schema::create('sel_proveedores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion')->nullable();
+            $table->string('opcion');
             $table->timestamps();
         });
 
         Schema::create('sel_concurso', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion')->nullable();
+            $table->string('opcion');
             $table->timestamps();
         });
 
         Schema::create('sel_directa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion')->nullable();
+            $table->string('opcion');
             $table->timestamps();
         });
 
         Schema::create('sel_confiscacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('opcion')->nullable();
+            $table->string('opcion');
             $table->timestamps();
         });
 
@@ -177,25 +177,25 @@ class CreateSelectores extends Migration
 //ANEXOS S
         Schema::create('sel_paises', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codPais', 100);
-            $table->string('pais', 100);
-            $table->integer('revisadoAddPais')->nullable();
+            $table->string('codPais');
+            $table->string('pais');
+            $table->integer('revisadoAddPais');
             $table->timestamps();
         });
 
         Schema::create('sel_parroquias', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codParroquia', 100);
-            $table->string('parroquia', 100);
-            $table->integer('revisadoAddParro')->nullable();
+            $table->string('codParroquia');
+            $table->string('parroquia');
+            $table->integer('revisadoAddParro');
             $table->timestamps();
         });
 
         Schema::create('sel_ciudad', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codCiudad', 100);
-            $table->string('ciudad', 100);
-            $table->integer('revisadoAddCiudad')->nullable();
+            $table->string('codCiudad');
+            $table->string('ciudad');
+            $table->integer('revisadoAddCiudad');
             $table->timestamps();
         });
 
