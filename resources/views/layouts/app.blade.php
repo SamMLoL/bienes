@@ -21,6 +21,7 @@
         <link href="{{ asset('css/bootstrap-submenu.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('img/bandera.png') }}" rel="icon">
+        <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
     </head>
 <body>
 
@@ -174,18 +175,6 @@
                                         Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
                                     </a> 
 
-                                    <a href="{{ url('/pais') }}">
-                                        Añadir Países  <i class="fa fa-plus-circle"></i>
-                                    </a> 
-
-                                    <a href="{{ url('/parroquia') }}">
-                                        Añadir Parroquias  <i class="fa fa-plus-circle"></i>
-                                    </a> 
-
-                                    <a href="{{ url('/ciudad') }}">
-                                        Añadir Ciudad  <i class="fa fa-plus-circle"></i>
-                                    </a> 
-
                                     </li>
                                 </ul>
                             </li>
@@ -226,7 +215,9 @@
     <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
     <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/contadorTextarea.js') }}"></script>
-    <script src="{{ asset('js/select2.js') }}"></script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/selectBuscador.js') }}"></script>
+   
    
    
 

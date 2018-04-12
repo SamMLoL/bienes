@@ -16,14 +16,13 @@ class modeloS4 extends Model
 
       #FUNCION DE SELECT
 
-    public static function modifiqueParroquias(){
+    /*public static function modifiqueParroquias(){
          return sel_parroquias::all();
      }
 
     public static function modifiqueCiudad(){
          return sel_ciudad::all();
-     }
-
+     }*/
 
 
      public function selectSedes()

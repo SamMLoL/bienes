@@ -179,7 +179,6 @@ class CreateSelectores extends Migration
             $table->increments('id');
             $table->string('codPais');
             $table->string('pais');
-            $table->integer('revisadoAddPais');
             $table->timestamps();
         });
 
@@ -187,7 +186,6 @@ class CreateSelectores extends Migration
             $table->increments('id');
             $table->string('codParroquia');
             $table->string('parroquia');
-            $table->integer('revisadoAddParro');
             $table->timestamps();
         });
 
@@ -195,7 +193,6 @@ class CreateSelectores extends Migration
             $table->increments('id');
             $table->string('codCiudad');
             $table->string('ciudad');
-            $table->integer('revisadoAddCiudad');
             $table->timestamps();
         });
 

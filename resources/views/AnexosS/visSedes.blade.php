@@ -16,13 +16,6 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-               <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
-                <b id="colorInstruccion">INSTRUCCIONES: RECUERDE DIRIGIRSE AL MENÚ, EN EL ICONO  (<i class="fa fa-cog" aria-hidden="true"></i>)  Y AGREGUE LAS OPCIONES DE PAÍS, PARROQUIA Y CIUDAD PARA COMPLETAR EL ENVÍO DEL REGISTRO.</b></h6>
-            </div>
-        </div>
-
         <div class="row"> 
             <div class="col-md-12 li moverIzq">
                 <ul class="js-errors li"></ul>
@@ -144,8 +137,10 @@
         <div class="col-md-4 form-group separar">
           <label for="{{$codPais[$posicion][0]}}">{{$codPais[$posicion][1]}}</label>
               <select name="{{$codPais[$posicion][0]}}" id="{{$codPais[$posicion][0]}}" class="form-control">
-                  <option value="0" disabled selected>Seleccione</option>
-                
+                  <option disabled selected>Seleccione</option>
+                  @foreach($selectPais as $traeDir)
+                    <option value="{{$traeDir->id}}">{{$traeDir->pais}}</option> 
+                  @endforeach
               </select>
         </div>
 
@@ -168,9 +163,11 @@
 
             <div class="col-md-4 form-group separar">
               <label for="{{$codParroquia[$posicion][0]}}">{{$codParroquia[$posicion][1]}}</label>
-                  <select name="{{$codParroquia[$posicion][0]}}" id="{{$codParroquia[$posicion][0]}}" class="form-control">
+                  <select name="{{$codParroquia[$posicion][0]}}" id="{{$codParroquia[$posicion][0]}}" class="form-control" disabled>
                       <option value="0" disabled selected>Seleccione</option>
-                   
+                   @foreach($selectParroquia as $traeDir)
+                    <option value="{{$traeDir->id}}">{{$traeDir->parroquia}}</option> 
+                   @endforeach
                   </select>
             </div>
           @endforeach
@@ -179,9 +176,11 @@
 
             <div class="col-md-4 form-group separar">
               <label for="{{$codCiudad[$posicion][0]}}">{{$codCiudad[$posicion][1]}}</label>
-                  <select name="{{$codCiudad[$posicion][0]}}" id="{{$codCiudad[$posicion][0]}}" class="form-control">
+                  <select name="{{$codCiudad[$posicion][0]}}" id="{{$codCiudad[$posicion][0]}}" class="form-control" disabled>
                       <option value="0" disabled selected>Seleccione</option>
-                   
+                   @foreach($selectCiudad as $traeDir)
+                    <option value="{{$traeDir->id}}">{{$traeDir->ciudad}}</option> 
+                   @endforeach
                   </select>
             </div>
           @endforeach
@@ -251,12 +250,5 @@
    </div>
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-
-      $('#codPais').select2();
-  });
-
-</script>
 
 @endsection

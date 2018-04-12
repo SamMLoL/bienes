@@ -15,37 +15,48 @@ use App\modeloBitacora;
 class controladorS4 extends Controller
 {
     
+
+    
+
+    public function selectLocaPais(Request $request)
+    {
+         if($request->ajax()){
+            $s4Pais = sel_paises::selectPaises();
+          return response()->json($s4Pais);
+      }
+    } 
+
     public function selectLocaParro(Request $request)
     {
          if($request->ajax()){
-            $s4 = sel_parroquias::selectParroquias();
-          return response()->json($s4);
+            $s4Parro = sel_parroquias::selectParroquias();
+          return response()->json($s4Parro);
       }
     }
 
-    public function modifiLocaParro(Request $request, $id)
+    /*public function modifiLocaParro(Request $request, $id)
     {
          if($request->ajax()){
             $modificarParro = sel_parroquias::modifiqueParroquias($id);
           return response()->json($modificarParro);
       }
-    }
+    }*/
 
     public function selectLocaCiudad(Request $request)
     {
          if($request->ajax()){
-            $s4 = sel_ciudad::selectCiudad();
-          return response()->json($s4);
+            $s4Ciudad = sel_ciudad::selectCiudad();
+          return response()->json($s4Ciudad);
       }
     }
 
-    public function modifiLocaCiudad(Request $request, $id)
+    /*public function modifiLocaCiudad(Request $request, $id)
     {
          if($request->ajax()){
             $modificarCiudad = sel_ciudad::modifiqueCiudades($id);
           return response()->json($modificarCiudad);
       }
-    }
+    }*/
 
     public function index()
     {
@@ -113,7 +124,6 @@ class controladorS4 extends Controller
         $piso = array(
             array("piso","Piso:","Introduzca el piso donde se localiza la sede","20"),
             );
-
 
 
     	return view('AnexosS.visSedes', compact('lastCod','lugarSedes','selectLoca','selectPais','selectParroquia','selectCiudad','codSede','selectSede','espeSede','descSede','localizacion','codPais','espePais','codParroquia','codCiudad','espeCiudad','urbanizacion','calleAvenida','casaEdificio','piso'));

@@ -9,6 +9,11 @@ class sel_paises extends Model
     protected $table = 'sel_paises';
     protected $fillable = ['codPais','pais','revisadoAddPais'];
 
+    
+    public static function selectPaises(){
+         return sel_paises::all();
+     }
+
     public function selectPais()
     {
         return $this->hasOne('App\modeloS4', 'codPais');
