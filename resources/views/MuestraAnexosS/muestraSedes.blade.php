@@ -93,10 +93,17 @@
                       </div> 
                       @endif
 
+                      @if($seleccion->codPais == '230')
+                      <div class="col-md-4 form-group">
+                          <label for="codPais">Código del País donde se Ubica la Sede</label>
+                              <br>230
+                      </div>  
+                      @else
                       <div class="col-md-4 form-group">
                           <label for="codPais">Código del País donde se Ubica la Sede</label>
                               <br>{{$seleccion->selectPais->codPais}}
                       </div> 
+                      @endif
                   </div>
             </div>
 
@@ -114,7 +121,7 @@
                       </div>  
                       @endif
 
-                      @if($seleccion->codParroquia == '1')
+                      @if($seleccion->codParroquia == '1093')
                       <div class="col-md-4 form-group">
                           <label for="codParroquia">Código de Parroquia donde se Ubica el Ente</label>
                               <br>99
@@ -126,7 +133,7 @@
                       </div>  
                       @endif
 
-                      @if($seleccion->codCiudad == '1')
+                      @if($seleccion->codCiudad == '332')
                       <div class="col-md-4 form-group">
                           <label for="codCiudad">Código de la Ciudad donde se Ubica el Ente</label>
                               <br>99

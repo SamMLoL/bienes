@@ -1644,6 +1644,7 @@ class migracionGeneral extends Seeder
         array("250301","La Orchila"),
         array("260101","Otras Dependencias Federales (P)"),
         array("270101","Registro de Normalización (Parroquia)"),
+        array("270102","99"),
                   );
 
       foreach ($dato as $v) {
@@ -1991,6 +1992,7 @@ class migracionGeneral extends Seeder
       array("250300-0001","La Orchila"),
       array("260100-0001","Otra Localidad (Dependencia Federal)"),
       array("270100-0001","Otra ciudad o localidad"),
+      array("270100-0002","99"),
 
           );
 

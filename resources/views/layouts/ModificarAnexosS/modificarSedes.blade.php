@@ -13,7 +13,7 @@
      <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
      <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
      <link href="{{ asset('img/bandera.png') }}" rel="icon">
-
+     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
   </head>
 <body>
 
@@ -114,7 +114,7 @@
 
                     <div class="col-md-4 form-group separar">
                       <label for="codPais">Código del País donde se Ubica la Sede</label>
-                         <select name="codPais" id="codPais" class="form-control">
+                         <select name="codPais" id="codPais2" class="form-control">
                               <option value="{{$form_s4->selectPais->id}}">{{$form_s4->selectPais->pais}}</option>
                             @foreach($selectPais as $form)
                               @if($form->id != $form_s4->selectPais->id)
@@ -219,8 +219,9 @@
                 </div>
             </div>
 
-            <input id="ruta" value="{{url('modificarParro')}}" hidden>
-            <input id="ruta2" value="{{url('modificarCiudad')}}" hidden>
+            <input type="hidden" id="s4Parro2" value="{{url('s4Parro2')}}">
+            <input type="hidden" id="s4Ciudad2" value="{{url('s4Ciudad2')}}">
+            <input type="hidden" id="s4Pais2" value="{{url('s4Pais2')}}">
 
               <div class="row">
                   <div class="col-md-12 form-group"><br>
@@ -241,60 +242,9 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/dropdown.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicobienes.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
     <script src="{{ asset('js/contadorTextarea.js') }}"></script>
-    <script> 
-        $(document).ready(function(){
-    $("#localizacion2").change(function(){
-      var id = $("#localizacion2").val();
-      var ruta = $('#ruta').val();
-        if(id != 2){
-          $.get(ruta+'/'+event.target.value+"",function(response,parroquia){
-             $("#codParroquia2").empty();
-                $("#codParroquia2").append("<option value='0' disabled selected>Seleccione... </option>");
-                 for(i=0; i<response.length; i++){
-                  $("#codParroquia2").append("<option value='"+response[i].id+ "'> "+response[i].parroquia+"</option>");
-      }
-
-          })
-       
-        }else{
-          //$("#codParroquia").attr("disabled", true);
-          $("#codParroquia2").empty();
-          $("#codParroquia2").append("<option value='99'>99 </option>");
-        
-          }
-      })
-
-    $("#localizacion2").change(function(){
-      var id = $("#localizacion2").val();
-      var ruta2 = $('#ruta2').val();
-        if(id != 2){
-          $.get(ruta2+'/'+event.target.value+"",function(response,ciudad){
-             $("#codCiudad2").empty();
-                $("#codCiudad2").append("<option value='0' disabled selected>Seleccione... </option>");
-                 for(i=0; i<response.length; i++){
-                  $("#codCiudad2").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
-          
-         
-      
-      }
-      //Esta función tiene que estar fuera del for
-        $("#espeOtroCiudad").attr("disabled", true).prop($('#espeOtroCiudad').val('noaplica'));
-          })
-
-       
-        }else{
-          //$("#codCiudad").attr("disabled", true);
-          $("#codCiudad2").empty();
-          $("#codCiudad2").append("<option value='99'>99 </option>");
-          $("#espeOtroCiudad").attr("disabled", false).prop($('#espeOtroCiudad').val(''));
-        
-          }
-      //Esta función tiene que estar fuera del for
-        
-      })
-});
-    </script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/selectBuscador.js') }}"></script>

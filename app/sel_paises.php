@@ -14,6 +14,10 @@ class sel_paises extends Model
          return sel_paises::all();
      }
 
+      public static function modifiquePaises($id){
+         return sel_paises::where('pais', $id)->get();
+     }
+
     public function selectPais()
     {
         return $this->hasOne('App\modeloS4', 'codPais');

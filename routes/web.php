@@ -154,8 +154,16 @@ Route::resource('sedes', 'controladorS4');
 #SELECT LOCALIZACIÓN Y SELECT CODIGO DE PARROQUIA PARA CUANDO SELECCIONE INTERNACIONAL SE COLOQUE 99 EN CASO CONTRARIO TRAIGA LAS OPCIONES DEL OPTION(SELECT)
 
 Route::get('s4Pais/', 'controladorS4@selectLocaPais');
-Route::get('s4/', 'controladorS4@selectLocaParro');
+#Modificar visSedes s4pais ruta
+Route::get('s4Pais2/', 'controladorS4@selectPaismodif');
+
+Route::get('s4Parro/', 'controladorS4@selectLocaParro');
+#Modificar visSedes s4Parro ruta
+Route::get('s4Parro2/', 'controladorS4@selectParromodif');
+
 Route::get('s4Ciudad/', 'controladorS4@selectLocaCiudad');
+#Modificar visSedes s4Ciudad ruta
+Route::get('s4Ciudad2/', 'controladorS4@selectCiudadmodif');
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 

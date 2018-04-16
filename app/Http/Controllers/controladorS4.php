@@ -26,6 +26,14 @@ class controladorS4 extends Controller
       }
     } 
 
+    public function modifiLocaPais(Request $request)
+    {
+         if($request->ajax()){
+            $s4Pais2 = sel_paises::modifiquePaises();
+          return response()->json($s4Pais2);
+      }
+    }
+
     public function selectLocaParro(Request $request)
     {
          if($request->ajax()){
@@ -34,13 +42,13 @@ class controladorS4 extends Controller
       }
     }
 
-    /*public function modifiLocaParro(Request $request, $id)
+    public function modifiLocaParro(Request $request, $id)
     {
          if($request->ajax()){
-            $modificarParro = sel_parroquias::modifiqueParroquias($id);
-          return response()->json($modificarParro);
+            $s4Parro2 = sel_parroquias::modifiqueParroquias($id);
+          return response()->json($s4Parro2);
       }
-    }*/
+    }
 
     public function selectLocaCiudad(Request $request)
     {
@@ -50,13 +58,13 @@ class controladorS4 extends Controller
       }
     }
 
-    /*public function modifiLocaCiudad(Request $request, $id)
+    public function modifiLocaCiudad(Request $request, $id)
     {
          if($request->ajax()){
-            $modificarCiudad = sel_ciudad::modifiqueCiudades($id);
-          return response()->json($modificarCiudad);
+            $s4Ciudad2 = sel_ciudad::modifiqueCiudades($id);
+          return response()->json($s4Ciudad2);
       }
-    }*/
+    }
 
     public function index()
     {
@@ -144,20 +152,12 @@ class controladorS4 extends Controller
             $form_s4->codSede = $request->codSede;
         }
 
+        $form_s4->codParroquia = $request->codParroquia;
+        
 
-        if($form_s4->codParroquia = $request->codParroquia == '99')
-        {
-            $form_s4->codParroquia = '1';
-        }else{
-            $form_s4->codParroquia = $request->codParroquia;
-        }
-
-        if($form_s4->codCiudad = $request->codCiudad == '99')
-        {
-            $form_s4->codCiudad = '1';
-        }else{
-            $form_s4->codCiudad = $request->codCiudad;
-        }
+        
+        $form_s4->codCiudad = $request->codCiudad;
+       
 
         if($form_s4->espeSede = $request->espeSede == '')
         {

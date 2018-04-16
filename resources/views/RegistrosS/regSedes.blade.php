@@ -73,13 +73,13 @@
                         <td class="text-center">{{$registro->codPais}}</td>
                     
 
-                        @if($registro->codParroquia == '1')
+                        @if($registro->codParroquia == '1093')
                         <td class="text-center">99</td>
                         @else
                         <td class="text-center">{{$registro->codParroquia}}</td>
                         @endif
 
-                        @if($registro->codCiudad == '1')
+                        @if($registro->codCiudad == '332')
                         <td class="text-center">99</td>
                         @else
                         <td class="text-center">{{$registro->codCiudad}}</td>
