@@ -42,7 +42,7 @@
           <tbody style="font-size:12px;">
             @foreach($verS4 as $registro)
                 
-                @if($registro->codSede == '1') 
+                @if($registro->codSede == '0') 
                   <tr>
                         @if($registro->revisadoS4 == '1')
                         <td class="text-center"><a href="#" hidden>{{$registro->id}}</a><a href="seleccionSedes/{{$registro->id}}"><b>Nuevo <i class="fa fa-eye" aria-hidden="true"></i> xxx</b></a></td>

@@ -155,15 +155,15 @@ Route::resource('sedes', 'controladorS4');
 
 Route::get('s4Pais/', 'controladorS4@selectLocaPais');
 #Modificar visSedes s4pais ruta
-Route::get('s4Pais2/', 'controladorS4@selectPaismodif');
+Route::get('s4Pais2/{id}', 'controladorS4@modifiLocaPais');
 
 Route::get('s4Parro/', 'controladorS4@selectLocaParro');
 #Modificar visSedes s4Parro ruta
-Route::get('s4Parro2/', 'controladorS4@selectParromodif');
+Route::get('s4Parro2/{id}', 'controladorS4@modifiLocaParro');
 
 Route::get('s4Ciudad/', 'controladorS4@selectLocaCiudad');
 #Modificar visSedes s4Ciudad ruta
-Route::get('s4Ciudad2/', 'controladorS4@selectCiudadmodif');
+Route::get('s4Ciudad2/{id}', 'controladorS4@modifiLocaCiudad');
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 

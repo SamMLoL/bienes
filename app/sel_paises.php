@@ -10,13 +10,6 @@ class sel_paises extends Model
     protected $fillable = ['codPais','pais','revisadoAddPais'];
 
     
-    public static function selectPaises(){
-         return sel_paises::all();
-     }
-
-      public static function modifiquePaises($id){
-         return sel_paises::where('pais', $id)->get();
-     }
 
     public function selectPais()
     {

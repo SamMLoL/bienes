@@ -55,7 +55,7 @@
                 <div class="col-md-12">
                     <div class="col-md-4">
                        <label for="codSede">Código de la Sede</label>
-                       @if($form_s4->codSede == '1')
+                       @if($form_s4->codSede == '0')
                           <input type="text" class="form-control" name="codSede" id="codSede" value="xxx"  placeholder="Introduzca el número de cédula" maxlength="10"> 
                        @else
                           <input type="text" class="form-control" name="codSede" id="codSede" value="{{$form_s4->codSede}}"  placeholder="Introduzca el número de cédula" maxlength="10"> 
@@ -134,29 +134,34 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row separar">
                 <div class="col-md-12">    
                     <div class="col-md-4 form-group">
                       <label for="codParroquia">Código de Parroquia donde se Ubica el Ente</label>
                          <select name="codParroquia" id="codParroquia2" class="form-control">
-                             
+                          @foreach($selectParroquia as $form)
+                             @if($form_s4->selectParroquia->id == '1093')
+                              <option value="1093">99</option>
+                             @break
+                             @else
                               <option value="{{$form_s4->selectParroquia->id}}">{{$form_s4->selectParroquia->parroquia}}</option>
-                            @foreach($selectParroquia as $form)
-                              @if($form->id != $form_s4->selectParroquia->id)
-                              <option value="{{$form->id}}">{{$form->parroquia}}</option> 
-                              @endif
-                            @endforeach
+                              <option value="{{$form->id}}">{{$form->parroquia}}</option>
+                             @endif
+                          @endforeach
                          </select>
                     </div>
 
                     <div class="col-md-4 form-group separar">
                       <label for="codCiudad">Código de la Ciudad donde se Ubica el Ente </label>
                          <select name="codCiudad" id="codCiudad2" class="form-control">
-                              <option value="{{$form_s4->selectCodCiudad->id}}">{{$form_s4->selectCodCiudad->ciudad}}</option>
                             @foreach($selectCiudad as $form)
-                               @if($form->id != $form_s4->selectCodCiudad->id)
-                                <option value="{{$form->id}}">{{$form->ciudad}}</option> 
+                              @if($form_s4->selectCiudades->id == '332')
+                              <option value="332">99</option>
+                              @break
+                              @else
+                              <option value="{{$form_s4->selectCiudades->id}}">{{$form_s4->selectCiudades->ciudad}}</option>
+                              <option value="{{$form->id}}">{{$form->ciudad}}</option>
                               @endif
                             @endforeach
                          </select>
@@ -167,7 +172,7 @@
                         @if($form_s4->espeOtroCiudad == '1')  
                           <input type="text" class="form-control" name="espeOtroCiudad" id="espeOtroCiudad" value="noaplica" maxlength="100"> 
                         @else
-                          <input type="text" class="form-control" name="espeOtroCiudad" id="espeOtroCiudad" value="{{$form_s4->espeOtroCiudad}}" maxlength="100" onkeypress="return soloNum(event)">
+                          <input type="text" class="form-control" name="espeOtroCiudad" id="espeOtroCiudad" value="{{$form_s4->espeOtroCiudad}}" maxlength="100">
                         @endif
                     </div>
                 </div> 
@@ -219,9 +224,9 @@
                 </div>
             </div>
 
-            <input type="hidden" id="s4Parro2" value="{{url('s4Parro2')}}">
-            <input type="hidden" id="s4Ciudad2" value="{{url('s4Ciudad2')}}">
-            <input type="hidden" id="s4Pais2" value="{{url('s4Pais2')}}">
+            <input type="hidden" id="s4Parro" value="{{url('s4Parro2')}}">
+            <input type="hidden" id="s4Ciudad" value="{{url('s4Ciudad2')}}">
+            <input type="hidden" id="s4Pais" value="{{url('s4Pais2')}}">
 
               <div class="row">
                   <div class="col-md-12 form-group"><br>
@@ -241,7 +246,6 @@
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
-    <script src="{{ asset('js/dropdown.js') }}"></script>
     <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>

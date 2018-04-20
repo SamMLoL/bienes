@@ -34,7 +34,7 @@
         <hr>
               <div class="row separar40">
                   <div class="col-md-12">
-                      @if($seleccion->codSede == '1')
+                      @if($seleccion->codSede == '0')
                      	<div class="col-md-4 form-group">
                      	    <label for="codSede">Código de la Sede</label>
                       	    <br>xxx

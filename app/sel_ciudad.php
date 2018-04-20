@@ -11,16 +11,9 @@ class sel_ciudad extends Model
 
     
 
-     public static function selectCiudad(){
-         return sel_ciudad::all();
-     }
+    
 
-     public static function modifiqueCiudades($id){
-         return sel_ciudad::where('parroquia', $id)->get();
-     }
-
-
-     public function selectCodCiudad()
+     public function selectCiudades()
     {
         return $this->hasOne('App\modeloS4', 'codCiudad');
     }

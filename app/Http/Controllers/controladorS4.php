@@ -16,12 +16,10 @@ class controladorS4 extends Controller
 {
     
 
-    
-
     public function selectLocaPais(Request $request)
     {
          if($request->ajax()){
-            $s4Pais = sel_paises::selectPaises();
+            $s4Pais = modeloS4::selectPaises();
           return response()->json($s4Pais);
       }
     } 
@@ -29,7 +27,7 @@ class controladorS4 extends Controller
     public function modifiLocaPais(Request $request)
     {
          if($request->ajax()){
-            $s4Pais2 = sel_paises::modifiquePaises();
+            $s4Pais2 = modeloS4::modifiquePaises();
           return response()->json($s4Pais2);
       }
     }
@@ -37,15 +35,15 @@ class controladorS4 extends Controller
     public function selectLocaParro(Request $request)
     {
          if($request->ajax()){
-            $s4Parro = sel_parroquias::selectParroquias();
+            $s4Parro = modeloS4::selectParroquias();
           return response()->json($s4Parro);
       }
     }
 
-    public function modifiLocaParro(Request $request, $id)
+    public function modifiLocaParro(Request $request)
     {
          if($request->ajax()){
-            $s4Parro2 = sel_parroquias::modifiqueParroquias($id);
+            $s4Parro2 = modeloS4::modifiqueParroquias();
           return response()->json($s4Parro2);
       }
     }
@@ -53,15 +51,15 @@ class controladorS4 extends Controller
     public function selectLocaCiudad(Request $request)
     {
          if($request->ajax()){
-            $s4Ciudad = sel_ciudad::selectCiudad();
+            $s4Ciudad = modeloS4::selectCiudad();
           return response()->json($s4Ciudad);
       }
     }
 
-    public function modifiLocaCiudad(Request $request, $id)
+    public function modifiLocaCiudad(Request $request)
     {
          if($request->ajax()){
-            $s4Ciudad2 = sel_ciudad::modifiqueCiudades($id);
+            $s4Ciudad2 = modeloS4::modifiqueCiudades();
           return response()->json($s4Ciudad2);
       }
     }
@@ -147,7 +145,7 @@ class controladorS4 extends Controller
 
         if($form_s4->codSede = $request->codSede == '')
         {
-            $form_s4->codSede = '1';
+            $form_s4->codSede = '0';
         }else{
             $form_s4->codSede = $request->codSede;
         }
@@ -247,31 +245,29 @@ class controladorS4 extends Controller
 
     public function update(Request $request, $id)
     {
-        $form_s4 = new modeloS4();
-        $form_s4->tipoSede= $request->tipoSede;
+        $form_s4 = modeloS4::find($id);
+        $form_s4->tipoSede = $request->tipoSede;
         $form_s4->localizacion = $request->localizacion;
         $form_s4->codPais = $request->codPais;
+    
 
         if($form_s4->codSede = $request->codSede == '')
         {
-            $form_s4->codSede = '1';
+            $form_s4->codSede = '0';
         }else{
             $form_s4->codSede = $request->codSede;
         }
 
-        if($form_s4->codParroquia = $request->codParroquia == '99')
+        if($form_s4->codParroquia = $request->codParroquia == '1093')
         {
-            $form_s4->codParroquia = '1';
+            $form_s4->codParroquia = '1093';
         }else{
             $form_s4->codParroquia = $request->codParroquia;
         }
-
-        if($form_s4->codCiudad = $request->codCiudad == '99')
-        {
-            $form_s4->codCiudad = '1';
-        }else{
-            $form_s4->codCiudad = $request->codCiudad;
-        }
+      
+        
+        $form_s4->codCiudad = $request->codCiudad;
+       
 
         if($form_s4->espeSede = $request->espeSede == '')
         {
@@ -328,6 +324,7 @@ class controladorS4 extends Controller
         }else{
             $form_s4->piso = $request->piso;
         }
+
 
         if($form_s4->save()){
 
