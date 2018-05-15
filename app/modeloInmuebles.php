@@ -8,10 +8,21 @@ class modeloInmuebles extends Model
 {
     protected $table = 'datosinmuebles';
 
+    public static function modiPaisinmueble(){
+         return sel_paises::all();
+     }
 
-    public function selectDepeninmueble()
+    public static function modiParroinmueble(){
+         return sel_parroquias::all();
+     }
+
+    public static function modiCiudadinmueble(){
+         return sel_ciudad::all();
+     }
+
+    public function selectUnidadinmu()
     {
-        return $this->belongsTo('App\sel_responsables1', 'depAdmRes');
+        return $this->belongsTo('App\sel_unidades', 'codUnidad');
     }
 
     public function selectCorresinmu()

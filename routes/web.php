@@ -157,13 +157,20 @@ Route::get('s4Pais/', 'controladorS4@selectLocaPais');
 #Modificar visSedes s4pais ruta
 Route::get('s4Pais2/{id}', 'controladorS4@modifiLocaPais');
 
+Route::get('s4Pais3/{id}', 'controladorInmuebles@modifiLocaPais');
+
+
 Route::get('s4Parro/', 'controladorS4@selectLocaParro');
 #Modificar visSedes s4Parro ruta
 Route::get('s4Parro2/{id}', 'controladorS4@modifiLocaParro');
 
+Route::get('s4Parro3/{id}', 'controladorInmuebles@modifiLocaParro');
+
 Route::get('s4Ciudad/', 'controladorS4@selectLocaCiudad');
 #Modificar visSedes s4Ciudad ruta
 Route::get('s4Ciudad2/{id}', 'controladorS4@modifiLocaCiudad');
+
+Route::get('s4Ciudad3/{id}', 'controladorInmuebles@modifiLocaCiudad');
 
 #VISTAS DE MUESTRA REGISTROS DATATABLE registroT./En: VIEWS OF SAMPLE REGISTERS DATATABLE REGISTRY
 
@@ -256,6 +263,7 @@ Route::get('/anularBienes/{id}', 'con_bienesVer@anularBienes');
 Route::get('/anularEqtransporte/{id}', 'con_EqtransporteVer@anularTransporte');
 Route::get('/anularSemo/{id}', 'con_semovientesVer@anularSemo');
 Route::get('/anularDatos/{id}', 'con_datosbienesVer@anularDatos');
+Route::get('/anularInmu/{id}', 'con_inmueblesVer@anularInmuebles');
 #ELIMINAR REGISTRO DE TABLAS DE ANEXOS S =>con_Ver...
 Route::get('/anularBasicos/{id}', 'con_s1Ver@anularBasicos');
 Route::get('/anularMaxima/{id}', 'con_s2Ver@anularMaxima');

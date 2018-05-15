@@ -10,6 +10,7 @@
 	     <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">  
 	     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 	     <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+	     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
 	     <link href="{{ asset('img/bandera.png') }}" rel="icon">
 	</head>
 <body>
@@ -66,11 +67,11 @@
 
 					<div class="col-md-4 form-group">
 				        <li>Dependencia Administrativa:</li>
-					        <select name="depAdmRes" id="depAdmRes" class="form-control">
-					            <option value="{{$form_t9->selectDependenciatr->id}}" >{{$form_t9->selectDependenciatr->opcion}}</option>
-					              @foreach($dependecia as $traeDir)
-					              	@if($traeDir->id != $form_t9->selectDependenciatr->id)
-					                <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option>
+					        <select name="codUnidad" id="codUnidad3" class="form-control">
+					            <option value="{{$form_t9->selectUnidadtran->id}}" >{{$form_t9->selectUnidadtran->unidad}}</option>
+					              @foreach($unidad as $traeDir)
+					              	@if($traeDir->id != $form_t9->selectUnidadtran->id)
+					                <option value="{{$traeDir->id}}">{{$traeDir->unidad}}</option>
 					                @endif
 					              @endforeach
 					        </select>
@@ -600,5 +601,7 @@
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
  	<script src="{{ asset('js/contadorTextarea.js') }}"></script>
+ 	<script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/selectBuscador.js') }}"></script>
 
  

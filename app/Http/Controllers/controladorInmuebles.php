@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloInmuebles;
-use App\sel_responsables1;
+use App\sel_unidades;
 use App\sel_seguros3;
 use App\sel_proveedores;
 use App\sel_paises;
@@ -18,11 +18,35 @@ use App\sel_usos;
 use App\modeloBitacora;
 
 class controladorInmuebles extends Controller
-{
+{   
+    public function modifiLocaPais(Request $request)
+    {
+         if($request->ajax()){
+            $s4Pais3 = modeloInmuebles::modiPaisinmueble();
+          return response()->json($s4Pais3);
+      }
+    }
+
+    public function modifiLocaParro(Request $request)
+    {
+         if($request->ajax()){
+            $s4Parro3 = modeloInmuebles::modiParroinmueble();
+          return response()->json($s4Parro3);
+      }
+    }
+
+    public function modifiLocaCiudad(Request $request)
+    {
+         if($request->ajax()){
+            $s4Ciudad3 = modeloInmuebles::modiCiudadinmueble();
+          return response()->json($s4Ciudad3);
+      }
+    }
+
     public function index()
     {	
     	$lastCod = modeloInmuebles::select('codBien')->get()->last();
-    	$dependencia = sel_responsables1::all();
+    	$unidad = sel_unidades::all();
     	$corresBien = sel_seguros3::all();
     	$localizacion = sel_proveedores::all();
     	$selectPais = sel_paises::all();
@@ -37,13 +61,13 @@ class controladorInmuebles extends Controller
     	$seguroBien = sel_seguros3::all();
 
 
-    	return view('AnexosT.visInmuebles', compact('lastCod','dependencia','corresBien','localizacion','selectPais','selectParroquia','selectCiudad','estatusBien','estadoBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
+    	return view('AnexosT.visInmuebles', compact('lastCod','unidad','corresBien','localizacion','selectPais','selectParroquia','selectCiudad','estatusBien','estadoBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
     }
 
     public function store(Request $request)
     {
         $form_t12 = new modeloInmuebles();
-        $form_t12->depAdmRes = $request->depAdmRes;
+        $form_t12->codUnidad = $request->codUnidad;
         $form_t12->corresBien = $request->corresBien;
         $form_t12->localizacion = $request->localizacion;
         $form_t12->codPais = $request->codPais;
@@ -351,7 +375,7 @@ class controladorInmuebles extends Controller
     {
         $form_t12 = modeloInmuebles::find($id);
         $lastCod = modeloInmuebles::select('codBien')->get()->last();
-        $dependencia = sel_responsables1::all();
+        $unidad = sel_unidades::all();
         $corresBien = sel_seguros3::all();
         $localizacion = sel_proveedores::all();
         $selectPais = sel_paises::all();
@@ -365,7 +389,7 @@ class controladorInmuebles extends Controller
         $unidadTerreno = sel_medidapeso::all();
         $seguroBien = sel_seguros3::all();
 
-       return view('layouts.ModificarAnexosT.modificarInmuebles',compact('form_t12','lastCod','dependencia','corresBien','localizacion','selectPais','selectParroquia','selectCiudad','estatusBien','estadoBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
+       return view('layouts.ModificarAnexosT.modificarInmuebles',compact('form_t12','lastCod','unidad','corresBien','localizacion','selectPais','selectParroquia','selectCiudad','estatusBien','estadoBien','moneda','usoInmueble','unidadConstru','unidadTerreno','seguroBien'));
     }
 
 
@@ -373,7 +397,7 @@ class controladorInmuebles extends Controller
       {
 
         $form_t12 = modeloInmuebles::find($id);
-        $form_t12->depAdmRes = $request->depAdmRes;
+        $form_t12->codUnidad = $request->codUnidad;
         $form_t12->corresBien = $request->corresBien;
         $form_t12->localizacion = $request->localizacion;
         $form_t12->codPais = $request->codPais;
@@ -422,16 +446,16 @@ class controladorInmuebles extends Controller
           $form_t12->espeOtroPais = $request->espeOtroPais;  
         }
 
-        if($form_t12->codParroquia = $request->codParroquia == '99')
+        if($form_t12->codParroquia = $request->codParroquia == '1094')
         {
-          $form_t12->codParroquia = '1';
+          $form_t12->codParroquia = '1094';
         }else{
           $form_t12->codParroquia = $request->codParroquia;  
         }
 
-        if($form_t12->codCiudad = $request->codCiudad == '99')
+        if($form_t12->codCiudad = $request->codCiudad == '332')
         {
-          $form_t12->codCiudad = '1';
+          $form_t12->codCiudad = '332';
         }else{
           $form_t12->codCiudad = $request->codCiudad;  
         }

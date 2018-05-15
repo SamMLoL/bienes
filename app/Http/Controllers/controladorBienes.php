@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloBienes;
 use App\modeloDirecta;
-use App\sel_responsables1;
+use App\sel_unidades;
 use App\sel_estatusbien;
 use App\sel_seguros2;
 use App\sel_condicionbien;
@@ -22,7 +22,7 @@ class controladorBienes extends Controller
     {
 
      $lastCod = modeloBienes::select('codOt2_1')->get()->last();
-     $dependecia = sel_responsables1::all();
+     $unidad = sel_unidades::all();
      $estatusBien = sel_estatusbien::all();
      $moneda = sel_seguros2::all();
      $condicion = sel_condicionbien::all();
@@ -32,7 +32,7 @@ class controladorBienes extends Controller
      $unidadGarantia = sel_garantiabien::all();
      $poseeComponente = sel_seguros3::all();
           
-     return view('AnexosT.visBienes', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
+     return view('AnexosT.visBienes', compact('lastCod','unidad','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
 
     }
 
@@ -58,7 +58,7 @@ class controladorBienes extends Controller
     {
          $form_t8 = new modeloBienes();
          $form_t8->codOt2_1 = $request->codOt2_1;
-         $form_t8->depAdmRes = $request->depAdmRes;
+         $form_t8->codUnidad = $request->codUnidad;
          $form_t8->estatuBien = $request->estatuBien;
          $form_t8->moneda = $request->moneda;
          $form_t8->edoBien = $request->edoBien;
@@ -260,7 +260,7 @@ class controladorBienes extends Controller
     {
           $form_t8 = modeloBienes::find($id);
           $lastCod = modeloBienes::select('codOt2_1')->get()->last();
-          $dependecia = sel_responsables1::all();
+          $unidad = sel_unidades::all();
           $estatusBien = sel_estatusbien::all();
           $moneda = sel_seguros2::all();
           $condicion = sel_condicionbien::all();
@@ -270,14 +270,14 @@ class controladorBienes extends Controller
           $unidadGarantia = sel_garantiabien::all();
           $poseeComponente = sel_seguros3::all();
 
-        return view('layouts.ModificarAnexosT.modificarBienes', compact('form_t8','lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
+        return view('layouts.ModificarAnexosT.modificarBienes', compact('form_t8','lastCod','unidad','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente'));
     }
 
      public function update(Request $request, $id)
     {
          $form_t8=modeloBienes::find($id);
          $form_t8->codOt2_1 = $request->codOt2_1;
-         $form_t8->depAdmRes = $request->depAdmRes;
+         $form_t8->codUnidad = $request->codUnidad;
          $form_t8->estatuBien = $request->estatuBien;
          $form_t8->moneda = $request->moneda;
          $form_t8->edoBien = $request->edoBien;

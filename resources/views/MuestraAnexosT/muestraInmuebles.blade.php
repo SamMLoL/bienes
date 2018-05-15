@@ -14,6 +14,7 @@
     </head>
 <body>
 
+@include('EliminarAnexosT.anularInmuebles')
 
 <div class="container" id="sha">
     <div class="col-md-12">
@@ -30,7 +31,7 @@
             </div>
         </div>
 <hr>
-        
+
           <div class="row separar40">
               <div class="col-md-12 form-group">
                  	@if($seleccion->codBien == '1')
@@ -59,7 +60,7 @@
 
               	  <div class="col-md-4">
                  	    <label>Dependencia Administrativa</label>
-                     	    <br>{{$seleccion->depAdmRes}}
+                     	    <br>{{$seleccion->selectUnidadinmu->codigo}}
                   </div>
               </div>
           </div>
@@ -130,12 +131,20 @@
               <div class="col-md-12 form">
                     <div class="col-md-4">
                       <label>Código de la Parroquia donde se Ubica el Inmueble</label>
+                          @if($seleccion->codParroquia == '1094')
+                          <br>99
+                          @else
                           <br>{{$seleccion->codParroquia}}
+                          @endif
                     </div>
                     
                     <div class="col-md-4">
                       <label>Código de la Ciudad donde se Ubica el Bien</label>
+                          @if($seleccion->codCiudad == '332')
+                          <br>99
+                          @else
                           <br>{{$seleccion->codCiudad}}
+                          @endif
                     </div>
                   
                     @if($seleccion->espeOtroCiudad == '1')

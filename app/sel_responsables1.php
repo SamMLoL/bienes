@@ -18,10 +18,7 @@ class sel_responsables1 extends Model
         return $this->hasOne('App\modeloBienes', 'depAdmRes');
     }
 
-    public function selectDependenciatr()
-    {
-        return $this->hasOne('App\modeloEqtransporte', 'depAdmRes');
-    }
+   
 
     public function selectDependenciasemo()
     {

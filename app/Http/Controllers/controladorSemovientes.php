@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloSemovientes;
-use App\sel_responsables1;
+use App\sel_unidades;
 use App\sel_estatusbien;
 use App\sel_seguros2;
 use App\sel_condicionbien;
@@ -21,7 +21,7 @@ class controladorSemovientes extends Controller
     public function index()
     {
     	$lastCod = modeloSemovientes::select('codBien')->get()->last();
-    	$dependecia = sel_responsables1::all();
+    	$unidad = sel_unidades::all();
     	$estatusBien = sel_estatusbien::all();
     	$moneda = sel_seguros2::all();
     	$condicion = sel_condicionbien::all();
@@ -33,14 +33,14 @@ class controladorSemovientes extends Controller
       $peso = sel_medidapeso::all();
 
 
-        return view('AnexosT.visSemovientes', compact('lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
+        return view('AnexosT.visSemovientes', compact('lastCod','unidad','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
     }
 
      public function store(Request $request)
     {
          $form_t10 = new modeloSemovientes();
          $form_t10->codBien = $request->codBien;
-         $form_t10->depAdmRes = $request->depAdmRes;
+         $form_t10->codUnidad = $request->codUnidad;
          $form_t10->estatuBien = $request->estatuBien;
          $form_t10->moneda = $request->moneda;
          $form_t10->edoBien = $request->edoBien;
@@ -258,7 +258,7 @@ class controladorSemovientes extends Controller
     {     
           $form_t10 = modeloSemovientes::find($id);
           $lastCod = modeloSemovientes::select('codBien')->get()->last();
-          $dependecia = sel_responsables1::all();
+          $unidad = sel_unidades::all();
           $estatusBien = sel_estatusbien::all();
           $moneda = sel_seguros2::all();
           $condicion = sel_condicionbien::all();
@@ -269,14 +269,14 @@ class controladorSemovientes extends Controller
           $proposito = sel_proposito::all();
           $peso = sel_medidapeso::all();
 
-        return view('layouts.ModificarAnexosT.modificarSemovientes', compact('form_t10','lastCod','dependecia','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
+        return view('layouts.ModificarAnexosT.modificarSemovientes', compact('form_t10','lastCod','unidad','estatusBien','moneda','condicion','genero','colorBien','seguroBien','tiposAnimal','proposito','peso'));
     }
 
     public function update(Request $request, $id)
     {
          $form_t10=modeloSemovientes::find($id); 
          $form_t10->codBien = $request->codBien;
-         $form_t10->depAdmRes = $request->depAdmRes;
+         $form_t10->codUnidad = $request->codUnidad;
          $form_t10->estatuBien = $request->estatuBien;
          $form_t10->moneda = $request->moneda;
          $form_t10->edoBien = $request->edoBien;

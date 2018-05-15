@@ -13,7 +13,7 @@ use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['codBien','codCata','depAdmRes','sedeOrgano','codRespAdm','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','claseBien','espeClase','codMarca','codModel','anoFabriBien','serialCarro','serialMotor','placaBien','numTituPro','colorBien','otraEspeColor','capacidadBien','nomDadoBien','usoBien','espeTecBien','otraEspeBien','garantia','unidadMedi','feIniGarantia','tieneSistema','espeSistema','poseeCompo','seguroBien','codRegSeguro','revisadot9'];
+    protected $fillable = ['codBien','codCata','codUnidad','sedeOrgano','codRespAdm','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','claseBien','espeClase','codMarca','codModel','anoFabriBien','serialCarro','serialMotor','placaBien','numTituPro','colorBien','otraEspeColor','capacidadBien','nomDadoBien','usoBien','espeTecBien','otraEspeBien','garantia','unidadMedi','feIniGarantia','tieneSistema','espeSistema','poseeCompo','seguroBien','codRegSeguro','revisadot9'];
 
     
 
@@ -27,9 +27,9 @@ use SoftDeletes;
         return $this->belongsTo('App\sel_clasebien', 'claseBien');
     }
 
-    public function selectDependenciatr()
+    public function selectUnidadtran()
     {
-        return $this->belongsTo('App\sel_responsables1', 'depAdmRes');
+        return $this->belongsTo('App\sel_unidades', 'codUnidad');
     }
 
     public function selectEstatustr()

@@ -12,8 +12,9 @@
      <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">  
      <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
      <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-     <link href="{{ asset('img/bandera.png') }}" rel="icon">
      <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
+     <link href="{{ asset('img/bandera.png') }}" rel="icon">
+   
   </head>
 <body>
 
@@ -246,9 +247,6 @@
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-    <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
-    <script src="{{ asset('js/contadorTextarea.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/selectBuscador.js') }}"></script>

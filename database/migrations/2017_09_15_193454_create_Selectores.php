@@ -115,11 +115,11 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
-        Schema::create('sel_responsables1', function (Blueprint $table) {
+        /*Schema::create('sel_responsables1', function (Blueprint $table) {
             $table->increments('id');
             $table->string('opcion');
             $table->timestamps();
-        });
+        });*/
 
         Schema::create('sel_estatusbien', function (Blueprint $table) {
             $table->increments('id');
@@ -202,7 +202,7 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
-//ANEXO S3
+//ANEXO S4
 #SEDES
         Schema::create('sel_sedes', function (Blueprint $table) {
             $table->increments('id');
@@ -216,6 +216,13 @@ class CreateSelectores extends Migration
             $table->timestamps();
         });
 
+//ANEXO S5
+        Schema::create('sel_unidades', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('codigo');
+            $table->string('unidad');
+            $table->timestamps();
+        });
         
     }
 

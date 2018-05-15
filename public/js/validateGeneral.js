@@ -97,7 +97,7 @@ $(document).ready(function() {
            apeRes: { required:true},
            telfRes: { required:true},
            cargoRes: { required:true},
-           depAdmRes: { required:true},
+           codUnidad: { required:true},
             
         },
         messages: {
@@ -108,7 +108,7 @@ $(document).ready(function() {
             apeRes : "* Campo obligatorio, ¡Por favor, introduzca el apellido del responsable!",
             telfRes : "* Campo obligatorio, ¡Por favor, introduzca el teléfono del responsable!",
             cargoRes : "* Campo obligatorio, ¡ Por favor, introduzca el cargo del responsable",
-            depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa del responsable!"
+            codUnidad : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa del responsable!"
         
 
         },
@@ -246,7 +246,7 @@ $(document).ready(function() {
     $("#formValidaT8").validate({
         rules: {
            codOt2_1: { required:true},
-           depAdmRes: { required:true},
+           codUnidad: { required:true},
            estatuBien: { required:true},
            moneda: { required:true},
            edoBien: { required:true},
@@ -261,7 +261,7 @@ $(document).ready(function() {
         
         messages: {
            codOt2_1 : "* Campo obligatorio, ¡ Por favor, introduzca el código del origen del bien !",
-           depAdmRes : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
+           codUnidad : "* Campo obligatorio, ¡ Por favor, seleccione la dependencia administrativa !",
            estatuBien : "* Campo obligatorio, ¡ Por favor, seleccione el estatus del uso del bien !",
            moneda : "* Campo obligatorio, ¡ Por favor, seleccione la moneda !",
            edoBien : "* Campo obligatorio, ¡ Por favor, seleccione el estado del bien !",

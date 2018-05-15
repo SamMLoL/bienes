@@ -67,10 +67,10 @@
 
             <div class="col-md-4 form-group">
               <li>Dependencia Administrativa:</li>
-                <select name="depAdmRes" id="depAdmRes" class="form-control">
+                <select name="codUnidad" id="codUnidad" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
-                      @foreach($dependencia as $traeDir)
-                        <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option> 
+                      @foreach($unidad as $traeDir)
+                        <option value="{{$traeDir->id}}">{{$traeDir->unidad}}</option> 
                       @endforeach
                 </select>
             </div>

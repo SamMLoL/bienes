@@ -13,11 +13,11 @@ use SoftDeletes;
     
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['codBien','codCata','depAdmRes','sedeOrgano','codRespAdm','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','raza','genero','tipoAnimal','espeOtroTipo','proposito','espeOtroPro','codColorBien','espeColor','otraEspeColor','peso','unidadPeso','feNacimiento','numHierro','seParticulares','otrasEspecifi','seguroBien','codRegSeguro'];
+    protected $fillable = ['codBien','codCata','codUnidad','sedeOrgano','codRespAdm','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','raza','genero','tipoAnimal','espeOtroTipo','proposito','espeOtroPro','codColorBien','espeColor','otraEspeColor','peso','unidadPeso','feNacimiento','numHierro','seParticulares','otrasEspecifi','seguroBien','codRegSeguro'];
 
-     public function selectDependenciasemo()
+     public function selectUnidadsemo()
     {
-        return $this->belongsTo('App\sel_responsables1', 'depAdmRes');
+        return $this->belongsTo('App\sel_unidades', 'codUnidad');
     }
 
     public function selectEstatusemo()

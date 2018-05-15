@@ -54,7 +54,7 @@
 
               	  <div class="col-md-4 form-group">
                  	    <label>Dependencia Administrativa</label>
-                     	    <br>{{$seleccion->selectDependencia->opcion}}
+                     	    <br>{{$seleccion->selectUnidadbienes->codigo}}
                   </div>
               </div>
           </div>

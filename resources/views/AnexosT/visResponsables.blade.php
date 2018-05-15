@@ -85,8 +85,8 @@
         <label for="{{$select2[$posicion][0]}}">{{$select2[$posicion][1]}}</label>
             <select name="{{$select2[$posicion][0]}}" id="{{$select2[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
-              @foreach($infoSelect1 as $traeSelect)
-               <option value="{{$traeSelect->id}}">{{$traeSelect->opcion}}</option> 
+              @foreach($unidad as $traeSelect)
+               <option value="{{$traeSelect->id}}">{{$traeSelect->unidad}}</option> 
               @endforeach
             </select>
       </div>

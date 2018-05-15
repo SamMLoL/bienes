@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloEqtransporte;
-use App\sel_responsables1;
+use App\sel_unidades;
 use App\sel_estatusbien;
 use App\sel_seguros2;
 use App\sel_condicionbien;
@@ -21,7 +21,7 @@ class controladorEqtransporte extends Controller
     public function index()
     {
     	$lastCod = modeloEqtransporte::select('codBien')->get()->last();
-    	$dependecia = sel_responsables1::all();
+    	$unidad = sel_unidades::all();
     	$estatusBien = sel_estatusbien::all();
     	$moneda = sel_seguros2::all();
     	$condicion = sel_condicionbien::all();
@@ -33,14 +33,14 @@ class controladorEqtransporte extends Controller
       $claseBien = sel_clasebien::all();
 
 
-        return view('AnexosT.visEqtransporte', compact('lastCod','dependecia','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
+        return view('AnexosT.visEqtransporte', compact('lastCod','unidad','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
     }
 
     public function store(Request $request)
     {
          $form_t9=new modeloEqtransporte();
          $form_t9->codBien = $request->codBien;
-         $form_t9->depAdmRes = $request->depAdmRes;
+         $form_t9->codUnidad = $request->codUnidad;
          $form_t9->estatuBien = $request->estatuBien;
          $form_t9->moneda = $request->moneda;
          $form_t9->edoBien = $request->edoBien;
@@ -321,7 +321,7 @@ class controladorEqtransporte extends Controller
     {
         $form_t9 = modeloEqtransporte::find($id);
         $lastCod = modeloEqtransporte::select('codBien')->get()->last();
-        $dependecia = sel_responsables1::all();
+        $unidad = sel_unidades::all();
         $estatusBien = sel_estatusbien::all();
         $moneda = sel_seguros2::all();
         $condicion = sel_condicionbien::all();
@@ -332,14 +332,14 @@ class controladorEqtransporte extends Controller
         $poseeComponente = sel_seguros3::all();
         $claseBien = sel_clasebien::all();
 
-       return view('layouts.ModificarAnexosT.modificarEqtransporte',compact('form_t9','lastCod','dependecia','estatusBien','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
+       return view('layouts.ModificarAnexosT.modificarEqtransporte',compact('form_t9','lastCod','unidad','estatusBien','estatusBien','moneda','condicion','marcas','modelos','colorBien','unidadGarantia','poseeComponente','claseBien'));
     }
 
      public function update(Request $request, $id)
      {   
          $form_t9= modeloEqtransporte::find($id);
          $form_t9->codBien = $request->codBien;
-         $form_t9->depAdmRes = $request->depAdmRes;
+         $form_t9->codUnidad = $request->codUnidad;
          $form_t9->estatuBien = $request->estatuBien;
          $form_t9->moneda = $request->moneda;
          $form_t9->edoBien = $request->edoBien;

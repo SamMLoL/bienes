@@ -10,6 +10,7 @@
 	     <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">  
 	     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 	     <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+	     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
 	     <link href="{{ asset('img/bandera.png') }}" rel="icon">
 	</head>
 <body>
@@ -66,11 +67,11 @@
 
 					<div class="col-md-4">
 				        <li>Dependencia Administrativa</li>
-					        <select name="depAdmRes" id="depAdmRes" class="form-control">
-					            <option value="{{$form_t12->selectDepeninmueble->id}}" >{{$form_t12->selectDepeninmueble->opcion}}</option>
-					              @foreach($dependencia as $traeDir)
-					              	@if($traeDir->id != $form_t12->selectDepeninmueble->id)
-					                <option value="{{$traeDir->id}}">{{$traeDir->opcion}}</option>
+					        <select name="codUnidad" id="codUnidad4" class="form-control">
+					            <option value="{{$form_t12->selectUnidadinmu->id}}" >{{$form_t12->selectUnidadinmu->unidad}}</option>
+					              @foreach($unidad as $traeDir)
+					              	@if($traeDir->id != $form_t12->selectUnidadinmu->id)
+					                <option value="{{$traeDir->id}}">{{$traeDir->unidad}}</option>
 					                @endif
 					              @endforeach
 					        </select>
@@ -116,7 +117,7 @@
 				<div class="col-md-12 form-group">
 					<div class="col-md-4">
 				        <li>Localización</li>
-					        <select name="localizacion" id="localizacion" class="form-control">
+					        <select name="localizacion" id="localizacion3" class="form-control">
 					            <option value="{{$form_t12->selectLocalinmu->id}}" >{{$form_t12->selectLocalinmu->opcion}}</option>
 					              @foreach($localizacion as $traeDir)
 					              	@if($traeDir->id != $form_t12->selectLocalinmu->id)
@@ -128,7 +129,7 @@
 
 					<div class="col-md-4">
 				        <li>Código del País donde se Ubica la Sede</li>
-					        <select name="codPais" id="codPais" class="form-control">
+					        <select name="codPais" id="codPais3" class="form-control">
 					            <option value="{{$form_t12->selectPaisesinmu->id}}" >{{$form_t12->selectPaisesinmu->pais}}</option>
 					              @foreach($selectPais as $traeDir)
 					              	@if($traeDir->id != $form_t12->selectPaisesinmu->id)
@@ -153,7 +154,7 @@
 				<div class="col-md-12 form-group">
 					<div class="col-md-4">
 				        <li>Código de la Parroquia donde se Ubica el Inmueble</li>
-					        <select name="codParroquia" id="codParroquia" class="form-control">
+					        <select name="codParroquia" id="codParroquia3" class="form-control">
 					            <option value="{{$form_t12->selectParroinmu->id}}" >{{$form_t12->selectParroinmu->parroquia}}</option>
 					              @foreach($selectPais as $traeDir)
 					              	@if($traeDir->id != $form_t12->selectParroinmu->id)
@@ -165,7 +166,7 @@
 
 					<div class="col-md-4">
 				        <li>Código de la Ciudad donde se Ubica el Bien</li>
-					        <select name="codCiudad" id="codCiudad" class="form-control">
+					        <select name="codCiudad" id="codCiudad3" class="form-control">
 					            <option value="{{$form_t12->selectCiudadinmu->id}}" >{{$form_t12->selectCiudadinmu->ciudad}}</option>
 					              @foreach($selectPais as $traeDir)
 					              	@if($traeDir->id != $form_t12->selectCiudadinmu->id)
@@ -620,6 +621,9 @@
 				</div>
 			</div>
 
+			<input type="hidden" id="s4Parro3" value="{{url('s4Parro3')}}">
+            <input type="hidden" id="s4Ciudad3" value="{{url('s4Ciudad3')}}">
+            <input type="hidden" id="s4Pais3" value="{{url('s4Pais3')}}">
 
 			<div class="row">
 	              <div class="col-md-12 form-group"><br>
@@ -645,4 +649,6 @@
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
  	<script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
  	<script src="{{ asset('js/contadorTextarea.js') }}"></script>
+ 	<script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/selectBuscador.js') }}"></script>
  

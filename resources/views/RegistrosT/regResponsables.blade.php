@@ -33,8 +33,8 @@
                        <td id="letrasb" class="text-center">Cédula Identidad</td>
                        <td id="letrasb" class="text-center">Nombre Responsable</td>
                        <td id="letrasb" class="text-center">Apellido Responsable</td>
-                       <td id="letrasb" class="text-center">Teléfono Responsable</td>
                        <td id="letrasb" class="text-center">Cargo Responsable</td>
+                       <td id="letrasb" class="text-center">Dependencia Administrativa</td>
                        <td id="letrasb" class="text-center">Ver más</td>
                     </tr>
                 </thead>
@@ -62,8 +62,8 @@
                         <td class="text-center">{{$reg4->cedula}}</td>
                         <td class="text-center">{{$reg4->nomRes}}</td>
                         <td class="text-center">{{$reg4->apeRes}}</td>
-                        <td class="text-center">{{$reg4->telfRes}}</td>
                         <td class="text-center">{{$reg4->cargoRes}}</td>
+                        <td class="text-center">{{$reg4->selectUnidad->codigo}}</td>
                         <td class="text-center"><a href="seleccionResponsables/{{$reg4->id}}"><i style="color:#8E2121;" class="fa fa-eye fa-2x" aria-hidden="true"></i></a></td>
 
                   </tr>     

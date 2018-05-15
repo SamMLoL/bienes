@@ -53,7 +53,7 @@
 
               	  <div class="col-md-4">
                  	    <label>Dependencia Administrativa</label>
-                     	    <br>{{$seleccion->selectDependenciasemo->opcion}}
+                     	    <br>{{$seleccion->selectUnidadsemo->codigo}}
                   </div>
               </div>
           </div>

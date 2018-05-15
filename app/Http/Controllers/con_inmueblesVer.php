@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloInmuebles;
+use App\modeloBitacora;
 
 class con_inmueblesVer extends Controller
 {
@@ -35,7 +36,7 @@ class con_inmueblesVer extends Controller
           $bit = new modeloBitacora();
           $bit->user = $_SESSION['id'];
           $bit->accion  = 3;
-          $bit->referencia = 'Bienes';
+          $bit->referencia = 'Datos de los Inmuebles';
           $bit->save();
 
          return redirect('regInmuebles')->with('msj', 'Registro Eliminado Exitosamente');

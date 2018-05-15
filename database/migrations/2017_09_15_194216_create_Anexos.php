@@ -233,7 +233,7 @@ class CreateAnexos extends Migration
             $table->string('telfRes', 20)->nullable();
             $table->string('cargoRes', 200)->nullable();
             $table->string('correRes', 200)->nullable();
-            $table->string('depAdmRes', 10)->nullable();
+            $table->string('codUnidad', 10)->nullable();
             $table->integer('revisadot4')->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -275,8 +275,8 @@ class CreateAnexos extends Migration
             $table->increments('id');
             $table->string('codOt2_1', 12)->nullable();
             $table->string('codCata', 10)->nullable();
-            $table->integer('depAdmRes')->nullable();
-            $table->foreign('depAdmRes')->references('id')->on('sel_responsables1');
+            $table->integer('codUnidad')->nullable();
+            $table->foreign('codUnidad')->references('id')->on('sel_unidades');
             $table->string('sedeOrgano', 10)->nullable();
             $table->string('codRespAdm', 10)->nullable();
             $table->string('codResBien', 10)->nullable();
@@ -323,8 +323,8 @@ class CreateAnexos extends Migration
             $table->increments('id');
             $table->string('codBien', 12)->nullable();
             $table->string('codCata', 10)->nullable();
-            $table->integer('depAdmRes')->nullable();
-            $table->foreign('depAdmRes')->references('id')->on('sel_responsables1');
+            $table->integer('codUnidad')->nullable();
+            $table->foreign('codUnidad')->references('id')->on('sel_unidades');
             $table->string('sedeOrgano', 10)->nullable();
             $table->string('codRespAdm', 10)->nullable();
             $table->string('codResBien', 10)->nullable();
@@ -383,8 +383,8 @@ class CreateAnexos extends Migration
             $table->increments('id');
             $table->string('codBien', 12)->nullable();
             $table->string('codCata', 10)->nullable();
-            $table->integer('depAdmRes')->nullable();
-            $table->foreign('depAdmRes')->references('id')->on('sel_responsables1');
+            $table->integer('codUnidad')->nullable();
+            $table->foreign('codUnidad')->references('id')->on('sel_unidades');
             $table->string('sedeOrgano', 10)->nullable();
             $table->string('codRespAdm', 10)->nullable();
             $table->string('codResBien', 10)->nullable();
@@ -448,8 +448,8 @@ class CreateAnexos extends Migration
             $table->increments('id');
             $table->string('codBien', 12)->nullable();
             $table->string('codCata', 10)->nullable();
-            $table->integer('depAdmRes')->nullable();
-            $table->foreign('depAdmRes')->references('id')->on('sel_responsables1');
+            $table->integer('codUnidad')->nullable();
+            $table->foreign('codUnidad')->references('id')->on('sel_unidades');
             $table->string('codRespAdm', 10)->nullable();
             $table->integer('corresBien')->nullable();
             $table->foreign('corresBien')->references('id')->on('sel_seguros3');
@@ -587,6 +587,18 @@ class CreateAnexos extends Migration
             $table->string('casaEdificio', 30)->nullable();
             $table->string('piso', 20)->nullable();
             $table->integer('revisadoS4')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        #S5
+        Schema::create('unidades', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('codUnidad',10)->nullable();
+            $table->string('descUnidad', 255)->nullable();
+            $table->integer('unidad')->nullable();
+            $table->foreign('unidad')->references('id')->on('sel_unidades');
+            $table->integer('revisadoS5')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

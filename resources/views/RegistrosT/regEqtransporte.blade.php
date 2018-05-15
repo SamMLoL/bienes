@@ -55,7 +55,7 @@
                         <td class="text-center">{{$reg9->codCata}}</td>
                         @endif
                         
-                        <td class="text-center">{{$reg9->selectDependenciatr->opcion}}</td>
+                        <td class="text-center">{{$reg9->selectUnidadtran->codigo}}</td>
 
                         @if($reg9->sedeOrgano == '1')
                         <td class="text-center">xxx</td>

@@ -14,7 +14,7 @@ use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['codResp','tipoResp','cedula','nomRes','apeRes','telfRes','cargoRes','correRes','depAdmRes','revisadot4'];
+    protected $fillable = ['codResp','tipoResp','cedula','nomRes','apeRes','telfRes','cargoRes','correRes','codUnidad','revisadot4'];
 
      /*SELECT compAse => selectt3 , Número de Póliza => numPoli , Moneda => moneda*/
 
@@ -23,8 +23,8 @@ use SoftDeletes;
         return $this->belongsTo('App\sel_responsables', 'tipoResp');
     }
 
-      public function selectResponsables1()
+      public function selectUnidad()
     {
-        return $this->belongsTo('App\sel_responsables1', 'depAdmRes');
+        return $this->belongsTo('App\sel_unidades', 'codUnidad');
     }
 }

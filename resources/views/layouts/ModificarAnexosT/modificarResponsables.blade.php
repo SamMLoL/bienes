@@ -10,6 +10,7 @@
 	     <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">  
 	     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 	     <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+	     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
 	     <link href="{{ asset('img/bandera.png') }}" rel="icon">
 	</head>
 <body>
@@ -112,17 +113,17 @@
 					  </div>
 				    </div>
 					
-				    <div class="col-md-4 form-group">
-		           	    <label for="depAdmRes">Tipo de Responsable</label>
-		                <select name="depAdmRes" id="depAdmRes" class="form-control">
-		                 <option value="{{$form_t4->selectResponsables1->id}}">{{$form_t4->selectResponsables1->opcion}}</option>
-		                @foreach($infoSelect1 as $form)
-		                	@if($form->id != $form_t4->selectResponsables1->id)
-		                 <option value="{{$form->id}}">{{$form->opcion}}</option> 
-		                 	@endif
-		                @endforeach
-		                </select>
-			  		</div>
+				    <div class="col-md-4 form-group separar">
+                      <label for="codUnidad">Dependencia Administrativa</label>
+                         <select name="codUnidad" id="codUnidad2" class="form-control">
+                              <option value="{{$form_t4->selectUnidad->id}}">{{$form_t4->selectUnidad->unidad}}</option>
+                            @foreach($unidad as $form)
+                              @if($form->id != $form_t4->selectUnidad->id)
+                              <option value="{{$form->id}}">{{$form->unidad}}</option> 
+                              @endif
+                            @endforeach
+                         </select>
+                    </div>
 				</div>
 		    </div>
 		
@@ -145,3 +146,6 @@
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
+    <script src="{{ asset('js/contadorTextarea.js') }}"></script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/selectBuscador.js') }}"></script>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\modeloResponsables;
 use App\sel_responsables;
-use App\sel_responsables1;
+use App\sel_unidades;
 use App\modeloBitacora;
 
 
@@ -17,7 +17,7 @@ class controladorResponsables extends Controller
 
     # for/id/name label /placeholder tabla->t4 type="text">
         $infoSelect = sel_responsables::all();
-        $infoSelect1 = sel_responsables1::all();
+        $unidad = sel_unidades::all();
         $lastCod = modeloResponsables::select('codResp')->get()->last();
 
         $arrayt4=array(
@@ -35,10 +35,10 @@ class controladorResponsables extends Controller
             );
 
         $select2 = array(
-            array("depAdmRes","Dependencia Administrativa:","2"),
+            array("codUnidad","Dependencia Administrativa:","2"),
             );
 
-        return view('AnexosT.visResponsables', compact('infoSelect','infoSelect1','arrayt4','select','select2','lastCod'));
+        return view('AnexosT.visResponsables', compact('infoSelect','unidad','arrayt4','select','select2','lastCod'));
     }
 
     
@@ -47,7 +47,7 @@ class controladorResponsables extends Controller
         $form_t4 = new modeloResponsables();
         $form_t4->codResp = $request->codResp;
         $form_t4->tipoResp = $request->tipoResp;
-        $form_t4->depAdmRes = $request->depAdmRes;
+        $form_t4->codUnidad = $request->codUnidad;
         $form_t4->revisadot4 = 1;
 
      
@@ -83,10 +83,10 @@ class controladorResponsables extends Controller
     public function edit($id)
     {
         $form_t4 = modeloResponsables::find($id);
-        $infoSelect = sel_responsables::all();
-        $infoSelect1 = sel_responsables1::all();
+        $infoSelect = sel_unidades::all();
+        $unidad = sel_unidades::all();
 
-        return view('layouts.ModificarAnexosT.modificarResponsables', compact('form_t4','infoSelect','infoSelect1'));
+        return view('layouts.ModificarAnexosT.modificarResponsables', compact('form_t4','infoSelect','unidad'));
     }
 
     
@@ -95,7 +95,7 @@ class controladorResponsables extends Controller
         $form_t4 = modeloResponsables::find($id);
         $form_t4->codResp = $request->codResp;
         $form_t4->tipoResp = $request->tipoResp;
-        $form_t4->depAdmRes = $request->depAdmRes;
+        $form_t4->codUnidad = $request->codUnidad;
         $form_t4->cedula = $request->cedula;
         $form_t4->nomRes = $request->nomRes;  
         $form_t4->apeRes = $request->apeRes;  

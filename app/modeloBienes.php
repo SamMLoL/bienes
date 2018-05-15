@@ -13,7 +13,7 @@ use SoftDeletes;
     
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['codOt2_1','codCata','depAdmRes','sedeOrgano','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','serialBien','codMarca','codModel','añoFabriBien','codColorBien','espeColor','otraEspeColor','espeTecBien','otraDescBien','garantia','unidadMedi','feIniGarantia','feFinGarantia','poseeCompo','seguroBien','codRegSeguro','revisadot8'];
+    protected $fillable = ['codOt2_1','codCata','codUnidad','sedeOrgano','codResBien','codInterno','estatuBien','espOtroUso','valorAdq','moneda','espeMoneda','feAdqBien','feIngBien','edoBien','espOtroEdo','descEdoBien','serialBien','codMarca','codModel','añoFabriBien','codColorBien','espeColor','otraEspeColor','espeTecBien','otraDescBien','garantia','unidadMedi','feIniGarantia','feFinGarantia','poseeCompo','seguroBien','codRegSeguro','revisadot8'];
 
     public static function selectBienes($id){
          return modeloModelos::where('codMarca', $id)->get();
@@ -33,9 +33,9 @@ use SoftDeletes;
         return $this->belongsTo('App\sel_condicionbien', 'edoBien');
     }
 
-    public function selectDependencia()
+    public function selectUnidadbienes()
     {
-        return $this->belongsTo('App\sel_responsables1', 'depAdmRes');
+        return $this->belongsTo('App\sel_unidades', 'codUnidad');
     }
 
     public function selectSeguros()

@@ -158,4 +158,66 @@
     
         }
     })
+
+    $("#localizacion3").change(function(event){
+
+      var id = $("#localizacion3").val();
+        var s4Parro3 = $('#s4Parro3').val();
+          var s4Ciudad3 = $('#s4Ciudad3').val();
+            var s4Pais3 = $('#s4Pais3').val();
+        if(id == 1){
+        
+          $.get(s4Parro3+'/'+event.target.value+"",function(response,parroquia){
+             $("#codParroquia3").empty();
+                $("#codParroquia3").append("<option value='0' disabled selected>Seleccione... </option>");
+                 for(i=0; i<1093; i++){
+                  $("#codParroquia3").append("<option value='"+response[i].id+ "'> "+response[i].parroquia+"</option>");
+        }
+
+            })
+
+          
+          $.get(s4Ciudad3+'/'+event.target.value+"",function(response,ciudad){
+             $("#codCiudad3").empty();
+                $("#codCiudad3").append("<option value='0' disabled selected>Seleccione... </option>");
+                 for(i=0; i<331; i++){
+                  $("#codCiudad3").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
+        }
+
+            })
+
+              $("#codPais3").empty().append("<option value='230'>Venezuela </option>");
+              $("#espeOtroPais").attr("disabled", true).append($('#espeOtroPais').val('noaplica'));
+              $("#espeOtroCiudad").attr("disabled", true).append($('#espeOtroCiudad').val('noaplica'));
+              /*$("#espeOtroPais").attr("disabled", true).prop($('#espeOtroPais').val('noaplica'));*/
+              $("#codParroquia3").attr("disabled", false);
+              $("#codCiudad3").attr("disabled", false);
+            
+              //$("#espeOtroPais").attr("disabled", true).prop($('#espeOtroPais').val('noaplica'));
+             
+       
+          }else{
+
+            
+             $.get(s4Pais3+'/'+event.target.value+"",function(response,pais){
+              $("#codPais3").empty();
+                $("#codPais3").append("<option value='0' disabled selected>Seleccione... </option>");
+                 for(i=0; i<response.length; i++){
+                  $("#codPais3").append("<option value='"+response[i].id+ "'> "+response[i].pais+"</option>");
+        }
+
+            })
+            
+              /*$("#codPais").empty().append("<option value='2'>Otro País </option>");*/
+
+              $("#codParroquia3").attr("disabled", false);
+              $("#codParroquia3").empty().append("<option value='1094'>99 </option>");
+              $("#codCiudad3").attr("disabled", false);
+              $("#codCiudad3").empty().append("<option value='332'>99 </option>");
+              
+             
+            }
+
+      })
   
+

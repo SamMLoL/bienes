@@ -54,7 +54,7 @@
                         <td class="text-center">{{$reg12->codCata}}</td>
                         @endif
                         
-                        <td class="text-center">{{$reg12->selectDepeninmueble->opcion}}</td>
+                        <td class="text-center">{{$reg12->selectUnidadinmu->codigo}}</td>
 
                         @if($reg12->codRespAdm == '1')
                         <td class="text-center">xxx</td>
