@@ -88,6 +88,7 @@
                                         <li><a href="maxima">Datos de la Máxima Autoridad</a></li>
                                         <li><a href="patrimonial">Datos del Responsable Patrimonial</a></li>
                                         <li><a href="sedes">Datos de las Sedes y Similares del Ente</a></li>
+                                        <li><a href="unidades">Unidades Administrativas</a></li>
                                     </ul>
                                 </li>
                                                                            

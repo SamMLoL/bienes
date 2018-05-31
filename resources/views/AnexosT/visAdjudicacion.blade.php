@@ -67,7 +67,7 @@
     <!--ARRAY SELECT selectT28 BELONGING TO CONTROLADORT28, TABLE RELATED IN THE BD => mig_selectT28 AND T28-->
       
       @foreach($selectT28 as $posicion => $valor)
-      <div class="col-md-4 {{$selectT28[$posicion][2]}} form-group separar">
+      <div class="col-md-4 {{$selectT28[$posicion][2]}} form-group separar40">
           <label for="{{$selectT28[$posicion][0]}}">{{$selectT28[$posicion][1]}}</label>
             <select name="{{$selectT28[$posicion][0]}}" id="{{$selectT28[$posicion][0]}}" class="form-control">
                <option value="0" disabled selected>Seleccione</option>
@@ -81,9 +81,12 @@
     <!--ARRAY DE INPUT-TEXT arrayT28 PERTENECIENTE AL CONTROLADORT28, TABLA RELACIONADA EN LA BD => T28-->
     <!--ARRAY OF INPUT-TEXT arrayT28 BELONGING TO CONTROLADORT28, TABLE RELATED IN THE BD => T28-->
 
+
+  Av francisco solano lopez local 15-a entre calle los jabillos y san geronimo sabana grande punto de refencia 3 locales despues del molino  montaje 33 ancho * 48 alto 1117000
+
       @foreach($arrayT28 as $posicion => $valor)
        
-       <div class="col-md-4 {{$arrayT28[$posicion][4]}} form-group separar">
+       <div class="col-md-4 {{$arrayT28[$posicion][4]}} form-group separar40">
           <label for="">{{$arrayT28[$posicion][1]}}</label>
           <input type="text" class="form-control" id="{{$arrayT28[$posicion][0]}}" name="{{$arrayT28[$posicion][0]}}" placeholder="{{$arrayT28[$posicion][2]}}" maxlength="{{$arrayT28[$posicion][3]}}">
        </div> 
@@ -106,7 +109,7 @@
                 </div>
           </div>
       @endforeach
-
+   
     <!--ARRAY DE FECHA date2T28 PERTENECIENTE AL CONTROLADORT28, TABLA RELACIONADA EN LA BD => T28--> 
     <!--ARRAY OF DATE date2T28 BELONGING TO CONTROLADORT28, TABLE RELATED IN THE BD => T28-->
 

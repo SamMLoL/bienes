@@ -56,7 +56,7 @@ class controladorSeguros extends Controller
     );
 
   $selectRes= array(
-      array("poseRes","Posee Responsabilidad Civil:","2"),
+      array("poseRes","Posee Responsabilidad Civil:","2","col-md-pull-18"),
     );
 
   $desMoneda = array(
@@ -73,7 +73,7 @@ class controladorSeguros extends Controller
     );
 
   $datet2=array(
-    array("fefinPoli","Fecha Fin de la Póliza:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status"),
+    array("fefinPoli","Fecha Fin de la Póliza:","¡Si se desconoce, deje el campo en blanco!","input-group","input-group-addon","inputGroupprimary3Status","col-md-pull-8"),
     );
 
   $espeCobe= array(

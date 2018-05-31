@@ -225,9 +225,9 @@
                 </div>
             </div>
 
-            <input type="hidden" id="s4Parro" value="{{url('s4Parro2')}}">
-            <input type="hidden" id="s4Ciudad" value="{{url('s4Ciudad2')}}">
-            <input type="hidden" id="s4Pais" value="{{url('s4Pais2')}}">
+            <input type="hidden" id="s4Parro2" value="{{url('s4Parro2')}}">
+            <input type="hidden" id="s4Ciudad2" value="{{url('s4Ciudad2')}}">
+            <input type="hidden" id="s4Pais2" value="{{url('s4Pais2')}}">
 
               <div class="row">
                   <div class="col-md-12 form-group"><br>
@@ -248,5 +248,6 @@
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/validate.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/selectBuscador.js') }}"></script>

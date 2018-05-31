@@ -9,7 +9,7 @@ class sel_unidades extends Model
     protected $table = 'sel_unidades';
     protected $fillable = ['codigo','unidad'];
 
-     public function selectUnidad()
+    public function selectUnidad()
     {
         return $this->hasOne('App\modeloResponsables', 'codUnidad');
     }

@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-12"> 
         <div class="row">
-            <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> CONCURSO / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE .</b></h5></div>
+            <div id="panelTitu" class="panel-heading text-center separar40"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> CONCURSO / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE .</b></h5></div>
         </div>
       
         <div class="row">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 separar">
+            <div class="col-md-12 separar40">
                 <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
                <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
             </div>
@@ -63,13 +63,15 @@
       <form role="form" id="formValidaT2" name="formValidaT2" method="POST" action="{{url('concurso')}}">
         {{ csrf_field() }}
  
-<div class="row">
-    <div class="col-md-12">
+
         <!--ARRAY SELECT PERTENECIENTE AL CONTROLADORT2, TABLA RELACIONADA EN LA BD => mig_selectT2 Y T2-->
         <!--ARRAY SELECT BELOW TO CONTROLADORT2, RELATED TABLE IN BD => mig_selectT2 AND T2-->
 
+<div class="row">
+    <div class="col-md-12">
+
           @foreach($selectT2 as $posicion => $valor)
-              <div class="col-md-4 {{$selectT2[$posicion][2]}} form-group separar">
+              <div class="col-md-4 {{$selectT2[$posicion][2]}} form-group separar40">
                <label for="{{$selectT2[$posicion][0]}}">{{$selectT2[$posicion][1]}}</label>
                   <select name="{{$selectT2[$posicion][0]}}" id="{{$selectT2[$posicion][0]}}" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
@@ -85,7 +87,7 @@
   
           @foreach($arrayt2 as $posicion => $valor)
 
-        	    <div class="col-md-4 {{$arrayt2[$posicion][4]}} form-group separar">
+        	    <div class="col-md-4 {{$arrayt2[$posicion][4]}} form-group separar40">
 					
 				        	<label for="{{$arrayt2[$posicion][0]}}">{{$arrayt2[$posicion][1]}}</label>
                      
@@ -112,10 +114,12 @@
               </div>
          
           @endforeach
-        
+    </div>
+</div>      
         <!--ARRAY DE FECHA date2t2 PERTENECIENTE AL CONTROLADORT2, TABLA RELACIONADA EN LA BD => T2--> 
         <!--ARRAY OF DATE date2t2 BELONGING TO CONTROLADORT2, TABLE RELATED IN THE BD => T2-->
-
+<div class="row separar">
+    <div class="col-md-12">
           @foreach($date2t2 as $posicion => $valor)
                 
              <div class="col-md-4 form-group">
@@ -153,7 +157,7 @@
 
     <!-- FINAL DE LOS 3 FOREACH $arrayt2 $datet2 $date3t2 DEL ROW GENERAL --> 
             
-              <div class="row">
+              <div class="row separar">
                   <div class="col-md-12 form-group" ><br>
                       <center>
                          <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
@@ -162,9 +166,8 @@
                       </center> 
                   </div>
               </div>
-
       </form>            
     <!-- FIN CONTAINER -->
-  </div>
+   </div>
 </div>
 @endsection

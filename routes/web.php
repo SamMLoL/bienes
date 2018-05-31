@@ -151,24 +151,28 @@ Route::resource('patrimonial', 'controladorS3');
 Route::get('/sedes', 'controladorS4@index');
 Route::resource('sedes', 'controladorS4');
 
+#ANEXO S5 = Datos de las Unidades Administrativas
+Route::get('/unidades', 'controladorS5@index');
+Route::resource('unidades', 'controladorS5');
+
 #SELECT LOCALIZACIÓN Y SELECT CODIGO DE PARROQUIA PARA CUANDO SELECCIONE INTERNACIONAL SE COLOQUE 99 EN CASO CONTRARIO TRAIGA LAS OPCIONES DEL OPTION(SELECT)
 
 Route::get('s4Pais/', 'controladorS4@selectLocaPais');
 #Modificar visSedes s4pais ruta
-Route::get('s4Pais2/{id}', 'controladorS4@modifiLocaPais');
+Route::get('s4Pais2/{id}', 'controladorS4@modiLocaPaises');
 
 Route::get('s4Pais3/{id}', 'controladorInmuebles@modifiLocaPais');
 
 
 Route::get('s4Parro/', 'controladorS4@selectLocaParro');
 #Modificar visSedes s4Parro ruta
-Route::get('s4Parro2/{id}', 'controladorS4@modifiLocaParro');
+Route::get('s4Parro2/{id}', 'controladorS4@modiLocaParro');
 
 Route::get('s4Parro3/{id}', 'controladorInmuebles@modifiLocaParro');
 
 Route::get('s4Ciudad/', 'controladorS4@selectLocaCiudad');
 #Modificar visSedes s4Ciudad ruta
-Route::get('s4Ciudad2/{id}', 'controladorS4@modifiLocaCiudad');
+Route::get('s4Ciudad2/{id}', 'controladorS4@modiLocaCiudad');
 
 Route::get('s4Ciudad3/{id}', 'controladorInmuebles@modifiLocaCiudad');
 

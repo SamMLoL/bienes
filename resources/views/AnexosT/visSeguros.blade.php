@@ -3,12 +3,12 @@
 @section('content')
 
 	<div class="row">
-	     <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b><i class="fa fa-file-o" aria-hidden="true"></i> SEGUROS / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
+	     <div id="panelTitu" class="panel-heading text-center separar40"><h5 id="h5Titu"><b><i class="fa fa-file-o" aria-hidden="true"></i> SEGUROS / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
       </div>
 
 
 	<div class="row">
-      <div class="col-md-12 separar">
+      <div class="col-md-12 separar40">
         <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
          <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
       </div>
@@ -39,7 +39,7 @@
                 @endif
                </b>
             @else
-               <center>EMPRSEG001</center>
+               <center id="color">EMPRSEG001</center>
             @endif
             </li></li>
         </div>
@@ -58,10 +58,11 @@
    	  <form role="form" id="formValidaT3" name="formValidaT3" method="POST" action="{{url('seguros')}}">
     	{{ csrf_field() }}
 
-
+  <div class="row">
+    <div class="col-md-12">
       @foreach($codRegT3 as $posicion => $valor)
       
-      <div class="col-md-4 form-group separar">
+      <div class="col-md-4 form-group separar40">
           <label for="{{$codRegT3[$posicion][0]}}">{{$codRegT3[$posicion][1]}}</label>
           <input type="text" name="{{$codRegT3[$posicion][0]}}" id="{{$codRegT3[$posicion][0]}}" class="form-control" placeholder="{{$codRegT3[$posicion][2]}}" maxlength="{{$codRegT3[$posicion][3]}}">
       </div>
@@ -70,7 +71,7 @@
     
       @foreach($selectCompAse as $posicion => $valor)
 
-      <div class="col-md-4 form-group  separar">
+      <div class="col-md-4 form-group  separar40">
         <label for="{{$selectCompAse[$posicion][0]}}">{{$selectCompAse[$posicion][1]}}</label>
             <select name="{{$selectCompAse[$posicion][0]}}" id="{{$selectCompAse[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -85,16 +86,19 @@
 
       @foreach($otraCompa as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$otraCompa[$posicion][4]}} separar">
+      <div class="col-md-4 form-group {{$otraCompa[$posicion][4]}} separar40">
           <label for="{{$otraCompa[$posicion][0]}}">{{$otraCompa[$posicion][1]}}</label>
           <input type="text" name="{{$otraCompa[$posicion][0]}}" id="{{$otraCompa[$posicion][0]}}" class="form-control" placeholder="{{$otraCompa[$posicion][2]}}" maxlength="{{$otraCompa[$posicion][3]}}" disabled>
       </div>
       @endforeach
+    </div>
+</div>
 
-
+<div class="row">
+    <div class="col-md-12">
       @foreach($numPoli as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$numPoli[$posicion][4]}} separar">
+      <div class="col-md-4 form-group {{$numPoli[$posicion][4]}} separar40">
           <label for="{{$numPoli[$posicion][0]}}">{{$numPoli[$posicion][1]}}</label>
           <input type="text" name="{{$numPoli[$posicion][0]}}" id="{{$numPoli[$posicion][0]}}" class="form-control" placeholder="{{$numPoli[$posicion][2]}}" maxlength="{{$numPoli[$posicion][3]}}">
       </div>
@@ -103,7 +107,7 @@
 
     @foreach($selectPoli as $posicion => $valor)
 
-      <div class="col-md-4 form-group  separar">
+      <div class="col-md-4 form-group  separar40">
         <label for="{{$selectPoli[$posicion][0]}}">{{$selectPoli[$posicion][1]}}</label>
             <select name="{{$selectPoli[$posicion][0]}}" id="{{$selectPoli[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -118,16 +122,20 @@
 
       @foreach($montoAse as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$montoAse[$posicion][4]}} separar">
+      <div class="col-md-4 form-group {{$montoAse[$posicion][4]}} separar40">
           <label for="{{$montoAse[$posicion][0]}}">{{$montoAse[$posicion][1]}}</label>
           <input type="text" name="{{$montoAse[$posicion][0]}}" id="{{$montoAse[$posicion][0]}}" class="form-control money" placeholder="{{$montoAse[$posicion][2]}}" maxlength="{{$montoAse[$posicion][3]}}">
       </div>
       @endforeach
-      
+    </div>
+</div>   
+
+<div class="row">  
+    <div class="col-md-12"> 
     
       @foreach($selectMoneda as $posicion => $valor)
 
-      <div class="col-md-4 {{$selectMoneda[$posicion][2]}} form-group  separar">
+      <div class="col-md-4 {{$selectMoneda[$posicion][2]}} form-group  separar40">
         <label for="{{$selectMoneda[$posicion][0]}}">{{$selectMoneda[$posicion][1]}}</label>
             <select name="{{$selectMoneda[$posicion][0]}}" id="{{$selectMoneda[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -141,7 +149,7 @@
 
       @foreach($desMoneda as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$desMoneda[$posicion][4]}} separar">
+      <div class="col-md-4 form-group {{$desMoneda[$posicion][4]}} separar40">
           <label for="{{$desMoneda[$posicion][0]}}">{{$desMoneda[$posicion][1]}}</label>
           <input type="text" name="{{$desMoneda[$posicion][0]}}" id="{{$desMoneda[$posicion][0]}}" class="form-control" placeholder="{{$desMoneda[$posicion][2]}}" maxlength="{{$desMoneda[$posicion][3]}}" disabled>
       </div>
@@ -161,8 +169,11 @@
                 </div>
          </div>
       @endforeach
+    </div>
+</div>
 
-
+<div class="row">
+    <div class="col-md-12">
       @foreach($datet2 as $posicion => $valor)
        
           <div class="col-md-4 form-group">
@@ -180,7 +191,7 @@
 
       @foreach($selectRes as $posicion => $valor)
 
-      <div class="col-md-4 form-group separar">
+      <div class="col-md-4 form-group  separar40 ">
         <label for="{{$selectRes[$posicion][0]}}">{{$selectRes[$posicion][1]}}</label>
             <select name="{{$selectRes[$posicion][0]}}" id="{{$selectRes[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -192,9 +203,11 @@
 
       @endforeach
 
+      
+
       @foreach($selectCobe as $posicion => $valor)
 
-      <div class="col-md-4 form-group separar">
+      <div class="col-md-4 form-group separar40">
         <label for="{{$selectCobe[$posicion][0]}}">{{$selectCobe[$posicion][1]}}</label>
             <select name="{{$selectCobe[$posicion][0]}}" id="{{$selectCobe[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -205,10 +218,14 @@
       </div>
 
       @endforeach
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-12">
       @foreach($espeCobe as $posicion => $valor)
       
-      <div class="col-md-4 form-group separar">
+      <div class="col-md-4 form-group separar40">
             <label for="{{$espeCobe[$posicion][0]}}">{{$espeCobe[$posicion][1]}}</label>
               <input type="text" name="{{$espeCobe[$posicion][0]}}" id="{{$espeCobe[$posicion][0]}}" class="form-control"  placeholder="{{$espeCobe[$posicion][2]}}" maxlength="{{$espeCobe[$posicion][3]}}" disabled>
           </div>
@@ -216,12 +233,13 @@
 
       @foreach($descCobe as $posicion => $valor)
       
-      <div class="col-md-4 form-group separar">
+      <div class="col-md-4 form-group separar40">
             <label for="{{$descCobe[$posicion][0]}}">{{$descCobe[$posicion][1]}}</label>
               <input type="text" name="{{$descCobe[$posicion][0]}}" id="{{$descCobe[$posicion][0]}}" class="form-control"  placeholder="{{$descCobe[$posicion][2]}}" maxlength="{{$descCobe[$posicion][3]}}">
           </div>
       @endforeach
-
+    </div>
+</div>
 	    	<div class="row">
               <div class="col-md-12 form-group" ><br>
                            

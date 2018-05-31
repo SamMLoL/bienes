@@ -530,24 +530,24 @@ $("#formValidaS1").validate({
                 
     });
 
-$("#formValidaS4").validate({
+$("#formValidaS5").validate({
         rules: {
            
-           tipoSede: { required:true},
-           localizacion: { required:true},
-           codPais: { required:true},
-           codParroquia: { required:true},
-           codCiudad: { required:true},
+           codUnidad: { required:true},
+           descUnidad: { required:true},
+           categoria: { required:true},
+         
+          
             
         },
 
         messages: {
            
-            tipoSede : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el tipo de sede !",
-            localizacion : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la localización !",
-            codPais : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione el país donde se ubica la sede !",
-            codParroquia : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la parroquia donde se ubica la sede !",
-            codCiudad : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la ciudad donde se ubica la sede !",
+            codUnidad : "* Campo obligatorio, &nbsp;¡ Por favor, introduzca el código de la unidad administrativa !",
+            descUnidad : "* Campo obligatorio, &nbsp;¡ Por favor, describa la denominación de la unidad !",
+            categoria : "* Campo obligatorio, &nbsp;¡ Por favor, seleccione la categoría de la unidad !",
+           
+            
 
         },
 
@@ -569,26 +569,6 @@ $("#formValidaS4").validate({
         errorElement: "li",
                 
     });
-
-
-
-$("#formValidaAddPais").validate({
-        rules: {
-           
-           codigo: { required:true},
-           codPais: { required:true},
-           
-            
-        },
-
-        messages: {
-           
-            codigo : "* Por favor, introduzca el código",
-            codPais : "*Por favor, introduzca el nombre país !",
-
-        },
-
-      });  
 
 }); 
 

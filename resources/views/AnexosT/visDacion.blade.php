@@ -71,7 +71,7 @@
 
       @foreach($selectT23 as $posicion => $valor)
 
-      <div class="col-md-4 {{$selectT23[$posicion][2]}} form-group  separar">
+      <div class="col-md-4 {{$selectT23[$posicion][2]}} form-group  separar40">
         <label for="{{$selectT23[$posicion][0]}}">{{$selectT23[$posicion][1]}}</label>
             <select name="{{$selectT23[$posicion][0]}}" id="{{$selectT23[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -88,7 +88,7 @@
 
       @foreach($arrayT23 as $posicion => $valor)
       
-      <div class="col-md-4 form-group {{$arrayT23[$posicion][4]}} separar">
+      <div class="col-md-4 form-group {{$arrayT23[$posicion][4]}} separar40">
             <label for="{{$arrayT23[$posicion][0]}}">{{$arrayT23[$posicion][1]}}</label>
               <input type="text" name="{{$arrayT23[$posicion][0]}}" id="{{$arrayT23[$posicion][0]}}" class="form-control" placeholder="{{$arrayT23[$posicion][2]}}" maxlength="{{$arrayT23[$posicion][3]}}" onkeypress="{{$arrayT23[$posicion][5]}}">
           </div>
@@ -110,10 +110,12 @@
                 </div>
          </div>
       @endforeach
-
+    </div>
+</div>
     <!--ARRAY DE FECHA date2T23 PERTENECIENTE AL CONTROLADORT23, TABLA RELACIONADA EN LA BD => T23--> 
     <!--ARRAY OF DATE date2T23 BELONGING TO CONTROLADORT23, TABLE RELATED IN THE BD => T23-->
-
+<div class="row">
+    <div class="col-md-12">
       @foreach($date2T23 as $posicion => $valor)
        
           <div class="col-md-4 form-group">
@@ -130,7 +132,7 @@
     </div>
 </div> 
     
-	    	<div class="row">
+	    	<div class="row separar">
             <div class="col-md-12 form-group" ><br>
                 <center>
                     <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>

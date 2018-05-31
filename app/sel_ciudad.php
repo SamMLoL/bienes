@@ -10,9 +10,6 @@ class sel_ciudad extends Model
     protected $fillable = ['codCiudad','ciudad'];
 
     
-
-    
-
      public function selectCiudades()
     {
         return $this->hasOne('App\modeloS4', 'codCiudad');
@@ -21,5 +18,10 @@ class sel_ciudad extends Model
      public function selectCiudadinmu()
     {
         return $this->hasOne('App\modeloInmuebles', 'codCiudad');
+    }
+
+     public function selectCiudadsedes()
+    {
+        return $this->hasOne('App\modeloS4', 'codCiudad');
     }
 }

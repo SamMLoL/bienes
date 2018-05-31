@@ -39,35 +39,39 @@
 
 <!---->
 
-$("#localizacion").change(function(){
-      var id = $("#localizacion").val();
+$("#localizacion2").change(function(){
+      var id = $("#localizacion2").val();
+        var s4Parro2 = $('#s4Parro2').val();
+          var s4Ciudad2 = $('#s4Ciudad2').val();
+            var s4Pais2 = $('#s4Pais2').val();
         if(id != 2){
-          $.get("bienes/s4Parro/",function(response,parroquia){
-             $("#codParroquia").empty();
-                $("#codParroquia").append("<option value='0' disabled selected>Seleccione... </option>");
+
+          $.get(s4Parro2+'/'+event.target.value+"",function(response,parroquia){
+             $("#codParroquia2").empty();
+                $("#codParroquia2").append("<option value='0' disabled selected>Seleccione... </option>");
                  for(i=0; i<1093; i++){
-                  $("#codParroquia").append("<option value='"+response[i].id+ "'> "+response[i].parroquia+"</option>");
+                  $("#codParroquia2").append("<option value='"+response[i].id+ "'> "+response[i].parroquia+"</option>");
         }
 
             })
 
-          $.get("bienes/s4Ciudad/",function(response,ciudad){
-             $("#codCiudad").empty();
-                $("#codCiudad").append("<option value='0' disabled selected>Seleccione... </option>");
+          $.get(s4Ciudad2+'/'+event.target.value+"",function(response,ciudad){
+             $("#codCiudad2").empty();
+                $("#codCiudad2").append("<option value='0' disabled selected>Seleccione... </option>");
                  for(i=0; i<331; i++){
-                  $("#codCiudad").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
+                  $("#codCiudad2").append("<option value='"+response[i].id+ "'> "+response[i].ciudad+"</option>");
         }
 
             })
 
        
  
-              $("#codPais").empty().append("<option value='230'>Venezuela </option>");
+              $("#codPais2").empty().append("<option value='230'>Venezuela </option>");
               $("#espeOtroPais").attr("disabled", true).append($('#espeOtroPais').val('noaplica'));
               $("#espeOtroCiudad").attr("disabled", true).append($('#espeOtroCiudad').val('noaplica'));
               /*$("#espeOtroPais").attr("disabled", true).prop($('#espeOtroPais').val('noaplica'));*/
-              $("#codParroquia").attr("disabled", false);
-              $("#codCiudad").attr("disabled", false);
+              $("#codParroquia2").attr("disabled", false);
+              $("#codCiudad2").attr("disabled", false);
             
               //$("#espeOtroPais").attr("disabled", true).prop($('#espeOtroPais').val('noaplica'));
              
@@ -77,11 +81,11 @@ $("#localizacion").change(function(){
 
           
 
-             $.get("bienes/s4Pais/",function(response,pais){
-              $("#codPais").empty();
-                $("#codPais").append("<option value='0' disabled selected>Seleccione... </option>");
+             $.get(s4Pais2+'/'+event.target.value+"",function(response,pais){
+              $("#codPais2").empty();
+                $("#codPais2").append("<option value='0' disabled selected>Seleccione... </option>");
                  for(i=0; i<response.length; i++){
-                  $("#codPais").append("<option value='"+response[i].id+ "'> "+response[i].pais+"</option>");
+                  $("#codPais2").append("<option value='"+response[i].id+ "'> "+response[i].pais+"</option>");
         }
 
             })
@@ -89,7 +93,7 @@ $("#localizacion").change(function(){
               /*$("#codPais").empty().append("<option value='2'>Otro País </option>");*/
 
               $("#codParroquia").attr("disabled", false);
-              $("#codParroquia").empty().append("<option value='1093'>99 </option>");
+              $("#codParroquia").empty().append("<option value='1094'>99 </option>");
               $("#codCiudad").attr("disabled", false);
               $("#codCiudad").empty().append("<option value='332'>99 </option>");
               

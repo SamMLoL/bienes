@@ -223,6 +223,12 @@ class CreateSelectores extends Migration
             $table->string('unidad');
             $table->timestamps();
         });
+
+        Schema::create('sel_categoria', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('categoria');
+            $table->timestamps();
+        });
         
     }
 

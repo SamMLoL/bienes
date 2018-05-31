@@ -594,10 +594,12 @@ class CreateAnexos extends Migration
         #S5
         Schema::create('unidades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codUnidad',10)->nullable();
+            $table->string('codUnidad');
             $table->string('descUnidad', 255)->nullable();
-            $table->integer('unidad')->nullable();
-            $table->foreign('unidad')->references('id')->on('sel_unidades');
+            $table->integer('categoria')->unsigned();
+            $table->foreign('categoria')->references('id')->on('sel_categoria');
+            $table->string('espeCatego', 100)->nullable();
+            $table->string('codAdscrita', 10)->nullable();
             $table->integer('revisadoS5')->nullable();
             $table->softDeletes();
             $table->timestamps();

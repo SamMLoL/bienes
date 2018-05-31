@@ -36,8 +36,8 @@
 
         <div class="row separar">
             <div class="col-md-12">
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"> <b id="espaciar2">Ultimo Registro</b>
-              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar5"> Código del Proveedor</b>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><center><b>Ultimo Registro</b></center>
+              <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><center><b> Código del Proveedor</b></center>
               
               @if($lastCod)
                 <center><b id="color">{{$lastCod->codProvee}}</b></center>

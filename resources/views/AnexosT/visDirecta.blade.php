@@ -72,7 +72,7 @@
 
     	@foreach($selectT21 as $posicion => $valor)
             
-             <div class="col-md-4 {{$selectT21[$posicion][2]}} form-group  separar">
+             <div class="col-md-4 {{$selectT21[$posicion][2]}} form-group  separar40">
                 <label for="{{$selectT21[$posicion][0]}}">{{$selectT21[$posicion][1]}}</label>
                    <select name="{{$selectT21[$posicion][0]}}" id="{{$selectT21[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
@@ -86,7 +86,7 @@
 
         @foreach($selectT22 as $posicion => $valor)
             
-             <div class="col-md-4 {{$selectT22[$posicion][2]}} form-group  separar">
+             <div class="col-md-4 {{$selectT22[$posicion][2]}} form-group  separar40">
                 <label for="{{$selectT22[$posicion][0]}}">{{$selectT22[$posicion][1]}}</label>
                    <select name="{{$selectT22[$posicion][0]}}" id="{{$selectT22[$posicion][0]}}" class="form-control">
                       <option value="0" disabled selected>Seleccione</option>
@@ -109,16 +109,18 @@
 
 		@foreach($arrayT21 as $posicion => $valor)
     
-		 <div class="col-md-4 {{$arrayT21[$posicion][4]}} form-group separar">
+		 <div class="col-md-4 {{$arrayT21[$posicion][4]}} form-group separar40">
 		    <label for="{{$arrayT21[$posicion][0]}}">{{$arrayT21[$posicion][1]}}</label>
                 <input type="text" class="form-control" name="{{$arrayT21[$posicion][0]}}" id="{{$arrayT21[$posicion][0]}}" placeholder="{{$arrayT21[$posicion][2]}}" maxlength="{{$arrayT21[$posicion][3]}}" >
          </div>
 
     	@endforeach
-
+    </div>
+</div>
     <!--ARRAY DE FECHA dateT21 PERTENECIENTE AL CONTROLADORT21, TABLA RELACIONADA EN LA BD => T21--> 
     <!--ARRAY OF DATE dateT21 BELONGING TO CONTROLADORT21, TABLE RELATED IN THE BD => T21-->
-
+<div class="row separar">
+    <div class="col-md-12">
 		@foreach($dateT21 as $posicion => $valor)
                       
          <div class="col-md-4 form-group">

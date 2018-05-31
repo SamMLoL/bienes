@@ -20,4 +20,9 @@ class sel_parroquias extends Model
         return $this->hasOne('App\modeloInmuebles', 'codParroquia');
     }
 
+    public function selectParrosedes()
+    {
+        return $this->hasOne('App\modeloS4', 'codParroquia');
+    }
+
 }

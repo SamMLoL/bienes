@@ -45,7 +45,7 @@
                   </center><b id="color"> {{$lastCod->codOt2_4}}</b></center>
                 @endif
               @else
-                  </center><b id="color">E2012001</b></center>
+                  <center><b id="color">E2012001</b></center>
               @endif
               
                 </li></li>
@@ -70,7 +70,7 @@
     <!--ARRAY SELECT selectT24 BELONGING TO CONTROLADORT24, TABLE RELATED IN THE BD => mig_selectT24 AND T24-->
 
         @foreach($selectT24 as $posicion => $valor)
-    		  <div class="col-md-4 {{$selectT24[$posicion][2]}} form-group separar">
+    		  <div class="col-md-4 {{$selectT24[$posicion][2]}} form-group separar40">
             	<label for="{{$selectT24[$posicion][0]}}">{{$selectT24[$posicion][1]}}</label>
                   <select name="{{$selectT24[$posicion][0]}}" id="{{$selectT24[$posicion][0]}}" class="form-control">
                     <option value="0" disabled selected>Seleccione</option>
@@ -86,7 +86,7 @@
 
 		    @foreach($arrayT24 as $posicion => $valor)
 		  
-		      <div class="col-md-4 form-group {{$arrayT24[$posicion][4]}} separar">
+		      <div class="col-md-4 form-group {{$arrayT24[$posicion][4]}} separar40">
             <label for="{{$arrayT24[$posicion][0]}}">{{$arrayT24[$posicion][1]}}</label>
               <input type="text" name="{{$arrayT24[$posicion][0]}}" id="{{$arrayT24[$posicion][0]}}" class="form-control" placeholder="{{$arrayT24[$posicion][2]}}" maxlength="{{$arrayT24[$posicion][3]}}" onkeypress="{{$arrayT24[$posicion][5]}}">
           </div>
@@ -109,10 +109,12 @@
                 </div>
           </div>
       	@endforeach
-        
+    </div>
+</div>        
     <!--ARRAY DE FECHA date2T24 PERTENECIENTE AL CONTROLADORT24, TABLA RELACIONADA EN LA BD => T24--> 
     <!--ARRAY OF DATE date2T24 BELONGING TO CONTROLADORT24, TABLE RELATED IN THE BD => T24-->
-
+<div class="row">
+    <div class="col-md-12">
       	@foreach($date2T24 as $posicion => $valor)
        
           <div class="col-md-4 form-group">
@@ -128,8 +130,8 @@
       	@endforeach
     </div>
 </div>
-	    <div class="row">
-            <div class="col-md-12 form-group" ><br>
+	    <div class="row separar">
+            <div class="col-md-12 form-group"><br>
                 <center>
                     <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>
                              

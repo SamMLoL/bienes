@@ -5,17 +5,17 @@
 <div class="row">
    <div class="col-md-12">
     	<div class="row">
-    	     <div id="panelTitu" class="panel-heading text-center separar"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> EXPROPIACIÓN / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
+    	     <div id="panelTitu" class="panel-heading text-center separar40"><h5 id="h5Titu"><b> <i class="fa fa-file-o" aria-hidden="true"></i> EXPROPIACIÓN / DATOS DE LOS ORIGENES (FORMAS DE ADQUISICIÓN) DE LOS BIENES MUEBLES E INMUEBLES DEL ORGANO O ENTE</b></h5></div>
       </div>
 
-    	<div class="row separar">
+    	<div class="row">
       		<div class="col-md-12">
       			 <h7><b>F) Aplicable solo para la forma de adquisición de Expropiación</b></h7>
       		</div>
     	</div>
     	
     	<div class="row">
-          <div class="col-md-12 separar">
+          <div class="col-md-12">
             <h6> <i id="colorInstruccion" class="fa fa-info-circle" aria-hidden="true" title="" ></i>  
              <b id="colorInstruccion"> INSTRUCCIONES: EL CAMPO QUE DESCONOZCA, POR FAVOR DEJARLO EN BLANCO. SEGÚN EL MANUAL DE ESPECIFICACIONES TÉCNICAS.</b></h6>
           </div>
@@ -33,7 +33,7 @@
           </div>
       </div>
 
-      <div class="row">
+      <div class="row separar">
           <div class="col-md-12">
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar2">Ultimo Registro</b>
               <li style="border-style: ridge; background-color: white; width: 160px;"  class="listas"><b id="espaciar4"> Código de Origen</b>
@@ -70,7 +70,7 @@
     <!--ARRAY SELECT selectT25 BELONGING TO CONTROLADORT25, TABLE RELATED IN THE BD => mig_selectT25 AND T25-->
 
       @foreach($selectT25 as $posicion => $valor)
-      <div class="col-md-4 {{$selectT25[$posicion][2]}} form-group separar">
+      <div class="col-md-4 {{$selectT25[$posicion][2]}} form-group separar40">
           <label for="{{$selectT25[$posicion][0]}}">{{$selectT25[$posicion][1]}}</label>
               <select name="{{$selectT25[$posicion][0]}}" id="{{$selectT25[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -86,7 +86,7 @@
 
       @foreach($arrayT25 as $posicion => $valor)
        
-       <div class="col-md-4 {{$arrayT25[$posicion][4]}} form-group separar">
+       <div class="col-md-4 {{$arrayT25[$posicion][4]}} form-group separar40">
          <label for="">{{$arrayT25[$posicion][1]}}</label>
          <input type="text" class="form-control" id="{{$arrayT25[$posicion][0]}}" name="{{$arrayT25[$posicion][0]}}" placeholder="{{$arrayT25[$posicion][2]}}" maxlength="{{$arrayT25[$posicion][3]}}" onkeypress="{{$arrayT25[$posicion][5]}}">
        </div> 

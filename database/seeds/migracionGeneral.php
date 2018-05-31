@@ -168,7 +168,7 @@ class migracionGeneral extends Seeder
       }
 
 
-      $dato = array( 
+      /*$dato = array( 
        array("DVPE3300","Despacho del Vicepresidente Ejecutivo"),
        array("AUD33001","Auditoría Interna"),
        array("DEV330011","Dirección de Evaluación y Control de Gestión"),
@@ -240,7 +240,7 @@ class migracionGeneral extends Seeder
            'unidad' => $v[1],
 
           ]);   
-      }
+      }*/
 
        $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En desuso por obsolescencia","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En almacén o Depósito para su asignación","Otro uso");
 
@@ -2071,7 +2071,35 @@ class migracionGeneral extends Seeder
           ]); 
       }
 
+      $dato = array(
+        array("Despacho del Presidente"),
+        array("Despacho del Vicepresidente"),
+        array("Despacho del Ministro"),
+        array("Despacho Viceministro"),
+        array("Dirección General"),
+        array("Dirección de Línea"),
+        array("Coordinación"),
+        array("División"),
+        array("Departamento"),
+        array("Presidencia"),
+        array("Gerencia General"),
+        array("Gerencia"),
+        array("Sub-Gerencia"),
+        array("Despacho del Superintendente"),
+        array("Dirección General Adjunta"),
+        array("Intendencia"),
+        array("Unidad Ad- Hoc"),
+        array("Área Organizacional"),
+        array("Área de Trabajo"),
+        array("Otra Categoría de Unidad"),
+        );
 
+      foreach ($dato as $v) {
+        DB::table('sel_categoria')->insert([
+           'categoria' => $v[0],
+
+          ]);   
+      }
 
 
     }

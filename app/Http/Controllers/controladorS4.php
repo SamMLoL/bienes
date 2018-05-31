@@ -16,50 +16,28 @@ class controladorS4 extends Controller
 {
     
 
-    public function selectLocaPais(Request $request)
+    public function modiLocaPaises(Request $request)
     {
          if($request->ajax()){
-            $s4Pais = modeloS4::selectPaises();
-          return response()->json($s4Pais);
-      }
-    } 
-
-    public function modifiLocaPais(Request $request)
-    {
-         if($request->ajax()){
-            $s4Pais2 = modeloS4::modifiquePaises();
+            $s4Pais2 = modeloS4::modiSedesPaises();
           return response()->json($s4Pais2);
       }
     }
 
-    public function selectLocaParro(Request $request)
-    {
-         if($request->ajax()){
-            $s4Parro = modeloS4::selectParroquias();
-          return response()->json($s4Parro);
-      }
-    }
 
-    public function modifiLocaParro(Request $request)
+    public function modiLocaParro(Request $request)
     {
          if($request->ajax()){
-            $s4Parro2 = modeloS4::modifiqueParroquias();
+            $s4Parro2 = modeloS4::modiSedesParroquias();
           return response()->json($s4Parro2);
       }
     }
 
-    public function selectLocaCiudad(Request $request)
-    {
-         if($request->ajax()){
-            $s4Ciudad = modeloS4::selectCiudad();
-          return response()->json($s4Ciudad);
-      }
-    }
 
-    public function modifiLocaCiudad(Request $request)
+    public function modiLocaCiudad(Request $request)
     {
          if($request->ajax()){
-            $s4Ciudad2 = modeloS4::modifiqueCiudades();
+            $s4Ciudad2 = modeloS4::modiSedesCiudades();
           return response()->json($s4Ciudad2);
       }
     }
@@ -152,8 +130,6 @@ class controladorS4 extends Controller
 
         $form_s4->codParroquia = $request->codParroquia;
         
-
-        
         $form_s4->codCiudad = $request->codCiudad;
        
 
@@ -220,7 +196,6 @@ class controladorS4 extends Controller
           $bit->accion  = 1;
           $bit->referencia = 'Datos de las Sedes y Similares del Ente';
           $bit->save();
-
          
 
         return back()->with('msj', 'Datos Registrados Exitosamente');

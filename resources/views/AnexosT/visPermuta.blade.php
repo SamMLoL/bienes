@@ -69,7 +69,7 @@
     <div class="col-md-12">
 
       @foreach($selectT26 as $posicion => $valor)
-      <div class="col-md-4 {{$selectT26[$posicion][2]}} form-group separar">
+      <div class="col-md-4 {{$selectT26[$posicion][2]}} form-group separar40">
           <label for="{{$selectT26[$posicion][0]}}">{{$selectT26[$posicion][1]}}</label>
               <select name="{{$selectT26[$posicion][0]}}" id="{{$selectT26[$posicion][0]}}" class="form-control">
                 <option value="0" disabled selected>Seleccione</option>
@@ -85,7 +85,7 @@
 
       @foreach($arrayT26 as $posicion => $valor)
        
-       <div class="col-md-4 {{$arrayT26[$posicion][4]}} form-group separar">
+       <div class="col-md-4 {{$arrayT26[$posicion][4]}} form-group separar40">
          <label for="{{$arrayT26[$posicion][0]}}">{{$arrayT26[$posicion][1]}}</label>
          <input type="text" class="form-control" id="{{$arrayT26[$posicion][0]}}" name="{{$arrayT26[$posicion][0]}}" placeholder="{{$arrayT26[$posicion][2]}}" maxlength="{{$arrayT26[$posicion][3]}}" onkeypress="{{$arrayT26[$posicion][5]}}">
        </div> 
@@ -105,7 +105,7 @@
                 </div>
           </div>
       @endforeach
-
+   
     <!--ARRAY DE FECHA date2T26 PERTENECIENTE AL CONTROLADORT26, TABLA RELACIONADA EN LA BD => T26--> 
     <!--ARRAY OF DATE date2T26 BELONGING TO CONTROLADORT26, TABLE RELATED IN THE BD => T26-->
 
@@ -122,10 +122,12 @@
                 </div>
           </div>
       @endforeach
-
+    </div>
+</div>
     <!--ARRAY DE FECHA date3T26 PERTENECIENTE AL CONTROLADORT26, TABLA RELACIONADA EN LA BD => T26--> 
     <!--ARRAY OF DATE date3T26 BELONGING TO CONTROLADORT26, TABLE RELATED IN THE BD => T26-->
-
+<div class="row">
+    <div class="col-md-12">
       @foreach($date3T26 as $posicion => $valor)
        
           <div class="col-md-4 form-group">
@@ -140,8 +142,8 @@
           </div>
       @endforeach
     </div>
-</div>
-	      <div class="row">
+</div>   
+	      <div class="row separar">
             <div class="col-md-12 form-group"><br>
                 <center>
                     <button type="submit" class="btn btn-md btn-success" name="#"><i class="fa fa-check-square-o" aria-hidden="true"></i><b> Enviar</b></button>

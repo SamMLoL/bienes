@@ -14,27 +14,16 @@ class modeloS4 extends Model
 
      protected $fillable = ['codSede','tipoSede','espeSede','descSede','localizacion','codPais','espeOtroPais','codParroquia','codCiudad','espeOtroCiudad','urbanizacion','calleAvenida','casaEdificio','piso','revisadoS4'];
 
-      public static function selectPaises(){
+
+     public static function modiSedesPaises(){
          return sel_paises::all();
      }
 
-      public static function modifiquePaises(){
-         return sel_paises::all();
-     }
-
-     public static function selectParroquias(){
+     public static function modiSedesParroquias(){
          return sel_parroquias::all();
      }
 
-     public static function modifiqueParroquias(){
-         return sel_parroquias::all();
-     }
-
-     public static function selectCiudad(){
-         return sel_ciudad::all();
-     }
-
-     public static function modifiqueCiudades(){
+     public static function modiSedesCiudades(){
          return sel_ciudad::all();
      }
 
