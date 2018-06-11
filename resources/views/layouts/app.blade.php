@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('', 'Bienes Nacionales') }}</title>
+        <title>{{ config('', 'Pruebas de sistema') }}</title>
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('img/bandera.png') }}" rel="icon">
@@ -48,100 +48,17 @@
                     <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Registro Anexos <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PAGINAS DEL MENU <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu" role="menu">
-                            <!--SUB-MENU DE ANEXOS T-->
-                            <li class="dropdown-submenu"><a href="">Anexos T</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="proveedores">Proveedores</a></li>
-
-                                <li class="dropdown-submenu"><a href="">Modalidades</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="concurso">Compra por Concurso</a></li>
-                                        <li><a href="directa">Compra Directa</a></li>
-                                        <li><a href="confiscacion">Confiscación</a></li>
-                                        <li><a href="dacion">Dación en Pago</a></li>
-                                        <li><a href="donacion">Donación</a></li>
-                                        <li><a href="expropiacion">Expropiación</a></li>
-                                        <li><a href="permuta">Permuta</a></li>
-                                        <li><a href="transferencia">Transferencia</a></li>
-                                        <li><a href="adjudicacion">Adjudicación</a></li>
-                                    </ul>
-                                </li>
-                                        <li><a href="seguros">Seguros</a></li>
-                                        <li><a href="responsables">Responsables de los Bienes</a></li>
-                                        <li><a href="marcas">Marcas</a></li>
-                                        <li><a href="modelos">Modelos</a></li>
-                                        <li><a href="componentes">Componentes</a></li>
-                                        <li><a href="bienes">Bienes</a></li>
-                                        <li><a href="transporte">Equipo de Transporte</a></li>
-                                        <li><a href="semovientes">Semovientes</a></li>
-                                        <li><a href="datosbienes">Bienes Muebles e Inmuebles</a></li>
-                                        <li><a href="datosinmuebles">Bienes de Inmuebles del Organo</a></li>
-                                    </ul>
-                                </li>
-                            
-                                
-                                <li class="dropdown-submenu"><a href="">Anexos S</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="basicos">Datos Básicos del Ente</a></li>
-                                        <li><a href="maxima">Datos de la Máxima Autoridad</a></li>
-                                        <li><a href="patrimonial">Datos del Responsable Patrimonial</a></li>
-                                        <li><a href="sedes">Datos de las Sedes y Similares del Ente</a></li>
-                                        <li><a href="unidades">Unidades Administrativas</a></li>
-                                    </ul>
-                                </li>
+                         
+                            <li class="dropdown-MENU"><a href="prueba">PAGINAS</a>
+                                    <ul class="dropdown-menu">             
                                                                            
                         </ul>
                     </li>
+                  </li>
                 </ul>
-
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Consultar Anexos <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-submenu"><a href="">Anexos T</a>
-                                    <ul class="dropdown-menu">
-                                      <li><a href="regProveedores">Proveedores</a></li>
-
-                                      <li class="dropdown-submenu"><a href="">Modalidades</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="regConcurso">Compra por Concurso</a></li>
-                                            <li><a href="regDirecta">Compra Directa</a></li>
-                                            <li><a href="regConfiscacion">Confiscación</a></li>
-                                            <li><a href="regDacion">Dación en Pago</a></li>
-                                            <li><a href="regDonacion">Donación</a></li>
-                                            <li><a href="regExpropiacion">Expropiación</a></li>
-                                            <li><a href="regPermuta">Permuta</a></li>
-                                            <li><a href="regTransferencia">Transferencia</a></li>
-                                            <li><a href="regAdjudicacion">Adjudicación</a></li>
-                                        </ul>
-                                       </li>
-
-                                       <li><a href="regSeguros">Seguros</a></li>
-                                       <li><a href="regResponsables">Responsables de los Bienes</a></li>
-                                       <li><a href="histoMarcas">Marcas</a></li>
-                                       <li><a href="histoModelos">Modelos</a></li>
-                                       <li><a href="regComponentes">Componentes</a></li>
-                                       <li><a href="regBienes">Bienes</a></li>
-                                       <li><a href="regTransporte">Equipo de Transporte</a></li>
-                                       <li><a href="regSemovientes">Semovientes</a></li>
-                                       <li><a href="regDatosbienes">Bienes Muebles e Inmuebles</a></li>
-                                       <li><a href="regInmuebles">Bienes de Inmuebles del Órgano</a></li>
-                                    </ul>
-                                </li> 
-                                <li class="dropdown-submenu"><a href="">Anexos S</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="regBasicos">Datos Básicos</a></li>
-                                        <li><a href="regMaxima">Datos de la Máxima Autoridad</a></li>
-                                        <li><a href="regPatrimonial">Datos del Responsable Patrimonial</a></li>
-                                        <li><a href="regSedes">Datos de las Sedes y Similares</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
+                </ul>
                          <!-- Right Side Of Navbar -->
                          <ul class="nav navbar-nav navbar-right">
                          <!-- Authentication Links-->
@@ -157,25 +74,6 @@
                                            Cerrar Sesión
                                         </a>
                                    
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                         <!-- Authentication Links-->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                 <i class="fa fa-cog" aria-hidden="true"></i>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        
-                                    <a href="{{ url('/bitacora') }}">
-                                        Bitácora  <i class="fa fa-archive" aria-hidden="true"></i>  
-                                    </a> 
-
                                     </li>
                                 </ul>
                             </li>

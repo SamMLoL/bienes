@@ -16,7 +16,7 @@ class migracionGeneral extends Seeder
           ]);   
       }
 
-      $dato = array('Registró', 'Modificó','Eliminó');
+      /*$dato = array('Registró', 'Modificó','Eliminó');
 
       foreach ($dato as $v) {
         DB::table('acciones')->insert([
@@ -168,7 +168,7 @@ class migracionGeneral extends Seeder
       }
 
 
-      /*$dato = array( 
+       $dato = array( 
        array("DVPE3300","Despacho del Vicepresidente Ejecutivo"),
        array("AUD33001","Auditoría Interna"),
        array("DEV330011","Dirección de Evaluación y Control de Gestión"),
@@ -240,7 +240,7 @@ class migracionGeneral extends Seeder
            'unidad' => $v[1],
 
           ]);   
-      }*/
+      }
 
        $dato = array("En uso","En comodato","En arrendamiento","En mantenimiento","En reparación","En proceso de disposición","En desuso por obsolescencia","En desuso por inservibilidad","En desuso por obsolescencia e inservibilidad","En almacén o Depósito para su asignación","Otro uso");
 
@@ -1724,8 +1724,8 @@ class migracionGeneral extends Seeder
 
 
       $dato = array(
-        /*array("001","Caracas"),
-        array("002","Otra Ciudad"),*/
+        array("001","Caracas"),
+        array("002","Otra Ciudad"),
 
       array("10100-0001","Caracas"),
       array("20100-0001","La Esmeralda"),
@@ -2099,7 +2099,7 @@ class migracionGeneral extends Seeder
            'categoria' => $v[0],
 
           ]);   
-      }
+      }*/
 
 
     }
