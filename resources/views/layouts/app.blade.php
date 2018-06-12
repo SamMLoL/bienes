@@ -15,13 +15,7 @@
         <link href="{{ asset('css/menu.css') }}" rel="stylesheet">  
         <link href="{{ asset('css/general.css') }}" rel="stylesheet">  
         <link href="{{ asset('css/appstilo.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/tablas.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/bootstrap-submenu.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('img/bandera.png') }}" rel="icon">
-        <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" type="text/css">
     </head>
 <body>
 
@@ -95,27 +89,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/dropdown.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>  
     <script src="{{ asset('js/moment.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.validate.js') }}"></script>
-    <script src="{{ asset('js/validateGeneral.js') }}"></script> <!-- Valida los campos de las (Tabla Proveedores=T1 a la Tabla bienes de Inmuebles Organos=T12) -->
-    <script src="{{ asset('js/validateModalidades.js') }}"></script> <!-- Valida los campos de la Tabla compra por concurso=T2 a la  Tabla adjudicación=T28 (Modalidades)) -->
-    <script src="{{ asset('js/validate.js') }}"></script>
-    <script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-hover-dropdown.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-submenu.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/tabla.datatable.js') }}"></script>
-    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-    <script src="{{ asset('js/funcion.mask.decimal.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicoanexosT.js') }}"></script>
-    <script src="{{ asset('js/inputDinamicoanexosS.js') }}"></script>
-    <script src="{{ asset('js/contadorTextarea.js') }}"></script>
-    <script src="{{ asset('js/select2.min.js') }}"></script>
-    <script src="{{ asset('js/selectBuscador.js') }}"></script>
    
    
    

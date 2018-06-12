@@ -28,7 +28,7 @@ Route::post('/sesion', 'controladorLogin@login');
 Route::get('/logout', 'controladorLogin@logout');
 
 Route::get('/prueba', 'controladorPrueba@index');
-
+Route::post('/home/mensaje', 'mensaje@create');
 
 session_start();
 
@@ -43,6 +43,7 @@ Route::group(['middleware' => 'sesion'], function () {
 
 	Route::get('/home', function () {
     return view('/home');
+    
 });
 });
 
